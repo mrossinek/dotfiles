@@ -1,0 +1,13 @@
+[user]
+	name = mrossinek
+	email = rmax@ethz.ch
+
+[core]
+	editor = nvim
+
+[diff]
+	tool = nvim -d
+
+[alias]
+	s = status
+	tree = log --graph --oneline --all
