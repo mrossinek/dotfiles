@@ -10,6 +10,15 @@
 
 [alias]
         a = add
+        br = branch
+        c = commit
+        ch = checkout
         d = diff
-	s = status
+        i = init
+        l = log
+        m = merge
+        pl = pull
+        ps = push
+        s = status
+        t = tree
 	tree = log --graph --oneline --all
