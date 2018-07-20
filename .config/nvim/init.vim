@@ -50,6 +50,13 @@ set updatetime=100
 set undofile
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+" visual @
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+function! ExecuteMacroOverVisualRange()
+        echo "@".getcmdline()
+        execute ":'<,'>normal @".nr2char(getchar())
+endfunction
+
 " indentation
 set expandtab
 set smartindent
