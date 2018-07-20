@@ -11,6 +11,11 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})  " enables auto updates
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
+" colorscheme
+call minpac#add('NLKNguyen/papercolor-theme')
+set background=dark
+colorscheme PaperColor
+
 " basic setup
 set colorcolumn=80
 set cursorline
