@@ -12,8 +12,16 @@ command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
 " Plugins
+
+" Git integration
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-fugitive')
+
+" tpope
+call minpac#add('tpope/vim-unimpaired')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-repeat')
 
 " colorscheme
 call minpac#add('NLKNguyen/papercolor-theme')
