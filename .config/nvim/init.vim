@@ -12,6 +12,11 @@ command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
 " Plugins
+call minpac#add('vim-scripts/TaskList.vim')
+
+" auto completion
+call minpac#add('ncm2/ncm2')
+call minpac#add('roxma/nvim-yarp')
 
 " Git integration
 call minpac#add('airblade/vim-gitgutter')
