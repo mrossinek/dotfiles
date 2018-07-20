@@ -11,6 +11,10 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})  " enables auto updates
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
+" Plugins
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('tpope/vim-fugitive')
+
 " colorscheme
 call minpac#add('NLKNguyen/papercolor-theme')
 set background=dark
@@ -30,6 +34,7 @@ set nowrap
 set number
 set showmatch
 set signcolumn=yes
+set updatetime=100
 
 " file editing
 set undofile
