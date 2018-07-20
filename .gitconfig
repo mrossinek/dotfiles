@@ -9,5 +9,7 @@
 	tool = nvim -d
 
 [alias]
+        a = add
+        d = diff
 	s = status
 	tree = log --graph --oneline --all
