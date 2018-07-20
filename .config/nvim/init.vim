@@ -16,6 +16,11 @@ call minpac#add('NLKNguyen/papercolor-theme')
 set background=dark
 colorscheme PaperColor
 
+" airline
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+let g:airline_theme='papercolor'
+
 " basic setup
 set colorcolumn=80
 set cursorline
