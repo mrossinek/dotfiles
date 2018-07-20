@@ -11,3 +11,30 @@ URxvt*scrollTtyKeypress: true
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
+! PaperColor Theme
+*.foreground: #f2f2f2
+*.background: #2e2e2d
+! black
+*.color0:  #2c2c2c
+*.color8:  #969694
+! red
+*.color1:  #c62828
+*.color9:  #f15250
+! green
+*.color2:  #558b2e
+*.color10: #86bd47
+! yellow / orange
+*.color3:  #f9a825
+*.color11: #f8e63a
+! blue
+*.color4:  #1565c1
+*.color12: #77b2f6
+! magenta
+*.color5:  #6a1e9a
+*.color13: #b933a8
+! cyan
+*.color6:  #00838f
+*.color14: #25c3dc
+! white
+*.color7:  #ffffff
+*.color15: #ffffff
