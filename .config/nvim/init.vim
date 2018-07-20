@@ -32,6 +32,8 @@ set hidden
 set ignorecase
 set nowrap
 set number
+set scrolloff=2
+set sidescrolloff=5
 set showmatch
 set signcolumn=yes
 set updatetime=100
