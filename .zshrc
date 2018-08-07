@@ -27,6 +27,7 @@ ttyctl -f
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # aliases
+alias sudo='sudo '  # enables aliases after sudo
 alias vi=nvim
 alias vim=nvim
 alias -s tex=nvim
