@@ -6,6 +6,7 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 URxvt.font: xft:inconsolata:size=10
+dzen2.font: inconsolata:size=12
 
 ! do not scroll with output
 URxvt*scrollTtyOutput: false
