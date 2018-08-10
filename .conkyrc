@@ -12,6 +12,7 @@ conky.config={
 conky.text = [[
 ^fg(\#FFFFFF) ${template0 } ${fs_free /} \
 ^fg(\#FFFFFF) ${template0 } ${fs_free /home/} \
+^fg(\#FFFFFF) ${template0 } ${acpitemp}°C \
 ^fg(\#FFFFFF) ${template0 } ${cpu}% \
 ^fg(\#FFFFFF) ${template0 } ${memperc}% \
 ${if_existing /proc/net/route wlan0} ^fg(\#ebac54) ${template0 } ${wireless_link_qual_perc wlan0}% @ ${wireless_essid wlan0} (${addr wlan0}) ^fg(\#00aa4a) ${template0 } ${downspeed wlan0} ^fg(\#ff3333) ${template0 } ${upspeed wlan0} \
