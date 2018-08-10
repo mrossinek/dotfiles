@@ -10,6 +10,8 @@ conky.config={
 
 
 conky.text = [[
+^fg(\#FFFFFF) ${template0 } ${exec ~/.conky/mail-counter.sh} \
+^fg(\#FFFFFF) ${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
 ^fg(\#FFFFFF) ${template0 } ${fs_free /} \
 ^fg(\#FFFFFF) ${template0 } ${fs_free /home/} \
 ^fg(\#FFFFFF) ${template0 } ${acpitemp}°C \
