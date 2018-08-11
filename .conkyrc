@@ -10,6 +10,33 @@ conky.config={
 
 
 conky.text = [[
+# mpd
+${if_running mpd}${if_mpd_playing}\
+${if_match "${mpd_status}" == "Playing"}\
+^fg(\#FFFFFF)\
+${else}${if_match "${mpd_status}" == "Paused"}\
+^fg(\#FFFF00)\
+${endif}${endif}\
+^ca(1,mpc toggle)\
+${template0 } ${mpd_artist} - ${mpd_title} \
+^ca()\
+${endif}${endif}\
+#
+# volume
+${if_match ${exec amixer get PCM -M | grep -o "[0-9]*%" | sed 's/%//'} == 0}\
+^fg(\#FF0000)${template0 }\
+${else}${if_match ${exec amixer get PCM -M | grep -o "[0-9]*%" | sed 's/%//'} >= 100}\
+^fg(\#FF0000)${template0 }\
+${else}${if_match ${exec amixer get PCM -M | grep -o "[0-9]*%" | sed 's/%//'} >= 50}\
+^fg(\#FFFF00)${template0 }\
+${else}${if_match ${exec amixer get PCM -M | grep -o "[0-9]*%" | sed 's/%//'} <= 50}\
+^fg(\#00FF00)${template0 }\
+${endif}${endif}${endif}${endif}\
+^ca(1,amixer set PCM toggle)\
+ ${exec amixer get PCM -M | grep -o "[0-9]*%"} \
+^ca()\
+#
+ \
 # disk usage
 ^fg(\#FFFFFF)${template0 } ${fs_free /} \
 ^fg(\#FFFFFF)${template0 } ${fs_free /home/} \
