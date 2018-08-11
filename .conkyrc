@@ -77,7 +77,9 @@ ${if_match ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} > 0}\
 ${else}\
 ^fg(\#FFFFFF)\
 ${endif}\
+^ca(1,urxvt -e "newsboat")\
 ${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
+^ca()\
 #
 # stocks
 ^ca(1,~/.conky/buttons/stocks.sh)\
