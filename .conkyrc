@@ -83,7 +83,7 @@ ${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
 #
 # stocks
 ^ca(1,~/.conky/buttons/stocks.sh)\
-${template0 } \
+^fg(\#FFFFFF)${template0 } \
 ^ca()\
 #
  \
