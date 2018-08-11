@@ -10,19 +10,69 @@ conky.config={
 
 
 conky.text = [[
+# disk usage
 ^fg(\#FFFFFF) ${template0 } ${fs_free /} \
 ^fg(\#FFFFFF) ${template0 } ${fs_free /home/} \
-^fg(\#FFFFFF) ${template0 } ${acpitemp}°C \
-^fg(\#FFFFFF) ${template0 } ${cpu}% \
-^fg(\#FFFFFF) ${template0 } ${memperc}% \
+#
+# temperature
+${if_match ${acpitemp} >= 100} \
+^bg(\#FFFF00) ^fg(\#FF0000) ${template0 } ${acpitemp}°C ^bg() \
+${else} ${if_match ${acpitemp} >= 85} \
+^fg(\#FF0000) ${template0 } ${acpitemp}°C \
+${else} ${if_match ${acpitemp} >= 60} \
+^fg(\#FFFF00) ${template0 } ${acpitemp}°C \
+${else} \
+^fg(\#FFFFFF) ${template0 } ${acpitemp}°C \
+${endif} ${endif} ${endif} \
+#
+# cpu usage
+${if_match ${cpu} >= 100} \
+^bg(\#FFFF00) ^fg(\#FF0000) \
+${else} ${if_match ${cpu} >= 75} \
+^fg(\#FF0000) \
+${else} ${if_match ${cpu} >= 50} \
+^fg(\#FFFF00) \
+${else} \
+^fg(\#FFFFFF) \
+${endif} ${endif} ${endif} \
+${template0 } ${cpu}% \
+^bg() \
+#
+# ram usage
+${if_match ${memperc} >= 100} \
+^bg(\#FFFF00) ^fg(\#FF0000) \
+${else} ${if_match ${memperc} >= 75} \
+^fg(\#FF0000) \
+${else} ${if_match ${memperc} >= 50} \
+^fg(\#FFFF00) \
+${else} \
+^fg(\#FFFFFF) \
+${endif} ${endif} ${endif} \
+${template0 } ${memperc}% \
+^bg() \
+#
+# networking 
 ${if_existing /proc/net/route wlan0} ^fg(\#ebac54) ${template0 } ${wireless_link_qual_perc wlan0}% @ ${wireless_essid wlan0} (${addr wlan0}) ^fg(\#00aa4a) ${template0 } ${downspeed wlan0} ^fg(\#ff3333) ${template0 } ${upspeed wlan0} \
 ${else} \
 ${if_existing /proc/net/route eth0} ^fg(\#ebac54) ${template0 } (${addr eth0}) ^fg(\#00aa4a) ${template0 } ${downspeed eth0} ^fg(\#ff3333) ${template0 } ${upspeed eth0} \
 ${else} \
-^fg(\#ff0000) No connection! \
+^fg(\#ff0000) No internet! \
 ${endif} ${endif} \
-^fg(\#FFFFFF) ${template0 } ${exec ~/.conky/mail-counter.sh} \
+#
+# mail
+${if_match ${exec ~/.conky/mail-counter.sh} > 0} \
+^fg(\#00FF00) ${template0 } ${exec ~/.conky/mail-counter.sh} \
+${else} \
+^fg(\#FFFFFF) ${template0 } ${exec ~/.conky/mail-counter.sh} \
+${endif} \
+#
+# news
 ^fg(\#FFFFFF) ${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
+#
+# calendar
 ^fg(\#FFFFFF) ${template0 } ${time %a %b %d} \
+#
+# clock
 ^fg(\#ebac54) ${template0 } ${time %I:%M} \
+#
 ]];
