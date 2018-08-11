@@ -29,7 +29,7 @@ main = do
 myLogHook :: Handle -> X ()
 myLogHook h = dynamicLogWithPP $ def
     {
-      ppCurrent = dzenColor "#ebac54" "" . pad
+      ppCurrent = dzenColor "#f9a825" "" . pad
     , ppHidden  = dzenColor "#ffffff" "" . pad
     , ppUrgent  = dzenColor "#ff0000" "#ff0000" . pad
     , ppWsSep   = ""
