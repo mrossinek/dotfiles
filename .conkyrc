@@ -79,6 +79,11 @@ ${else}\
 ${endif}\
 ${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
 #
+# stocks
+^ca(1,~/.conky/button-stocks.sh)\
+${template0 } \
+^ca()\
+#
  \
 # calendar
 ^fg(\#FFFFFF)${template0 } ${time %a %b %d} \
