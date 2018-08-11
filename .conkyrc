@@ -42,6 +42,7 @@ ${endif}${endif}${endif}${endif}\
 ^fg(\#FFFFFF)${template0 } ${fs_free /home/} \
 #
  \
+^ca(1,urxvt -e htop)\
 # temperature
 ${if_match ${acpitemp} >= 100}\
 ^bg(\#FFFF00)^fg(\#FF0000)${template0 }\
@@ -81,6 +82,7 @@ ${endif}${endif}${endif}\
 ${template0 } ${memperc}% \
 ^bg()\
 #
+^ca()\
  \
 # networking 
 ${if_existing /proc/net/route wlan0}^fg(\#f9a825)${template0 } ${wireless_link_qual_perc wlan0}% @ ${wireless_essid wlan0} (${addr wlan0}) ^fg(\#00aa4a)${template0 } ${downspeed wlan0} ^fg(\#ff3333)${template0 } ${upspeed wlan0} \
@@ -114,10 +116,12 @@ ${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
 ^ca()\
 #
  \
+^ca(1,~/.conky/buttons/calendar.sh)\
 # calendar
 ^fg(\#FFFFFF)${template0 } ${time %a %b %d} \
 #
 # clock
 ^fg(\#f9a825)${template0 } ${time %I:%M} \
 #
+^ca()\
 ]];
