@@ -118,12 +118,12 @@ ${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
 #
  \
 #
-^ca(1,~/.conky/buttons/calendar.sh)\
 # calendar
+^ca(1,~/.conky/buttons/calendar.sh)\
 ^fg(\#FFFFFF)${template0 } ${time %a %b %d} \
+^ca()\
 #
 # clock
 ^fg(\#f9a825)${template0 } ${time %I:%M} \
 #
-^ca()\
 ]];
