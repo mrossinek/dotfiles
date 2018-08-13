@@ -45,7 +45,7 @@ ${else}\
 ^fg(\#ff0000) No internet! \
 ${endif}${endif}\
 #
-^ca(1,urxvt -e htop)\
+^ca(1,~/.conky/buttons/system.sh)^ca(3,urxvt -e htop)\
 # temperature
 ${if_match ${acpitemp} >= 100}\
 ^bg(\#FFFF00)^fg(\#FF0000)${template0 }\
@@ -85,7 +85,7 @@ ${endif}${endif}${endif}\
 ${template0 } ${memperc}% \
 ^bg()\
 #
-^ca()\
+^ca()^ca()\
 #
  \
 # disk usage
