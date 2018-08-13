@@ -130,6 +130,8 @@ ${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
 ^ca()^ca()\
 #
 # clock
+^ca(1,~/.conky/buttons/timew_preview.sh)^ca(3,~/.conky/buttons/timew_toggle.sh)\
 ^fg(\#f9a825)${template0 } ${time %I:%M} \
+^ca()^ca()\
 #
 ]];
