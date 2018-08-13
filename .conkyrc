@@ -17,9 +17,9 @@ ${if_match "${mpd_status}" == "Playing"}\
 ${else}${if_match "${mpd_status}" == "Paused"}\
 ^fg(\#FFFF00)\
 ${endif}${endif}\
-^ca(1,mpc toggle)\
+^ca(1,~/.conky/buttons/music.sh)^ca(3,mpc toggle)\
 ${template0 } ${mpd_artist} - ${mpd_title} \
-^ca()\
+^ca()^ca()\
 ${endif}${endif}\
 #
 # volume
