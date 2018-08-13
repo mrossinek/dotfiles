@@ -119,9 +119,9 @@ ${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
  \
 #
 # calendar
-^ca(1,~/.conky/buttons/calendar.sh)\
+^ca(1,~/.conky/buttons/calendar.sh)^ca(3,urxvt -e ikhal)\
 ^fg(\#FFFFFF)${template0 } ${time %a %b %d} \
-^ca()\
+^ca()^ca()\
 #
 # clock
 ^fg(\#f9a825)${template0 } ${time %I:%M} \
