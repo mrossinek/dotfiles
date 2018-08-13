@@ -1,0 +1,23 @@
+directory: ~/Music
+library: ~/.local/share/beets/library.db
+
+plugins: fromfilename fetchart lastgenre duplicates mpdupdate mpdstats mbsync
+
+asciify_paths: yes
+paths:
+        default: $albumartist/$album%aunique{}/$track $title
+        singleton: $artist/Singles/$title
+        comp: Compilations/$album%aunique{}/$track $title
+        albumtype:soundtrack: Soundtracks/$album%aunique{}/$track %$title
+
+import:
+        write: yes
+        move: yes
+        log: ~/.local/share/beets/import.log
+
+match:
+        strong_rec_thresh: 0.10
+
+mpd:
+        host: localhost
+        port: 6600
