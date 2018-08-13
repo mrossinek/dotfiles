@@ -89,8 +89,10 @@ ${template0 } ${memperc}% \
 #
  \
 # disk usage
+^ca(3,urxvt -e ranger)\
 ^fg(\#FFFFFF)${template0 } ${fs_free /} \
 ^fg(\#FFFFFF)${template0 } ${fs_free /home/} \
+^ca()\
 #
  \
 # mail
