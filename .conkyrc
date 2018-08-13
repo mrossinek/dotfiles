@@ -117,6 +117,12 @@ ${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
 ^ca()\
 #
  \
+# todo
+^ca(1,~/.conky/buttons/tasks.sh)^ca(3,task sync)\
+^fg(\#FFFFFF)${template0 } \
+^ca()^ca()\
+#
+ \
 #
 # calendar
 ^ca(1,~/.conky/buttons/calendar.sh)^ca(3,urxvt -e ikhal)\
