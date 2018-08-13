@@ -109,9 +109,9 @@ ${if_match ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} > 0}\
 ${else}\
 ^fg(\#FFFFFF)\
 ${endif}\
-^ca(1,urxvt -e "newsboat")\
+^ca(1,urxvt -e "newsboat")^ca(3,newsboat -x reload)\
 ${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
-^ca()\
+^ca()^ca()\
 #
 # stocks
 ^ca(1,~/.conky/buttons/stocks.sh)\
