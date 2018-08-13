@@ -1,0 +1,47 @@
+[calendars]
+
+[[Important]]
+path = ~/.calendars/important/
+color = light red
+
+[[Personal]]
+path = ~/.calendars/personal/
+color = light blue
+
+[[Sport]]
+path = ~/.calendars/sport/
+color = light magenta
+
+[[Uni]]
+path = ~/.calendars/uni/
+color = yellow
+
+[[Birthdays]]
+path = ~/.contacts/
+color = light green
+type = birthdays
+
+[sqlite]
+path = ~/.local/share/khal/khal.db
+
+[locale]
+unicode_symbols = False
+
+local_timezone = Europe/Zurich
+default_timezone = Europe/Zurich
+
+timeformat = %H:%M
+dateformat = %d.%m.
+longdateformat = %Y-%m-%d
+datetimeformat =  %d.%m. %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
+
+firstweekday = 0
+weeknumbers = left
+
+[default]
+default_command = calendar
+default_calendar = Personal
+timedelta = 2d
+print_new = event
+highlight_event_days = True
