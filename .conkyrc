@@ -32,9 +32,9 @@ ${else}${if_match ${exec amixer get PCM -M | grep -o "[0-9]*%" | sed 's/%//'} >=
 ${else}${if_match ${exec amixer get PCM -M | grep -o "[0-9]*%" | sed 's/%//'} <= 50}\
 ^fg(\#00FF00)${template0 }\
 ${endif}${endif}${endif}${endif}\
-^ca(1,~/.conky/buttons/volume.sh)^ca(3,amixer set PCM toggle)\
+^ca(3,amixer set PCM toggle)\
  ${exec amixer get PCM -M | grep -o "[0-9]*%"} \
-^ca()^ca()\
+^ca()\
 #
  \
 # networking 
