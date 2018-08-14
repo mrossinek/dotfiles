@@ -114,9 +114,9 @@ ${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
 ^ca()^ca()\
 #
 # stocks
-^ca(1,~/.conky/buttons/stocks.sh)\
+^ca(1,~/.conky/buttons/stocks.sh)^ca(3,cd ~/.stocks/; ./watcher.sh; cd)\
 ^fg(\#FFFFFF)${template0 } \
-^ca()\
+^ca()^ca()\
 #
  \
 # todo
