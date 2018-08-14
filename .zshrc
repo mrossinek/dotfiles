@@ -34,3 +34,5 @@ alias vimdiff='nvim -d'
 alias -s tex=nvim
 alias -s org=w3m
 alias -s com=w3m
+
+source ~/.zsh_private_aliases
