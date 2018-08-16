@@ -38,6 +38,15 @@ bind index,pager @ compose-to-sender
 # macros
 macro index 'c' "<change-folder>?<change-dir><home>^K=<enter>" "change the folder"
 
+# khard integration
+set query_command= "khard email --parsable '%s'"
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
+macro index,pager A \
+    "<pipe-message>khard add-email<return>" \
+    "add the sender email address to khard"
+
 # sidebar
 set sidebar_visible = yes
 set sidebar_width = 35
