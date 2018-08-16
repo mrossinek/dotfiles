@@ -1,0 +1,78 @@
+# environment
+set shell = "/bin/zsh"
+set editor = nvim
+
+# storage
+set mbox_type = Maildir
+set folder = ~/.mail
+
+# behaviour
+set help
+set tilde
+set nomark_old
+set sort = threads
+set sort_browser = reverse-date
+set mail_check = 300
+set implicit_autoview = yes
+set mailcap_path = "~/.config/neomutt/mailcap"
+
+# editing
+set include
+set autoedit
+set edit_headers
+set nouse_domain
+
+# header settings
+ignore *
+unignore from: subject to cc bcc mail-followup-to date x-mailer x-url
+unhdr_order *
+hdr_order date from subject to cc bcc
+
+# rendering
+auto_view text/html
+
+# key bindings
+bind pager G bottom
+bind index,pager @ compose-to-sender
+
+# macros
+macro index 'c' "<change-folder>?<change-dir><home>^K=<enter>" "change the folder"
+
+# sidebar
+set sidebar_visible = yes
+set sidebar_width = 35
+set sidebar_short_path = yes
+set sidebar_delim_chars = "/"
+set sidebar_folder_indent = yes
+set sidebar_indent_string = "  "
+# \C = Ctrl-Shift
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+bind index,pager B sidebar-toggle-visible
+
+# color scheme
+color attachment color1 color0
+color bold brightcolor15 color0
+color error brightcolor1 color0
+color hdrdefault color4 color0
+color indicator color7 color6
+color markers color1 color0
+color message brightcolor1 color0
+color normal color7 color0
+color progress color7 color1
+color prompt brightcolor5 color0
+color quoted color2 color0
+color quoted1 color3 color0
+color quoted2 color4 color0
+color quoted3 color5 color0
+color quoted4 color9 color0
+color quoted5 color6 color0
+color search color5 color0
+color signature color2 color0
+color status color0 color3
+color tilde brightcolor5 color0
+color tree color14 color8
+color underline brightcolor11 color0
+color index color12 color0 ~F
+color index color9 color0 "~N|~O"
