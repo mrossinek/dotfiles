@@ -1,0 +1,28 @@
+# source basic config
+source ~/.config/neomutt/neomuttrc
+
+# source server and login credentials (POP)
+source ~/.config/neomutt/private.loginrc
+
+# configure SSL
+unset ssl_starttls
+set ssl_force_tls = yes
+
+# storage
+set folder    = "~/.mail/private/"
+set spoolfile = "~/.mail/private/"
+set record    = "+sent"
+set postponed = "+drafts"
+
+mailboxes $folder +sent +drafts +trash
+
+set header_cache     = "~/.mail/private/cache/headers"
+set message_cachedir = "~/.mail/private/cache/messages"
+
+# behaviour
+unset pop_delete
+unset confirmappend
+folder-hook . set trash"=+trash"
+folder-hook trash$ unset trash
+
+macro index <f9> "<shell-escape>getmail -n<enter>" "run getmail to get new mail"

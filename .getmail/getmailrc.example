@@ -1,0 +1,14 @@
+[retriever]
+type     = SimplePOP3SSLRetriever
+server   = server.address
+port     = 995
+username = username
+# alternatively one can use password_command and hook it up to a script
+password = password
+
+[destination]
+type = Maildir
+path = ~/.mail/accountname/
+
+[options]
+read_all = false
