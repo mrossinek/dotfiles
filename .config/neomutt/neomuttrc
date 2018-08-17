@@ -1,10 +1,10 @@
 # environment
-set shell = "/bin/zsh"
+set shell  = "/bin/zsh"
 set editor = nvim
 
 # storage
 set mbox_type = Maildir
-set folder = ~/.mail
+set folder    = ~/.mail
 
 # behaviour
 set help

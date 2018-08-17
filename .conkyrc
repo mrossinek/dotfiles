@@ -101,7 +101,9 @@ ${if_match ${exec ~/.conky/scripts/mail-counter.sh} > 0}\
 ${else}\
 ^fg(\#FFFFFF)${template0 }\
 ${endif}\
+^ca(1,urxvt -e sh -c "tmuxp load mail")^ca(3,getmail -n; offlineimap)\
  ${exec ~/.conky/scripts/mail-counter.sh} \
+^ca()^ca()\
 #
 # news
 ${if_match ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} > 0}\

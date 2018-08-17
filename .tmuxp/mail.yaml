@@ -1,0 +1,8 @@
+session_name: mail
+windows:
+- window_name: uni
+  panes:
+  - neomutt -F ~/.config/neomutt/uni.neomuttrc; exit
+- window_name: private
+  panes:
+  - neomutt -F ~/.config/neomutt/private.neomuttrc; exit
