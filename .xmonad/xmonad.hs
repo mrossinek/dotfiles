@@ -7,6 +7,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Hooks.EwmhDesktops
 import System.IO
 
 myTerminal              = "urxvt"
@@ -20,7 +21,7 @@ myStatusBar = "conky | dzen2 -x 500 -y 0 -ta r -dock -e 'button3:'"
 main = do
     dzenLeftBar  <- spawnPipe myXmonadBar
     dzenRightBar <- spawnPipe myStatusBar
-    xmonad $ desktopConfig
+    xmonad $ ewmh desktopConfig
         {
           logHook               = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
         , layoutHook            = smartSpacing 5 $ smartBorders $ avoidStruts $ layoutHook defaultConfig
@@ -29,6 +30,10 @@ main = do
         , normalBorderColor     = myNormalBorderColor
         , focusedBorderColor    = myFocusedBorderColor
         }
+        `additionalKeys`
+        [
+          ((myModMask, xK_p), spawn "rofi -show combi")
+        ]
 
 myLogHook :: Handle -> X ()
 myLogHook h = dynamicLogWithPP $ def
