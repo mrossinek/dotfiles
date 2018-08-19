@@ -57,6 +57,8 @@ set sidescrolloff=5
 set showmatch
 set signcolumn=yes
 set updatetime=100
+cabbrev h vert h
+cabbrev Man vert Man
 
 " file editing
 set undofile
