@@ -8,6 +8,11 @@
 [diff]
 	tool = nvim -d
 
+[merge]
+        tool = nvim -d
+        conflictstyle = diff3
+        prompt = false
+
 [alias]
         a = add
         br = branch
