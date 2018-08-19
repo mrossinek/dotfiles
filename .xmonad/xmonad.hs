@@ -2,6 +2,9 @@ import XMonad
 import XMonad.Config.Desktop
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.FadeInactive
+import XMonad.Hooks.ManageDocks
+import XMonad.Layout.NoBorders
+import XMonad.Layout.Spacing
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
@@ -20,6 +23,7 @@ main = do
     xmonad $ desktopConfig
         {
           logHook               = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
+        , layoutHook            = smartSpacing 5 $ smartBorders $ lessBorders OnlyFloat $ avoidStruts $ layoutHook defaultConfig
         , terminal              = myTerminal
         , modMask               = myModMask
         , normalBorderColor     = myNormalBorderColor
