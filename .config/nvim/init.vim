@@ -15,8 +15,8 @@ command! PackClean call minpac#clean()
 call minpac#add('vim-scripts/TaskList.vim')
 
 " auto completion
-call minpac#add('ncm2/ncm2')
-call minpac#add('roxma/nvim-yarp')
+call minpac#add('ncm2/ncm2', {'type': 'opt'})
+call minpac#add('roxma/nvim-yarp', {'type': 'opt'})
 
 " Git integration
 call minpac#add('airblade/vim-gitgutter')
