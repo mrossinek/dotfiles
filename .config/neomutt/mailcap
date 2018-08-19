@@ -1,4 +1,4 @@
-text/html; qutebrowser '%s' &; test=test -n "$DISPLAY"; needsterminal;
+text/html; mv %s %s.html && qutebrowser %s.html >/dev/null 2>/dev/null; needsterminal;
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
 image/*; ~/.config/neomutt/image_preview.sh %s; needsterminal;
 application/pdf; zathura %s; needsterminal;
