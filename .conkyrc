@@ -47,6 +47,7 @@ ${else}\
 ${endif}${endif}\
 #
 ^ca(3,urxvt -e htop)\
+^ca(1,~/.conky/buttons/temp.sh)\
 # temperature
 ${if_match ${acpitemp} >= 100}\
 ^bg(\#FFFF00)^fg(\#FF0000)${template0 }\
@@ -60,6 +61,7 @@ ${endif}${endif}${endif}\
  ${acpitemp}°C \
 ^bg()\
 #
+^ca()\
 ^ca(1,~/.conky/buttons/cpu.sh)\
 # cpu usage
 ${if_match ${cpu} >= 100}\
