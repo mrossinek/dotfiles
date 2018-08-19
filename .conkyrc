@@ -6,6 +6,7 @@ conky.config={
         total_run_times=0,
         use_spacer=none,
         template0=[[^fn(Font Awesome 5 Free:style=Solid:size=9)\1 ^fn()]],
+        template1=[[${exec amixer get PCM -M | grep -o "[0-9]*%" | sed 's/%//'}]]
 };
 
 
@@ -23,17 +24,17 @@ ${template0 } ${mpd_artist} - ${mpd_title} \
 ${endif}${endif}\
 #
 # volume
-${if_match ${exec amixer get PCM -M | grep -o "[0-9]*%" | sed 's/%//'} == 0}\
+${if_match ${template1} == 0}\
 ^fg(\#FF0000)${template0 }\
-${else}${if_match ${exec amixer get PCM -M | grep -o "[0-9]*%" | sed 's/%//'} >= 100}\
+${else}${if_match ${template1} >= 100}\
 ^fg(\#FF0000)${template0 }\
-${else}${if_match ${exec amixer get PCM -M | grep -o "[0-9]*%" | sed 's/%//'} >= 50}\
+${else}${if_match ${template1} >= 50}\
 ^fg(\#FFFF00)${template0 }\
-${else}${if_match ${exec amixer get PCM -M | grep -o "[0-9]*%" | sed 's/%//'} <= 50}\
+${else}${if_match ${template1} <= 50}\
 ^fg(\#00FF00)${template0 }\
 ${endif}${endif}${endif}${endif}\
 ^ca(3,amixer set PCM toggle)\
- ${exec amixer get PCM -M | grep -o "[0-9]*%"} \
+ ${template1}% \
 ^ca()\
 #
  \
