@@ -100,23 +100,25 @@ ${template0 } ${memperc}% \
 #
  \
 # mail
-${if_match ${exec ~/.conky/scripts/mail-counter.sh} > 0}\
+${if_match ${exec cat ~/.mailcount} > 0}\
 ^fg(\#00FF00)${template0 }\
 ${else}\
 ^fg(\#FFFFFF)${template0 }\
 ${endif}\
-^ca(1,urxvt -e sh -c "tmuxp load mail")^ca(3,getmail -n; offlineimap)\
- ${exec ~/.conky/scripts/mail-counter.sh} \
+^ca(1,urxvt -e sh -c "tmuxp load mail"; ~/.conky/scripts/mail-counter.sh)\
+^ca(3,getmail -n; offlineimap; ~/.conky/scripts/mail-counter.sh)\
+ ${exec cat ~/.mailcount} \
 ^ca()^ca()\
 #
 # news
-${if_match ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} > 0}\
+${if_match ${exec cat ~/.newscount} > 0}\
 ^fg(\#00FF00)\
 ${else}\
 ^fg(\#FFFFFF)\
 ${endif}\
-^ca(1,urxvt -e "newsboat")^ca(3,newsboat -x reload)\
-${template0 } ${exec newsboat -x print-unread | sed 's/[^0-9]//g'} \
+^ca(1,urxvt -e "newsboat"; ~/.conky/scripts/news-counter.sh)\
+^ca(3,newsboat -x reload; ~/.conky/scripts/news-counter.sh)\
+${template0 } ${exec cat ~/.newscount} \
 ^ca()^ca()\
 #
 # stocks
