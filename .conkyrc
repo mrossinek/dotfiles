@@ -45,7 +45,7 @@ ${else}\
 ^fg(\#ff0000) No internet! \
 ${endif}${endif}\
 #
-^ca(1,~/.conky/buttons/system.sh)^ca(3,urxvt -e htop)\
+^ca(3,urxvt -e htop)\
 # temperature
 ${if_match ${acpitemp} >= 100}\
 ^bg(\#FFFF00)^fg(\#FF0000)${template0 }\
@@ -59,6 +59,7 @@ ${endif}${endif}${endif}\
  ${acpitemp}°C \
 ^bg()\
 #
+^ca(1,~/.conky/buttons/cpu.sh)\
 # cpu usage
 ${if_match ${cpu} >= 100}\
 ^bg(\#FFFF00)^fg(\#FF0000)\
@@ -72,6 +73,8 @@ ${endif}${endif}${endif}\
 ${template0 } ${cpu}% \
 ^bg()\
 #
+^ca()\
+^ca(1,~/.conky/buttons/ram.sh)\
 # ram usage
 ${if_match ${memperc} >= 100}\
 ^bg(\#FFFF00)^fg(\#FF0000)\
@@ -85,7 +88,8 @@ ${endif}${endif}${endif}\
 ${template0 } ${memperc}% \
 ^bg()\
 #
-^ca()^ca()\
+^ca()\
+^ca()\
 #
  \
 # disk usage
