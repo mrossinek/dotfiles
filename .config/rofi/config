@@ -1,3 +1,4 @@
-rofi.combi-modi: window,drun,ssh,run
+rofi.combi-modi: window,ssh,run
+rofi.modi: combi
 rofi.font: inconsolata 10
 rofi.theme: /usr/share/rofi/themes/glue_pro_blue.rasi
