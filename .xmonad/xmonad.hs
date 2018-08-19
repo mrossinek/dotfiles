@@ -23,7 +23,7 @@ main = do
     xmonad $ desktopConfig
         {
           logHook               = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
-        , layoutHook            = smartSpacing 5 $ smartBorders $ lessBorders OnlyFloat $ avoidStruts $ layoutHook defaultConfig
+        , layoutHook            = smartSpacing 5 $ smartBorders $ avoidStruts $ layoutHook defaultConfig
         , terminal              = myTerminal
         , modMask               = myModMask
         , normalBorderColor     = myNormalBorderColor
