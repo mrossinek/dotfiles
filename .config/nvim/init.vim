@@ -14,10 +14,6 @@ command! PackClean call minpac#clean()
 " Plugins
 call minpac#add('vim-scripts/TaskList.vim')
 
-" auto completion
-call minpac#add('ncm2/ncm2', {'type': 'opt'})
-call minpac#add('roxma/nvim-yarp', {'type': 'opt'})
-
 " Git integration
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-fugitive')
@@ -46,6 +42,7 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ' ln'
 
 " basic setup
+set complete+=i,kspell
 set colorcolumn=80
 set cursorline
 set hidden
