@@ -82,14 +82,6 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
-" completion
-if has("autocmd") && exists("+omnifunc")
-        autocmd Filetype *
-                                \ if &omnifunc == "" |
-                                \       setlocal omnifunc=syntaxcomplete#Complete
-                                \ endif
-endif
-
 " fuzzy finding
 set path+=**
 set wildmenu
