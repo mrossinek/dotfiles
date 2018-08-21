@@ -11,7 +11,10 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})  " enables auto updates
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
-" Plugins
+" PLUGINS
+call minpac#add('mhinz/vim-randomtag', {'type': 'opt'})
+
+" helpers
 call minpac#add('vim-scripts/TaskList.vim')
 
 " completion
@@ -45,7 +48,7 @@ endif
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ' ln'
 
-" basic setup
+" BASICS
 set complete+=i,kspell
 set completeopt-=preview
 set colorcolumn=80
