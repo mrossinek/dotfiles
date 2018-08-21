@@ -14,6 +14,10 @@ command! PackClean call minpac#clean()
 " Plugins
 call minpac#add('vim-scripts/TaskList.vim')
 
+" completion
+" CPP
+call minpac#add('vim-scripts/OmniCppComplete')
+
 " Git integration
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-fugitive')
@@ -43,6 +47,7 @@ let g:airline_symbols.maxlinenr = ' ln'
 
 " basic setup
 set complete+=i,kspell
+set completeopt-=preview
 set colorcolumn=80
 set cursorline
 set hidden
