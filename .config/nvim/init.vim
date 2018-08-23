@@ -16,7 +16,6 @@ call minpac#add('vim-scripts/TaskList.vim')
 
 " undotree
 call minpac#add('mbbill/undotree')
-map <leader>ut :UndotreeToggle<cr>
 
 " completion
 " CPP
@@ -71,6 +70,7 @@ cabbrev Man vert Man
 " some functions/mappings
 nnoremap <leader>so :source %<cr>
 nnoremap <leader>rn :set invrelativenumber<cr>
+nnoremap <leader>ut :UndotreeToggle<cr>
 
 function! FixLastSpellingError()
         normal! mm[s1z=`m"
