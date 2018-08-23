@@ -54,9 +54,9 @@ let g:airline_symbols.maxlinenr = ' ln'
 
 " basic setup
 let mapleader=','
+set colorcolumn=80
 set complete+=i,kspell
 set completeopt-=preview
-set colorcolumn=80
 set cursorline
 set hidden
 set ignorecase
@@ -64,8 +64,8 @@ set nowrap
 set number
 set relativenumber
 set scrolloff=2
-set sidescrolloff=5
 set showmatch
+set sidescrolloff=5
 set signcolumn=yes
 set updatetime=100
 cabbrev h vert h
@@ -88,11 +88,11 @@ omap aa :normal Vaa<CR>
 " Line object
 vnoremap al :<C-U>silent! normal! 0v$h<CR>
 omap al :normal Val<CR>
-vnoremap il :<C-U>silent! normal! 0wv$h<CR>
+vnoremap il :<C-U>silent! normal! ^v$h<CR>
 omap il :normal Vil<CR>
 vnoremap aL :<C-U>silent! normal! 0v$<CR>
 omap aL :normal VaL<CR>
-vnoremap iL :<C-U>silent! normal! 0wv$<CR>
+vnoremap iL :<C-U>silent! normal! ^v$<CR>
 omap iL :normal ViL<CR>
 
 " file editing
