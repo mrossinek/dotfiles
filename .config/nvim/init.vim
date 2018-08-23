@@ -14,6 +14,10 @@ command! PackClean call minpac#clean()
 " Plugins
 call minpac#add('vim-scripts/TaskList.vim')
 
+" undotree
+call minpac#add('mbbill/undotree')
+map <leader>ut :UndotreeToggle<cr>
+
 " completion
 " CPP
 call minpac#add('vim-scripts/OmniCppComplete')
