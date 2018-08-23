@@ -50,6 +50,7 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ' ln'
 
 " basic setup
+let mapleader=','
 set complete+=i,kspell
 set completeopt-=preview
 set colorcolumn=80
@@ -58,6 +59,7 @@ set hidden
 set ignorecase
 set nowrap
 set number
+set relativenumber
 set scrolloff=2
 set sidescrolloff=5
 set showmatch
@@ -65,6 +67,15 @@ set signcolumn=yes
 set updatetime=100
 cabbrev h vert h
 cabbrev Man vert Man
+
+" some functions/mappings
+nnoremap <leader>so :source %<cr>
+nnoremap <leader>rn :set invrelativenumber<cr>
+
+function! FixLastSpellingError()
+        normal! mm[s1z=`m"
+endfunction
+nnoremap <leader>sp :call FixLastSpellingError()<cr>
 
 " file editing
 set undofile
