@@ -12,6 +12,10 @@ command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
 " Plugins
+" indent object
+call minpac#add('michaeljsmith/vim-indent-object')
+
+" tasklist
 call minpac#add('vim-scripts/TaskList.vim')
 
 " undotree
@@ -76,6 +80,20 @@ function! FixLastSpellingError()
         normal! mm[s1z=`m"
 endfunction
 nnoremap <leader>sp :call FixLastSpellingError()<cr>
+
+" custom text objects
+" ALL object (Note: inner does not make sense here)
+vnoremap aa :<C-U>silent! normal! ggVG<CR>
+omap aa :normal Vaa<CR>
+" Line object
+vnoremap al :<C-U>silent! normal! 0v$h<CR>
+omap al :normal Val<CR>
+vnoremap il :<C-U>silent! normal! 0wv$h<CR>
+omap il :normal Vil<CR>
+vnoremap aL :<C-U>silent! normal! 0v$<CR>
+omap aL :normal VaL<CR>
+vnoremap iL :<C-U>silent! normal! 0wv$<CR>
+omap iL :normal ViL<CR>
 
 " file editing
 set undofile
