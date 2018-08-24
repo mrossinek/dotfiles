@@ -12,6 +12,13 @@ command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
 " Plugins
+
+" ZoomWin
+call minpac#add('vim-scripts/ZoomWin')
+
+" vim-trailing-whitespace
+call minpac#add('bronson/vim-trailing-whitespace')
+
 " indent object
 call minpac#add('michaeljsmith/vim-indent-object')
 
@@ -22,6 +29,7 @@ call minpac#add('vim-scripts/TaskList.vim')
 call minpac#add('mbbill/undotree')
 
 " completion
+call minpac#add('ervandew/supertab')
 " CPP
 call minpac#add('vim-scripts/OmniCppComplete')
 
