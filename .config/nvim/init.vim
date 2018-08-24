@@ -79,6 +79,12 @@ set updatetime=100
 cabbrev h vert h
 cabbrev Man vert Man
 
+" disable arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 " some functions/mappings
 nnoremap <leader>so :source %<cr>
 nnoremap <leader>rn :set invrelativenumber<cr>
