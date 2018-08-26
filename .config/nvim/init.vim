@@ -13,9 +13,6 @@ command! PackClean call minpac#clean()
 
 " Plugins
 
-" ZoomWin
-call minpac#add('vim-scripts/ZoomWin')
-
 " vim-trailing-whitespace
 call minpac#add('bronson/vim-trailing-whitespace')
 
@@ -84,6 +81,12 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+" zoom-win like functionality
+" mnemonic: window maximize
+nnoremap <C-W>m :tabnew %<cr>
+" mnemonic: window all
+nnoremap <C-W>a :tabclose<cr>
 
 " some functions/mappings
 nnoremap <leader>so :source %<cr>
