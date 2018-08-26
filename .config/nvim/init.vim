@@ -87,7 +87,6 @@ noremap <Right> <Nop>
 
 " some functions/mappings
 nnoremap <leader>so :source %<cr>
-nnoremap <leader>rn :set invrelativenumber<cr>
 nnoremap <leader>ut :UndotreeToggle<cr>
 
 function! FixLastSpellingError()
