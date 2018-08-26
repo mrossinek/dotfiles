@@ -5,6 +5,7 @@ import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
+import XMonad.Actions.CycleWS
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Hooks.EwmhDesktops
@@ -32,7 +33,8 @@ main = do
         }
         `additionalKeys`
         [
-          ((myModMask, xK_p), spawn "rofi -show combi")
+          ((myModMask, xK_p), spawn "rofi -show combi"),
+          ((myModMask, xK_0), toggleWS)
         ]
 
 myLogHook :: Handle -> X ()
