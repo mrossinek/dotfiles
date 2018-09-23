@@ -62,8 +62,7 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ' ln'
 
 " basic setup
-let mapleader=','
-set colorcolumn=80
+set colorcolumn=81
 set complete+=kspell
 set completeopt-=preview
 set cursorline
