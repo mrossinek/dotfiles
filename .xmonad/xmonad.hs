@@ -6,6 +6,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 import XMonad.Actions.CycleWS
+import XMonad.Actions.UpdatePointer
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Hooks.EwmhDesktops
@@ -24,7 +25,7 @@ main = do
     dzenRightBar <- spawnPipe myStatusBar
     xmonad $ ewmh desktopConfig
         {
-          logHook               = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
+          logHook               = myLogHook dzenLeftBar >> updatePointer (0.5, 0.5) (0, 0) >> fadeInactiveLogHook 0xdddddddd
         , layoutHook            = smartSpacing 5 $ smartBorders $ avoidStruts $ layoutHook defaultConfig
         , terminal              = myTerminal
         , modMask               = myModMask
