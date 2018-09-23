@@ -95,6 +95,14 @@ nnoremap <A-H> <C-w>H
 nnoremap <A-J> <C-w>J
 nnoremap <A-K> <C-w>K
 nnoremap <A-L> <C-w>L
+inoremap <A-h> <C-\><C-n><C-w>h
+inoremap <A-j> <C-\><C-n><C-w>j
+inoremap <A-k> <C-\><C-n><C-w>k
+inoremap <A-l> <C-\><C-n><C-w>l
+inoremap <A-H> <C-\><C-n><C-w>H
+inoremap <A-J> <C-\><C-n><C-w>J
+inoremap <A-K> <C-\><C-n><C-w>K
+inoremap <A-L> <C-\><C-n><C-w>L
 
 " zoom-win like functionality
 " mnemonic: window maximize
