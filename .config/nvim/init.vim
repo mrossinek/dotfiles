@@ -161,8 +161,8 @@ command! MakeTags !ctags -R .
 
 " terminal mappings
 " set coloring for terminal cursor
-hi! link TermCursor Cursor
-hi! TermCursorNC ctermfg=15 ctermbg=6 cterm=NONE
+au TermOpen * hi! link TermCursor Cursor
+au TermOpen * hi! TermCursorNC ctermfg=15 ctermbg=6 cterm=NONE
 " Esc key
 tnoremap <Esc> <C-\><C-n>
 tnoremap <A-[> <Esc>
