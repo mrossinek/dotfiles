@@ -88,9 +88,9 @@ noremap <Right> <Nop>
 
 " zoom-win like functionality
 " mnemonic: window maximize
-nnoremap <C-W>m :tabnew %<cr>
+nnoremap <C-W>m :winc _ <bar> winc <bar> <cr>
 " mnemonic: window all
-nnoremap <C-W>a :tabclose<cr>
+nnoremap <C-W>a :winc =<cr>
 
 " some functions/mappings
 nnoremap <leader>so :source %<cr>
