@@ -1,8 +1,10 @@
 import XMonad
+import qualified XMonad.StackSet as W
 import XMonad.Config.Desktop
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 import XMonad.Actions.CycleWS
@@ -27,6 +29,7 @@ main = do
         {
           logHook               = myLogHook dzenLeftBar >> updatePointer (0.95, 0.05) (0, 0) >> fadeInactiveLogHook 0xdddddddd
         , layoutHook            = smartSpacing 5 $ smartBorders $ avoidStruts $ layoutHook defaultConfig
+        , manageHook            = myManageHook
         , terminal              = myTerminal
         , modMask               = myModMask
         , normalBorderColor     = myNormalBorderColor
@@ -50,3 +53,11 @@ myLogHook h = dynamicLogWithPP $ def
     , ppTitle   = (" " ++) . dzenColor "#f2f2f2" "" . shorten 50
     , ppOutput  = hPutStrLn h
     }
+
+myManageHook = composeAll
+    [
+      className =? "Gcr-prompter" --> doCenterFloat
+    , className =? "qutebrowser" --> doShift "2"
+    , resource =? "weechat" --> doShift "9" <+> doF (W.greedyView "9")
+    , manageDocks
+    ]
