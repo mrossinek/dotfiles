@@ -25,7 +25,7 @@ main = do
     dzenRightBar <- spawnPipe myStatusBar
     xmonad $ ewmh desktopConfig
         {
-          logHook               = myLogHook dzenLeftBar >> updatePointer (0.5, 0.5) (0, 0) >> fadeInactiveLogHook 0xdddddddd
+          logHook               = myLogHook dzenLeftBar >> updatePointer (0.95, 0.05) (0, 0) >> fadeInactiveLogHook 0xdddddddd
         , layoutHook            = smartSpacing 5 $ smartBorders $ avoidStruts $ layoutHook defaultConfig
         , terminal              = myTerminal
         , modMask               = myModMask
@@ -35,7 +35,7 @@ main = do
         `additionalKeys`
         [
           ((myModMask, xK_p), spawn "rofi -show combi"),
-          ((myModMask, xK_0), toggleWS)
+          ((myModMask, xK_o), toggleWS)
         ]
 
 myLogHook :: Handle -> X ()
