@@ -2,7 +2,7 @@ conky.config={
         background=false,
         out_to_console=true,
         out_to_x=false,
-        update_interval=.5,
+        update_interval=2,
         total_run_times=0,
         use_spacer=none,
         lua_load='~/.conky/scripts/lua-functions.lua',
@@ -46,6 +46,8 @@ ${if_existing /proc/net/route eth0}^fg(\#f9a825)${template0 } (${addr eth0}) 
 ${else}\
 ^fg(\#ff0000) No internet! \
 ${endif}${endif}\
+#
+# system monitoring
 #
 ^ca(3,urxvt -e htop)\
 ^ca(1,~/.conky/buttons/temp.sh)\
@@ -97,7 +99,7 @@ ${template0 } ${lua format %3s ${memperc}%} \
 #
  \
 # disk usage
-^ca(3,urxvt -e ranger)\
+^ca(1,urxvt -e ranger)\
 ^fg(\#FFFFFF)${template0 } ${fs_free /} \
 ^fg(\#FFFFFF)${template0 } ${fs_free /home/} \
 ^ca()\
