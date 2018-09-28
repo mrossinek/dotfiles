@@ -50,4 +50,5 @@ fi
 
 eval $(ssh-agent)
 xsetroot -solid "#2e2e2d"
+export _JAVA_AWT_WM_NONREPARENTING=1
 exec xmonad
