@@ -28,7 +28,7 @@ main = do
     xmonad $ ewmh desktopConfig
         {
           logHook               = myLogHook dzenLeftBar >> updatePointer (0.95, 0.05) (0, 0) >> fadeInactiveLogHook 0xdddddddd
-        , layoutHook            = smartSpacing 5 $ smartBorders $ avoidStruts $ layoutHook defaultConfig
+        , layoutHook            = spacingRaw True (Border 5 5 5 5) False (Border 5 5 5 5) True $ smartBorders $ avoidStruts $ layoutHook def
         , manageHook            = myManageHook
         , terminal              = myTerminal
         , modMask               = myModMask
