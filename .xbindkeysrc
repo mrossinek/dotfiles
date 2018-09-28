@@ -1,0 +1,10 @@
+###########################
+# xbindkeys configuration #
+###########################
+
+"amixer set PCM toggle"
+        XF86AudioMute
+
+##################################
+# End of xbindkeys configuration #
+##################################
