@@ -1,6 +1,5 @@
-[user]
-	name = mrossinek
-	email = rmax@ethz.ch
+[include]
+        path = ~/.gitconfig_user.inc
 
 [core]
 	editor = nvim
