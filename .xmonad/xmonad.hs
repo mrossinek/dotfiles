@@ -56,8 +56,7 @@ myLogHook h = dynamicLogWithPP $ def
 
 myManageHook = composeAll
     [
-      className =? "Gcr-prompter" --> doCenterFloat
-    , className =? "qutebrowser" --> doShift "2"
+      className =? "qutebrowser" --> doShift "2"
     , resource =? "weechat" --> doShift "9" <+> doF (W.greedyView "9")
     , manageDocks
     ]
