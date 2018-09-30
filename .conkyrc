@@ -7,7 +7,7 @@ conky.config={
         use_spacer=none,
         lua_load='~/.conky/scripts/lua-functions.lua',
         template0=[[^fn(Font Awesome 5 Free:style=Solid:size=9)\1 ^fn()]],
-        template1=[[${exec amixer get PCM -M | grep -o "[0-9]*%" | sed 's/%//'}]]
+        template1=[[${exec pactl list sinks | grep Volume | grep -o "[0-9]*%" | head -1 | sed 's/%//'}]]
 };
 
 
@@ -34,7 +34,7 @@ ${else}${if_match ${template1} >= 50}\
 ${else}${if_match ${template1} <= 50}\
 ^fg(\#00FF00)${template0 }\
 ${endif}${endif}${endif}${endif}\
-^ca(3,amixer set PCM toggle)\
+^ca(3,pactl set-sink-mute 0 toggle)\
  ${template1}% \
 ^ca()\
 #

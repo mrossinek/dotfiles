@@ -2,8 +2,14 @@
 # xbindkeys configuration #
 ###########################
 
-"amixer set PCM toggle"
+"pactl set-sink-mute 0 toggle"
         XF86AudioMute
+
+"pactl set-sink-volume 0 +5%"
+        XF86AudioRaiseVolume
+
+"pactl set-sink-volume 0 -5%"
+        XF86AudioLowerVolume
 
 ##################################
 # End of xbindkeys configuration #
