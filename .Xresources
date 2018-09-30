@@ -26,6 +26,15 @@ URxvt*scrollTtyKeypress: true
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
+! font size adjusting
+URxvt.perl-ext-common: font-size
+
+URxvt.font-size.step:  2
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
+
 ! PaperColor Theme
 *.foreground: #f2f2f2
 *.background: #2e2e2d
