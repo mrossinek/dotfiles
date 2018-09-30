@@ -3,4 +3,4 @@ from subprocess import check_output
 
 
 def get_pass(hostdomain, username):
-    return check_output("pass Mail/" + hostdomain + "/" + username, shell=True).splitlines()[0]
+    return check_output("pass " + hostdomain + "/" + username, shell=True).splitlines()[0]
