@@ -17,6 +17,12 @@
 "xbacklight -dec 10"
         XF86MonBrightnessDown
 
+"maim -uks ~/Pictures/Screenshots/screenshot_$(date +%s).png"
+        Mod4 + Print
+
+"physlock -m"
+        Mod4 + 0
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
