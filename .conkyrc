@@ -34,7 +34,7 @@ ${else}${if_match ${template1} >= 50}\
 ${else}${if_match ${template1} <= 50}\
 ^fg(\#00FF00)${template0 }\
 ${endif}${endif}${endif}${endif}\
-^ca(3,pactl set-sink-mute 0 toggle)\
+^ca(3,pactl set-sink-mute @DEFAULT_SINK@ toggle)\
  ${template1}% \
 ^ca()\
 #
