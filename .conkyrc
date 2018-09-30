@@ -55,7 +55,9 @@ ${endif}${endif}\
 #
 # battery
 ^ca(1,~/.conky/buttons/bat.sh)\
-${if_match ${battery_percent BAT0} >= 80}\
+${if_existing /sys/class/power_supply/BAT0/status Charging}\
+^bg()^fg(\#FFFFFF)${template0 }\
+${else}${if_match ${battery_percent BAT0} >= 80}\
 ^fg(\#00FF00)${template0 }\
 ${else}${if_match ${battery_percent BAT0} >= 50}\
 ^fg(\#00FF00)${template0 }\
@@ -65,10 +67,12 @@ ${else}${if_match ${battery_percent BAT0} >= 10}\
 ^bg(\#FFFF00)^fg(\#000000)${template0 }\
 ${else}\
 ^bg(\#FF0000)^fg(\#FFFFFF)${template0 }\
-${endif}${endif}${endif}${endif}\
+${endif}${endif}${endif}${endif}${endif}\
  ${battery_short BAT0}\
 ^bg() \
-${if_match ${battery_percent BAT1} >= 80}\
+${if_existing /sys/class/power_supply/BAT1/status Charging}\
+^bg()^fg(\#FFFFFF)${template0 }\
+${else}${if_match ${battery_percent BAT1} >= 80}\
 ^fg(\#00FF00)${template0 }\
 ${else}${if_match ${battery_percent BAT1} >= 50}\
 ^fg(\#00FF00)${template0 }\
@@ -78,7 +82,7 @@ ${else}${if_match ${battery_percent BAT1} >= 10}\
 ^bg(\#FFFF00)^fg(\#000000)${template0 }\
 ${else}\
 ^bg(\#FF0000)^fg(\#FFFFFF)${template0 }\
-${endif}${endif}${endif}${endif}\
+${endif}${endif}${endif}${endif}${endif}\
  ${battery_short BAT1}\
 ^bg() \
 ^ca()\
