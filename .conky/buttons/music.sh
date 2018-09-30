@@ -1,6 +1,6 @@
 #!/bin/sh
 eval $(xdotool getmouselocation --shell)
-width=350
+width=600
 x_pos=$(( $X - width + 50 ))
 (
 #echo "Music Controls"

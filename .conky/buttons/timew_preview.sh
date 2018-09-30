@@ -1,6 +1,6 @@
 #!/bin/sh
 eval $(xdotool getmouselocation --shell)
-width=220
+width=400
 x_pos=$(( $X - width ))
 (
 echo "Timewarrior"

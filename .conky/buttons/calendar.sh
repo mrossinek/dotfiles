@@ -1,6 +1,6 @@
 #!/bin/sh
 eval $(xdotool getmouselocation --shell)
-width=290
+width=400
 x_pos=$(( $X - width + 50 ))
 cnt=$(khal list 2>/dev/null | wc -l)
 cnt=$(( $cnt<15?$cnt:15 ))

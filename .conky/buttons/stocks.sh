@@ -1,6 +1,6 @@
 #!/bin/sh
 eval $(xdotool getmouselocation --shell)
-width=295
+width=400
 x_pos=$(( $X - width + 50 ))
 cnt=$(cat ~/.stocks/prices.txt | wc -l)
 (

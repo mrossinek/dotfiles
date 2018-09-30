@@ -1,6 +1,6 @@
 #!/bin/sh
 eval $(xdotool getmouselocation --shell)
-width=600
+width=800
 x_pos=$(( $X - width + 50 ))
 (
 echo "Top 10 RAM consumers"

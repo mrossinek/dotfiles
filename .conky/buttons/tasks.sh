@@ -1,6 +1,6 @@
 #!/bin/sh
 eval $(xdotool getmouselocation --shell)
-width=490
+width=800
 x_pos=$(( $X - width + 50 ))
 cnt=$(task +PENDING count)
 cnt=$(( $cnt + 3 ))
