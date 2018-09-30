@@ -11,6 +11,12 @@
 "pactl set-sink-volume 0 -5%"
         XF86AudioLowerVolume
 
+"xbacklight -inc 10"
+        XF86MonBrightnessUp
+
+"xbacklight -dec 10"
+        XF86MonBrightnessDown
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
