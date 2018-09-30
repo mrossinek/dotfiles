@@ -7,8 +7,8 @@ Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-URxvt.font: xft:inconsolata:size=10,xft:FontAwesome5Free:style=Regular,xft:FontAwesome5Free:style=Solid,xft:FontAwesome5Brands
-dzen2.font: inconsolata:size=10
+URxvt.font: xft:inconsolata:size=14,xft:FontAwesome5Free:style=Regular,xft:FontAwesome5Free:style=Solid,xft:FontAwesome5Brands
+dzen2.font: inconsolata:size=14
 
 ! remove ugly urxvt scrollbar
 URxvt.scrollBar: false
