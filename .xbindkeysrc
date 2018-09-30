@@ -23,6 +23,15 @@
 "physlock -m"
         Mod4 + 0
 
+"~/keyboard_toggle.sh"
+        Mod4 + F11
+
+"~/toggle_screen.sh"
+        XF86Display
+
+"~/xrandr_duplicate.sh"
+        Shift + XF86Display
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
