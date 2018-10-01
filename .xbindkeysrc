@@ -5,16 +5,16 @@
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
         XF86AudioMute
 
-"pactl set-sink-volume @DEFAULT_SINK@ +5%"
+"pactl set-sink-volume @DEFAULT_SINK@ +2%"
         XF86AudioRaiseVolume
 
-"pactl set-sink-volume @DEFAULT_SINK@ -5%"
+"pactl set-sink-volume @DEFAULT_SINK@ -2%"
         XF86AudioLowerVolume
 
-"xbacklight -inc 10"
+"xbacklight -inc 5"
         XF86MonBrightnessUp
 
-"xbacklight -dec 10"
+"xbacklight -dec 5"
         XF86MonBrightnessDown
 
 "maim -uks ~/Pictures/Screenshots/screenshot_$(date +%s).png"
