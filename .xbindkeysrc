@@ -24,7 +24,7 @@
         Mod4 + 0
 
 "~/keyboard_toggle.sh"
-        Mod4 + F11
+        XF86Launch2
 
 "~/toggle_screen.sh"
         XF86Display
