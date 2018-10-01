@@ -2,7 +2,7 @@
 eval $(xdotool getmouselocation --shell)
 width=800
 x_pos=$(( $X - width + 50 ))
-cnt=$(task +PENDING count)
+cnt=$(task next 2>/dev/null | wc -l)
 cnt=$(( $cnt + 3 ))
 cnt=$(( $cnt<15?$cnt:15 ))
 (
