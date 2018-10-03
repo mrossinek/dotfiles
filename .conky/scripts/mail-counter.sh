@@ -9,4 +9,4 @@ find ~/.mail -type d -name "new" -exec sh -c '
                 fi
         done
         echo $count
-' sh {} + > .mailcount
+' sh {} + > ~/.mailcount
