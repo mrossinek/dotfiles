@@ -8,9 +8,14 @@
 	tool = nvim -d
 
 [merge]
-        tool = nvim -d
-        conflictstyle = diff3
+        tool = vimdiff
         prompt = false
+
+[mergetool]
+        prompt = yes
+
+[mergetool "vimdiff"]
+        cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
 [alias]
         a = add
