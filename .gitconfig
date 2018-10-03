@@ -25,6 +25,7 @@
         d = diff
         i = init
         l = log
+        ls = ls-tree -r master
         m = merge
         pl = pull
         ps = push
