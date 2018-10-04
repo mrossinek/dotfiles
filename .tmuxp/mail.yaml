@@ -6,3 +6,6 @@ windows:
 - window_name: private
   panes:
   - neomutt -F ~/.config/neomutt/private.neomuttrc; exit
+- window_name: local
+  panes:
+  - neomutt -F ~/.config/neomutt/local.neomuttrc; exit
