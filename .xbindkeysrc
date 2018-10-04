@@ -20,7 +20,7 @@
 "maim -uks ~/Pictures/Screenshots/screenshot_$(date +%s).png"
         Mod4 + Print
 
-"physlock -m"
+"xset dpms force off"
         Mod4 + 0
 
 "~/keyboard_toggle.sh"
