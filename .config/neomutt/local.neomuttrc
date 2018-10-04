@@ -4,3 +4,5 @@ source ~/.config/neomutt/neomuttrc
 # storage
 set folder = "/var/mail/"
 set spoolfile = +/${USER}
+
+mailboxes $spoolfile
