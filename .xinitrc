@@ -48,8 +48,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-eval $(ssh-agent)
-xsetroot -solid "#2e2e2d"
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+eval $(ssh-agent)
 xbindkeys
+xsetroot -solid "#2e2e2d"
+xss-lock -- physlock -m -d &
 exec xmonad
