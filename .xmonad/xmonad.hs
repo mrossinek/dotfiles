@@ -58,5 +58,6 @@ myManageHook = composeAll
     [
       className =? "qutebrowser" --> doShift "2"
     , resource =? "weechat" --> doShift "9" <+> doF (W.greedyView "9")
+    , resource =? "pass" --> doCenterFloat
     , manageDocks
     ]
