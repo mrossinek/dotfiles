@@ -2,6 +2,9 @@
 # xbindkeys configuration #
 ###########################
 
+"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        XF86AudioMicMute
+
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
         XF86AudioMute
 
