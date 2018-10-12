@@ -6,7 +6,9 @@ settings:
   bindings.commands:
     global:
       normal:
-        <Alt-p>: spawn --userscript qute-pass
+        ;A: hint links spawn buku -a {hint-url}
+        <Alt+p>: spawn --userscript qute-pass
+        A: spawn buku -a {url}
         M: hint links spawn mpv {hint-url}
         m: spawn mpv {url}
   completion.height:
