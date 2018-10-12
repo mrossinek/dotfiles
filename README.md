@@ -1,4 +1,4 @@
 # dotfiles
 My dotfiles
 
-![alt text](.dotfiles_screenshot,jpg "Screenshot")
+![alt text](.dotfiles_screenshot.jpg "Screenshot")
