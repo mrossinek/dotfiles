@@ -33,7 +33,6 @@ export GPG_TTY=$(tty)
 alias vi=nvim
 alias vim=nvim
 alias vimdiff='nvim -d'
-alias mutt='tmuxp load mail'
 alias -s tex=nvim
 alias -s org=w3m
 alias -s com=w3m

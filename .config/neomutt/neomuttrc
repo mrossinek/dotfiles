@@ -21,6 +21,7 @@ set include
 set autoedit
 set edit_headers
 set nouse_domain
+set text_flowed = yes
 
 # header settings
 ignore *
