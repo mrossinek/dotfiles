@@ -151,7 +151,7 @@ ${if_match ${exec cat ~/.mailcount} > 0}\
 ${else}\
 ^fg(\#FFFFFF)${template0 }\
 ${endif}\
-^ca(1,urxvt -e sh -c "tmuxp load mail"; ~/.conky/scripts/mail-counter.sh)\
+^ca(1,mutt)\
 ^ca(3,getmail -n; offlineimap; ~/.conky/scripts/mail-counter.sh)\
  ${exec cat ~/.mailcount} \
 ^ca()^ca()\
