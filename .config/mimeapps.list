@@ -5,3 +5,4 @@ image/png=feh.desktop
 image/jpeg=feh.desktop
 image/x-exr=tev.desktop
 video/webm=mpv.desktop
+x-scheme-handler/viber=viber.desktop
