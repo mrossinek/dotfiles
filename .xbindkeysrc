@@ -21,6 +21,9 @@
         XF86MonBrightnessDown
 
 "maim -uks ~/Pictures/Screenshots/screenshot_$(date +%s).png"
+        Print
+
+"maim -ui $(xdotool getactivewindow) ~/Pictures/Screenshots/screenshot_$(date +%s).png"
         Mod4 + Print
 
 "xset dpms force off"
