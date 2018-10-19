@@ -34,6 +34,9 @@ call minpac#add('ervandew/supertab')
 " CPP
 call minpac#add('vim-scripts/OmniCppComplete')
 
+" LaTeX
+call minpac#add('lervag/vimtex')
+
 " Git integration
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-fugitive')
