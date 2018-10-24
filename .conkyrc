@@ -7,6 +7,7 @@ conky.config={
         use_spacer=none,
         lua_load='~/.conky/scripts/lua-functions.lua',
         template0=[[^fn(Font Awesome 5 Free:style=Solid:size=11)\1 ^fn()]],
+        template9=[[^fn(Font Awesome 5 Brands:style=Solid:size=13)\1 ^fn()]],
         template1=[[${exec pactl list sinks | grep Volume | grep -o "[0-9]*%" | head -1 | sed 's/%//'}]]
 };
 
@@ -41,6 +42,14 @@ ${endif}${endif}${endif}${endif}${endif}\
 ^ca()\
 #
 \
+# bluetootg
+${if_existing /proc/acpi/ibm/bluetooth disabled}^fg(\#444444)\
+${else}\
+^fg(\#777777)\
+${endif}\
+${template9 }\
+#
+ \
 # networking
 ${if_existing /proc/net/route tun0}^fg(\#00ff00)${template0 } \
 ${else}\
