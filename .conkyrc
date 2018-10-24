@@ -43,10 +43,13 @@ ${endif}${endif}${endif}${endif}${endif}\
 #
 \
 # bluetootg
+${if_match "${exec echo -e 'info\nquit' | bluetoothctl | grep Connected | sed 's/Connected: //' | sed 's/[^a-z]//'}" == "yes"}\
+^fg(\#1565c1)\
+${else}\
 ${if_existing /proc/acpi/ibm/bluetooth disabled}^fg(\#444444)\
 ${else}\
 ^fg(\#777777)\
-${endif}\
+${endif}${endif}\
 ${template9 }\
 #
  \
