@@ -157,6 +157,13 @@ ${template0 } ${lua format %3s ${memperc}%} \
 ^ca()\
 #
  \
+# cron (lock status)
+${if_existing .cron_lock}^fg(\#555555)\
+${else}^fg(\xFFFFFF)\
+${endif}\
+${template0 }\
+#
+  \
 # mail
 ${if_match ${exec cat ~/.mailcount} > 0}\
 ^fg(\#00FF00)${template0 }\
