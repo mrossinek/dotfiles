@@ -42,7 +42,7 @@ ${endif}${endif}${endif}${endif}${endif}\
 ^ca()\
 #
 \
-# bluetootg
+# bluetooth
 ${if_match "${exec echo -e 'info\nquit' | bluetoothctl | grep Connected | sed 's/Connected: //' | sed 's/[^a-z]//'}" == "yes"}\
 ^fg(\#1565c1)\
 ${else}\
