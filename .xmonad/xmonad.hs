@@ -19,8 +19,8 @@ myModMask               = mod4Mask
 myNormalBorderColor     = "#969694"
 myFocusedBorderColor    = "#77b2f6"
 
-myXmonadBar = "dzen2 -x 0 -y 0 -w 640 -ta l -dock -e 'button3:'"
-myStatusBar = "conky | dzen2 -x 640 -y 0 -ta r -dock -e 'button3:'"
+myXmonadBar = "dzen2 -x 0 -y 0 -w 600 -ta l -dock -e 'button3:'"
+myStatusBar = "conky | dzen2 -x 600 -y 0 -ta r -dock -e 'button3:'"
 
 main = do
     dzenLeftBar  <- spawnPipe myXmonadBar
@@ -28,7 +28,7 @@ main = do
     xmonad $ ewmh desktopConfig
         {
           logHook               = myLogHook dzenLeftBar >> updatePointer (0.95, 0.05) (0, 0) >> fadeInactiveLogHook 0xdddddddd
-        , layoutHook            = spacingRaw True (Border 5 5 5 5) False (Border 5 5 5 5) True $ smartBorders $ avoidStruts $ layoutHook def
+        , layoutHook            = spacingRaw True (Border 5 5 5 5) False (Border 5 5 5 5) True $ smartBorders $ myLayout
         , manageHook            = myManageHook
         , terminal              = myTerminal
         , modMask               = myModMask
@@ -40,6 +40,13 @@ main = do
           ((myModMask, xK_p), spawn "rofi -show combi"),
           ((myModMask, xK_o), toggleWS)
         ]
+
+myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full) ||| Full
+    where
+        tiled = Tall nmaster delta ratio
+        nmaster = 1
+        delta = 1/100
+        ratio = 1/2
 
 myLogHook :: Handle -> X ()
 myLogHook h = dynamicLogWithPP $ def
