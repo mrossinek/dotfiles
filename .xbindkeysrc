@@ -29,6 +29,9 @@
 "xset dpms force off"
         Mod4 + 0
 
+"~/cron_sync.sh"
+        XF86Tools
+
 "~/actuate_cron.sh"
         XF86Launch1
 
