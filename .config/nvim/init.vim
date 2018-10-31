@@ -23,6 +23,9 @@ call minpac#add('bronson/vim-trailing-whitespace')
 " indent object
 call minpac#add('michaeljsmith/vim-indent-object')
 
+" replace with register
+call minpac#add('vim-scripts/ReplaceWithRegister')
+
 " tasklist
 call minpac#add('vim-scripts/TaskList.vim')
 
@@ -46,6 +49,10 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-repeat')
+
+" christoomey
+call minpac#add('christoomey/vim-titlecase')
+call minpac#add('christoomey/vim-sort-motion')
 
 " colorscheme
 call minpac#add('NLKNguyen/papercolor-theme')
