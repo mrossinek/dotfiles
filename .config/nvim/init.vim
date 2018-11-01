@@ -40,6 +40,9 @@ call minpac#add('vim-scripts/OmniCppComplete')
 let OmniCpp_ShowPrototypeInAbbr = 1
 let OmniCpp_DefaultNamespaces = ["std"]
 
+" CMake integration
+call minpac#add('vhdirk/vim-cmake')
+
 " LaTeX
 call minpac#add('lervag/vimtex')
 
