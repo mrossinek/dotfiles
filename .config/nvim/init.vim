@@ -137,6 +137,7 @@ function! FixLastSpellingError()
         normal! mm[s1z=`m"
 endfunction
 nnoremap <leader>sp :call FixLastSpellingError()<cr>
+nnoremap <leader>sl :set spelllang=
 
 " custom text objects
 " ALL object (Note: inner does not make sense here)
