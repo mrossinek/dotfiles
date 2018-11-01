@@ -43,6 +43,9 @@ let OmniCpp_DefaultNamespaces = ["std"]
 " LaTeX
 call minpac#add('lervag/vimtex')
 
+" Markdown
+call minpac#add('plasticboy/vim-markdown')
+
 " Git integration
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-fugitive')
