@@ -34,8 +34,11 @@ call minpac#add('mbbill/undotree')
 
 " completion
 call minpac#add('ervandew/supertab')
+let g:SuperTabDefaultCompletionType = "context"
 " CPP
 call minpac#add('vim-scripts/OmniCppComplete')
+let OmniCpp_ShowPrototypeInAbbr = 1
+let OmniCpp_DefaultNamespaces = ["std"]
 
 " LaTeX
 call minpac#add('lervag/vimtex')
