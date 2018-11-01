@@ -67,6 +67,10 @@ nmap <leader>gt <Plug>Titlecase
 vmap <leader>gt <Plug>Titlecase
 nmap <leader>gT <Plug>TitlecaseLine
 
+" tmux integration
+call minpac#add('christoomey/vim-tmux-navigator')
+let g:tmux_navigator_no_mappings = 1
+
 " colorscheme
 call minpac#add('NLKNguyen/papercolor-theme')
 set background=dark
@@ -109,18 +113,20 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 " window movement
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <M-\> :TmuxNavigatePrevious<cr>
 nnoremap <A-H> <C-w>H
 nnoremap <A-J> <C-w>J
 nnoremap <A-K> <C-w>K
 nnoremap <A-L> <C-w>L
-inoremap <A-h> <C-\><C-n><C-w>h
-inoremap <A-j> <C-\><C-n><C-w>j
-inoremap <A-k> <C-\><C-n><C-w>k
-inoremap <A-l> <C-\><C-n><C-w>l
+inoremap <silent> <M-h> <C-\><C-n>:TmuxNavigateLeft<cr>
+inoremap <silent> <M-j> <C-\><C-n>:TmuxNavigateDown<cr>
+inoremap <silent> <M-k> <C-\><C-n>:TmuxNavigateUp<cr>
+inoremap <silent> <M-l> <C-\><C-n>:TmuxNavigateRight<cr>
+inoremap <silent> <M-\> <C-\><C-n>:TmuxNavigatePrevious<cr>
 inoremap <A-H> <C-\><C-n><C-w>H
 inoremap <A-J> <C-\><C-n><C-w>J
 inoremap <A-K> <C-\><C-n><C-w>K
@@ -189,12 +195,13 @@ au TermOpen * hi! link TermCursor Cursor
 au TermOpen * hi! TermCursorNC ctermfg=15 ctermbg=6 cterm=NONE
 " Esc key
 tnoremap <Esc> <C-\><C-n>
-tnoremap <A-[> <Esc>
+tnoremap <A-e> <Esc>
 " seemless window switching
-tnoremap <A-h> <C-\><C-n><C-w>h
-tnoremap <A-j> <C-\><C-n><C-w>j
-tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
+tnoremap <silent> <M-h> <C-\><C-n>:TmuxNavigateLeft<cr>
+tnoremap <silent> <M-j> <C-\><C-n>:TmuxNavigateDown<cr>
+tnoremap <silent> <M-k> <C-\><C-n>:TmuxNavigateUp<cr>
+tnoremap <silent> <M-l> <C-\><C-n>:TmuxNavigateRight<cr>
+tnoremap <silent> <M-\> <C-\><C-n>:TmuxNavigatePrevious<cr>
 tnoremap <A-H> <C-\><C-n><C-w>H
 tnoremap <A-J> <C-\><C-n><C-w>J
 tnoremap <A-K> <C-\><C-n><C-w>K
