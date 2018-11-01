@@ -51,8 +51,12 @@ call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-repeat')
 
 " christoomey
-call minpac#add('christoomey/vim-titlecase')
 call minpac#add('christoomey/vim-sort-motion')
+call minpac#add('christoomey/vim-titlecase')
+let g:titlecase_map_keys = 0
+nmap <leader>gt <Plug>Titlecase
+vmap <leader>gt <Plug>Titlecase
+nmap <leader>gT <Plug>TitlecaseLine
 
 " colorscheme
 call minpac#add('NLKNguyen/papercolor-theme')
