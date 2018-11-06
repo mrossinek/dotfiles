@@ -53,6 +53,7 @@ settings:
       DEFAULT: https://duckduckgo.com/?q={}
       a: https://wiki.archlinux.org/?search={}
       archwiki: https://wiki.archlinux.org/?search={}
+      arxiv: https://arxiv.org/search/?query={}
       cpp: https://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search={}&button=
       d: https://www.dict.cc/?s={}
       dict: https://www.dict.cc/?s={}
