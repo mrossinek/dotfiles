@@ -148,6 +148,16 @@ endfunction
 nnoremap <leader>sp :call FixLastSpellingError()<cr>
 nnoremap <leader>sl :setlocal spelllang=
 
+function! ToggleScrollingMode()
+        if &scrolloff!=100
+                :normal M
+                setlocal scrolloff=100
+        else
+                setlocal scrolloff=2
+        endif
+endfunction
+nnoremap <leader>sc :call ToggleScrollingMode()<cr>
+
 " custom text objects
 " ALL object (Note: inner does not make sense here)
 vnoremap aa :<C-U>silent! normal! ggVG<CR>
