@@ -179,8 +179,11 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g
 
 " configure mkview
 set viewoptions-=options
-autocmd BufWinLeave *.* mkview!
-autocmd BufWinEnter *.* silent loadview
+augroup remember_folds
+        autocmd!
+        autocmd BufWinLeave *.* mkview!
+        autocmd BufWinEnter *.* silent! loadview
+augroup END
 
 " visual @
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
