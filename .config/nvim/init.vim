@@ -141,6 +141,7 @@ nnoremap <C-W>a :winc =<cr>
 " some functions/mappings
 nnoremap <leader>so :source %<cr>
 nnoremap <leader>ut :UndotreeToggle<cr>
+nnoremap <leader>n :noh<cr>
 
 function! FixLastSpellingError()
         normal! mm[s1z=`m"
@@ -175,6 +176,11 @@ omap iL :normal ViL<CR>
 " file editing
 set undofile
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" configure mkview
+set viewoptions-=options
+autocmd BufWinLeave *.* mkview!
+autocmd BufWinEnter *.* silent loadview
 
 " visual @
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
