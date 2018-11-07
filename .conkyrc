@@ -43,10 +43,11 @@ ${endif}${endif}${endif}${endif}${endif}\
 #
 \
 # bluetooth
+${if_existing /proc/acpi/ibm/bluetooth disabled}\
+^fg(\#444444)\
+${else}\
 ${if_match "${exec echo -e 'info\nquit' | bluetoothctl | grep Connected | sed 's/Connected: //' | sed 's/[^a-z]//'}" == "yes"}\
 ^fg(\#1565c1)\
-${else}\
-${if_existing /proc/acpi/ibm/bluetooth disabled}^fg(\#444444)\
 ${else}\
 ^fg(\#777777)\
 ${endif}${endif}\
@@ -188,7 +189,12 @@ ${template0 } ${exec cat ~/.newscount} \
 #
 # stocks
 ^ca(1,~/.conky/buttons/stocks.sh)^ca(3,cd ~/.stocks/; ./watcher.sh; cd)\
-^fg(\#FFFFFF)${template0 } \
+${if_existing .stocks/tmp.txt}\
+^fg(\#FFFF00)\
+${else}\
+^fg(\#FFFFFF)\
+${endif}\
+${template0 } \
 ^ca()^ca()\
 #
  \
