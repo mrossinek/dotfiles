@@ -212,7 +212,7 @@ ${template0 } \
 #
 # clock
 ^ca(1,~/.conky/buttons/timew_preview.sh)^ca(3,~/.conky/buttons/timew_toggle.sh)\
-${if_match ${exec timew get dom.active} 1}\
+${if_match ${exec timew get dom.active} == 1}\
 ^fg(\#00FF00)\
 ${else}\
 ^fg(\#f9a825)\
