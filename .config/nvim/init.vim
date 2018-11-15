@@ -86,6 +86,11 @@ nnoremap <leader>tcl :VtrClearRunner<cr>
 nnoremap <leader>tfl :VtrFlushCommand<cr>
 nnoremap <leader>tro :VtrReorientRunner<cr>
 
+" distraction free
+call minpac#add('junegunn/goyo.vim')
+let g:goyo_width = "90%"
+let g:goyo_height = "90%"
+nnoremap gy :Goyo<cr>
 
 " colorscheme
 call minpac#add('NLKNguyen/papercolor-theme')
