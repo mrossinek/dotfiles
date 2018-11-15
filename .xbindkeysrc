@@ -35,8 +35,8 @@
 "~/actuate_cron.sh"
         XF86Launch1
 
-"~/keyboard_toggle.sh"
-        XF86Launch2
+# "~/keyboard_toggle.sh"
+#        XF86Launch2
 
 "~/toggle_screen.sh"
         XF86Display
