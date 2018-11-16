@@ -81,7 +81,7 @@ nnoremap <leader>to  :VtrOpenRunner<cr>
 nnoremap <leader>tk  :VtrKillRunner<cr>
 nnoremap <leader>tf  :VtrFocusRunner<cr>
 nnoremap <leader>td  :VtrDetachRunner<cr>
-nnoremap <leader>ta  :VtrReattachRunner<cr>
+nnoremap <leader>ta  :VtrAttachToPane<cr>
 nnoremap <leader>tcl :VtrClearRunner<cr>
 nnoremap <leader>tfl :VtrFlushCommand<cr>
 nnoremap <leader>tro :VtrReorientRunner<cr>
@@ -179,6 +179,7 @@ function! ToggleScrollingMode()
         endif
 endfunction
 nnoremap <leader>sc :call ToggleScrollingMode()<cr>
+nnoremap <leader>scb :setlocal scb!<cr>
 
 " custom text objects
 " ALL object (Note: inner does not make sense here)
