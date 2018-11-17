@@ -17,33 +17,33 @@ settings:
   downloads.position:
     global: bottom
   fonts.completion.category:
-    global: bold 14pt monospace
+    global: bold 7pt monospace
   fonts.completion.entry:
-    global: 14pt monospace
+    global: 7pt monospace
   fonts.debug_console:
-    global: 14pt monospace
+    global: 7pt monospace
   fonts.downloads:
-    global: 14pt monospace
+    global: 7pt monospace
   fonts.hints:
-    global: bold 14pt monospace
+    global: bold 7pt monospace
   fonts.keyhint:
-    global: 14pt monospace
+    global: 7pt monospace
   fonts.messages.error:
-    global: 14pt monospace
+    global: 7pt monospace
   fonts.messages.info:
-    global: 14pt monospace
+    global: 7pt monospace
   fonts.messages.warning:
-    global: 14pt monospace
+    global: 7pt monospace
   fonts.monospace:
     global: '"Inconsolata", "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono",
       Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation
       Mono", monospace, Fixed, Consolas, Terminal'
   fonts.prompts:
-    global: 14pt monospace
+    global: 7pt monospace
   fonts.statusbar:
-    global: 14pt monospace
+    global: 7pt monospace
   fonts.tabs:
-    global: 14pt monospace
+    global: 7pt monospace
   spellcheck.languages:
     global:
     - en-US
