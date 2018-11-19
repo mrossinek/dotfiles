@@ -1,1 +1,3 @@
 packadd vimtex
+setlocal nocursorline
+setlocal norelativenumber
