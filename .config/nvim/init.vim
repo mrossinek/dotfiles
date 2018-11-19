@@ -194,6 +194,11 @@ vnoremap aL :<C-U>silent! normal! 0v$<CR>
 omap aL :normal VaL<CR>
 vnoremap iL :<C-U>silent! normal! ^v$<CR>
 omap iL :normal ViL<CR>
+" | object
+vnoremap a\| :<C-U>silent! normal! F\|vf\|<CR>
+omap a\| :normal va\|<CR>
+vnoremap i\| :<C-U>silent! normal! T\|vt\|<CR>
+omap i\| :normal vi\|<CR>
 
 " file editing
 set undofile
