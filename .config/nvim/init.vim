@@ -26,9 +26,6 @@ call minpac#add('michaeljsmith/vim-indent-object')
 " replace with register
 call minpac#add('vim-scripts/ReplaceWithRegister')
 
-" tasklist
-call minpac#add('vim-scripts/TaskList.vim')
-
 " undotree
 call minpac#add('mbbill/undotree')
 
@@ -36,36 +33,25 @@ call minpac#add('mbbill/undotree')
 call minpac#add('ervandew/supertab')
 let g:SuperTabDefaultCompletionType = "context"
 " CPP
-call minpac#add('vim-scripts/OmniCppComplete')
-let OmniCpp_ShowPrototypeInAbbr = 1
-let OmniCpp_DefaultNamespaces = ["std"]
+call minpac#add('vim-scripts/OmniCppComplete', {'type': 'opt'})
 
 " CMake integration
 call minpac#add('vhdirk/vim-cmake')
 
 " LaTeX
-call minpac#add('lervag/vimtex')
+call minpac#add('lervag/vimtex', {'type': 'opt'})
 
 " Markdown
-call minpac#add('plasticboy/vim-markdown')
+call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
 
 " Git integration
 call minpac#add('airblade/vim-gitgutter')
-call minpac#add('tpope/vim-fugitive')
 
 " tpope
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-repeat')
-
-" christoomey
-call minpac#add('christoomey/vim-sort-motion')
-call minpac#add('christoomey/vim-titlecase')
-let g:titlecase_map_keys = 0
-nmap <leader>gt <Plug>Titlecase
-vmap <leader>gt <Plug>Titlecase
-nmap <leader>gT <Plug>TitlecaseLine
 
 " tmux integration
 call minpac#add('christoomey/vim-tmux-navigator')
