@@ -1,8 +1,3 @@
-" VIMRC ONLY
-if has("autocmd")
-        autocmd bufwritepost init.vim source $MYVIMRC
-endif
-
 " MINPAC
 " Install minpac:
 " mkdir -p ~/.config/nvim/pack/minpac/opt/
