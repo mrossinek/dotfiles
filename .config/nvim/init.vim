@@ -21,6 +21,9 @@ command! PackClean call minpac#clean()
 
 " START
 
+" random vim help page
+call minpac#add('mhinz/vim-randomtag')
+
 " tpope
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-commentary')
@@ -66,6 +69,7 @@ let g:VtrAppendNewline = 1
 nnoremap <leader>tc  :VtrSendCommandToRunner<cr>
 nnoremap <leader>tl  :VtrSendLinesToRunner<cr>
 vnoremap <leader>tl  :VtrSendLinesToRunner<cr>
+nnoremap <leader>ts  :VtrSendFile<cr>
 nnoremap <leader>to  :VtrOpenRunner<cr>
 nnoremap <leader>tk  :VtrKillRunner<cr>
 nnoremap <leader>tf  :VtrFocusRunner<cr>
@@ -118,7 +122,6 @@ set complete+=kspell
 set completeopt-=preview
 set cursorline
 set hidden
-set ignorecase
 set nowrap
 set number
 set relativenumber
@@ -126,6 +129,7 @@ set scrolloff=2
 set showmatch
 set sidescrolloff=5
 set signcolumn=yes
+set smartcase
 set undofile
 set updatetime=100
 
