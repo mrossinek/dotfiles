@@ -207,6 +207,12 @@ nnoremap <leader>sl :setlocal spelllang=
 nnoremap <leader>sc :call ToggleScrollingMode()<cr>
 nnoremap <leader>scb :setlocal scb!<cr>
 
+" simpler splitting
+nnoremap <A--> :new<cr>
+inoremap <A--> <C-\><C-n>:new<cr>:startinsert<cr>
+nnoremap <A-\|> :vnew<cr>
+inoremap <A-\|> <C-\><C-n>:vnew<cr>:startinsert<cr>
+
 " visual @
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
