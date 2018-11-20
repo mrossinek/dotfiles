@@ -104,6 +104,14 @@ call minpac#add('lervag/vimtex', {'type': 'opt'})
 " Markdown
 call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
 
+" OPT Loading
+augroup PackOptLoad
+        autocmd!
+        autocmd FileType cpp packadd OmniCppComplete
+        autocmd FileType tex packadd vimtex
+        autocmd FileType markdown packadd vim-markdown
+augroup end
+
 " BASICS
 set colorcolumn=81
 set complete+=kspell
