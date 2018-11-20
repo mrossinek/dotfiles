@@ -147,11 +147,6 @@ cabbrev h vert h
 cabbrev Man vert Man
 
 " NAVIGATION
-" disable arrow keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
 
 " window movement
 nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
