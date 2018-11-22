@@ -45,8 +45,8 @@ nnoremap <leader>ut :UndotreeToggle<cr>
 
 " distraction free
 call minpac#add('junegunn/goyo.vim')
-let g:goyo_width = "90%"
-let g:goyo_height = "90%"
+let g:goyo_width = '90%'
+let g:goyo_height = '90%'
 nnoremap gy :Goyo<cr>
 
 " error marking
@@ -54,7 +54,7 @@ call minpac#add('mh21/errormarker.vim')
 
 " async
 call minpac#add('skywind3000/asyncrun.vim')
-let g:asyncrun_auto = "make"
+let g:asyncrun_auto = 'make'
 command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 nnoremap <leader>qf :call asyncrun#quickfix_toggle(8)<cr>
 
@@ -95,7 +95,9 @@ call minpac#add('vhdirk/vim-cmake')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-rhubarb')
 call minpac#add('tpope/vim-fugitive')
-autocmd BufReadPost fugitive://* set bufhidden=delete
+augroup git
+        autocmd BufReadPost fugitive://* set bufhidden=delete
+augroup END
 
 " TMUX
 call minpac#add('christoomey/vim-tmux-navigator')
@@ -228,7 +230,7 @@ endfunction
 
 function! ToggleScrollingMode()
         if &scrolloff!=100
-                :normal M
+                :normal! M
                 setlocal scrolloff=100
         else
                 setlocal scrolloff=2
@@ -236,7 +238,7 @@ function! ToggleScrollingMode()
 endfunction
 
 function! ExecuteMacroOverVisualRange()
-        echo "@".getcmdline()
+        echo '@'.getcmdline()
         execute ":'<,'>normal @".nr2char(getchar())
 endfunction
 
@@ -286,7 +288,9 @@ omap i\| :normal vi\|<CR>
 
 " SESSIONS
 " file editing
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup files
+        au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup END
 
 " configure mkview
 set viewoptions-=options
