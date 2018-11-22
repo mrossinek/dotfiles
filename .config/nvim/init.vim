@@ -61,6 +61,31 @@ nnoremap <leader>qf :call asyncrun#quickfix_toggle(8)<cr>
 " completion
 call minpac#add('ervandew/supertab')
 let g:ale_completion_enabled = 1
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_linters_explicit = 1
+let g:ale_linters =     {
+                        \       'cpp': ['gcc'],
+                        \       'cuda': ['nvcc'],
+                        \       'haskell': ['ghc'],
+                        \       'help': [],
+                        \       'java': ['javac'],
+                        \       'markdown': ['prettier'],
+                        \       'python': ['flake8'],
+                        \       'sh': ['shellcheck'],
+                        \       'tex': ['chktex'],
+                        \       'text': [],
+                        \       'vim': ['vint'],
+                        \}
+let g:ale_linter_aliases =      {
+                                \       'bash': 'sh',
+                                \       'c': 'cpp',
+                                \       'html': 'markdown',
+                                \       'json': 'markdown',
+                                \       'latex': 'tex',
+                                \       'plaintex': 'tex',
+                                \       'plaintext': 'text',
+                                \       'zsh': 'sh',
+                                \}
 call minpac#add('w0rp/ale')
 
 " CMake integration
