@@ -107,6 +107,9 @@ let g:airline_symbols.maxlinenr = ' ln'
 " C++
 call minpac#add('vim-scripts/OmniCppComplete', {'type': 'opt'})
 
+" Python
+call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
+
 " LaTeX
 call minpac#add('lervag/vimtex', {'type': 'opt'})
 
@@ -117,6 +120,7 @@ call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
 augroup PackOptLoad
         autocmd!
         autocmd FileType cpp packadd OmniCppComplete
+        autocmd FileType python packadd jedi-vim
         autocmd FileType tex packadd vimtex
         autocmd FileType markdown packadd vim-markdown
 augroup end
