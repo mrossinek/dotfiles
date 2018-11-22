@@ -44,6 +44,15 @@ let g:goyo_width = "90%"
 let g:goyo_height = "90%"
 nnoremap gy :Goyo<cr>
 
+" error marking
+call minpac#add('mh21/errormarker.vim')
+
+" async
+call minpac#add('skywind3000/asyncrun.vim')
+let g:asyncrun_auto = "make"
+command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
+nnoremap <leader>qf :call asyncrun#quickfix_toggle(8)<cr>
+
 " completion
 call minpac#add('ervandew/supertab')
 let g:SuperTabDefaultCompletionType = "context"
