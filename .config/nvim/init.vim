@@ -16,6 +16,11 @@ command! PackClean call minpac#clean()
 
 " START
 
+" local vimrc
+call minpac#add('embear/vim-localvimrc')
+let g:localvimrc_sandbox = 0
+let g:localvimrc_ask = 0
+
 " random vim help page
 call minpac#add('mhinz/vim-randomtag')
 
