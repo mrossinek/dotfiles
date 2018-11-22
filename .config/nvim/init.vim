@@ -55,7 +55,8 @@ nnoremap <leader>qf :call asyncrun#quickfix_toggle(8)<cr>
 
 " completion
 call minpac#add('ervandew/supertab')
-let g:SuperTabDefaultCompletionType = "context"
+let g:ale_completion_enabled = 1
+call minpac#add('w0rp/ale')
 
 " CMake integration
 call minpac#add('vhdirk/vim-cmake')
