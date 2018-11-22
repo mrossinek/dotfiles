@@ -63,6 +63,9 @@ call minpac#add('vhdirk/vim-cmake')
 
 " Git integration
 call minpac#add('airblade/vim-gitgutter')
+call minpac#add('tpope/vim-rhubarb')
+call minpac#add('tpope/vim-fugitive')
+autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " TMUX
 call minpac#add('christoomey/vim-tmux-navigator')
