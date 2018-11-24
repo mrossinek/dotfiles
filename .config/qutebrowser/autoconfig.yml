@@ -8,7 +8,7 @@ settings:
       normal:
         ;A: hint links spawn buku -a {hint-url}
         <Alt+p>: spawn --userscript qute-pass
-        <Ctrl+o>: spawn buku_run
+        <Alt+o>: spawn buku_run
         A: spawn buku -a {url}
         M: hint links spawn mpv {hint-url}
         m: spawn mpv {url}
