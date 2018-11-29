@@ -27,6 +27,10 @@ URxvt*scrollTtyKeypress: true
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
+! tmux friently escape sequence
+URxvt.keysym.Shift-Up:   \033[1;2A
+URxvt.keysym.Shift-Down: \033[1;2B
+
 ! font size adjusting
 URxvt.perl-ext-common: font-size
 
