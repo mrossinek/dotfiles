@@ -59,7 +59,7 @@ URxvt.keysym.C-slash:  font-size:show
 *.color4:  #1565c1
 *.color12: #77b2f6
 ! magenta
-*.color5:  #6a1e9a
+*.color5:  #8e42be
 *.color13: #b933a8
 ! cyan
 *.color6:  #00838f
