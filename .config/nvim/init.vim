@@ -261,6 +261,12 @@ inoremap <A--> <C-\><C-n>:new<cr>:startinsert<cr>
 nnoremap <A-\|> :vnew<cr>
 inoremap <A-\|> <C-\><C-n>:vnew<cr>:startinsert<cr>
 
+" simpler editing
+nnoremap <leader>ew :e <C-R>=expand("%:p:h")."/"<CR>
+nnoremap <leader>es :sp <C-R>=expand("%:p:h")."/"<CR>
+nnoremap <leader>ev :vsp <C-R>=expand("%:p:h")."/"<CR>
+nnoremap <leader>et :tabe <C-R>=expand("%:p:h")."/"<CR>
+
 " visual @
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
