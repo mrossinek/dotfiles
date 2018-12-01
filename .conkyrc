@@ -41,7 +41,10 @@ ${endif}${endif}${endif}${endif}${endif}\
  ${template1}% \
 ^ca()\
 #
-\
+# brightness
+^fg(\#FFFFFF)${template0 } ${exec xbacklight | cut -d'.' -f1}%\
+#
+ \
 # bluetooth
 ${if_existing /proc/acpi/ibm/bluetooth disabled}\
 ^fg(\#444444)\
