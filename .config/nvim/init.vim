@@ -29,6 +29,10 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-repeat')
+call minpac#add('tpope/vim-abolish')
+
+" exchange
+call minpac#add('tommcdo/vim-exchange')
 
 " replace with register
 call minpac#add('vim-scripts/ReplaceWithRegister')
