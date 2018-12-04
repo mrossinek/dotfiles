@@ -166,6 +166,7 @@ set complete+=kspell
 set completeopt-=preview
 set cursorline
 set hidden
+set ignorecase
 set nowrap
 set number
 set relativenumber
@@ -173,7 +174,7 @@ set scrolloff=2
 set showmatch
 set sidescrolloff=5
 set signcolumn=yes
-set smartcase
+set spelllang=en_us
 set undofile
 set updatetime=100
 
