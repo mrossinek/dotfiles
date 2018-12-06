@@ -51,6 +51,7 @@ fi
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 eval $(ssh-agent)
+greenclip daemon &
 xbindkeys
 xsetroot -solid "#2e2e2d"
 xss-lock -- physlock -m -d &
