@@ -165,9 +165,10 @@ ${template0 } ${lua format %3s ${memperc}%} \
 #
  \
 # cron (lock status)
-${if_existing .cron_lock}^fg(\#555555)\
+${if_existing .sync_lock}^fg(\#FFFF00)\
+${else}${if_existing .cron_lock}^fg(\#555555)\
 ${else}^fg(\xFFFFFF)\
-${endif}\
+${endif}${endif}\
 ${template0 }\
 #
   \
