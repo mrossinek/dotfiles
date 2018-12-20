@@ -27,7 +27,7 @@ main = do
     dzenRightBar <- spawnPipe myStatusBar
     xmonad $ ewmh desktopConfig
         {
-          logHook               = myLogHook dzenLeftBar >> updatePointer (0.95, 0.05) (0, 0) >> fadeInactiveLogHook 0xdddddddd
+          logHook               = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
         , layoutHook            = spacingRaw True (Border 5 5 5 5) False (Border 5 5 5 5) True $ smartBorders $ myLayout
         , manageHook            = myManageHook
         , terminal              = myTerminal
