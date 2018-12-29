@@ -51,8 +51,11 @@ settings:
   url.searchengines:
     global:
       DEFAULT: https://duckduckgo.com/?q={}
-      a: https://wiki.archlinux.org/?search={}
+      aw: https://wiki.archlinux.org/?search={}
       archwiki: https://wiki.archlinux.org/?search={}
+      ap: https://www.archlinux.org/packages/?q={}
+      aur: https://aur.archlinux.org/packages/?K={}
+      package: https://www.archlinux.org/packages/?q={}
       arxiv: https://arxiv.org/search/?query={}
       cpp: https://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search={}&button=
       d: https://www.dict.cc/?s={}
