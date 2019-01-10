@@ -15,7 +15,9 @@ find ~/.mail -type d -name "new" -exec sh -c '
 
 typeset -i next=$(cat ~/.mailcount)
 
+new=$(( $next - $prev ))
+
 if [ $next -gt $prev ]; then
-        notify-send -u low "Mail" "$count new mails"
+        notify-send -u low "Mail" "$new new mails"
 fi
 
