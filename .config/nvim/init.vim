@@ -106,22 +106,8 @@ augroup END
 " TMUX
 call minpac#add('christoomey/vim-tmux-navigator')
 let g:tmux_navigator_no_mappings = 1
-call minpac#add('christoomey/vim-tmux-runner')
-let g:VtrStripLeadingWhitespace = 0
-let g:VtrClearEmptyLines = 0
-let g:VtrAppendNewline = 1
-nnoremap <leader>tc  :VtrSendCommandToRunner<cr>
-nnoremap <leader>tl  :VtrSendLinesToRunner<cr>
-vnoremap <leader>tl  :VtrSendLinesToRunner<cr>
-nnoremap <leader>ts  :VtrSendFile<cr>
-nnoremap <leader>to  :VtrOpenRunner<cr>
-nnoremap <leader>tk  :VtrKillRunner<cr>
-nnoremap <leader>tf  :VtrFocusRunner<cr>
-nnoremap <leader>td  :VtrDetachRunner<cr>
-nnoremap <leader>ta  :VtrAttachToPane<cr>
-nnoremap <leader>tcl :VtrClearRunner<cr>
-nnoremap <leader>tfl :VtrFlushCommand<cr>
-nnoremap <leader>tro :VtrReorientRunner<cr>
+" call minpac#add('mrossinek/vim-tmux-controller')
+" ^ is added locally from source
 
 " DESIGN
 " colorscheme
