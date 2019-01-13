@@ -237,6 +237,10 @@ endfunction
 command! MakeTags !ctags -R .
 
 " MAPPINGS
+" additional function keys
+map <F13> <S-CR>
+map <F14> <C-CR>
+
 nnoremap <leader>so :source %<cr>
 nnoremap <leader>n :noh<cr>
 
