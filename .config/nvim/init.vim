@@ -108,6 +108,7 @@ call minpac#add('christoomey/vim-tmux-navigator')
 let g:tmux_navigator_no_mappings = 1
 " call minpac#add('mrossinek/vim-tmux-controller')
 " ^ is added locally from source
+nnoremap <S-CR> :VtcSendLines<cr>
 
 " DESIGN
 " colorscheme
