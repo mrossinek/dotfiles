@@ -186,6 +186,8 @@ cabbrev h vert h
 cabbrev Man vert Man
 
 " NAVIGATION
+nnoremap <C-E> 2<C-E>
+nnoremap <C-Y> 2<C-Y>
 
 " window movement
 nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
