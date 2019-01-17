@@ -91,6 +91,7 @@ let g:ale_linter_aliases =      {
                                 \       'zsh': 'sh',
                                 \}
 call minpac#add('w0rp/ale')
+nnoremap <leader>ad :ALEDetail<cr>
 
 " CMake integration
 call minpac#add('vhdirk/vim-cmake')
