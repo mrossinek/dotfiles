@@ -44,6 +44,14 @@
 "~/xrandr_duplicate.sh"
         Shift + XF86Display
 
+"mpc play"
+        m:0x0 + c:208
+        XF86AudioPlay
+
+"mpc pause"
+        m:0x0 + c:209
+        XF86AudioPause
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
