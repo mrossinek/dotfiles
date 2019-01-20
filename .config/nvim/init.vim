@@ -143,6 +143,9 @@ call minpac#add('lervag/vimtex', {'type': 'opt'})
 " Markdown
 call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
 
+" CSS
+call minpac#add('ap/vim-css-color', {'type': 'opt'})
+
 " OPT Loading
 augroup PackOptLoad
         autocmd!
@@ -150,6 +153,7 @@ augroup PackOptLoad
         autocmd FileType python packadd jedi-vim
         autocmd FileType tex packadd vimtex
         autocmd FileType markdown packadd vim-markdown
+        autocmd FileType css packadd vim-css-color
 augroup end
 
 " BASICS
