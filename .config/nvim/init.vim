@@ -292,9 +292,6 @@ nnoremap <leader>et :tabe <C-R>=expand("%:p:h")."/"<CR>
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
 " swap some commands
-" faster command mode
-nnoremap ; :
-nnoremap : ;
 " visual block mode is more useful than plain visual mode
 nnoremap v <C-v>
 nnoremap <C-v> v
