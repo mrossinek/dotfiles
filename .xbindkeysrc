@@ -52,6 +52,14 @@
         m:0x0 + c:209
         XF86AudioPause
 
+"mpc next"
+        m:0x0 + c:171
+        XF86AudioNext
+
+"mpc prev"
+        m:0x0 + c:173
+        XF86AudioPrev
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
