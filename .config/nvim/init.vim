@@ -1,4 +1,4 @@
-" MINPAC
+" MINPAC {{{
 " Install minpac:
 " mkdir -p ~/.config/nvim/pack/minpac/opt/
 " cd ~/.config/nvim/pack/minpac/opt
@@ -12,9 +12,11 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})  " enables auto updates
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
-" PLUGINS
+" }}}
 
-" START
+" PLUGINS {{{
+
+" START {{{
 
 " local vimrc
 call minpac#add('embear/vim-localvimrc')
@@ -129,7 +131,9 @@ endif
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ' ln'
 
-" OPT
+" }}}
+
+" OPT {{{
 
 " C++
 call minpac#add('vim-scripts/OmniCppComplete', {'type': 'opt'})
@@ -156,7 +160,11 @@ augroup PackOptLoad
         autocmd FileType css packadd vim-css-color
 augroup end
 
-" BASICS
+" }}}
+
+" }}}
+
+" BASICS {{{
 set colorcolumn=81
 set complete+=kspell
 set completeopt-=preview
@@ -187,11 +195,15 @@ nnoremap <space> za
 set path+=**
 set wildmenu
 
-" ABBREVIATIONS
+" }}}
+
+" ABBREVIATIONS {{{
 cabbrev h vert h
 cabbrev Man vert Man
 
-" NAVIGATION
+" }}}
+
+" NAVIGATION {{{
 nnoremap <C-E> 2<C-E>
 nnoremap <C-Y> 2<C-Y>
 
@@ -221,7 +233,9 @@ nnoremap <C-W>m :winc _ <bar> winc <bar> <cr>
 " mnemonic: window all
 nnoremap <C-W>a :winc =<cr>
 
-" FUNCTIONS
+" }}}
+
+" FUNCTIONS {{{
 
 function! FixLastSpellingError()
         normal! mm[s1z=`m"
@@ -241,10 +255,14 @@ function! ExecuteMacroOverVisualRange()
         execute ":'<,'>normal @".nr2char(getchar())
 endfunction
 
-" COMMANDS
+" }}}
+
+" COMMANDS {{{
 command! MakeTags !ctags -R .
 
-" MAPPINGS
+" }}}
+
+" MAPPINGS {{{
 " additional function keys
 map <F13> <S-CR>
 map <F14> <C-CR>
@@ -273,7 +291,9 @@ nnoremap <leader>et :tabe <C-R>=expand("%:p:h")."/"<CR>
 " visual @
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
-" TEXT OBJECTS
+" }}}
+
+" TEXT OBJECTS {{{
 
 " ALL object (Note: inner does not make sense here)
 vnoremap aa :<C-U>silent! normal! ggVG<CR>
@@ -295,7 +315,9 @@ omap a\| :normal va\|<CR>
 vnoremap i\| :<C-U>silent! normal! T\|vt\|<CR>
 omap i\| :normal vi\|<CR>
 
-" SESSIONS
+" }}}
+
+" SESSIONS {{{
 " file editing
 augroup files
         au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -309,7 +331,9 @@ augroup remember_folds
         autocmd BufWinEnter *.* silent! loadview
 augroup END
 
-" TERMINAL
+" }}}
+
+" TERMINAL {{{
 " set coloring for terminal cursor
 au TermOpen * hi! link TermCursor Cursor
 au TermOpen * hi! TermCursorNC ctermfg=15 ctermbg=6 cterm=NONE
@@ -330,8 +354,12 @@ tnoremap <A-L> <C-\><C-n><C-w>L
 tnoremap <expr> <A-r> '<C-\><C-n>"'.nr2char(getchar()).'pi'
 tnoremap <A-R> <C-\><C-n>0pi
 
-" NETRW
+" }}}
+
+" NETRW {{{
 let g:netrw_altv=1
 let g:netrw_banner=0
 let g:netrw_browse_split=4
 let g:netrw_liststyle=3
+
+" }}}
