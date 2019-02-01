@@ -71,5 +71,9 @@ settings:
       xmonad: https://hayoo.fh-wedel.de/?query={}
       y: https://www.youtube.com/results?search_query={}
       youtube: https://www.youtube.com/results?search_query={}
+  url.start_pages:
+    global:
+    - https://github.com/
+    - https://start.duckduckgo.com
   zoom.default:
     global: 150%
