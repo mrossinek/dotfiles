@@ -14,6 +14,10 @@ settings:
         A: spawn buku -a {url}
         M: hint links spawn mpv {hint-url}
         m: spawn mpv {url}
+  colors.tabs.bar.bg:
+    global: '#2E2E2D'
+  colors.tabs.even.fg:
+    global: black
   completion.height:
     global: 30%
   content.headers.user_agent:
@@ -55,6 +59,16 @@ settings:
     global:
     - en-US
     - de-DE
+  tabs.padding:
+    global:
+      bottom: 0
+      left: 2
+      right: 0
+      top: 0
+  tabs.position:
+    global: left
+  tabs.width:
+    global: 15%
   url.searchengines:
     global:
       DEFAULT: https://duckduckgo.com/?q={}
