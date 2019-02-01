@@ -7,8 +7,8 @@ settings:
     global:
       normal:
         ;A: hint links spawn buku -a {hint-url}
-        <Alt+p>: spawn --userscript qute-pass
         <Alt+o>: spawn buku_run
+        <Alt+p>: spawn --userscript qute-pass
         A: spawn buku -a {url}
         M: hint links spawn mpv {hint-url}
         m: spawn mpv {url}
@@ -54,17 +54,17 @@ settings:
   url.searchengines:
     global:
       DEFAULT: https://duckduckgo.com/?q={}
-      aw: https://wiki.archlinux.org/?search={}
-      archwiki: https://wiki.archlinux.org/?search={}
       ap: https://www.archlinux.org/packages/?q={}
-      aur: https://aur.archlinux.org/packages/?K={}
-      package: https://www.archlinux.org/packages/?q={}
+      archwiki: https://wiki.archlinux.org/?search={}
       arxiv: https://arxiv.org/search/?query={}
+      aur: https://aur.archlinux.org/packages/?K={}
+      aw: https://wiki.archlinux.org/?search={}
       cpp: https://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search={}&button=
       d: https://www.dict.cc/?s={}
       dict: https://www.dict.cc/?s={}
       g: https://www.github.com/search?&q={}
       github: https://www.github.com/search?&q={}
+      package: https://www.archlinux.org/packages/?q={}
       w: https://en.wikipedia.org/w/index.php?search={}&title=Special:Search
       wikipedia: https://en.wikipedia.org/w/index.php?search={}&title=Special:Search
       x: https://hayoo.fh-wedel.de/?query={}
