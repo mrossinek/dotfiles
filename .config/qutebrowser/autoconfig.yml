@@ -14,6 +14,10 @@ settings:
         A: spawn buku -a {url}
         M: hint links spawn mpv {hint-url}
         m: spawn mpv {url}
+  bindings.key_mappings:
+    global:
+      <Alt+Down>: J
+      <Alt+Up>: K
   colors.tabs.bar.bg:
     global: '#2E2E2D'
   colors.tabs.even.fg:
