@@ -3,6 +3,8 @@
 
 config_version: 2
 settings:
+  auto_save.session:
+    global: true
   bindings.commands:
     global:
       normal:
@@ -47,6 +49,8 @@ settings:
     global: 14pt monospace
   fonts.tabs:
     global: 14pt monospace
+  session.lazy_restore:
+    global: true
   spellcheck.languages:
     global:
     - en-US
