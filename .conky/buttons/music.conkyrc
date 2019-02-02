@@ -2,7 +2,7 @@ conky.config={
         background=false,
         out_to_console=true,
         out_to_x=false,
-        update_interval=.3,
+        update_interval=2,
         total_run_times=0,
         use_spacer=none,
 };
@@ -19,4 +19,8 @@ ${mpd_bar 1,25} [${mpd_elapsed}/${mpd_length} (${mpd_percent}%)]
 ^fg(\#f9a825)\
 ^ca(1,mpc repeat) Repeat: ${mpd_repeat} ^ca()\
 ^ca(1,mpc random) Random: ${mpd_random} ^ca()
+ Volume Controls: \
+^ca(1,pactl set-sink-volume @DEFAULT_SINK@ +2%) UP ^ca()\
+^ca(1,pactl set-sink-mute @DEFAULT_SINK@ toggle) mute ^ca()\
+^ca(1,pactl set-sink-volume @DEFAULT_SINK@ +2%) DOWN ^ca()
 ]];

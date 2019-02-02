@@ -1,12 +1,10 @@
 #!/bin/sh
 eval $(xdotool getmouselocation --shell)
-width=100
+width=400
 x_pos=$(( $X - width + 50 ))
 (
-echo "^fg(\#FFFFFF)
- ^ca(1,amixer set PCM -M 2%-)^fn(Font Awesome 5 Free:style=Solid:size=9)^fn()^ca() \
- ^ca(1,amixer set PCM toggle)^fn(Font Awesome 5 Free:style=Solid:size=9)^fn()^ca() \
- ^ca(1,amixer set PCM -M 2%+)^fn(Font Awesome 5 Free:style=Solid:size=9)^fn()^ca() "
-) | dzen2 -p -x $x_pos -y 20 -w $width \
+echo "Music Controls"
+conky -c ~/.conky/buttons/music.conkyrc
+) | dzen2 -p -x $x_pos -y 20 -w $width -l 4 \
         -bg "#1c1c1c" \
         -e 'onstart=uncollapse;button3=exit'
