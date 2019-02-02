@@ -21,7 +21,7 @@ ${else}${if_match "${mpd_status}" == "Paused"}\
 ^fg(\#FFFF00)\
 ${endif}${endif}\
 ^ca(1,~/.conky/buttons/music.sh)^ca(3,mpc toggle)\
-${template0 } ${lua format %.24s ${mpd_artist}}: ${lua format %.20s ${mpd_title}} \
+${template0 } ${lua format %.20s ${mpd_artist}}: ${lua format %.20s ${mpd_title}} \
 ^ca()^ca()\
 ${endif}${endif}\
 #
