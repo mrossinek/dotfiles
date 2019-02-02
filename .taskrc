@@ -4,3 +4,5 @@ taskd.certificate=~/.task/user.cert.pem
 taskd.key=~/.task/user.key.pem
 taskd.ca=~/.task/ca.cert.pem
 include ~/.task/private_credentials # holds server address and login creds
+
+include ~/.task_context
