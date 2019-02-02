@@ -111,6 +111,7 @@ call minpac#add('christoomey/vim-tmux-navigator')
 let g:tmux_navigator_no_mappings = 1
 " call minpac#add('mrossinek/vim-tmux-controller')
 " ^ is added locally from source
+packadd vim-tmux-controller
 nnoremap <S-CR> :VtcSendLines<cr>
 
 " DESIGN
@@ -140,6 +141,7 @@ call minpac#add('vim-scripts/OmniCppComplete', {'type': 'opt'})
 
 " Python
 call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
+let g:jedi#usages_command = "<leader>u"
 
 " LaTeX
 call minpac#add('lervag/vimtex', {'type': 'opt'})
