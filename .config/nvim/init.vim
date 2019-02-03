@@ -136,6 +136,16 @@ let g:airline_symbols.maxlinenr = ' ln'
 
 " OPT {{{
 
+" ledge
+call minpac#add('ledger/vim-ledger', {'type': 'opt'})
+let g:ledger_bin = 'hledger'
+let g:ledger_commodity_sep = ' '
+let g:ledger_default_commodity = 'CHF'
+augroup Ledger
+        autocmd FileType ledger inoremap <silent> <Tab> <C-r>=ledger#autocomplete_and_align()<CR>
+        autocmd FileType ledger vnoremap <silent> <Tab> :LedgerAlign<CR>
+augroup end
+
 " C++
 call minpac#add('vim-scripts/OmniCppComplete', {'type': 'opt'})
 
@@ -155,6 +165,7 @@ call minpac#add('ap/vim-css-color', {'type': 'opt'})
 " OPT Loading
 augroup PackOptLoad
         autocmd!
+        autocmd FileType ledger packadd vim-ledger
         autocmd FileType cpp packadd OmniCppComplete
         autocmd FileType python packadd jedi-vim
         autocmd FileType tex packadd vimtex
