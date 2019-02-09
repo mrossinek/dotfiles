@@ -95,6 +95,11 @@ let g:ale_linter_aliases =      {
 call minpac#add('w0rp/ale')
 nnoremap <leader>ad :ALEDetail<cr>
 
+" tagbar
+call minpac#add('majutsushi/tagbar')
+nnoremap <leader>ct :TagbarToggle<cr>
+" mnemonic: Ctags Toggle
+
 " CMake integration
 call minpac#add('vhdirk/vim-cmake')
 
@@ -132,6 +137,9 @@ endif
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ' ln'
 
+" ANSI color support
+call minpac#add('powerman/vim-plugin-AnsiEsc')
+
 " }}}
 
 " OPT {{{
@@ -162,6 +170,16 @@ call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
 " CSS
 call minpac#add('ap/vim-css-color', {'type': 'opt'})
 
+" Wiki
+call minpac#add('vimwiki/vimwiki', {'type': 'opt'})
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_hl_cb_checked = 1
+let g:vimwiki_list = [{'path': '~/Files/Notes/', 'index': 'Index',
+                        \ 'ext': '.md'}]
+" call minpac#add('tbabej/taskwiki', {'type': 'opt'})
+" ^ is added locally from source
+let g:taskwiki_maplocalleader = ',t'
+
 " OPT Loading
 augroup PackOptLoad
         autocmd!
@@ -171,6 +189,8 @@ augroup PackOptLoad
         autocmd FileType tex packadd vimtex
         autocmd FileType markdown packadd vim-markdown
         autocmd FileType css packadd vim-css-color
+        autocmd BufRead,BufNewFile,BufEnter ~/Files/Notes/* packadd vimwiki
+        autocmd BufRead,BufNewFile,BufEnter ~/Files/Notes/* packadd taskwiki
 augroup end
 
 " }}}
