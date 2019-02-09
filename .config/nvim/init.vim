@@ -152,6 +152,8 @@ let g:ledger_default_commodity = 'CHF'
 augroup Ledger
         autocmd FileType ledger inoremap <silent> <Tab> <C-r>=ledger#autocomplete_and_align()<CR>
         autocmd FileType ledger vnoremap <silent> <Tab> :LedgerAlign<CR>
+        autocmd FileType ledger nnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
+        autocmd FileType ledger vnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
 augroup end
 
 " C++
