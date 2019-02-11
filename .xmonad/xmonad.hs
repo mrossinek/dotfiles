@@ -37,9 +37,13 @@ main = do
         }
         `additionalKeys`
         [
-          ((myModMask, xK_p), spawn "rofi -show combi"),
-          ((myModMask, xK_o), toggleWS)
+          ((myModMask, xK_p), spawn "rofi -show combi")
+        , ((myModMask, xK_o), toggleWS)
+        , ((myModMask, xK_w), screenWorkspace 0 >>= flip whenJust (windows . W.view) >> updatePointer (0.95, 0.05) (0, 0))
+        , ((myModMask, xK_e), screenWorkspace 1 >>= flip whenJust (windows . W.view) >> updatePointer (0.95, 0.05) (0, 0))
+        , ((myModMask, xK_r), screenWorkspace 2 >>= flip whenJust (windows . W.view) >> updatePointer (0.95, 0.05) (0, 0))
         ]
+
 
 myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full) ||| Full
     where
