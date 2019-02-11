@@ -32,6 +32,7 @@ call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-abolish')
+call minpac#add('tpope/vim-vinegar')
 
 " exchange
 call minpac#add('tommcdo/vim-exchange')
@@ -128,7 +129,7 @@ colorscheme PaperColor
 " airline
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
-let g:airline_theme='papercolor'
+let g:airline_theme='dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_symbols_ascii = 1
 if !exists('g:airline_symbols')
@@ -191,8 +192,6 @@ augroup PackOptLoad
         autocmd FileType tex packadd vimtex
         autocmd FileType markdown packadd vim-markdown
         autocmd FileType css packadd vim-css-color
-        autocmd BufRead,BufNewFile,BufEnter ~/Files/Notes/* packadd vimwiki
-        autocmd BufRead,BufNewFile,BufEnter ~/Files/Notes/* packadd taskwiki
 augroup end
 
 " }}}
