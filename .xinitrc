@@ -53,7 +53,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 eval $(ssh-agent)
 greenclip daemon &
 xbindkeys
-xsetroot -solid "#2e2e2d"
+feh --bg-center ~/.wallpaper.png &
 xss-lock -- physlock -m -d &
 urxvt -e tmux &
 qutebrowser &
