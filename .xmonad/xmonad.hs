@@ -38,6 +38,9 @@ main = do
         `additionalKeys`
         [
           ((myModMask, xK_p), spawn "rofi -show combi")
+        , ((myModMask, xK_a), spawn "rofi-mpc")
+        , ((myModMask, xK_d), spawn "rofi -show dict")
+        , ((myModMask, xK_f), spawn "rofi -show file_browser")
         , ((myModMask, xK_o), toggleWS)
         , ((myModMask, xK_w), screenWorkspace 0 >>= flip whenJust (windows . W.view) >> updatePointer (0.95, 0.05) (0, 0))
         , ((myModMask, xK_e), screenWorkspace 1 >>= flip whenJust (windows . W.view) >> updatePointer (0.95, 0.05) (0, 0))
