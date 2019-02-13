@@ -289,6 +289,16 @@ function! ExecuteMacroOverVisualRange()
         execute ":'<,'>normal @".nr2char(getchar())
 endfunction
 
+function! ToggleBackground()
+        if &background ==# 'dark'
+                let l:invbg='light'
+        else
+                let l:invbg='dark'
+        endif
+        let &background=l:invbg
+        call airline#switch_theme(l:invbg)
+endfunction
+
 " }}}
 
 " COMMANDS {{{
@@ -309,6 +319,8 @@ nnoremap <leader>sl :setlocal spelllang=
 
 nnoremap <leader>sc :call ToggleScrollingMode()<cr>
 nnoremap <leader>scb :setlocal scb!<cr>
+
+au VimEnter * nnoremap yob :call ToggleBackground()<cr>
 
 " simpler splitting
 nnoremap <A--> :new<cr>
