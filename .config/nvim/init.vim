@@ -165,7 +165,8 @@ call minpac#add('vim-scripts/OmniCppComplete', {'type': 'opt'})
 
 " Python
 call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
-let g:jedi#usages_command = "<leader>u"
+let g:jedi#usages_command = '<leader>u'
+call minpac#add('fs111/pydoc.vim', {'type': 'opt'})
 
 " LaTeX
 call minpac#add('lervag/vimtex', {'type': 'opt'})
@@ -192,6 +193,7 @@ augroup PackOptLoad
         autocmd FileType ledger packadd vim-ledger
         autocmd FileType cpp packadd OmniCppComplete
         autocmd FileType python packadd jedi-vim
+        autocmd FileType python packadd pydoc.vim
         autocmd FileType tex packadd vimtex
         autocmd FileType markdown packadd vim-markdown
         autocmd FileType css packadd vim-css-color
