@@ -163,6 +163,10 @@ augroup end
 " C++
 call minpac#add('vim-scripts/OmniCppComplete', {'type': 'opt'})
 
+" C#
+call minpac#add('OmniSharp/Omnisharp-vim', {'type': 'opt'})
+autocmd BufEnter,BufNew,BufRead *.qs setlocal filetype=cs
+
 " Python
 call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
 let g:jedi#usages_command = '<leader>u'
@@ -192,6 +196,7 @@ augroup PackOptLoad
         autocmd!
         autocmd FileType ledger packadd vim-ledger
         autocmd FileType cpp packadd OmniCppComplete
+        autocmd FileType cs packadd Omnisharp-vim
         autocmd FileType python packadd jedi-vim
         autocmd FileType python packadd pydoc.vim
         autocmd FileType tex packadd vimtex
