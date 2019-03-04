@@ -51,6 +51,7 @@ fi
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 eval $(ssh-agent)
+greenclip clear
 greenclip daemon &
 xbindkeys
 feh --bg-center ~/.wallpaper.png &
