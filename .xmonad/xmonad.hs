@@ -72,6 +72,7 @@ myManageHook = composeAll
     [
       className =? "qutebrowser" --> doShift "2"
     , className =? "R_x11" --> doFloat
+    , className =? "matplotlib" --> doFloat
     , className =? "Display" --> doCenterFloat
     , resource =? "weechat" --> doShift "9" <+> doF (W.greedyView "9")
     , resource =? "pass" --> doCenterFloat

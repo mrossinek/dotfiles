@@ -96,6 +96,10 @@ let g:ale_linter_aliases =      {
                                 \       'plaintext': 'text',
                                 \       'zsh': 'sh',
                                 \}
+let g:ale_fixers =      {
+                        \       'python': ['autopep8'],
+                        \
+                        \}
 call minpac#add('w0rp/ale')
 nnoremap <leader>ad :ALEDetail<cr>
 
@@ -111,6 +115,7 @@ call minpac#add('vhdirk/vim-cmake')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-rhubarb')
 call minpac#add('tpope/vim-fugitive')
+call minpac#add('shumphrey/fugitive-gitlab.vim')
 augroup git
         autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
