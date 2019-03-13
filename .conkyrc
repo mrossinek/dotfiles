@@ -210,6 +210,13 @@ ${template0 } \
 ^fg(\#FFFFFF)${template0 } \
 ^ca()^ca()\
 #
+# timew productivity
+${if_match ${exec timew get dom.active} == 1}\
+^fg(\#00aa4a)\
+${else}\
+^fg(\#ff3333)\
+${endif}\
+${template0 } ${exec ~/.conky/scripts/productivity-timer.py}\
  \
 #
 # calendar
