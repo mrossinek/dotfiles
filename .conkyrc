@@ -211,13 +211,21 @@ ${template0 } \
 ^ca()^ca()\
 #
 # timew productivity
+^ca(1,~/.conky/buttons/productivity_toggle.sh)\
 ${if_match ${exec timew get dom.active} == 1}\
-^fg(\#00aa4a)\
+${if_existing .productivity_timer}\
+^fg(\#00aa4a)${template0 } ${exec ~/.conky/scripts/productivity-timer.py} \
 ${else}\
-^fg(\#ff3333)\
+^fg(\#00aa4a)${template0 } \
 ${endif}\
-${template0 } ${exec ~/.conky/scripts/productivity-timer.py}\
- \
+${else}\
+${if_existing .productivity_timer}\
+^fg(\#ff3333)${template0 } ${exec ~/.conky/scripts/productivity-timer.py} \
+${else}\
+^fg(\#ff3333)${template0 } \
+${endif}\
+${endif}\
+^ca()\
 #
 # calendar
 ^ca(1,~/.conky/buttons/calendar.sh)^ca(3,urxvt -e ikhal)\

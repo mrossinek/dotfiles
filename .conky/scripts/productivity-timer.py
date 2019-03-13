@@ -5,7 +5,7 @@ import os
 
 DATEFORMAT = '%Y%m%dT%H%M%SZ'
 
-data = json.loads(os.popen('timew export today').read())
+data = json.loads(os.popen('timew export').read())
 last = data[-1]
 
 if 'end' in last:
