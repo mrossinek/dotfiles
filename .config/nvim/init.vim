@@ -247,8 +247,8 @@ set wildmenu
 " }}}
 
 " ABBREVIATIONS {{{
-cabbrev h vert h
-cabbrev Man vert Man
+cabbrev h vert help
+cabbrev M vert Man
 
 " }}}
 

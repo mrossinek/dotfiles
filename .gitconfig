@@ -23,6 +23,7 @@
         c = commit
         ch = checkout
         d = diff
+        dc = diff --cached
         i = init
         l = log
         ls = ls-tree -r master
