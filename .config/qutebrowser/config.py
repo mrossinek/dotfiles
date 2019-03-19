@@ -32,11 +32,31 @@ config.bind('<Alt+p>', 'spawn --userscript qute-pass')
 config.bind('A', 'spawn buku -a {url}')
 config.bind('M', 'hint links spawn mpv {hint-url}')
 config.bind('m', 'spawn mpv {url}')
+config.bind('t', 'set-cmd-text -s :open -t')
 config.bind('xt', 'set tabs.show never')
 config.bind('xT', 'set tabs.show always')
 
 # search engines
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'ap': 'https://www.archlinux.org/packages/?q={}', 'archwiki': 'https://wiki.archlinux.org/?search={}', 'arxiv': 'https://arxiv.org/search/?query={}', 'aur': 'https://aur.archlinux.org/packages/?K={}', 'aw': 'https://wiki.archlinux.org/?search={}', 'cpp': 'https://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search={}&button=', 'd': 'https://www.dict.cc/?s={}', 'dict': 'https://www.dict.cc/?s={}', 'g': 'https://www.github.com/search?&q={}', 'github': 'https://www.github.com/search?&q={}', 'package': 'https://www.archlinux.org/packages/?q={}', 'w': 'https://en.wikipedia.org/w/index.php?search={}&title=Special:Search', 'wikipedia': 'https://en.wikipedia.org/w/index.php?search={}&title=Special:Search', 'x': 'https://hayoo.fh-wedel.de/?query={}', 'xmonad': 'https://hayoo.fh-wedel.de/?query={}', 'y': 'https://www.youtube.com/results?search_query={}', 'youtube': 'https://www.youtube.com/results?search_query={}'}
+c.url.searchengines = {
+        'DEFAULT': 'https://duckduckgo.com/?q={}',
+        'ap': 'https://www.archlinux.org/packages/?q={}',
+        'archwiki': 'https://wiki.archlinux.org/?search={}',
+        'arxiv': 'https://arxiv.org/search/?query={}',
+        'aur': 'https://aur.archlinux.org/packages/?K={}',
+        'aw': 'https://wiki.archlinux.org/?search={}',
+        'cpp': 'https://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search={}&button=',
+        'd': 'https://www.dict.cc/?s={}',
+        'dict': 'https://www.dict.cc/?s={}',
+        'g': 'https://www.github.com/search?&q={}',
+        'github': 'https://www.github.com/search?&q={}',
+        'p': 'https://docs.python.org/3/search.html?q={}',
+        'package': 'https://www.archlinux.org/packages/?q={}',
+        'python': 'https://docs.python.org/3/search.html?q={}',
+        'w': 'https://en.wikipedia.org/w/index.php?search={}&title=Special:Search',
+        'wikipedia': 'https://en.wikipedia.org/w/index.php?search={}&title=Special:Search',
+        'y': 'https://www.youtube.com/results?search_query={}',
+        'youtube': 'https://www.youtube.com/results?search_query={}'
+        }
 
 # enable JavaScript
 config.set('content.javascript.enabled', True, 'file://*')
