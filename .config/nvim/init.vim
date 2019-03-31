@@ -195,6 +195,10 @@ let g:vimwiki_list = [{'path': '~/Files/Notes/', 'index': 'Index',
 " call minpac#add('tbabej/taskwiki', {'type': 'opt'})
 " ^ is added locally from source
 let g:taskwiki_maplocalleader = ',t'
+let g:taskwiki_extra_warriors = {'B': {
+                        \ 'data_location': '~/.bugs/data',
+                        \ 'taskrc_location': '~/.config/bugwarrior/taskrc'
+                        \ }}
 
 " OPT Loading
 augroup PackOptLoad

@@ -29,6 +29,7 @@ c.bindings.key_mappings = {'<Alt+Down>': 'J', '<Alt+Up>': 'K'}
 config.bind(';A', 'hint links spawn buku -a {hint-url}')
 config.bind('<Alt+o>', 'spawn buku_run')
 config.bind('<Alt+p>', 'spawn --userscript qute-pass')
+config.bind('<Alt+Tab>', 'tab-focus last')
 config.bind('A', 'spawn buku -a {url}')
 config.bind('M', 'hint links spawn mpv {hint-url}')
 config.bind('m', 'spawn mpv {url}')
@@ -49,6 +50,8 @@ c.url.searchengines = {
         'dict': 'https://www.dict.cc/?s={}',
         'g': 'https://www.github.com/search?&q={}',
         'github': 'https://www.github.com/search?&q={}',
+        'i': 'https://www.imdb.com/find?q={}',
+        'imdb': 'https://www.imdb.com/find?q={}',
         'p': 'https://docs.python.org/3/search.html?q={}',
         'package': 'https://www.archlinux.org/packages/?q={}',
         'python': 'https://docs.python.org/3/search.html?q={}',

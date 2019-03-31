@@ -54,7 +54,7 @@ eval $(ssh-agent)
 greenclip clear
 greenclip daemon &
 xbindkeys
-feh --bg-center ~/.wallpaper.png &
+xsetroot -solid "#2e2e2d"
 xss-lock -- physlock -m -d &
 urxvt -e tmux &
 qutebrowser &
