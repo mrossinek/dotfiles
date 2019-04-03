@@ -56,6 +56,9 @@ let g:goyo_width = '90%'
 let g:goyo_height = '90%'
 nnoremap gy :Goyo<cr>
 
+" linediff
+call minpac#add('AndrewRadev/linediff.vim')
+
 " smart search highlighting
 call minpac#add('romainl/vim-cool')
 
