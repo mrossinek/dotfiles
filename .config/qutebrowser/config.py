@@ -26,6 +26,10 @@ c.tabs.select_on_remove = 'last-used'
 c.colors.tabs.bar.bg = '#2E2E2D'
 c.colors.tabs.even.fg = 'black'
 
+# aliases / custom command chains
+c.aliases['close'] = "close ;; set tabs.show always"
+c.aliases['split'] = "tab-clone -w ;; set tabs.show never"
+
 # key mappings
 c.bindings.key_mappings = {'<Alt+Down>': 'J', '<Alt+Up>': 'K'}
 
