@@ -32,10 +32,10 @@
 "~/cron_sync.sh"
         XF86Tools
 
-"~/actuate_cron.sh"
+ "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
         XF86Launch1
 
- "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
+"~/keyboard_hotplug.sh"
         XF86Launch2
 
 "~/toggle_screen.sh"
