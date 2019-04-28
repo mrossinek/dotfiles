@@ -148,6 +148,8 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ' ln'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#fugitiveline#enabled = 1
 
 " ANSI color support
 call minpac#add('powerman/vim-plugin-AnsiEsc')
@@ -231,6 +233,7 @@ set nowrap
 set number
 set relativenumber
 set scrolloff=2
+set shiftwidth=4
 set showmatch
 set sidescrolloff=5
 set signcolumn=yes

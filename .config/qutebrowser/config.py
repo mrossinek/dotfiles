@@ -56,6 +56,7 @@ c.url.searchengines = {
         'cpp': 'https://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search={}&button=',
         'd': 'https://www.dict.cc/?s={}',
         'dict': 'https://www.dict.cc/?s={}',
+        'doi': 'https://doi.org/{}',
         'g': 'https://www.github.com/search?&q={}',
         'github': 'https://www.github.com/search?&q={}',
         'i': 'https://www.imdb.com/find?q={}',
