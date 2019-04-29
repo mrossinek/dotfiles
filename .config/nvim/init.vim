@@ -146,6 +146,7 @@ let g:airline_symbols_ascii = 1
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
 endif
+let g:airline_symbols.dirty = '+'
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ' ln'
 let g:airline#extensions#branch#enabled = 1
@@ -181,6 +182,8 @@ autocmd BufEnter,BufNew,BufRead *.qs setlocal filetype=cs
 call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
 let g:jedi#usages_command = '<leader>u'
 call minpac#add('fs111/pydoc.vim', {'type': 'opt'})
+call minpac#add('tmhedberg/SimpylFold', {'type': 'opt'})
+let g:SimpylFold_docstring_preview = 1
 
 " LaTeX
 call minpac#add('lervag/vimtex', {'type': 'opt'})
@@ -213,6 +216,7 @@ augroup PackOptLoad
         autocmd FileType cs packadd Omnisharp-vim
         autocmd FileType python packadd jedi-vim
         autocmd FileType python packadd pydoc.vim
+        autocmd FileType python packadd SimpylFold
         autocmd FileType tex packadd vimtex
         autocmd FileType markdown packadd vim-markdown
         autocmd FileType css packadd vim-css-color
