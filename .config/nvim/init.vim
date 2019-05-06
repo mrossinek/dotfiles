@@ -119,6 +119,7 @@ call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-rhubarb')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('shumphrey/fugitive-gitlab.vim')
+call minpac#add('junegunn/gv.vim')
 augroup git
         autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
