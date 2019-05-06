@@ -6,4 +6,5 @@ let OmniCpp_ShowPrototypeInAbbr = 1
 let OmniCpp_NamespaceSearch = 1
 let OmniCpp_DefaultNamespace = ["std"]
 
-set shiftwidth=4
+setlocal shiftwidth=4
+setlocal commentstring=//%s

@@ -81,7 +81,7 @@ let g:ale_linters =     {
                         \       'cuda': ['nvcc'],
                         \       'haskell': ['ghc'],
                         \       'help': [],
-                        \       'java': ['javac'],
+                        \       'java': ['javac', 'checkstyle'],
                         \       'markdown': ['prettier'],
                         \       'python': ['flake8'],
                         \       'sh': ['shellcheck'],
