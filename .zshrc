@@ -26,6 +26,25 @@ ttyctl -f
 # syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# customize prompt
+autoload -U colors && colors
+# GIT
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr '!'
+zstyle ':vcs_info:*' stagedstr '+'
+zstyle ':vcs_info:git*' formats "%{${fg[magenta]}%}[%{${fg[green]}%}%b%{${fg[yellow]}%}%m%u%c%{${fg[magenta]}%}]%{$reset_color%} "
+# VENV
+source /usr/share/zsh/scripts/virtualenv-auto-activate.sh
+source /usr/bin/virtualenvwrapper.sh
+function virtual_env_prompt () {
+    REPLY=${VIRTUAL_ENV+(${VIRTUAL_ENV:t}) }
+}
+grml_theme_add_token virtual-env -f virtual_env_prompt "%F${fg[cyan]}" '%f'
+# PROMPT
+zstyle ':prompt:grml:left:setup' items rc change-root user at host path virtual-env vcs newline percent
+zstyle ':prompt:grml:right:setup' items time sad-smiley
+
 # enable gpg signing
 export GPG_TTY=$(tty)
 
