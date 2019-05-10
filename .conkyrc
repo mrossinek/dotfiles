@@ -169,7 +169,9 @@ ${if_existing .sync_lock}^fg(\#FFFF00)\
 ${else}${if_existing .cron_lock}^fg(\#555555)\
 ${else}^fg(\xFFFFFF)\
 ${endif}${endif}\
+^ca(1,~/cron_sync.sh)^ca(3,~/actuate_cron.sh)\
 ${template0 }\
+^ca()^ca()\
 #
   \
 # mail
