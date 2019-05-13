@@ -46,6 +46,9 @@ call minpac#add('bronson/vim-trailing-whitespace')
 " indent object
 call minpac#add('michaeljsmith/vim-indent-object')
 
+" peekaboo: register preview
+call minpac#add('junegunn/vim-peekaboo')
+
 " undotree
 call minpac#add('mbbill/undotree')
 nnoremap <leader>ut :UndotreeToggle<cr>
