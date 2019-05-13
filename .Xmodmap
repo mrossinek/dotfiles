@@ -3,4 +3,4 @@ keycode 34 = bracketleft braceleft udiaeresis Udiaeresis
 keycode 47 = semicolon colon odiaeresis Odiaeresis
 keycode 48 = apostrophe quotedbl adiaeresis Adiaeresis
 clear lock
-keycode 66 = Escape Caps_Lock NoSymbol NoSymbol
+keycode 66 = Escape NoSymbol Caps_Lock NoSymbol
