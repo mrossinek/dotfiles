@@ -11,7 +11,6 @@ set help
 set tilde
 set nomark_old
 set sort = threads
-set sort_browser = reverse-date
 set mail_check = 300
 set implicit_autoview = yes
 set mailcap_path = "~/.config/neomutt/mailcap"
