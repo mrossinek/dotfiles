@@ -212,6 +212,9 @@ let g:taskwiki_extra_warriors = {'B': {
                         \ 'taskrc_location': '~/.config/bugwarrior/taskrc'
                         \ }}
 
+" Zeal
+call minpac#add('KabbAmine/zeavim.vim')
+
 " OPT Loading
 augroup PackOptLoad
         autocmd!
