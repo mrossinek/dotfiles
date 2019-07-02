@@ -55,5 +55,6 @@ alias vimdiff='nvim -d'
 alias -s tex=nvim
 alias -s org=w3m
 alias -s com=w3m
+alias fd='fd -I'  # since the .gitignore in ~ ignores all files
 
 source ~/.zsh_private_aliases
