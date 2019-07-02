@@ -74,6 +74,18 @@
         m:0x0 + c:173
         XF86AudioPrev
 
+"rofi-mpc"
+        Mod4 + a
+
+"rofi -modi calc -show calc -no-show-match -no-sort"
+        Mod4 + c
+
+"rofi -modi file-browser -show file-browser"
+        Mod4 + f
+
+"rofi -modi json-dict -show json-dict -json-dict-path ${HOME}/.local/share/dicts/json -json-dict-mode 2"
+        Mod4 + d
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
