@@ -239,7 +239,7 @@ set complete+=kspell
 set completeopt-=preview
 set cursorline
 set hidden
-set ignorecase
+set smartcase
 set nowrap
 set number
 set relativenumber
