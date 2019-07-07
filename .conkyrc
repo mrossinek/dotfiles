@@ -158,7 +158,7 @@ ${template0 } ${lua format %3s ${memperc}%} \
 #
  \
 # disk usage
-^ca(1,urxvt -e ranger)\
+^ca(1,urxvt -e vifm)\
 ^fg(\#FFFFFF)${template0 } ${fs_free /} \
 ^fg(\#FFFFFF)${template0 } ${fs_free /home/} \
 ^ca()\
