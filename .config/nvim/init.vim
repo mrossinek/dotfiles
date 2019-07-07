@@ -18,6 +18,9 @@ command! PackClean call minpac#clean()
 
 " START {{{
 
+" vifm
+call minpac#add('vifm/vifm.vim')
+
 " local vimrc
 call minpac#add('embear/vim-localvimrc')
 let g:localvimrc_sandbox = 0
