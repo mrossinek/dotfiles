@@ -20,6 +20,7 @@ command! PackClean call minpac#clean()
 
 " vifm
 call minpac#add('vifm/vifm.vim')
+let g:vifm_replace_netrw = 1
 
 " local vimrc
 call minpac#add('embear/vim-localvimrc')
@@ -452,10 +453,10 @@ tnoremap <A-R> <C-\><C-n>0pi
 " }}}
 
 " NETRW {{{
-let g:netrw_altv=1
-let g:netrw_banner=0
-let g:netrw_browse_split=4
-let g:netrw_liststyle=3
+" let g:netrw_altv=1
+" let g:netrw_banner=0
+" let g:netrw_browse_split=4
+" let g:netrw_liststyle=3
 
 " }}}
 
