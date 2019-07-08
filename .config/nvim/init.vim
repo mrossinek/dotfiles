@@ -121,6 +121,11 @@ nnoremap <leader>ct :TagbarToggle<cr>
 " CMake integration
 call minpac#add('vhdirk/vim-cmake')
 
+" vim-verdict
+" call minpac#add('https://gitlab.com/mrossinek/vim-verdict')
+" ^ is added locally from source
+packadd vim-verdict
+
 " Git integration
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-rhubarb')
@@ -134,7 +139,7 @@ augroup END
 " TMUX
 call minpac#add('christoomey/vim-tmux-navigator')
 let g:tmux_navigator_no_mappings = 1
-" call minpac#add('mrossinek/vim-tmux-controller')
+" call minpac#add('https://gitlab.com/mrossinek/vim-tmux-controller')
 " ^ is added locally from source
 packadd vim-tmux-controller
 nnoremap <S-CR> :VtcSendLines<cr>
