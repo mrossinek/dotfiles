@@ -66,8 +66,8 @@ c.url.searchengines = {
         'p': 'https://docs.python.org/3/search.html?q={}',
         'package': 'https://www.archlinux.org/packages/?q={}',
         'python': 'https://docs.python.org/3/search.html?q={}',
-        'w': 'https://en.wiki2.org/w/index.php?search={}&title=Special:Search',
-        'wiki2': 'https://en.wiki2.org/w/index.php?search={}&title=Special:Search',
+        'w': 'https://en.wikipedia.org/w/index.php?search={}&title=Special:Search',
+        'wikipedia': 'https://en.wikipedia.org/w/index.php?search={}&title=Special:Search',
         'y': 'https://www.youtube.com/results?search_query={}',
         'youtube': 'https://www.youtube.com/results?search_query={}'
         }
