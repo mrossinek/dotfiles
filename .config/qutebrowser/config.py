@@ -44,6 +44,7 @@ config.bind('m', 'spawn mpv {url}')
 config.bind('t', 'set-cmd-text -s :open -t')
 config.bind('xt', 'set tabs.show never')
 config.bind('xT', 'set tabs.show always')
+config.bind('<Tab>', 'nop')
 
 # search engines
 c.url.searchengines = {
