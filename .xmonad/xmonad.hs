@@ -72,7 +72,6 @@ myManageHook = composeAll
     , className =? "R_x11" --> doFloat
     , className =? "matplotlib" --> doFloat
     , className =? "Display" --> doCenterFloat
-    , resource =? "weechat" --> doShift "9" <+> doF (W.greedyView "9")
     , resource =? "pass" --> doCenterFloat
     , resource =? "float" --> doCenterFloat
     , manageDocks
