@@ -177,6 +177,7 @@ call minpac#add('ledger/vim-ledger', {'type': 'opt'})
 let g:ledger_bin = 'hledger'
 let g:ledger_commodity_sep = ' '
 let g:ledger_default_commodity = 'CHF'
+let g:ledger_extra_options = '--pedantic --explicit --check-payees'
 augroup Ledger
         autocmd FileType ledger inoremap <silent> <Tab> <C-r>=ledger#autocomplete_and_align()<CR>
         autocmd FileType ledger vnoremap <silent> <Tab> :LedgerAlign<CR>
