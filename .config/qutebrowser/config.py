@@ -60,6 +60,8 @@ c.url.searchengines = {
         'doi': 'https://doi.org/{}',
         'g': 'https://www.github.com/search?&q={}',
         'github': 'https://www.github.com/search?&q={}',
+        'h': 'https://hoogle.haskell.org/?hoogle={}',
+        'hoogle': 'https://hoogle.haskell.org/?hoogle={}',
         'i': 'https://www.imdb.com/find?q={}',
         'imdb': 'https://www.imdb.com/find?q={}',
         'm': 'https://music.youtube.com/search?q={}',
