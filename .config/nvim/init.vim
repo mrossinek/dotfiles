@@ -143,6 +143,8 @@ let g:tmux_navigator_no_mappings = 1
 " ^ is added locally from source
 packadd vim-tmux-controller
 nnoremap <S-CR> :VtcSendLines<cr>
+" call minpac#add('https://gitlab.com/mrossinek/displayp.vim')
+" ^ is added locally from source
 
 " DESIGN
 " colorscheme
