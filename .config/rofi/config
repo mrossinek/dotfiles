@@ -1,4 +1,4 @@
 rofi.combi-modi: window,ssh,run,drun
 rofi.modi: combi
-rofi.font: inconsolata 14
+rofi.font: InconsolataLGC Nerd Font Mono 12
 rofi.theme: /usr/share/rofi/themes/glue_pro_blue.rasi
