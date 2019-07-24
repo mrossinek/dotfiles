@@ -349,6 +349,15 @@ function! ToggleBackground()
         endif
         let &background=l:invbg
         call airline#switch_theme(l:invbg)
+        if exists('$TMUX')
+            execute('!printf "\033[?5t\007" > `tmux lsc -F "\#{client_tty}"`')
+        elseif has('nvim')
+            execute('!printf "\033[?5t\007" > /dev/`ps o "tty" p ' . nvim_get_proc(getpid())['ppid'] . ' | tail -1`')
+        else
+            " untested
+            execute('!printf "\033[?5t\007" > `tty`')
+        endif
+        redraw!
 endfunction
 
 " }}}
