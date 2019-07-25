@@ -26,6 +26,7 @@ ${template0 } ${lua format %.20s ${mpd_artist}}: ${lua format %.20s ${mpd_tit
 ${endif}${endif}\
 #
 # volume
+^ca(1,~/.conky/buttons/volume.sh)^ca(3,pactl set-sink-mute @DEFAULT_SINK@ toggle)\
 ${if_match "${exec pactl list sinks | grep Mute | sed 's/Mute: //' | sed 's/[^a-z]//'}" == "yes"}\
 ^fg(\#FF0000) ${template0 }\
 ${else}${if_match ${template1} == 0}\
@@ -37,7 +38,6 @@ ${else}${if_match ${template1} >= 50}\
 ${else}${if_match ${template1} <= 50}\
 ^fg(\#00FF00)${template0 }\
 ${endif}${endif}${endif}${endif}${endif}\
-^ca(1,~/.conky/buttons/volume.sh)^ca(3,pactl set-sink-mute @DEFAULT_SINK@ toggle)\
  ${template1}% \
 ^ca()^ca()\
 #
@@ -122,8 +122,8 @@ ${else}\
 ${endif}${endif}${endif}\
  ${lua format %4s ${acpitemp}°C} \
 ^bg()\
-#
 ^ca()\
+#
 ^ca(1,~/.conky/buttons/cpu.sh)\
 # cpu usage
 ${if_match ${cpu} >= 100}\
@@ -137,8 +137,8 @@ ${else}\
 ${endif}${endif}${endif}\
 ${template0 } ${lua format %3s ${cpu}%} \
 ^bg()\
-#
 ^ca()\
+#
 ^ca(1,~/.conky/buttons/ram.sh)\
 # ram usage
 ${if_match ${memperc} >= 100}\
@@ -152,9 +152,7 @@ ${else}\
 ${endif}${endif}${endif}\
 ${template0 } ${lua format %3s ${memperc}%} \
 ^bg()\
-#
-^ca()\
-^ca()\
+^ca()^ca()\
 #
  \
 # disk usage
@@ -175,13 +173,12 @@ ${template0 }\
 #
   \
 # mail
+^ca(1,mutt)^ca(3,getmail -n; offlineimap; ~/.conky/scripts/mail-counter.sh)\
 ${if_match ${exec cat ~/.mailcount} > 0}\
 ^fg(\#00FF00)${template0 }\
 ${else}\
 ^fg(\#FFFFFF)${template0 }\
 ${endif}\
-^ca(1,mutt)\
-^ca(3,getmail -n; offlineimap; ~/.conky/scripts/mail-counter.sh)\
  ${exec cat ~/.mailcount} \
 ^ca()^ca()\
 #
