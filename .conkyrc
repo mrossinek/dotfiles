@@ -5,6 +5,8 @@ conky.config={
         update_interval=2,
         total_run_times=0,
         use_spacer=none,
+        mpd_host="127.0.0.1",
+        mpd_port=6600,
         lua_load='~/.conky/scripts/lua-functions.lua',
         template0=[[^fn(Font Awesome 5 Free:style=Solid:size=11)\1^fn()]],
         template9=[[^fn(Font Awesome 5 Brands:style=Solid:size=13)\1^fn()]],
@@ -14,21 +16,24 @@ conky.config={
 
 conky.text = [[
 # mpd
-${if_running mpd}${if_mpd_playing}\
+${if_running mpd}\
+${lua format %.0s ${mpd_status}}\
+${lua format %.0s ${mpd_status}}\
+${if_mpd_playing}\
 ${if_match "${mpd_status}" == "Playing"}\
 ^fg(\#FFFFFF)\
 ${else}${if_match "${mpd_status}" == "Paused"}\
 ^fg(\#FFFF00)\
 ${endif}${endif}\
 ^ca(1,~/.conky/buttons/music.sh)^ca(3,mpc toggle)\
-${template0 } ${lua format %.20s ${mpd_artist}}: ${lua format %.20s ${mpd_title}} \
+${template0 } ${lua format %.30s ${mpd_artist}~${mpd_title}} \
 ^ca()^ca()\
 ${endif}${endif}\
 #
 # volume
 ^ca(1,~/.conky/buttons/volume.sh)^ca(3,pactl set-sink-mute @DEFAULT_SINK@ toggle)\
 ${if_match "${exec pactl list sinks | grep Mute | sed 's/Mute: //' | sed 's/[^a-z]//'}" == "yes"}\
-^fg(\#FF0000) ${template0 }\
+^fg(\#FF0000)${template0 }\
 ${else}${if_match ${template1} == 0}\
 ^fg(\#FF0000)${template0 }\
 ${else}${if_match ${template1} >= 100}\
