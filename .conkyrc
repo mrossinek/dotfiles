@@ -173,7 +173,8 @@ ${template0 }\
 #
   \
 # mail
-^ca(1,mutt)^ca(3,getmail -n; offlineimap; ~/.conky/scripts/mail-counter.sh)\
+^ca(1,urxvt -e "mutt"; ~/.conky/scripts/mail-counter.sh)\
+^ca(3,getmail -n; offlineimap; ~/.conky/scripts/mail-counter.sh)\
 ${if_match ${exec cat ~/.mailcount} > 0}\
 ^fg(\#00FF00)${template0 }\
 ${else}\
