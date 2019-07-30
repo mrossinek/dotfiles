@@ -71,6 +71,8 @@ c.url.searchengines = {
         'python': 'https://docs.python.org/3/search.html?q={}',
         'w': 'https://en.wikipedia.org/w/index.php?search={}&title=Special:Search',
         'wikipedia': 'https://en.wikipedia.org/w/index.php?search={}&title=Special:Search',
+        'x': 'https://xkcd.com/{}/',
+        'xkcd': 'https://xkcd.com/{}/',
         'y': 'https://www.youtube.com/results?search_query={}',
         'youtube': 'https://www.youtube.com/results?search_query={}'
         }
