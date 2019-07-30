@@ -5,4 +5,7 @@ taskd.key=~/.task/user.key.pem
 taskd.ca=~/.task/ca.cert.pem
 include ~/.task/private_credentials # holds server address and login creds
 
+# disable alternating line background coloring
+color.alternate=
+
 include ~/.task_local
