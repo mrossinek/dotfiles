@@ -22,6 +22,9 @@ command! PackClean call minpac#clean()
 call minpac#add('vifm/vifm.vim')
 let g:vifm_replace_netrw = 1
 
+" startify
+call minpac#add('mhinz/vim-startify')
+
 " local vimrc
 call minpac#add('embear/vim-localvimrc')
 let g:localvimrc_sandbox = 0
