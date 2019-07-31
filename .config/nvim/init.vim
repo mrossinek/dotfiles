@@ -220,8 +220,7 @@ let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_list = [{'path': '~/Files/Notes/', 'index': 'Index',
                         \ 'ext': '.md'}]
-" call minpac#add('tbabej/taskwiki', {'type': 'opt'})
-" ^ is added locally from source
+call minpac#add('tbabej/taskwiki', {'type': 'opt'})
 let g:taskwiki_maplocalleader = ',t'
 let g:taskwiki_extra_warriors = {'B': {
                         \ 'data_location': '~/.bugs/data',
