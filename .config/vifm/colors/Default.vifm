@@ -46,7 +46,7 @@
 
 highlight clear
 
-highlight Win cterm=none ctermfg=white ctermbg=black
+highlight Win cterm=none ctermfg=default ctermbg=default
 highlight Directory cterm=bold ctermfg=cyan ctermbg=default
 highlight Link cterm=bold ctermfg=yellow ctermbg=default
 highlight BrokenLink cterm=bold ctermfg=red ctermbg=default
@@ -55,17 +55,17 @@ highlight Device cterm=bold ctermfg=red ctermbg=default
 highlight Fifo cterm=bold ctermfg=cyan ctermbg=default
 highlight Executable cterm=bold ctermfg=green ctermbg=default
 highlight Selected cterm=bold ctermfg=magenta ctermbg=default
-highlight CurrLine cterm=bold,reverse ctermfg=default ctermbg=default
+highlight CurrLine cterm=bold,reverse ctermfg=default ctermbg=black
 highlight TopLine cterm=none ctermfg=black ctermbg=yellow
 highlight TopLineSel cterm=none ctermfg=black ctermbg=yellow
 highlight StatusLine cterm=none ctermfg=black ctermbg=yellow
-highlight WildMenu cterm=underline,reverse ctermfg=white ctermbg=black
-highlight CmdLine cterm=none ctermfg=white ctermbg=black
-highlight ErrorMsg cterm=none ctermfg=red ctermbg=black
-highlight Border cterm=none ctermfg=black ctermbg=black
+highlight WildMenu cterm=underline,reverse ctermfg=default ctermbg=default
+highlight CmdLine cterm=none ctermfg=default ctermbg=default
+highlight ErrorMsg cterm=none ctermfg=red ctermbg=default
+highlight Border cterm=none ctermfg=default ctermbg=default
 highlight JobLine cterm=bold,reverse ctermfg=black ctermbg=yellow
 highlight SuggestBox cterm=bold ctermfg=default ctermbg=default
-highlight CmpMismatch cterm=bold ctermfg=white ctermbg=red
+highlight CmpMismatch cterm=bold ctermfg=default ctermbg=red
 highlight AuxWin cterm=bold,underline,reverse,standout,italic ctermfg=default ctermbg=default
 highlight TabLine cterm=none ctermfg=black ctermbg=yellow
 highlight TabLineSel cterm=bold,reverse ctermfg=black ctermbg=yellow

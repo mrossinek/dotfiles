@@ -7,10 +7,7 @@ max-items 100
 browser qutebrowser
 
 # color theme
-color background color7 color0
-color listnormal color7 color0
 color listfocus color7 color6
-color listnormal_unread color1 color0
+color listnormal_unread color1 default bold
 color listfocus_unread color7 color6 bold
 color info color0 color3
-color article color7 color0
