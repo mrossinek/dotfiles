@@ -142,7 +142,6 @@ augroup git
 augroup END
 
 " TMUX
-call minpac#add('tmux-plugins/vim-tmux-focus-events')
 call minpac#add('christoomey/vim-tmux-navigator')
 let g:tmux_navigator_no_mappings = 1
 " call minpac#add('https://gitlab.com/mrossinek/vim-tmux-controller')
@@ -153,22 +152,63 @@ nnoremap <S-CR> :VtcSendLines<cr>
 " ^ is added locally from source
 
 " DESIGN
+let s:THEME=$THEME
 " colorscheme
 call minpac#add('NLKNguyen/papercolor-theme')
-set background=dark
+let &background=s:THEME
 let g:PaperColor_Theme_Options = {
             \   'theme': {
             \     'default': {
             \       'transparent_background': 1,
             \     },
+            \     'default.dark': {
+            \       'override' : {
+            \       'color00' : ['#303030', '236'],
+            \       'cursor_fg' : ['#303030', '236'],
+            \       'cursorlinenr_bg' : ['#303030', '236'],
+            \       'linenumber_bg' : ['#303030', '236'],
+            \       'vertsplit_bg' : ['#303030', '236'],
+            \       'statusline_active_fg' : ['#303030', '236'],
+            \       'todo_bg' : ['#303030', '236'],
+            \       'wildmenu_fg': ['#303030', '236'],
+            \       'cursorline' : ['#444444', '238'],
+            \       'cursorcolumn' : ['#444444', '238'],
+            \       'popupmenu_bg' : ['#444444', '238'],
+            \       }
+            \     }
             \   }
             \ }
 colorscheme PaperColor
 
 " airline
 call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
-let g:airline_theme='dark'
+let g:airline_theme=s:THEME
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+    if g:airline_theme ==? 'dark'
+        for colors in values(a:palette.normal)
+            " replace all colors using 234 with 236
+            if colors[3] == 234
+                let colors[1] = '#303030'
+                let colors[3] = 236
+            endif
+        endfor
+        for colors in values(a:palette.commandline)
+            " replace all colors using 234 with 236
+            if colors[3] == 234
+                let colors[1] = '#303030'
+                let colors[3] = 236
+            endif
+        endfor
+        for colors in values(a:palette.inactive)
+            " shift inactive colors by one in order to avoid clash with 236
+            if !exists('s:shifted_inactive')
+                let colors[3] = colors[3] - 1
+            endif
+        endfor
+        let s:shifted_inactive = 1
+    endif
+endfunction
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_symbols_ascii = 1
 if !exists('g:airline_symbols')
@@ -353,24 +393,25 @@ function! ExecuteMacroOverVisualRange()
 endfunction
 
 function! ToggleBackground()
-        if &background ==# 'dark'
-                let l:invbg='light'
-        else
-                let l:invbg='dark'
-        endif
-        let &background=l:invbg
-        call airline#switch_theme(l:invbg)
-        if exists('$TMUX')
-            execute('!printf "\033[?5t\007" > `tmux lsc -F "\#{client_tty}"`')
-        elseif has('nvim')
-            execute('!printf "\033[?5t\007" > /dev/`ps o "tty" p ' . nvim_get_proc(getpid())['ppid'] . ' | tail -1`')
-        else
-            " untested
-            execute('!printf "\033[?5t\007" > `tty`')
-        endif
-        redraw!
+    execute('silent! !source ~/.background_toggle')
+    call ThemeChecker()
 endfunction
 
+function! ThemeChecker()
+    if exists('$TMUX')
+        let s:THEME = substitute(split(execute('!tmux showenv THEME'), '=')[1], '\n', '', '')
+    else
+        let s:THEME=$THEME
+    endif
+    let &background=s:THEME
+    execute('AirlineTheme ' . s:THEME)
+endfunction
+nnoremap <leader>b :call ThemeChecker()<cr>
+
+augroup colortheme
+    autocmd ColorScheme * hi clear SignColumn
+    autocmd VimEnter * nnoremap yob :call ToggleBackground()<cr>
+augroup end
 " }}}
 
 " COMMANDS {{{
@@ -391,8 +432,6 @@ nnoremap <leader>sl :setlocal spelllang=
 
 nnoremap <leader>sc :call ToggleScrollingMode()<cr>
 nnoremap <leader>scb :setlocal scb!<cr>
-
-au VimEnter * nnoremap yob :call ToggleBackground()<cr>
 
 " simpler splitting
 nnoremap <A--> :new<cr>

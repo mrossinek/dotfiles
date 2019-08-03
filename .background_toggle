@@ -1,0 +1,12 @@
+#!/usr/bin/sh
+
+if [[ -n $TMUX ]]; then
+    printf "\033[?5t\007" > `tmux display -p "#{client_tty}"`
+    if [ `tmux showenv THEME` = "THEME=dark" ]; then
+        tmux setenv THEME 'light'
+        tmux source ~/.tmux_status_light.conf
+    else
+        tmux setenv THEME 'dark'
+        tmux source ~/.tmux_status_dark.conf
+    fi
+fi

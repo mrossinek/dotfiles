@@ -57,4 +57,9 @@ alias -s org=w3m
 alias -s com=w3m
 alias fd='fd -I'  # since the .gitignore in ~ ignores all files
 
+# color theme
+export THEME='dark'
+# this variable is used to sync the color themes of urxvt, tmux, vim and other
+# terminal based applications
+
 source ~/.zsh_private_aliases
