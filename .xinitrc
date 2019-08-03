@@ -54,7 +54,7 @@ eval $(ssh-agent)
 greenclip clear
 greenclip daemon &
 xbindkeys
-xsetroot -solid "#2e2e2d"
+xsetroot -solid "#303030"
 xss-lock -- physlock -m -d &
 urxvt -e tmux &
 qutebrowser &
