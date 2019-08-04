@@ -152,7 +152,11 @@ nnoremap <S-CR> :VtcSendLines<cr>
 " ^ is added locally from source
 
 " DESIGN
-let s:THEME=$THEME
+if $USER ==# 'root'
+    let s:THEME='dark'
+else
+    let s:THEME=$THEME
+endif
 " colorscheme
 call minpac#add('NLKNguyen/papercolor-theme')
 let &background=s:THEME
