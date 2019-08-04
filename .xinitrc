@@ -56,6 +56,6 @@ greenclip daemon &
 xbindkeys
 xsetroot -solid "#303030"
 xss-lock -- physlock -m -d &
-urxvt -e tmux &
+urxvt -e zsh -ic 'tmux' &
 qutebrowser &
 exec xmonad
