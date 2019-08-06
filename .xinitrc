@@ -53,6 +53,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 eval $(ssh-agent)
 greenclip clear
 greenclip daemon &
+dunst &
+mpDris2 &
 xbindkeys
 xsetroot -solid "#303030"
 xss-lock -- physlock -m -d &

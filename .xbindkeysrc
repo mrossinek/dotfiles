@@ -50,27 +50,27 @@
 "~/xrandr_duplicate.sh"
         Shift + XF86Display
 
-"mpc play"
+"playerctl play"
         m:0x0 + c:208
         XF86AudioPlay
 
-"mpc pause"
+"playerctl pause"
         m:0x0 + c:209
         XF86AudioPause
 
-"mpc toggle"
+"playerctl play-pause"
         m:0x0 + c:172
         XF86AudioPlay
 
-"mpc stop"
+"playerctl stop"
         m:0x0 + c:174
         XF86AudioStop
 
-"mpc next"
+"playerctl next"
         m:0x0 + c:171
         XF86AudioNext
 
-"mpc prev"
+"playerctl previous"
         m:0x0 + c:173
         XF86AudioPrev
 
