@@ -11,6 +11,6 @@ typeset -i next=$(cat ~/.newscount)
 new=$(( $next - $prev ))
 
 if [ $next -gt $prev ]; then
-        notify-send -u low "News" "$new new news"
+        notify-send -i emblem-documents -u low "News" "$new new news"
 fi
 

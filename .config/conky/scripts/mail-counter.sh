@@ -18,6 +18,6 @@ typeset -i next=$(cat ~/.mailcount)
 new=$(( $next - $prev ))
 
 if [ $next -gt $prev ]; then
-        notify-send -u low "Mail" "$new new mails"
+        notify-send -i emblem-mail -u low "Mail" "$new new mails"
 fi
 
