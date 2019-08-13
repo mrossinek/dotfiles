@@ -67,6 +67,8 @@ call minpac#add('junegunn/goyo.vim')
 let g:goyo_width = '90%'
 let g:goyo_height = '90%'
 nnoremap gy :Goyo<cr>
+call minpac#add('chrisbra/NrrwRgn')
+let g:nrrw_rgn_pad = 10
 
 " linediff
 call minpac#add('AndrewRadev/linediff.vim')
