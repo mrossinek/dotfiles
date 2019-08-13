@@ -3,6 +3,7 @@
 
 [core]
 	editor = nvim
+        pager = diff-so-fancy | less -FXRi
 
 [diff]
 	tool = nvim -d
@@ -16,6 +17,12 @@
 
 [mergetool "vimdiff"]
         cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[color]
+	ui = true
+
+[color "diff"]
+	meta = yellow
 
 [alias]
         a = add
