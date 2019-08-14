@@ -55,8 +55,10 @@ call minpac#add('michaeljsmith/vim-indent-object')
 
 " peekaboo: register preview
 call minpac#add('junegunn/vim-peekaboo')
+let g:peekaboo_delay = 500
 " markbar: mark preview
 call minpac#add('Yilin-Yang/vim-markbar')
+let g:markbar_explicitly_remap_mark_mappings = v:true
 
 " undotree
 call minpac#add('mbbill/undotree')
