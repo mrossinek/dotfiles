@@ -55,6 +55,7 @@ greenclip clear
 greenclip daemon &
 dunst &
 mpDris2 &
+libinput-gestures-setup start
 xbindkeys
 xsetroot -solid "#303030"
 xss-lock -- physlock -m -d &

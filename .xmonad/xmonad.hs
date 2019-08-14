@@ -7,6 +7,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
+import XMonad.Actions.FloatKeys
 import XMonad.Actions.CycleWS
 import XMonad.Actions.UpdatePointer
 import XMonad.Util.Run(spawnPipe)
@@ -43,8 +44,12 @@ main = do
         , ((myModMask, xK_w), screenWorkspace 0 >>= flip whenJust (windows . W.view) >> updatePointer (0.95, 0.05) (0, 0))
         , ((myModMask, xK_e), screenWorkspace 1 >>= flip whenJust (windows . W.view) >> updatePointer (0.95, 0.05) (0, 0))
         , ((myModMask, xK_r), screenWorkspace 2 >>= flip whenJust (windows . W.view) >> updatePointer (0.95, 0.05) (0, 0))
+        , ((myModMask, xK_Left), moveTo Prev NonEmptyWS)
+        , ((myModMask, xK_Right), moveTo Next NonEmptyWS)
+        , ((myModMask .|. shiftMask, xK_Left), shiftToPrev >> prevWS)
+        , ((myModMask .|. shiftMask, xK_Right), shiftToNext >> nextWS)
+        , ((myModMask, xK_Down), withFocused (keysResizeWindow (-500, -500) (0.5, 0.5)))
         ]
-
 
 myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full) ||| Full
     where
