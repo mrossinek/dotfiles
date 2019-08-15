@@ -42,6 +42,6 @@ weeknumbers = left
 [default]
 default_command = calendar
 default_calendar = Personal
-timedelta = 2d
+timedelta = 7d
 print_new = event
 highlight_event_days = True
