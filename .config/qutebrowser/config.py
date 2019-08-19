@@ -1,3 +1,4 @@
+from os.path import expanduser
 # pylint: disable=C0111
 c = c  # noqa: F821 pylint: disable=E0602,C0103
 config = config  # noqa: F821 pylint: disable=E0602,C0103
@@ -68,7 +69,8 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
 # web.whatsapp "hack"
-c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.128 Safari/537.36'
+with open(expanduser('~/.config/qutebrowser/user_agent.txt'), 'r') as user_agent:
+    c.content.headers.user_agent = user_agent.read().replace('\n', '')
 
 # fonts
 c.fonts.monospace = '"InconsolataLGC", "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
