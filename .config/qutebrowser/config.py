@@ -50,31 +50,16 @@ config.bind('<Tab>', 'nop')
 c.url.searchengines = {
         'DEFAULT': 'https://duckduckgo.com/?q={}',
         'ap': 'https://www.archlinux.org/packages/?q={}',
-        'archwiki': 'https://wiki.archlinux.org/?search={}',
-        'arxiv': 'https://arxiv.org/search/?query={}',
         'aur': 'https://aur.archlinux.org/packages/?K={}',
         'aw': 'https://wiki.archlinux.org/?search={}',
-        'cpp': 'https://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search={}&button=',
+        'c': 'https://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search={}&button=',
         'd': 'https://www.dict.cc/?s={}',
-        'dict': 'https://www.dict.cc/?s={}',
-        'doi': 'https://doi.org/{}',
         'g': 'https://www.github.com/search?&q={}',
-        'github': 'https://www.github.com/search?&q={}',
         'h': 'https://hoogle.haskell.org/?hoogle={}',
-        'hoogle': 'https://hoogle.haskell.org/?hoogle={}',
-        'i': 'https://www.imdb.com/find?q={}',
-        'imdb': 'https://www.imdb.com/find?q={}',
-        'm': 'https://music.youtube.com/search?q={}',
-        'music': 'https://music.youtube.com/search?q={}',
         'p': 'https://docs.python.org/3/search.html?q={}',
-        'package': 'https://www.archlinux.org/packages/?q={}',
-        'python': 'https://docs.python.org/3/search.html?q={}',
         'w': 'https://en.wikipedia.org/w/index.php?search={}&title=Special:Search',
-        'wikipedia': 'https://en.wikipedia.org/w/index.php?search={}&title=Special:Search',
         'x': 'https://xkcd.com/{}/',
-        'xkcd': 'https://xkcd.com/{}/',
         'y': 'https://www.youtube.com/results?search_query={}',
-        'youtube': 'https://www.youtube.com/results?search_query={}'
         }
 
 # enable JavaScript
