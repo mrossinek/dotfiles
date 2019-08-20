@@ -49,6 +49,11 @@ zstyle ':vcs_info:*' unstagedstr '!'
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:git*' formats "%{${fg[magenta]}%}[%{${fg[green]}%}%b%{${fg[yellow]}%}%m%u%c%{${fg[magenta]}%}]%{$reset_color%} "
 
+source /usr/bin/virtualenvwrapper.sh
+function virtual_env_prompt () {
+    REPLY=${VIRTUAL_ENV+(${VIRTUAL_ENV:t}) }
+}
+grml_theme_add_token virtual-env -f virtual_env_prompt "%F${fg[cyan]}" '%f'
 # PROMPT
 zstyle ':prompt:grml:left:setup' items rc change-root user at host path virtual-env vcs newline percent
 zstyle ':prompt:grml:right:setup' items time sad-smiley
@@ -81,3 +86,5 @@ export THEME='dark'
 
 source ~/.zsh_private_aliases
 
+# direnv
+eval "$(direnv hook zsh)"
