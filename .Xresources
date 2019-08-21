@@ -7,49 +7,7 @@ Xft.hintstyle: hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-URxvt*font: xft:InconsolataLGC Nerd Font Mono:size=12
 dzen2.font: InconsolataLGC Nerd Font Mono:size=12
-
-! urxvt settings
-URxvt*perl-ext-common: font-size,matcher,-option-popup,-readline,-searchable-scrollback,-selection-popup
-URxvt*saveLines: 10000
-
-! font size adjusting
-URxvt*font-size.step:  2
-URxvt*keysym.C-Up:     font-size:increase
-URxvt*keysym.C-Down:   font-size:decrease
-URxvt*keysym.C-equal:  font-size:reset
-
-! URL handling
-URxvt*keysym.C-M-u: matcher:select
-URxvt*url-launcher: qutebrowser
-
-! Disable printing the terminal contents when pressing PrintScreen.
-URxvt*print-pipe: "cat > /dev/null"
-
-! Disable ISO 14755(_52) modes
-URxvt*iso14755: false
-URxvt*iso14755_52: false
-
-! scrolling
-! remove ugly urxvt scrollbar
-URxvt*scrollBar: false
-! do not scroll with output
-URxvt*scrollTtyOutput: false
-! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer: true
-! scroll back to the bottom on keypress
-URxvt*scrollTtyKeypress: true
-! scrollback buffer in secondary screen
-URxvt*secondaryScreen: 1
-URxvt*secondaryScroll: 0
-
-! tmux friendly escape sequence
-URxvt*keysym.Shift-Up:   \033[1;2A
-URxvt*keysym.Shift-Down: \033[1;2B
-! additional function keys
-URxvt*keysym.S-Return: \033[1;2P
-URxvt*keysym.C-Return: \033[1;2Q
 
 ! PaperColor Theme
 *.foreground: #f2f2f2

@@ -81,7 +81,7 @@ command -v pygmentize > /dev/null && alias cat=pygmentize_cat
 
 # color theme
 export THEME='dark'
-# this variable is used to sync the color themes of urxvt, tmux, vim and other
+# this variable is used to sync the color themes of tmux, vim and other
 # terminal based applications
 
 source ~/.zsh_private_aliases

@@ -1,11 +1,14 @@
 #!/usr/bin/sh
 
 if [[ -n $TMUX ]]; then
-    printf "\033[?5t\007" > `tmux display -p "#{client_tty}"`
+    # remove colors setting from alacritty config
+    sed -i '$ d' ~/.config/alacritty/alacritty.yml
     if [ `tmux showenv THEME` = "THEME=dark" ]; then
+        echo 'colors: *light' >> ~/.config/alacritty/alacritty.yml
         tmux setenv THEME 'light'
         tmux source ~/.tmux_status_light.conf
     else
+        echo 'colors: *dark' >> ~/.config/alacritty/alacritty.yml
         tmux setenv THEME 'dark'
         tmux source ~/.tmux_status_dark.conf
     fi
