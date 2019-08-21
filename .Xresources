@@ -1,4 +1,4 @@
-*termName: rxvt-256color
+*termName: xterm-256color
 
 ! font setup
 Xft.autohint: 0
