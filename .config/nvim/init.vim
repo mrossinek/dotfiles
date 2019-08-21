@@ -146,6 +146,7 @@ augroup git
 augroup END
 
 " TMUX
+call minpac#add('tmux-plugins/vim-tmux-focus-events')
 call minpac#add('christoomey/vim-tmux-navigator')
 let g:tmux_navigator_no_mappings = 1
 " call minpac#add('https://gitlab.com/mrossinek/vim-tmux-controller')
