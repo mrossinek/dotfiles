@@ -233,6 +233,9 @@ let g:airline#extensions#fugitiveline#enabled = 1
 " ANSI color support
 call minpac#add('powerman/vim-plugin-AnsiEsc')
 
+" Colorizer
+call minpac#add('chrisbra/Colorizer')
+
 " }}}
 
 " OPT {{{
@@ -270,9 +273,6 @@ call minpac#add('lervag/vimtex', {'type': 'opt'})
 " Markdown
 call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
 
-" CSS
-call minpac#add('ap/vim-css-color', {'type': 'opt'})
-
 " Wiki
 call minpac#add('vimwiki/vimwiki', {'type': 'opt'})
 let g:vimwiki_hl_headers = 1
@@ -300,7 +300,6 @@ augroup PackOptLoad
         autocmd FileType python packadd SimpylFold
         autocmd FileType tex packadd vimtex
         autocmd FileType markdown packadd vim-markdown
-        autocmd FileType css packadd vim-css-color
 augroup end
 
 " }}}
