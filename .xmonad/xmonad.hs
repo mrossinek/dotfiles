@@ -39,7 +39,7 @@ main = do
         `additionalKeys`
         [
           ((myModMask, xK_p), spawn "rofi -show combi")
-        , ((myModMask, xK_semicolon), spawn "alacritty -name float")
+        , ((myModMask, xK_semicolon), spawn "alacritty --title 'float'")
         , ((myModMask, xK_o), toggleWS)
         , ((myModMask, xK_w), screenWorkspace 0 >>= flip whenJust (windows . W.view) >> updatePointer (0.95, 0.05) (0, 0))
         , ((myModMask, xK_e), screenWorkspace 1 >>= flip whenJust (windows . W.view) >> updatePointer (0.95, 0.05) (0, 0))
@@ -77,7 +77,7 @@ myManageHook = composeAll
     , className =? "R_x11" --> doFloat
     , className =? "matplotlib" --> doFloat
     , className =? "Display" --> doCenterFloat
-    , resource =? "pass" --> doCenterFloat
-    , resource =? "float" --> doCenterFloat
+    , title =? "pass" --> doCenterFloat
+    , title =? "float" --> doCenterFloat
     , manageDocks
     ]
