@@ -266,10 +266,10 @@ let g:ledger_commodity_sep = ' '
 let g:ledger_default_commodity = 'CHF'
 let g:ledger_extra_options = '--pedantic --explicit --check-payees'
 augroup Ledger
-        autocmd FileType ledger inoremap <silent> <Tab> <C-r>=ledger#autocomplete_and_align()<CR>
-        autocmd FileType ledger vnoremap <silent> <Tab> :LedgerAlign<CR>
-        autocmd FileType ledger nnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
-        autocmd FileType ledger vnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
+        autocmd User MyLedger inoremap <silent> <Tab> <C-r>=ledger#autocomplete_and_align()<CR>
+        autocmd User MyLedger vnoremap <silent> <Tab> :LedgerAlign<CR>
+        autocmd User MyLedger nnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
+        autocmd User MyLedger vnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
 augroup end
 
 " C++
@@ -324,6 +324,7 @@ call minpac#add('KabbAmine/zeavim.vim')
 augroup PackOptLoad
         autocmd!
         autocmd FileType ledger packadd vim-ledger
+        autocmd FileType ledger doautocmd User MyLedger
         autocmd FileType cpp packadd OmniCppComplete
         autocmd FileType cs packadd Omnisharp-vim
         autocmd FileType python packadd jedi-vim
