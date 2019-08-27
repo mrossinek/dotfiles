@@ -305,6 +305,18 @@ let g:taskwiki_extra_warriors = {'B': {
                         \ 'taskrc_location': '~/.config/bugwarrior/taskrc'
                         \ }}
 
+" grammer checker: languagetool
+call minpac#add('rhysd/vim-grammarous')
+let g:grammarous#languagetool_cmd = 'languagetool'
+augroup Grammarous
+    autocmd User MyGrammarous nmap <leader>gg :GrammarousCheck<CR>
+    autocmd User MyGrammarous nmap <leader>gf <Plug>(grammarous-fixit)
+    autocmd User MyGrammarous nmap <leader>gr <Plug>(grammarous-remove-error)
+    autocmd User MyGrammarous nmap <leader>gd <Plug>(grammarous-disable-rule)
+    autocmd User MyGrammarous nmap <leader>gn <Plug>(grammarous-move-to-next-error)
+    autocmd User MyGrammarous nmap <leader>gp <Plug>(grammarous-move-to-previous-error)
+augroup end
+
 " Zeal
 call minpac#add('KabbAmine/zeavim.vim')
 
@@ -319,6 +331,8 @@ augroup PackOptLoad
         autocmd FileType python packadd SimpylFold
         autocmd FileType tex packadd vimtex
         autocmd FileType markdown packadd vim-markdown
+        autocmd FileType text packadd vim-grammarous
+        autocmd FileType text doautocmd User MyGrammarous
 augroup end
 
 " }}}
