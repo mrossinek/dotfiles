@@ -55,6 +55,7 @@ eval $(ssh-agent)
 greenclip clear
 greenclip daemon &
 dunst &
+stalonetray &
 mpDris2 &
 libinput-gestures-setup start
 xbindkeys
