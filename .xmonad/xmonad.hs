@@ -20,7 +20,7 @@ myModMask               = mod4Mask
 myNormalBorderColor     = "#969694"
 myFocusedBorderColor    = "#77b2f6"
 
-myXmonadBar = "dzen2 -x 120 -y 0 -w 500 -ta l -dock -e 'button3:'"
+myXmonadBar = "dzen2 -x 72 -y 0 -w 500 -ta l -dock -e 'button3:'"
 myStatusBar = "conky | dzen2 -x 500 -y 0 -ta r -dock -e 'button3:'"
 
 main = do
