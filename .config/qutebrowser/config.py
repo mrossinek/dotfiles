@@ -68,12 +68,16 @@ config.set('content.javascript.enabled', True, 'file://*')
 config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
-# web.whatsapp "hack"
+# set user agent
 with open(expanduser('~/.config/qutebrowser/user_agent.txt'), 'r') as user_agent:
     c.content.headers.user_agent = user_agent.read().replace('\n', '')
 
+# patterns
+with config.pattern('*://web.whatsapp.com/') as p:
+    p.content.notifications = True
+
 # fonts
-c.fonts.monospace = '"InconsolataLGC", "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.monospace = '"InconsolataLGC Nerd Font Mono", monospace'
 c.fonts.completion.entry = '12pt monospace'
 c.fonts.completion.category = 'bold 12pt monospace'
 c.fonts.debug_console = '12pt monospace'
