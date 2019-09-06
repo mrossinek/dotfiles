@@ -171,7 +171,7 @@ let g:tmux_navigator_no_mappings = 1
 " call minpac#add('https://gitlab.com/mrossinek/vim-tmux-controller')
 " ^ is added locally from source
 packadd vim-tmux-controller
-nnoremap <S-CR> :VtcSendLines<cr>
+nnoremap <S-CR> :VtcSendLines<cr><CR>
 " call minpac#add('https://gitlab.com/mrossinek/displayp.vim')
 " ^ is added locally from source
 call minpac#add('wellle/tmux-complete.vim')
