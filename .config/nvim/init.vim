@@ -147,6 +147,8 @@ let g:ale_fixers =      {
                         \}
 call minpac#add('w0rp/ale')
 nnoremap <leader>ad :ALEDetail<cr>
+let g:deoplete#enable_at_startup = 1
+call minpac#add('Shougo/deoplete.nvim')
 
 " tagbar
 call minpac#add('majutsushi/tagbar')
@@ -280,15 +282,13 @@ augroup Ledger
 augroup end
 
 " C++
-call minpac#add('vim-scripts/OmniCppComplete', {'type': 'opt'})
+call minpac#add('deoplete-plugins/deoplete-clang', {'type': 'opt'})
 
-" C#
-call minpac#add('OmniSharp/Omnisharp-vim', {'type': 'opt'})
-autocmd BufEnter,BufNew,BufRead *.qs setlocal filetype=cs
+" Haskell
+call minpac#add('eagletmt/neco-ghc', {'type': 'opt'})
 
 " Python
-call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
-let g:jedi#usages_command = '<leader>u'
+call minpac#add('deoplete-plugins/deoplete-jedi', {'type': 'opt'})
 call minpac#add('fs111/pydoc.vim', {'type': 'opt'})
 call minpac#add('tmhedberg/SimpylFold', {'type': 'opt'})
 let g:SimpylFold_docstring_preview = 1
@@ -298,6 +298,9 @@ call minpac#add('lervag/vimtex', {'type': 'opt'})
 
 " Markdown
 call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
+
+" Vim
+call minpac#add('Shougo/neco-vim', {'type': 'opt'})
 
 " Wiki
 call minpac#add('vimwiki/vimwiki', {'type': 'opt'})
@@ -332,15 +335,18 @@ augroup PackOptLoad
         autocmd!
         autocmd FileType ledger packadd vim-ledger
         autocmd FileType ledger doautocmd User MyLedger
-        autocmd FileType cpp packadd OmniCppComplete
+        autocmd FileType c packadd deoplete-clang
+        autocmd FileType cpp packadd deoplete-clang
         autocmd FileType cs packadd Omnisharp-vim
-        autocmd FileType python packadd jedi-vim
+        autocmd FileType haskell packadd neco-ghc
+        autocmd FileType python packadd deoplete-jedi
         autocmd FileType python packadd pydoc.vim
         autocmd FileType python packadd SimpylFold
         autocmd FileType tex packadd vimtex
         autocmd FileType markdown packadd vim-markdown
         autocmd FileType text packadd vim-grammarous
         autocmd FileType text doautocmd User MyGrammarous
+        autocmd FileType vim packadd neco-vim
 augroup end
 
 " }}}
