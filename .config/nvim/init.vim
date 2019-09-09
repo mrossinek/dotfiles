@@ -14,6 +14,13 @@ command! PackClean call minpac#clean()
 
 " }}}
 
+" PYTHON {{{
+" Python support is installed into a virtualenv to allow seemless usage across
+" system and other virtualenvs
+let g:python_host_prog = '/home/max/Installations/pynvim2/.direnv/python-2.7.16/bin/python'
+let g:python3_host_prog = '/home/max/Installations/pynvim3/.direnv/python-3.7.4/bin/python'
+" }}}
+
 " PLUGINS {{{
 
 " START {{{
@@ -259,7 +266,7 @@ call minpac#add('chrisbra/Colorizer')
 
 " OPT {{{
 
-" ledge
+" ledger
 call minpac#add('ledger/vim-ledger', {'type': 'opt'})
 let g:ledger_bin = 'hledger'
 let g:ledger_commodity_sep = ' '
