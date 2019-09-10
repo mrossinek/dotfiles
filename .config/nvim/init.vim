@@ -288,6 +288,9 @@ call minpac#add('deoplete-plugins/deoplete-clang', {'type': 'opt'})
 call minpac#add('eagletmt/neco-ghc', {'type': 'opt'})
 
 " Python
+call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
+let g:jedi#usages_command = '<leader>u'
+let g:jedi#completions_enabled = 0
 call minpac#add('deoplete-plugins/deoplete-jedi', {'type': 'opt'})
 call minpac#add('fs111/pydoc.vim', {'type': 'opt'})
 call minpac#add('tmhedberg/SimpylFold', {'type': 'opt'})
@@ -340,6 +343,7 @@ augroup PackOptLoad
         autocmd FileType cs packadd Omnisharp-vim
         autocmd FileType haskell packadd neco-ghc
         autocmd FileType python packadd deoplete-jedi
+        autocmd FileType python packadd jedi-vim | call jedi#configure_call_signatures()
         autocmd FileType python packadd pydoc.vim
         autocmd FileType python packadd SimpylFold
         autocmd FileType tex packadd vimtex
