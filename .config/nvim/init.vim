@@ -115,6 +115,8 @@ nnoremap <leader>qf :call asyncrun#quickfix_toggle(8)<cr>
 
 " completion
 call minpac#add('ervandew/supertab')
+let g:SuperTabMappingForward = '<s-tab>'
+let g:SuperTabMappingBackward = '<tab>'
 let g:ale_completion_enabled = 1
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_linters_explicit = 1
