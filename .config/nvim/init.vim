@@ -25,10 +25,6 @@ let g:python3_host_prog = '/home/max/Installations/pynvim3/.direnv/python-3.7.4/
 
 " START {{{
 
-" vifm
-call minpac#add('vifm/vifm.vim')
-let g:vifm_replace_netrw = 1
-
 " startify
 call minpac#add('mhinz/vim-startify')
 
@@ -583,10 +579,10 @@ tnoremap <A-R> <C-\><C-n>0pi
 " }}}
 
 " NETRW {{{
-" let g:netrw_altv=1
-" let g:netrw_banner=0
-" let g:netrw_browse_split=4
-" let g:netrw_liststyle=3
+let g:netrw_altv=1
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_liststyle=3
 
 " }}}
 
