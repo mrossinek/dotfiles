@@ -26,7 +26,7 @@
 "maim -ui $(xdotool getactivewindow) ~/Pictures/Screenshots/screenshot_$(date +%s).png"
         Mod4 + Print
 
-"xset dpms force off"
+"physlock -ms"
         Mod4 + 0
 
 "~/easy_trackpoint.sh"

@@ -59,7 +59,6 @@ mpDris2 &
 libinput-gestures-setup start
 xbindkeys
 xsetroot -solid "#303030"
-xss-lock -- physlock -m -d &
 alacritty -e zsh -ic 'tmux' &
 qutebrowser &
 stalonetray &
