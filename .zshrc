@@ -20,7 +20,7 @@ zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
 
 # syntax highlighting
-zplugin ice wait"0" atinit"zpcompinit; zpcdreplay"
+zplugin ice wait"0" atinit"zpcompinit; zpcdreplay" atload"unset 'FAST_HIGHLIGHT[chroma-whatis]' 'FAST_HIGHLIGHT[chroma-man]'"
 zplugin light zdharma/fast-syntax-highlighting
 
 # key bindings
