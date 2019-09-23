@@ -6,6 +6,16 @@ max-items 100
 
 browser qutebrowser
 
+# rebind keys
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+bind-key j next
+bind-key k prev
+bind-key J next-feed
+bind-key K prev-feed
+
 # color theme
 color listfocus color7 color6
 color listnormal_unread color1 default bold
