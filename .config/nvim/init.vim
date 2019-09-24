@@ -361,6 +361,7 @@ set cursorline
 set hidden
 set ignorecase
 set smartcase
+set mouse=a
 set nowrap
 set number
 set relativenumber
