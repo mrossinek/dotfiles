@@ -510,6 +510,10 @@ nnoremap <C-v> v
 vnoremap v <C-v>
 vnoremap <C-v> v
 
+" swap tag jumping
+nnoremap <C-]> g<C-]>
+nnoremap g<C-]> <C-]>
+
 " }}}
 
 " TEXT OBJECTS {{{
