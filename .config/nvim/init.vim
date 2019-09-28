@@ -116,15 +116,15 @@ let g:ale_completion_enabled = 1
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_linters_explicit = 1
 let g:ale_linters =     {
-                        \       'cpp': ['gcc'],
+                        \       'cpp': ['clangd', 'gcc'],
                         \       'cuda': ['nvcc'],
-                        \       'haskell': ['ghc'],
+                        \       'haskell': ['hie', 'ghc'],
                         \       'help': [],
-                        \       'java': ['javac', 'checkstyle'],
+                        \       'java': ['javalsp', 'checkstyle'],
                         \       'markdown': ['prettier'],
-                        \       'python': ['flake8'],
+                        \       'python': ['pyls', 'flake8'],
                         \       'sh': ['shellcheck'],
-                        \       'tex': ['chktex'],
+                        \       'tex': ['texlab', 'chktex'],
                         \       'text': [],
                         \       'vim': ['vint'],
                         \}
@@ -142,7 +142,7 @@ let g:ale_fixers =      {
                         \       'python': ['autopep8'],
                         \
                         \}
-call minpac#add('w0rp/ale')
+call minpac#add('dense-analysis/ale')
 nnoremap <leader>ad :ALEDetail<cr>
 let g:deoplete#enable_at_startup = 1
 call minpac#add('Shougo/deoplete.nvim')
@@ -278,9 +278,6 @@ augroup Ledger
         autocmd User MyLedger vnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
 augroup end
 
-" C++
-call minpac#add('deoplete-plugins/deoplete-clang', {'type': 'opt'})
-
 " Haskell
 call minpac#add('eagletmt/neco-ghc', {'type': 'opt'})
 
@@ -288,7 +285,6 @@ call minpac#add('eagletmt/neco-ghc', {'type': 'opt'})
 call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
 let g:jedi#usages_command = '<leader>u'
 let g:jedi#completions_enabled = 0
-call minpac#add('deoplete-plugins/deoplete-jedi', {'type': 'opt'})
 call minpac#add('fs111/pydoc.vim', {'type': 'opt'})
 call minpac#add('tmhedberg/SimpylFold', {'type': 'opt'})
 let g:SimpylFold_docstring_preview = 1
@@ -334,11 +330,8 @@ call minpac#add('KabbAmine/zeavim.vim')
 augroup PackOptLoad
         autocmd FileType ledger packadd vim-ledger
         autocmd FileType ledger doautocmd User MyLedger
-        autocmd FileType c packadd deoplete-clang
-        autocmd FileType cpp packadd deoplete-clang
         autocmd FileType cs packadd Omnisharp-vim
         autocmd FileType haskell packadd neco-ghc
-        autocmd FileType python packadd deoplete-jedi
         autocmd FileType python packadd jedi-vim | call jedi#configure_call_signatures()
         autocmd FileType python packadd pydoc.vim
         autocmd FileType python packadd SimpylFold
