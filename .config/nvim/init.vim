@@ -44,6 +44,10 @@ call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-abolish')
 call minpac#add('tpope/vim-vinegar')
 
+" wincent
+call minpac#add('wincent/loupe')
+let g:LoupeCenterResults = 0
+
 " exchange
 call minpac#add('tommcdo/vim-exchange')
 
@@ -96,9 +100,6 @@ let g:nrrw_rgn_pad = 10
 
 " linediff
 call minpac#add('AndrewRadev/linediff.vim')
-
-" smart search highlighting
-call minpac#add('romainl/vim-cool')
 
 " error marking
 call minpac#add('mh21/errormarker.vim')
@@ -458,6 +459,8 @@ nnoremap <leader>b :call ThemeChecker()<cr>
 
 augroup colortheme
     autocmd ColorScheme * hi clear SignColumn
+    autocmd ColorScheme * hi clear Search
+    autocmd ColorScheme * hi Search ctermfg=9 guifg=9 cterm=bold gui=bold
     autocmd VimEnter * nnoremap yob :call ToggleBackground()<cr>
 augroup end
 " }}}
@@ -473,7 +476,6 @@ map <F13> <S-CR>
 map <F14> <C-CR>
 
 nnoremap <leader>so :source %<cr>
-nnoremap <leader>n :noh<cr>
 
 nnoremap <leader>sp :call FixLastSpellingError()<cr>
 nnoremap <leader>sl :setlocal spelllang=
