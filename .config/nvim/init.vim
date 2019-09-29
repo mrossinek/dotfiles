@@ -294,6 +294,9 @@ let g:SimpylFold_docstring_preview = 1
 " LaTeX
 call minpac#add('lervag/vimtex', {'type': 'opt'})
 
+" Mail
+call minpac#add('nicoe/deoplete-khard', {'type': 'opt'})
+
 " Markdown
 call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
 
@@ -338,6 +341,7 @@ augroup PackOptLoad
         autocmd FileType python packadd pydoc.vim
         autocmd FileType python packadd SimpylFold
         autocmd FileType tex packadd vimtex
+        autocmd FileType mail packadd deoplete-khard
         autocmd FileType markdown packadd vim-markdown
         autocmd FileType text packadd vim-grammarous
         autocmd FileType text doautocmd User MyGrammarous
