@@ -47,6 +47,7 @@ call minpac#add('tpope/vim-vinegar')
 " wincent
 call minpac#add('wincent/loupe')
 let g:LoupeCenterResults = 0
+call minpac#add('wincent/vcs-jump')
 
 " exchange
 call minpac#add('tommcdo/vim-exchange')
