@@ -237,7 +237,7 @@ mouse:
 
     # These are the modifiers that need to be held down for opening URLs when
     # clicking on them.
-    modifiers: None
+    modifiers: Shift
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
