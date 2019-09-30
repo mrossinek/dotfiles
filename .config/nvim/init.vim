@@ -1,3 +1,5 @@
+" vim: fdm=marker
+
 " MINPAC {{{
 " Install minpac:
 " mkdir -p ~/.config/nvim/pack/minpac/opt/
@@ -183,6 +185,8 @@ nnoremap <S-CR> :VtcSendLines<cr><CR>
 " call minpac#add('https://gitlab.com/mrossinek/displayp.vim')
 " ^ is added locally from source
 call minpac#add('wellle/tmux-complete.vim')
+let g:tmuxcomplete#trigger = ''
+let g:tmux_complete_capture_args = '-J -S -1024'
 
 " DESIGN
 if $USER ==# 'root'
@@ -353,15 +357,15 @@ augroup end
 " }}}
 
 " BASICS {{{
-set colorcolumn=81
+set colorcolumn=+0
 set complete+=kspell
 set completeopt-=preview
 set cursorline
+set foldlevelstart=1
 set hidden
 set ignorecase
 set smartcase
 set mouse=a
-set nowrap
 set number
 set relativenumber
 set scrolloff=2
@@ -372,6 +376,7 @@ set signcolumn=yes
 set spelllang=en_us
 set undofile
 set updatetime=100
+set nowrap
 
 " indentation
 set expandtab
@@ -465,8 +470,6 @@ nnoremap <leader>b :call ThemeChecker()<cr>
 augroup colortheme
     autocmd ColorScheme * hi clear SignColumn
     autocmd ColorScheme * hi Comment cterm=italic gui=italic
-    autocmd ColorScheme * hi clear Search
-    autocmd ColorScheme * hi Search ctermfg=9 guifg=9 cterm=bold gui=bold
     autocmd VimEnter * nnoremap yob :call ToggleBackground()<cr>
 augroup end
 " }}}
