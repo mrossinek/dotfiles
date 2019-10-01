@@ -74,7 +74,7 @@ alias fd='fd -I'  # since the .gitignore in ~ ignores all files
 # source: https://felixcrux.com/blog/syntax-highlighting-cat
 function pygmentize_cat {
   for arg in "$@"; do
-    pygmentize -O style=colorful -g "${arg}" 2> /dev/null || /bin/cat "${arg}"
+    pygmentize -O style=default -g "${arg}" 2> /dev/null || /bin/cat "${arg}"
   done
 }
 command -v pygmentize > /dev/null && alias cat=pygmentize_cat
