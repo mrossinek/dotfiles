@@ -19,8 +19,8 @@ command! PackClean call minpac#clean()
 " PYTHON {{{
 " Python support is installed into a virtualenv to allow seemless usage across
 " system and other virtualenvs
-let g:python_host_prog = '/home/max/Installations/pynvim2/.direnv/python-2.7.16/bin/python'
-let g:python3_host_prog = '/home/max/Installations/pynvim3/.direnv/python-3.7.4/bin/python'
+let g:python_host_prog = expand('~/Installations/pynvim2/.direnv/python-2.7.16/bin/python')
+let g:python3_host_prog = expand('~/Installations/pynvim3/.direnv/python-3.7.4/bin/python')
 " }}}
 
 " PLUGINS {{{
@@ -159,11 +159,6 @@ nnoremap <leader>ct :TagbarToggle<cr>
 " CMake integration
 call minpac#add('vhdirk/vim-cmake')
 
-" vim-verdict
-" call minpac#add('https://gitlab.com/mrossinek/vim-verdict')
-" ^ is added locally from source
-packadd vim-verdict
-
 " Git integration
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-rhubarb')
@@ -178,12 +173,9 @@ augroup END
 call minpac#add('tmux-plugins/vim-tmux-focus-events')
 call minpac#add('christoomey/vim-tmux-navigator')
 let g:tmux_navigator_no_mappings = 1
-" call minpac#add('https://gitlab.com/mrossinek/vim-tmux-controller')
-" ^ is added locally from source
-packadd vim-tmux-controller
+call minpac#add('https://gitlab.com/mrossinek/vim-tmux-controller')
 nnoremap <S-CR> :VtcSendLines<cr><CR>
-" call minpac#add('https://gitlab.com/mrossinek/displayp.vim')
-" ^ is added locally from source
+call minpac#add('https://gitlab.com/mrossinek/displayp.vim')
 call minpac#add('wellle/tmux-complete.vim')
 let g:tmuxcomplete#trigger = ''
 let g:tmux_complete_capture_args = '-J -S -1024'
@@ -267,6 +259,9 @@ call minpac#add('powerman/vim-plugin-AnsiEsc')
 " Colorizer
 call minpac#add('chrisbra/Colorizer')
 
+" Zeal
+call minpac#add('KabbAmine/zeavim.vim')
+
 " }}}
 
 " OPT {{{
@@ -283,9 +278,6 @@ augroup Ledger
         autocmd User MyLedger nnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
         autocmd User MyLedger vnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
 augroup end
-
-" Haskell
-call minpac#add('eagletmt/neco-ghc', {'type': 'opt'})
 
 " Python
 call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
@@ -304,9 +296,6 @@ call minpac#add('nicoe/deoplete-khard', {'type': 'opt'})
 " Markdown
 call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
 
-" Vim
-call minpac#add('Shougo/neco-vim', {'type': 'opt'})
-
 " Wiki
 call minpac#add('vimwiki/vimwiki', {'type': 'opt'})
 let g:vimwiki_hl_headers = 1
@@ -321,7 +310,7 @@ let g:taskwiki_extra_warriors = {'B': {
                         \ }}
 
 " grammer checker: languagetool
-call minpac#add('rhysd/vim-grammarous')
+call minpac#add('rhysd/vim-grammarous', {'type': 'opt'})
 let g:grammarous#languagetool_cmd = 'languagetool'
 augroup Grammarous
     autocmd User MyGrammarous nmap <leader>gg :GrammarousCheck<CR>
@@ -332,15 +321,14 @@ augroup Grammarous
     autocmd User MyGrammarous nmap <leader>gp <Plug>(grammarous-move-to-previous-error)
 augroup end
 
-" Zeal
-call minpac#add('KabbAmine/zeavim.vim')
+" vim-verdict
+call minpac#add('https://gitlab.com/mrossinek/vim-verdict', {'type': 'opt'})
 
 " OPT Loading
 augroup PackOptLoad
         autocmd FileType ledger packadd vim-ledger
         autocmd FileType ledger doautocmd User MyLedger
         autocmd FileType cs packadd Omnisharp-vim
-        autocmd FileType haskell packadd neco-ghc
         autocmd FileType python packadd jedi-vim | call jedi#configure_call_signatures()
         autocmd FileType python packadd pydoc.vim
         autocmd FileType python packadd SimpylFold
@@ -349,7 +337,6 @@ augroup PackOptLoad
         autocmd FileType markdown packadd vim-markdown
         autocmd FileType text packadd vim-grammarous
         autocmd FileType text doautocmd User MyGrammarous
-        autocmd FileType vim packadd neco-vim
 augroup end
 
 " }}}
@@ -374,6 +361,7 @@ set showmatch
 set sidescrolloff=5
 set signcolumn=yes
 set spelllang=en_us
+set textwidth=80
 set undofile
 set updatetime=100
 set nowrap
