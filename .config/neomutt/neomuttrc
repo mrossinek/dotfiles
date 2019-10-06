@@ -10,10 +10,16 @@ set folder    = ~/.mail
 set help
 set tilde
 set nomark_old
+set noconfirmappend
 set sort = threads
 set mail_check = 300
+set mail_check_stats = yes
 set implicit_autoview = yes
+set ssl_starttls = yes
+set ssl_force_tls = yes
+set smtp_authenticators = 'gssapi:login'
 set mailcap_path = "~/.config/neomutt/mailcap"
+set pager_stop = yes  # don't jump to the next message at the bottom of a message
 
 # editing
 set include
@@ -37,6 +43,7 @@ bind index,pager @ compose-to-sender
 
 # macros
 macro index 'c' "<change-folder>?<change-dir><home>^K=<enter>" "change the folder"
+macro index <f9> "<shell-escape>mbsync -a<enter>" "run mbsync to sync mail"
 
 # khard integration
 set query_command= "khard email --parsable '%s'"
@@ -54,6 +61,7 @@ set sidebar_short_path = yes
 set sidebar_delim_chars = "/"
 set sidebar_folder_indent = yes
 set sidebar_indent_string = "  "
+set sidebar_format = "%B%?N? [%N]?%* %?F?%F/?%S"
 # \C = Ctrl-Shift
 bind index,pager \CP sidebar-prev
 bind index,pager \CN sidebar-next
@@ -84,3 +92,6 @@ color tree color14 color8
 color underline brightcolor11 default
 color index color12 default ~F
 color index color9 default "~N|~O"
+
+# accounts
+source ~/.config/neomutt/accounts.neomuttrc
