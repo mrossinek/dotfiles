@@ -458,6 +458,8 @@ nnoremap <leader>b :call ThemeChecker()<cr>
 augroup colortheme
     autocmd ColorScheme * hi clear SignColumn
     autocmd ColorScheme * hi Comment cterm=italic gui=italic
+    autocmd ColorScheme * hi clear Search
+    autocmd ColorScheme * hi Search cterm=underline ctermfg=190 gui=underline guifg=190
     autocmd VimEnter * nnoremap yob :call ToggleBackground()<cr>
 augroup end
 " }}}
