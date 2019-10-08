@@ -478,9 +478,9 @@ function! ToggleList(bufname, pfx)
       return
     endif
   endfor
-  if a:pfx == 'l' && len(getloclist(0)) == 0
+  if a:pfx ==# 'l' && len(getloclist(0)) == 0
       echohl ErrorMsg
-      echo "Location List is Empty."
+      echo 'Location List is Empty.'
       return
   endif
   let winnr = winnr()
@@ -491,7 +491,11 @@ function! ToggleList(bufname, pfx)
 endfunction
 
 nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
-nmap <silent> <leader>e :call ToggleList("Quickfix List", 'c')<CR>
+nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
+
+augroup quickfix-quitting
+    autocmd WinEnter * if winnr('$') == 1 && &buftype == 'quickfix' | quit | endif
+augroup end
 " }}}
 
 " COMMANDS {{{
