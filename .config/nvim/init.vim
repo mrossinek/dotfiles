@@ -349,21 +349,32 @@ set complete+=kspell
 set completeopt-=preview
 set cursorline
 set foldlevelstart=1
+set formatoptions+=2,n
 set hidden
 set ignorecase
-set smartcase
+set inccommand=split
+set list
+set listchars=nbsp:⦸
+set listchars+=tab:▷┅
+set listchars+=extends:»
+set listchars+=precedes:«
+set listchars+=trail:•
 set mouse=a
 set number
 set relativenumber
 set scrolloff=2
 set shiftwidth=4
+let &showbreak='↪ '
 set showmatch
 set sidescrolloff=5
 set signcolumn=yes
+set smartcase
 set spelllang=en_us
+set switchbuf=usetab
 set textwidth=80
 set undofile
 set updatetime=100
+set virtualedit=block
 set nowrap
 
 " indentation
