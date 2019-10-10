@@ -27,9 +27,6 @@ let g:python3_host_prog = expand('~/Installations/pynvim3/.direnv/python-3.7.4/b
 
 " START {{{
 
-" startify
-call minpac#add('mhinz/vim-startify')
-
 " local vimrc
 call minpac#add('embear/vim-localvimrc')
 let g:localvimrc_sandbox = 0
