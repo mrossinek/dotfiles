@@ -79,6 +79,17 @@ function pygmentize_cat {
 }
 command -v pygmentize > /dev/null && alias cat=pygmentize_cat
 
+# Make CTRL-Z background things and unbackground them.
+function fg-bg() {
+  if [[ $#BUFFER -eq 0 ]]; then
+    fg
+  else
+    zle push-input
+  fi
+}
+zle -N fg-bg
+bindkey '^Z' fg-bg
+
 # color theme
 export THEME='dark'
 # this variable is used to sync the color themes of tmux, vim and other
