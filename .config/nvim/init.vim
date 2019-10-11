@@ -47,6 +47,8 @@ call minpac#add('tpope/vim-vinegar')
 call minpac#add('wincent/replay')
 call minpac#add('wincent/loupe')
 let g:LoupeCenterResults = 0
+nmap <Nop> <Plug>(LoupeN)
+nmap <Nop> <Plug>(Loupen)
 call minpac#add('wincent/vcs-jump')
 
 " exchange
