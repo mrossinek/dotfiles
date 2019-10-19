@@ -115,7 +115,7 @@ command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 " completion
 call minpac#add('ervandew/supertab')
 let g:SuperTabDefaultCompletionType = '<c-n>'
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0  " handled by deoplete
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_linters_explicit = 1
 let g:ale_linters =     {
@@ -125,7 +125,7 @@ let g:ale_linters =     {
                         \       'help': [],
                         \       'java': ['javalsp', 'checkstyle'],
                         \       'markdown': ['prettier'],
-                        \       'python': ['pyls', 'flake8'],
+                        \       'python': ['pyls', 'pylint', 'flake8'],
                         \       'sh': ['shellcheck'],
                         \       'tex': ['texlab', 'chktex'],
                         \       'text': [],
@@ -145,6 +145,7 @@ let g:ale_fixers =      {
                         \       'python': ['autopep8'],
                         \
                         \}
+let g:ale_python_pyls_executable = expand('~/Installations/pynvim3/.direnv/python-3.7.4/bin/pyls')
 call minpac#add('dense-analysis/ale')
 nnoremap <leader>ad :ALEDetail<cr>
 let g:deoplete#enable_at_startup = 1
