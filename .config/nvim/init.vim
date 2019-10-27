@@ -554,17 +554,17 @@ nnoremap <C-]> g<C-]>
 nnoremap g<C-]> <C-]>
 
 " "clever" auto pairing
-nnoremap <Plug>PairParenOpen    i()<Esc>:silent! call repeat#set("\<Plug>PairParenOpen", -1)<CR>i
-nnoremap <Plug>PairParenClose   i()<Esc>:silent! call repeat#set("\<Plug>PairParenClose", -1)<CR>a
-nnoremap <Plug>PairBraceOpen    i[]<Esc>:silent! call repeat#set("\<Plug>PairBraceOpen", -1)<CR>i
-nnoremap <Plug>PairBraceClose   i[]<Esc>:silent! call repeat#set("\<Plug>PairBraceClose", -1)<CR>a
-nnoremap <Plug>PairBracketOpen  i{}<Esc>:silent! call repeat#set("\<Plug>PairBracketOpen", -1)<CR>i
-nnoremap <Plug>PairBracketClose i{}<Esc>:silent! call repeat#set("\<Plug>PairBracketClose", -1)<CR>a
-nnoremap <Plug>PairAngleOpen    i<><Esc>:silent! call repeat#set("\<Plug>PairAngleOpen", -1)<CR>i
-nnoremap <Plug>PairAngleClose   i<><Esc>:silent! call repeat#set("\<Plug>PairAngleClose", -1)<CR>a
-nnoremap <Plug>PairQuoteSingle  i''<Esc>:silent! call repeat#set("\<Plug>PairQuoteSingle", -1)<CR>i
-nnoremap <Plug>PairQuoteDouble  i""<Esc>:silent! call repeat#set("\<Plug>PairQuoteDouble", -1)<CR>i
-nnoremap <Plug>PairBacktick     i``<Esc>:silent! call repeat#set("\<Plug>PairBacktick", -1)<CR>i
+nnoremap <Plug>PairParenOpen    a()<Esc>:silent! call repeat#set("\<Plug>PairParenOpen", -1)<CR>i
+nnoremap <Plug>PairParenClose   a()<Esc>:silent! call repeat#set("\<Plug>PairParenClose", -1)<CR>a
+nnoremap <Plug>PairBraceOpen    a[]<Esc>:silent! call repeat#set("\<Plug>PairBraceOpen", -1)<CR>i
+nnoremap <Plug>PairBraceClose   a[]<Esc>:silent! call repeat#set("\<Plug>PairBraceClose", -1)<CR>a
+nnoremap <Plug>PairBracketOpen  a{}<Esc>:silent! call repeat#set("\<Plug>PairBracketOpen", -1)<CR>i
+nnoremap <Plug>PairBracketClose a{}<Esc>:silent! call repeat#set("\<Plug>PairBracketClose", -1)<CR>a
+nnoremap <Plug>PairAngleOpen    a<><Esc>:silent! call repeat#set("\<Plug>PairAngleOpen", -1)<CR>i
+nnoremap <Plug>PairAngleClose   a<><Esc>:silent! call repeat#set("\<Plug>PairAngleClose", -1)<CR>a
+nnoremap <Plug>PairQuoteSingle  a''<Esc>:silent! call repeat#set("\<Plug>PairQuoteSingle", -1)<CR>i
+nnoremap <Plug>PairQuoteDouble  a""<Esc>:silent! call repeat#set("\<Plug>PairQuoteDouble", -1)<CR>i
+nnoremap <Plug>PairBacktick     a``<Esc>:silent! call repeat#set("\<Plug>PairBacktick", -1)<CR>i
 
 imap ( <C-o><Plug>PairParenOpen
 imap ) <C-o><Plug>PairParenClose
