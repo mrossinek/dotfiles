@@ -553,19 +553,6 @@ vnoremap <C-v> v
 nnoremap <C-]> g<C-]>
 nnoremap g<C-]> <C-]>
 
-" "clever" auto pairing
-imap ( <C-s>(
-imap ) <C-s>)
-imap [ <C-s>[
-imap ] <C-s>]
-imap { <C-s>{
-imap } <C-s>}
-imap < <C-s><
-imap > <C-s>>
-imap ' <C-s>'
-imap " <C-s>"
-imap ` <C-s>`
-
 " }}}
 
 " TEXT OBJECTS {{{
