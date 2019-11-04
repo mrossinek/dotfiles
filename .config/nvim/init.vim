@@ -47,8 +47,8 @@ call minpac#add('tpope/vim-vinegar')
 call minpac#add('wincent/replay')
 call minpac#add('wincent/loupe')
 let g:LoupeCenterResults = 0
-nmap <Nop>N <Plug>(LoupeN)
-nmap <Nop>n <Plug>(Loupen)
+nnoremap <Nop>N <Plug>(LoupeN)
+nnoremap <Nop>n <Plug>(Loupen)
 call minpac#add('wincent/vcs-jump')
 
 " exchange
@@ -317,12 +317,12 @@ call minpac#add('rhysd/vim-grammarous', {'type': 'opt'})
 let g:grammarous#languagetool_cmd = 'languagetool'
 augroup Grammarous
     autocmd!
-    autocmd User MyGrammarous nmap <leader>gg :GrammarousCheck<CR>
-    autocmd User MyGrammarous nmap <leader>gf <Plug>(grammarous-fixit)
-    autocmd User MyGrammarous nmap <leader>gr <Plug>(grammarous-remove-error)
-    autocmd User MyGrammarous nmap <leader>gd <Plug>(grammarous-disable-rule)
-    autocmd User MyGrammarous nmap <leader>gn <Plug>(grammarous-move-to-next-error)
-    autocmd User MyGrammarous nmap <leader>gp <Plug>(grammarous-move-to-previous-error)
+    autocmd User MyGrammarous nnoremap <leader>gg :GrammarousCheck<CR>
+    autocmd User MyGrammarous nnoremap <leader>gf <Plug>(grammarous-fixit)
+    autocmd User MyGrammarous nnoremap <leader>gr <Plug>(grammarous-remove-error)
+    autocmd User MyGrammarous nnoremap <leader>gd <Plug>(grammarous-disable-rule)
+    autocmd User MyGrammarous nnoremap <leader>gn <Plug>(grammarous-move-to-next-error)
+    autocmd User MyGrammarous nnoremap <leader>gp <Plug>(grammarous-move-to-previous-error)
 augroup end
 
 " vim-verdict
@@ -507,8 +507,8 @@ function! ToggleList(bufname, pfx)
   endif
 endfunction
 
-nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
-nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
+nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
+nnoremap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
 
 augroup quickfix-quitting
     autocmd!
@@ -523,8 +523,8 @@ command! MakeTags !ctags -R .
 
 " MAPPINGS {{{
 " additional function keys
-map <F13> <S-CR>
-map <F14> <C-CR>
+noremap <F13> <S-CR>
+noremap <F14> <C-CR>
 
 nnoremap <leader>so :source %<cr>
 
@@ -566,23 +566,23 @@ nnoremap g<C-]> <C-]>
 
 " ALL object (Note: inner does not make sense here)
 vnoremap aa :<C-U>silent! normal! ggVG<CR>
-omap aa :normal Vaa<CR>
+onoremap aa :normal Vaa<CR>
 
 " Line object
 vnoremap al :<C-U>silent! normal! 0v$h<CR>
-omap al :normal Val<CR>
+onoremap al :normal Val<CR>
 vnoremap il :<C-U>silent! normal! ^v$h<CR>
-omap il :normal Vil<CR>
+onoremap il :normal Vil<CR>
 vnoremap aL :<C-U>silent! normal! 0v$<CR>
-omap aL :normal VaL<CR>
+onoremap aL :normal VaL<CR>
 vnoremap iL :<C-U>silent! normal! ^v$<CR>
-omap iL :normal ViL<CR>
+onoremap iL :normal ViL<CR>
 
 " | object
 vnoremap a\| :<C-U>silent! normal! F\|vf\|<CR>
-omap a\| :normal va\|<CR>
+onoremap a\| :normal va\|<CR>
 vnoremap i\| :<C-U>silent! normal! T\|vt\|<CR>
-omap i\| :normal vi\|<CR>
+onoremap i\| :normal vi\|<CR>
 
 " }}}
 
