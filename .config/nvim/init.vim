@@ -471,10 +471,10 @@ nnoremap <leader>b :call ThemeChecker()<cr>
 
 augroup colortheme
     autocmd!
-    autocmd ColorScheme * hi clear SignColumn
-    autocmd ColorScheme * hi Comment cterm=italic gui=italic
-    autocmd ColorScheme * hi clear Search
-    autocmd ColorScheme * hi Search cterm=underline ctermfg=190 gui=underline guifg=190
+    autocmd ColorScheme * highlight clear SignColumn
+    autocmd ColorScheme * highlight Comment cterm=italic gui=italic
+    autocmd ColorScheme * highlight clear Search
+    autocmd ColorScheme * highlight Search cterm=underline ctermfg=190 gui=underline guifg=190
     autocmd VimEnter * nnoremap yob :call ToggleBackground()<cr>
 augroup end
 
@@ -586,8 +586,9 @@ onoremap i\| :normal vi\|<CR>
 
 " SESSIONS {{{
 " file editing
-augroup files
-        au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup FileEditing
+    autocmd!
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 augroup END
 
 " configure mkview
@@ -602,8 +603,11 @@ augroup END
 
 " TERMINAL {{{
 " set coloring for terminal cursor
-au TermOpen * hi! link TermCursor Cursor
-au TermOpen * hi! TermCursorNC ctermfg=15 ctermbg=6 cterm=NONE
+augroup TermHighlight
+    autocmd!
+    autocmd TermOpen * highlight! link TermCursor Cursor
+    autocmd TermOpen * highlight! TermCursorNC ctermfg=15 ctermbg=6 cterm=NONE
+augroup END
 " Esc key
 tnoremap <Esc> <C-\><C-n>
 tnoremap <A-e> <Esc>
