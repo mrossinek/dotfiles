@@ -93,6 +93,7 @@ function! s:goyo_leave()
   set scrolloff=5
 endfunction
 augroup Goyo
+    autocmd!
     autocmd! User GoyoEnter nested call <SID>goyo_enter()
     autocmd! User GoyoLeave nested call <SID>goyo_leave()
 augroup end
@@ -166,7 +167,8 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('shumphrey/fugitive-gitlab.vim')
 call minpac#add('junegunn/gv.vim')
 augroup git
-        autocmd BufReadPost fugitive://* set bufhidden=delete
+    autocmd!
+    autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
 
 " TMUX
@@ -273,10 +275,11 @@ let g:ledger_commodity_sep = ' '
 let g:ledger_default_commodity = 'CHF'
 let g:ledger_extra_options = '--pedantic --explicit --check-payees'
 augroup Ledger
-        autocmd User MyLedger inoremap <silent> <Tab> <C-r>=ledger#autocomplete_and_align()<CR>
-        autocmd User MyLedger vnoremap <silent> <Tab> :LedgerAlign<CR>
-        autocmd User MyLedger nnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
-        autocmd User MyLedger vnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
+    autocmd!
+    autocmd User MyLedger inoremap <silent> <Tab> <C-r>=ledger#autocomplete_and_align()<CR>
+    autocmd User MyLedger vnoremap <silent> <Tab> :LedgerAlign<CR>
+    autocmd User MyLedger nnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
+    autocmd User MyLedger vnoremap <silent> <leader>e :s/CHF/EUR/Ig\|noh<CR>
 augroup end
 
 " Python
@@ -313,6 +316,7 @@ let g:taskwiki_extra_warriors = {'B': {
 call minpac#add('rhysd/vim-grammarous', {'type': 'opt'})
 let g:grammarous#languagetool_cmd = 'languagetool'
 augroup Grammarous
+    autocmd!
     autocmd User MyGrammarous nmap <leader>gg :GrammarousCheck<CR>
     autocmd User MyGrammarous nmap <leader>gf <Plug>(grammarous-fixit)
     autocmd User MyGrammarous nmap <leader>gr <Plug>(grammarous-remove-error)
@@ -326,17 +330,18 @@ call minpac#add('https://gitlab.com/mrossinek/vim-verdict', {'type': 'opt'})
 
 " OPT Loading
 augroup PackOptLoad
-        autocmd FileType ledger packadd vim-ledger
-        autocmd FileType ledger doautocmd User MyLedger
-        autocmd FileType cs packadd Omnisharp-vim
-        autocmd FileType python packadd jedi-vim | call jedi#configure_call_signatures()
-        autocmd FileType python packadd pydoc.vim
-        autocmd FileType python packadd SimpylFold
-        autocmd FileType tex packadd vimtex
-        autocmd FileType mail packadd deoplete-khard
-        autocmd FileType markdown packadd vim-markdown
-        autocmd FileType text packadd vim-grammarous
-        autocmd FileType text doautocmd User MyGrammarous
+    autocmd!
+    autocmd FileType ledger packadd vim-ledger
+    autocmd FileType ledger doautocmd User MyLedger
+    autocmd FileType cs packadd Omnisharp-vim
+    autocmd FileType python packadd jedi-vim | call jedi#configure_call_signatures()
+    autocmd FileType python packadd pydoc.vim
+    autocmd FileType python packadd SimpylFold
+    autocmd FileType tex packadd vimtex
+    autocmd FileType mail packadd deoplete-khard
+    autocmd FileType markdown packadd vim-markdown
+    autocmd FileType text packadd vim-grammarous
+    autocmd FileType text doautocmd User MyGrammarous
 augroup end
 
 " }}}
@@ -467,6 +472,7 @@ endfunction
 nnoremap <leader>b :call ThemeChecker()<cr>
 
 augroup colortheme
+    autocmd!
     autocmd ColorScheme * hi clear SignColumn
     autocmd ColorScheme * hi Comment cterm=italic gui=italic
     autocmd ColorScheme * hi clear Search
@@ -505,6 +511,7 @@ nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
 nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
 
 augroup quickfix-quitting
+    autocmd!
     autocmd WinEnter * if winnr('$') == 1 && &buftype == 'quickfix' | quit | endif
 augroup end
 " }}}
@@ -588,9 +595,9 @@ augroup END
 " configure mkview
 set viewoptions-=options
 augroup remember_folds
-        autocmd!
-        autocmd BufWinLeave *.* mkview!
-        autocmd BufWinEnter *.* silent! loadview
+    autocmd!
+    autocmd BufWinLeave *.* mkview!
+    autocmd BufWinEnter *.* silent! loadview
 augroup END
 
 " }}}
