@@ -349,11 +349,12 @@ augroup end
 " }}}
 
 " BASICS {{{
+set autoindent
 set colorcolumn=+0
 set complete+=kspell
 set completeopt-=preview
 set cursorline
-set foldlevelstart=1
+set expandtab
 set formatoptions+=2,n
 set hidden
 set ignorecase
@@ -382,13 +383,10 @@ set updatetime=100
 set virtualedit=block
 set nowrap
 
-" indentation
-set expandtab
-set smartindent
-
 " folding
 set foldmethod=indent
 set foldlevel=99
+set foldlevelstart=1
 nnoremap <space> za
 
 " fuzzy finding
