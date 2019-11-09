@@ -16,9 +16,6 @@ let g:python3_host_prog = expand('~/Installations/pynvim3/.direnv/python-3.7.4/b
 " local vimrc
 call minpac#add('embear/vim-localvimrc')
 
-" random vim help page
-call minpac#add('mhinz/vim-randomtag')
-
 " tpope
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-commentary')
@@ -59,9 +56,6 @@ call minpac#add('chrisbra/NrrwRgn')
 " linediff
 call minpac#add('AndrewRadev/linediff.vim')
 
-" error marking
-call minpac#add('mh21/errormarker.vim')
-
 " async
 call minpac#add('skywind3000/asyncrun.vim')
 
@@ -99,9 +93,6 @@ call minpac#add('powerman/vim-plugin-AnsiEsc')
 
 " Colorizer
 call minpac#add('chrisbra/Colorizer')
-
-" Zeal
-call minpac#add('KabbAmine/zeavim.vim')
 
 " OPT
 " ledger
