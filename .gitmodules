@@ -16,6 +16,7 @@
 [submodule ".config/nvim/pack/minpac/opt/deoplete-khard"]
 	path = .config/nvim/pack/minpac/opt/deoplete-khard
 	url = https://github.com/nicoe/deoplete-khard
+	ignore = untracked
 [submodule ".config/nvim/pack/minpac/opt/vim-markdown"]
 	path = .config/nvim/pack/minpac/opt/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
