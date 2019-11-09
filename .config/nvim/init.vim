@@ -215,46 +215,6 @@ let g:PaperColor_Theme_Options = {
             \ }
 colorscheme PaperColor
 
-" airline
-call minpac#add('vim-airline/vim-airline')
-let g:airline_theme=s:THEME
-let g:airline_theme_patch_func = 'AirlineThemePatch'
-function! AirlineThemePatch(palette)
-    if g:airline_theme ==? 'dark'
-        for colors in values(a:palette.normal)
-            " replace all colors using 234 with 236
-            if colors[3] == 234
-                let colors[1] = '#303030'
-                let colors[3] = 236
-            endif
-        endfor
-        for colors in values(a:palette.commandline)
-            " replace all colors using 234 with 236
-            if colors[3] == 234
-                let colors[1] = '#303030'
-                let colors[3] = 236
-            endif
-        endfor
-        for colors in values(a:palette.inactive)
-            " shift inactive colors by one in order to avoid clash with 236
-            if !exists('s:shifted_inactive')
-                let colors[3] = colors[3] - 1
-            endif
-        endfor
-        let s:shifted_inactive = 1
-    endif
-endfunction
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_symbols_ascii = 1
-if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-endif
-let g:airline_symbols.dirty = '+'
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.maxlinenr = ' ln'
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#fugitiveline#enabled = 1
-
 " ANSI color support
 call minpac#add('powerman/vim-plugin-AnsiEsc')
 
