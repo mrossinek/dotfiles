@@ -183,14 +183,9 @@ let g:tmuxcomplete#trigger = ''
 let g:tmux_complete_capture_args = '-J -S -1024'
 
 " DESIGN
-if $USER ==# 'root'
-    let s:THEME='dark'
-else
-    let s:THEME=$THEME
-endif
 " colorscheme
 call minpac#add('NLKNguyen/papercolor-theme')
-let &background=s:THEME
+let &background='dark'
 let g:PaperColor_Theme_Options = {
             \   'theme': {
             \     'default': {
@@ -413,29 +408,12 @@ function! ExecuteMacroOverVisualRange()
         execute ":'<,'>normal @".nr2char(getchar())
 endfunction
 
-function! ToggleBackground()
-    execute('silent! !source ~/.background_toggle')
-    call ThemeChecker()
-endfunction
-
-function! ThemeChecker()
-    if exists('$TMUX')
-        let s:THEME = substitute(split(execute('!tmux showenv THEME'), '=')[1], '\n', '', '')
-    else
-        let s:THEME=$THEME
-    endif
-    let &background=s:THEME
-    execute('AirlineTheme ' . s:THEME)
-endfunction
-nnoremap <leader>b :call ThemeChecker()<cr>
-
 augroup colortheme
     autocmd!
     autocmd ColorScheme * highlight clear SignColumn
     autocmd ColorScheme * highlight Comment cterm=italic gui=italic
     autocmd ColorScheme * highlight clear Search
     autocmd ColorScheme * highlight Search cterm=underline ctermfg=190 gui=underline guifg=190
-    autocmd VimEnter * nnoremap yob :call ToggleBackground()<cr>
 augroup end
 
 function! GetBufferList()

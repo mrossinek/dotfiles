@@ -94,11 +94,6 @@ function fg-bg() {
 zle -N fg-bg
 bindkey '^Z' fg-bg
 
-# color theme
-export THEME='dark'
-# this variable is used to sync the color themes of tmux, vim and other
-# terminal based applications
-
 source ~/.zsh_private_aliases
 
 # direnv
