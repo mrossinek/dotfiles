@@ -76,6 +76,11 @@ with open(expanduser('~/.config/qutebrowser/user_agent.txt'), 'r') as user_agent
 with config.pattern('*://web.whatsapp.com/') as p:
     p.content.notifications = True
 
+with config.pattern('*://github.com/') as p:
+    p.content.javascript.can_access_clipboard = True
+    # from IRC (#qutebrowser): 11:03:56 The-Compiler | it's supposed to work without that setting
+    # when it's a result of an user interaction (like a click) - that not working is a Qt issue
+
 # fonts
 c.fonts.monospace = '"InconsolataLGC Nerd Font Mono", monospace'
 c.fonts.completion.entry = '12pt monospace'
