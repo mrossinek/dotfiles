@@ -1,31 +1,32 @@
 " Highlight Groups
-" clear old StatusLine highlighting
-highlight clear StatusLine
-highlight clear StatusLineNC
-highlight StatusLineNC ctermbg=235
-highlight! link StatusLineTerm StatusLine
-highlight! link StatusLineTermNC StatusLineNC
-" fix TabLine while we are at it
-highlight! TabLineFill ctermbg=236
+function! StatuslineInitHighlighting()
+    " clear old StatusLine highlighting
+    highlight clear StatusLine
+    highlight clear StatusLineNC
+    highlight StatusLineNC ctermbg=235
+    highlight! link StatusLineTerm StatusLine
+    highlight! link StatusLineTermNC StatusLineNC
+    " fix TabLine while we are at it
+    highlight! TabLineFill ctermbg=236
 
-" User 1: Mode highlighting
-highlight StatuslineUnmodified cterm=bold ctermfg=white ctermbg=darkgreen
-highlight StatuslineModified cterm=bold ctermfg=white ctermbg=red
-highlight! link User1 StatuslineUnmodified
+    " User 1: Mode highlighting
+    highlight StatuslineUnmodified cterm=bold ctermfg=white ctermbg=darkgreen
+    highlight StatuslineModified cterm=bold ctermfg=white ctermbg=red
+    highlight! link User1 StatuslineUnmodified
 
-" User 2: basic statusline info
-highlight User2 ctermbg=236 ctermfg=220
-highlight link StatusLine User2
+    " User 2: basic statusline info
+    highlight User2 ctermbg=236 ctermfg=220
+    highlight link StatusLine User2
 
-" User 3: info field: match CursorColumn
-highlight! link User3 CursorColumn
+    " User 3: info field: match CursorColumn
+    highlight! link User3 CursorColumn
 
-" User 4+5: ALE info fields
-highlight! link StatuslineALEError SpellBad
-highlight! link StatuslineALEWarning SpellCap
-highlight! link User4 StatuslineALEError
-highlight! link User5 StatuslineALEWarning
-
+    " User 4+5: ALE info fields
+    highlight! link StatuslineALEError SpellBad
+    highlight! link StatuslineALEWarning SpellCap
+    highlight! link User4 StatuslineALEError
+    highlight! link User5 StatuslineALEWarning
+endfunction
 
 " update highlighting when buffer becomes modified
 function! StatuslineUpdateHighlighting()
@@ -38,6 +39,7 @@ endfunction
 
 augroup StatuslineHighlighting
     autocmd!
+    autocmd VimEnter,ColorScheme * call StatuslineInitHighlighting()
     autocmd TextChanged,TextChangedI,BufEnter,BufWritePost * call StatuslineUpdateHighlighting()
 augroup end
 
