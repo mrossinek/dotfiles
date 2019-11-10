@@ -1,4 +1,5 @@
-from os.path import expanduser
+from os import path
+from sys import platform
 # pylint: disable=C0111
 c = c  # noqa: F821 pylint: disable=E0602,C0103
 config = config  # noqa: F821 pylint: disable=E0602,C0103
@@ -7,7 +8,10 @@ config = config  # noqa: F821 pylint: disable=E0602,C0103
 config.load_autoconfig()
 
 # UI
-c.zoom.default = '150%'
+if platform == 'darwin':
+    c.zoom.default = '100%'
+else:
+    c.zoom.default = '150%'
 c.completion.height = '30%'
 c.downloads.position = 'bottom'
 c.url.start_pages = ['https://github.com/', 'https://start.duckduckgo.com']
@@ -69,7 +73,7 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
 # set user agent
-with open(expanduser('~/.config/qutebrowser/user_agent.txt'), 'r') as user_agent:
+with open(path.join(path.abspath(path.dirname(__file__)), 'user_agent.txt'), 'r') as user_agent:
     c.content.headers.user_agent = user_agent.read().replace('\n', '')
 
 # patterns
