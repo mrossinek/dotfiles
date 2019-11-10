@@ -63,17 +63,18 @@ tabspaces: 4
 
 # (changes require restart)
 font:
-  normal:
-    family: monospace
-    style: Regular
+  # rely on defaults: Linux -> monospace, Darwin -> Menlo
+  # normal:
+  #   family: monospace
+  #   style: Regular
 
-  bold:
-    family: monospace
-    style: Bold
+  # bold:
+  #   family: monospace
+  #   style: Bold
 
-  italic:
-    family: monospace
-    style: Italic
+  # italic:
+  #   family: monospace
+  #   style: Italic
 
   size: 12.0
 
