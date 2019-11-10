@@ -28,6 +28,6 @@ let g:ale_fixers =      {
                         \       'python': ['autopep8'],
                         \
                         \}
-let g:ale_python_pyls_executable = expand('~/Installations/pynvim3/.direnv/python-3.7.4/bin/pyls')
+let g:ale_python_pyls_executable = expand('~/Installations/pynvim3/.direnv/python-3.*/bin/pyls')
 
 nnoremap <leader>ad :ALEDetail<cr>
