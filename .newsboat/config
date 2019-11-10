@@ -5,8 +5,6 @@ reload-time 60
 max-items 500
 keep-articles-days 30
 
-browser qutebrowser
-
 # rebind keys
 unbind-key j
 unbind-key k
