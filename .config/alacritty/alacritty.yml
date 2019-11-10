@@ -336,7 +336,6 @@ debug:
 #   - ~AppKeypad
 #   - AppKeypad
 key_bindings:
-  # (Windows/Linux only)
   - { key: Insert,   mods: Shift,         action: PasteSelection   }
   - { key: Equals,   mods: Control,       action: ResetFontSize    }
   - { key: Add,      mods: Control|Shift, action: IncreaseFontSize }
