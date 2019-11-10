@@ -1,3 +1,8 @@
+if [[ ! -v GRML_OSTYPE ]]; then
+    # if grml was not loaded from system-wide, use a local copy
+    source ~/.grml.zshrc
+fi
+
 # zplugin
 source ~/.zplugin/bin/zplugin.zsh
 autoload -Uz _zplugin
