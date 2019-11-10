@@ -101,83 +101,57 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-schemes:
-    dark: &dark
-        primary:
-            background: '0x303030'
-            foreground: '0xf2f2f2'
-            # The dimmed foreground color is calculated automatically if it is not present.
-            # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-            # is `false`, the normal foreground color will be used.
-            #dim_foreground: '0x9a9a9a'
-            bright_foreground: '0xffffff'
+colors:
+    primary:
+        background: '0x303030'
+        foreground: '0xf2f2f2'
+        # The dimmed foreground color is calculated automatically if it is not present.
+        # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+        # is `false`, the normal foreground color will be used.
+        #dim_foreground: '0x9a9a9a'
+        bright_foreground: '0xffffff'
 
-        # If these are unset, the cursor color will be the inverse of the cell color.
-        #cursor:
-        #  text: '0x000000'
-        #  cursor: '0xffffff'
+    # If these are unset, the cursor color will be the inverse of the cell color.
+    #cursor:
+    #  text: '0x000000'
+    #  cursor: '0xffffff'
 
-        # If selection background is unset, selection color will be the inverse of
-        # the cell colors. If only text is unset the cell text color will remain the
-        # same.
-        #selection:
-        #  text: '0xeaeaea'
-        #  background: '0x404040'
+    # If selection background is unset, selection color will be the inverse of
+    # the cell colors. If only text is unset the cell text color will remain the
+    # same.
+    #selection:
+    #  text: '0xeaeaea'
+    #  background: '0x404040'
 
-        # Normal colors
-        normal:
-            black:   '0x2c2c2c'
-            red:     '0xc62828'
-            green:   '0x558b2e'
-            yellow:  '0xf9a825'
-            blue:    '0x1565c1'
-            magenta: '0x8e42be'
-            cyan:    '0x00838f'
-            white:   '0xffffff'
+    # Normal colors
+    normal:
+        black:   '0x2c2c2c'
+        red:     '0xc62828'
+        green:   '0x558b2e'
+        yellow:  '0xf9a825'
+        blue:    '0x1565c1'
+        magenta: '0x8e42be'
+        cyan:    '0x00838f'
+        white:   '0xffffff'
 
-        # Bright colors
-        bright:
-            black:   '0x969694'
-            red:     '0xf15250'
-            green:   '0x86bd47'
-            yellow:  '0xf8e63a'
-            blue:    '0x77b2f6'
-            magenta: '0xb933a8'
-            cyan:    '0x25c3dc'
-            white:   '0xffffff'
+    # Bright colors
+    bright:
+        black:   '0x969694'
+        red:     '0xf15250'
+        green:   '0x86bd47'
+        yellow:  '0xf8e63a'
+        blue:    '0x77b2f6'
+        magenta: '0xb933a8'
+        cyan:    '0x25c3dc'
+        white:   '0xffffff'
 
-        # If the dim colors are not set, they will be calculated
-        # automatically based on the `normal` colors.
-        #dim:
+    # If the dim colors are not set, they will be calculated
+    # automatically based on the `normal` colors.
+    #dim:
 
-        # The indexed colors include all colors from 16 to 256.
-        # When these are not set, they're filled with sensible defaults.
-        indexed_colors: []
-
-    light: &light
-        primary:
-            background: '0xf2f2f2'
-            foreground: '0x303030'
-        # unchanged from dark
-        normal:
-            black:   '0x2c2c2c'
-            red:     '0xc62828'
-            green:   '0x558b2e'
-            yellow:  '0xf9a825'
-            blue:    '0x1565c1'
-            magenta: '0x8e42be'
-            cyan:    '0x00838f'
-            white:   '0xffffff'
-        bright:
-            black:   '0x969694'
-            red:     '0xf15250'
-            green:   '0x86bd47'
-            yellow:  '0xf8e63a'
-            blue:    '0x77b2f6'
-            magenta: '0xb933a8'
-            cyan:    '0x25c3dc'
-            white:   '0xffffff'
-        indexed_colors: []
+    # The indexed colors include all colors from 16 to 256.
+    # When these are not set, they're filled with sensible defaults.
+    indexed_colors: []
 
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
 # rung, the terminal background will be set to white and transition back to the
@@ -378,6 +352,3 @@ key_bindings:
   - { key: J,        mods: Alt|Shift,     chars: "\x1bJ"     }
   - { key: K,        mods: Alt|Shift,     chars: "\x1bK"     }
   - { key: L,        mods: Alt|Shift,     chars: "\x1bL"     }
-
-# ensure colors is set at bottom for easy theme switching
-colors: *dark
