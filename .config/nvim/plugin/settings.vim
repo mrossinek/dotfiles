@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 set autoindent
 set colorcolumn=+0
 set complete+=kspell

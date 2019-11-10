@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 " Highlight Groups
 function! StatuslineInitHighlighting()
     " clear old StatusLine highlighting
