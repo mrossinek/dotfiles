@@ -1,5 +1,5 @@
 " visual @
-vnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+vnoremap @ :<C-u>call mrossinek#functions#ExecuteMacroOverVisualRange()<CR>
 
 " swap some commands
 vnoremap v <C-v>

@@ -24,7 +24,7 @@ nnoremap <A--> :new<cr>
 nnoremap <A-\|> :vnew<cr>
 
 " scrolling
-nnoremap <leader>sc :call ToggleScrollingMode()<cr>
+nnoremap <leader>sc :call mrossinek#functions#ToggleScrollingMode()<cr>
 nnoremap <leader>scb :setlocal scb!<cr>
 nnoremap <C-E> 2<C-E>
 nnoremap <C-Y> 2<C-Y>
@@ -36,7 +36,7 @@ nnoremap <space> za
 nnoremap <leader>so :source %<cr>
 
 " spelling
-nnoremap <leader>sp :call FixLastSpellingError()<cr>
+nnoremap <leader>sp :call mrossinek#functions#FixLastSpellingError()<cr>
 nnoremap <leader>sl :setlocal spelllang=
 
 " swap tag jumping
@@ -48,5 +48,5 @@ nnoremap v <C-v>
 nnoremap <C-v> v
 
 " quickfix/location list toggles
-nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
-nnoremap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
+nnoremap <silent> <leader>l :call mrossinek#functions#ToggleList("Location List", 'l')<CR>
+nnoremap <silent> <leader>q :call mrossinek#functions#ToggleList("Quickfix List", 'c')<CR>
