@@ -68,6 +68,7 @@
 [submodule ".config/nvim/pack/minpac/start/ReplaceWithRegister"]
 	path = .config/nvim/pack/minpac/start/ReplaceWithRegister
 	url = https://github.com/vim-scripts/ReplaceWithRegister
+	ignore = dirty
 [submodule ".config/nvim/pack/minpac/start/vim-trailing-whitespace"]
 	path = .config/nvim/pack/minpac/start/vim-trailing-whitespace
 	url = https://github.com/bronson/vim-trailing-whitespace
