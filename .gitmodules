@@ -142,9 +142,6 @@
 	path = .config/nvim/pack/minpac/start/tmux-complete.vim
 	url = https://github.com/wellle/tmux-complete.vim
 	ignore = untracked
-[submodule ".config/nvim/pack/minpac/start/papercolor-theme"]
-	path = .config/nvim/pack/minpac/start/papercolor-theme
-	url = https://github.com/NLKNguyen/papercolor-theme
 [submodule ".config/nvim/pack/minpac/start/vim-plugin-AnsiEsc"]
 	path = .config/nvim/pack/minpac/start/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
