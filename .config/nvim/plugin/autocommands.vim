@@ -11,18 +11,6 @@ augroup RememberFolds
     autocmd BufWinEnter *.* silent! loadview
 augroup end
 
-" color theme
-augroup ColorTheme
-    autocmd!
-    " make sign column transparent
-    autocmd ColorScheme * highlight clear SignColumn
-    " italize comments
-    autocmd ColorScheme * highlight Comment cterm=italic gui=italic
-    " make search highlights more consistent
-    autocmd ColorScheme * highlight clear Search
-    autocmd ColorScheme * highlight Search cterm=underline ctermfg=190 gui=underline guifg=190
-augroup end
-
 " quit if last window is quickfix
 augroup QuickfixQuitting
     autocmd!

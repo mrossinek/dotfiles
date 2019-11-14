@@ -33,8 +33,8 @@ let cursorlinenr_fg = '226'  " #ffff00
 let cursorlinenr_bg = '236'  " #303030
 let popupmenu_fg = '251'  " #c6c6c6
 let popupmenu_bg = '238'  " #444444
-let search_fg = '16'  " #000000
-let search_bg = '29'  " #00875f
+let search_fg = '190'  " #d7ff00
+let search_bg = '236'  " #303030
 let linenumber_fg = '240'  " #585858
 let linenumber_bg = '236'  " #303030
 let vertsplit_fg = '66'  " #5f8787
@@ -286,7 +286,7 @@ exec 'hi VertSplit' . s:fg_vertsplit_fg . s:ft_none
 exec 'hi FoldColumn' . s:fg_folded_fg . s:bg_transparent . s:ft_none
 exec 'hi Cursor' . s:fg_cursor_fg . s:bg_cursor_bg
 exec 'hi SpecialKey' . s:fg_nontext
-exec 'hi Search' . s:fg_search_fg . s:bg_search_bg
+exec 'hi Search' . ' cterm=underline ' . s:fg_search_fg . s:bg_search_bg
 exec 'hi StatusLine' . s:fg_statusline_active_bg . s:bg_statusline_active_fg
 exec 'hi StatusLineNC' . s:fg_statusline_inactive_bg . s:bg_statusline_inactive_fg
 exec 'hi StatusLineTerm' . s:fg_statusline_active_bg . s:bg_statusline_active_fg
@@ -305,7 +305,8 @@ exec 'hi CursorLineNr' . s:fg_cursorlinenr_fg . s:bg_cursorlinenr_bg . s:ft_none
 exec 'hi CursorColumn'  . s:bg_cursorcolumn . s:ft_none
 exec 'hi PMenu' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
 exec 'hi PMenuSel' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_reverse
-exec 'hi SignColumn' . s:fg_green . s:ft_none
+" disabled to ensure transparency
+" exec 'hi SignColumn' . s:fg_green . s:ft_none
 exec 'hi ColorColumn'  . s:bg_cursorcolumn . s:ft_none
 " Tabline
 exec 'hi TabLine' . s:fg_tabline_inactive_fg . s:bg_tabline_inactive_bg . s:ft_none
