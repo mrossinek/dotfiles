@@ -148,3 +148,6 @@
 [submodule ".config/nvim/pack/minpac/start/Colorizer"]
 	path = .config/nvim/pack/minpac/start/Colorizer
 	url = https://github.com/chrisbra/Colorizer
+[submodule ".config/nvim/pack/minpac/start/vim-buftabline"]
+	path = .config/nvim/pack/minpac/start/vim-buftabline
+	url = https://github.com/ap/vim-buftabline
