@@ -28,6 +28,7 @@ c.tabs.position = 'left'
 c.tabs.width = '15%'
 c.tabs.padding = {'bottom': 0, 'left': 2, 'right': 0, 'top': 0}
 c.tabs.select_on_remove = 'last-used'
+c.tabs.mode_on_change = 'restore'
 c.colors.tabs.bar.bg = '#303030'
 c.colors.tabs.even.fg = 'black'
 
