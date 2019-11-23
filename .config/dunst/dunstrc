@@ -1,5 +1,5 @@
 [global]
-font = InconsolataLGC Nerd Font Mono 14
+font = MesloLGS Nerd Font Mono 14
 
 # Allow a small subset of html markup:
 #   <b>bold</b>

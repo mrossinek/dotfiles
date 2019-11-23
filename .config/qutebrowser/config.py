@@ -86,7 +86,7 @@ with config.pattern('*://github.com/') as p:
     # when it's a result of an user interaction (like a click) - that not working is a Qt issue
 
 # fonts
-c.fonts.monospace = '"InconsolataLGC Nerd Font Mono", monospace'
+c.fonts.monospace = '"MesloLGS Nerd Font Mono", monospace'
 c.fonts.completion.entry = '12pt monospace'
 c.fonts.completion.category = 'bold 12pt monospace'
 c.fonts.debug_console = '12pt monospace'
