@@ -56,6 +56,7 @@ zstyle ':vcs_info:git*' formats "%{${fg[magenta]}%}[%{${fg[green]}%}%b%{${fg[yel
 
 # grml options
 setopt vi
+export KEYTIMEOUT=1
 
 if [[ -x /usr/bin/virtualenvwrapper.sh ]]; then
     source /usr/bin/virtualenvwrapper.sh
