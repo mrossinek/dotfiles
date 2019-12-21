@@ -50,3 +50,7 @@ nnoremap <C-v> v
 " quickfix/location list toggles
 nnoremap <silent> <leader>l :call mrossinek#functions#ToggleList("Location List", 'l')<CR>
 nnoremap <silent> <leader>q :call mrossinek#functions#ToggleList("Quickfix List", 'c')<CR>
+
+" buffer navigation
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
