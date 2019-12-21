@@ -151,3 +151,6 @@
 [submodule ".config/nvim/pack/minpac/start/vim-buftabline"]
 	path = .config/nvim/pack/minpac/start/vim-buftabline
 	url = https://github.com/ap/vim-buftabline
+[submodule ".config/nvim/pack/minpac/start/vim-doge"]
+	path = .config/nvim/pack/minpac/start/vim-doge
+	url = https://github.com/kkoomen/vim-doge
