@@ -58,6 +58,22 @@ zstyle ':vcs_info:git*' formats "%{${fg[magenta]}%}[%{${fg[green]}%}%b%{${fg[yel
 setopt vi
 export KEYTIMEOUT=1
 
+# change the cursor when in vicmd mode
+zle-keymap-select () {
+    if [ $KEYMAP = vicmd ]; then
+        printf "\033[2 q"
+    else
+        printf "\033[6 q"
+    fi
+}
+zle -N zle-keymap-select
+
+zle-line-init () {
+    zle -K viins
+    printf "\033[6 q"
+}
+zle -N zle-line-init
+
 if [[ -x /usr/bin/virtualenvwrapper.sh ]]; then
     source /usr/bin/virtualenvwrapper.sh
 elif [[ -x /usr/local/bin/virtualenvwrapper.sh ]]; then
