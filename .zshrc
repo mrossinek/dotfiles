@@ -9,7 +9,7 @@ autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
 # autoload modules
-autoload -Uz compinit promptinit up-line-or-beginning-search down-line-or-beginning-search
+autoload -Uz compinit promptinit
 compinit
 promptinit
 
@@ -24,21 +24,22 @@ zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
 
-# syntax highlighting
-zplugin ice wait"0" atinit"zpcompinit; zpcdreplay" atload"unset 'FAST_HIGHLIGHT[chroma-whatis]' 'FAST_HIGHLIGHT[chroma-man]'"
-zplugin light zdharma/fast-syntax-highlighting
-
 # key bindings
-bindkey -v
+setopt vi
+export KEYTIMEOUT=1
 
 # history search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-[[ -n "$key[Up]"   ]] && bindkey -- "$key[Up]"   up-line-or-beginning-search
-[[ -n "$key[Down]" ]] && bindkey -- "$key[Down]" down-line-or-beginning-search
-
-zplugin ice wait"1"
+zplugin ice wait"0"
 zplugin light zsh-users/zsh-history-substring-search
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# syntax highlighting
+zplugin ice wait"1" atinit"zpcompinit; zpcdreplay" atload"unset 'FAST_HIGHLIGHT[chroma-whatis]' 'FAST_HIGHLIGHT[chroma-man]'"
+zplugin light zdharma/fast-syntax-highlighting
 
 # ttyctl command: freeze/unfreeze terminal
 ttyctl -f
@@ -55,9 +56,6 @@ zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:git*' formats "%{${fg[magenta]}%}[%{${fg[green]}%}%b%{${fg[yellow]}%}%m%u%c%{${fg[magenta]}%}]%{$reset_color%} "
 
 # grml options
-setopt vi
-export KEYTIMEOUT=1
-
 # change the cursor when in vicmd mode
 zle-keymap-select () {
     if [ $KEYMAP = vicmd ]; then
