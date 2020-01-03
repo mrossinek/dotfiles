@@ -25,7 +25,7 @@ set path+=**                           " fuzzy finding
 set relativenumber
 set scrolloff=2
 set shiftwidth=4
-let &showbreak='↪ '
+set showbreak=↪\ 
 set showmatch
 set sidescrolloff=5
 set signcolumn=yes
