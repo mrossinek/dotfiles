@@ -13,6 +13,7 @@ augroup PackOptLoad
     autocmd FileType python packadd pydoc.vim
     autocmd FileType python packadd SimpylFold
     autocmd FileType tex packadd vimtex
+    autocmd FileType tex packadd quicktex
     autocmd FileType mail packadd deoplete-khard
     autocmd FileType markdown packadd vim-markdown
     autocmd FileType text packadd vim-grammarous

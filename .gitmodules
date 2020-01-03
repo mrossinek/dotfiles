@@ -154,3 +154,6 @@
 [submodule ".config/nvim/pack/minpac/start/vim-doge"]
 	path = .config/nvim/pack/minpac/start/vim-doge
 	url = https://github.com/kkoomen/vim-doge
+[submodule ".config/nvim/pack/minpac/opt/quicktex"]
+	path = .config/nvim/pack/minpac/opt/quicktex
+	url = https://github.com/brennier/quicktex
