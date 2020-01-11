@@ -160,3 +160,9 @@
 [submodule ".config/nvim/pack/minpac/start/vim-sneak"]
 	path = .config/nvim/pack/minpac/start/vim-sneak
 	url = https://github.com/justinmk/vim-sneak
+[submodule ".config/nvim/pack/minpac/start/vim-eunuch"]
+	path = .config/nvim/pack/minpac/start/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
+[submodule ".config/nvim/pack/minpac/start/vim-dirvish"]
+	path = .config/nvim/pack/minpac/start/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish
