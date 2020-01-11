@@ -42,3 +42,32 @@ function! mrossinek#functions#ToggleList(bufname, pfx)
         wincmd p
     endif
 endfunction
+
+function! mrossinek#functions#WebSearch(type, ...)
+    " adapted from https://www.reddit.com/r/vim/comments/ebaoku/function_to_google_any_text_object/
+    let sel_save = &selection
+    let &selection = 'inclusive'
+    let reg_save = @@
+
+    if a:0  " Invoked from Visual mode, use '< and '> marks.
+        silent execute 'normal! `<' . a:type . '`>y'
+    elseif a:type ==? 'line'
+        silent execute "normal! '[V']y"
+    else
+        silent execute 'normal! `[v`]y'
+    endif
+
+    let filetype = ''
+    if &filetype !=? 'text'
+        let filetype = &filetype . '+'
+    endif
+    let search = filetype . substitute(trim(@@), ' \+', '+', 'g')
+
+    silent execute "!xdg-open 'https://duckduckgo.com/?q=" . search . "'"
+    if v:shell_error > 0
+        silent execute "!open 'https://duckduckgo.com/?q=" . search . "'"
+    endif
+
+    let &selection = sel_save
+    let @@ = reg_save
+endfunction
