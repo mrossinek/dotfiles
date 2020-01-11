@@ -157,3 +157,6 @@
 [submodule ".config/nvim/pack/minpac/opt/quicktex"]
 	path = .config/nvim/pack/minpac/opt/quicktex
 	url = https://github.com/brennier/quicktex
+[submodule ".config/nvim/pack/minpac/start/vim-sneak"]
+	path = .config/nvim/pack/minpac/start/vim-sneak
+	url = https://github.com/justinmk/vim-sneak
