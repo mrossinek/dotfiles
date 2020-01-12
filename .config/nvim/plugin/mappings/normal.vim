@@ -54,6 +54,7 @@ nnoremap <silent> <leader>q :call mrossinek#functions#ToggleList("Quickfix List"
 " buffer navigation
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
+nnoremap <C-S> :e #<CR>
 
 " web search
 nnoremap <silent> gs :set opfunc=mrossinek#functions#WebSearch<CR>g@
