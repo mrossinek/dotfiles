@@ -1,7 +1,6 @@
 " Python support is installed into a virtualenv to allow seemless usage across
 " system and other virtualenvs
-let g:python_host_prog = expand('~/Installations/pynvim2/.direnv/python-2.*/bin/python')
-let g:python3_host_prog = expand('~/Installations/pynvim3/.direnv/python-3.*/bin/python')
+call mrossinek#functions#SetPythonProvider()
 
 " OPT Loading
 augroup PackOptLoad

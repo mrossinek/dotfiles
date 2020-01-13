@@ -71,3 +71,18 @@ function! mrossinek#functions#WebSearch(type, ...)
     let &selection = sel_save
     let @@ = reg_save
 endfunction
+
+function! mrossinek#functions#SetPythonProvider()
+    for l:file in split(globpath(expand('~/Installations/pynvim2/.direnv'), 'python-2.*'), '\n')
+        if !exists('l:time') || getftime(l:file) > l:time
+            let l:time = getftime(l:file)
+            let g:python_host_prog = l:file . '/bin/python'
+        endif
+    endfor
+    for l:file in split(globpath(expand('~/Installations/pynvim3/.direnv'), 'python-3.*'), '\n')
+        if !exists('l:time') || getftime(l:file) > l:time
+            let l:time = getftime(l:file)
+            let g:python3_host_prog = l:file . '/bin/python'
+        endif
+    endfor
+endfunction
