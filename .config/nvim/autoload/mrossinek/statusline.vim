@@ -115,3 +115,14 @@ function! mrossinek#statusline#StatuslineALECount(type)
     return l:ret
 endfunction
 
+" GitGutter wrapper
+function! mrossinek#statusline#StatuslineGitInfo()
+    let l:added_symbol = '➕'     " Unicode U+2795 heavy plus sign
+    let l:modified_symbol = '➗'  " Unicode U+2797 heavy division sign
+    let l:removed_symbol = '➖'   " Unicode U+2796 heavy minus sign
+    let hunks = GitGutterGetHunkSummary()
+    return '[ ' . hunks[0] . l:added_symbol .
+                \ hunks[1] . l:modified_symbol .
+                \ hunks[2] . l:removed_symbol .
+                \ ']'
+endfunction

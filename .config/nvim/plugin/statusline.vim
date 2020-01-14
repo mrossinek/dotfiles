@@ -10,6 +10,7 @@ if has('statusline')
     set statusline+=\ %{mrossinek#statusline#StatuslineMode()}
     set statusline+=\ %2*
     set statusline+=\ %f  " filename
+    set statusline+=\ %{mrossinek#statusline#StatuslineGitInfo()}
     set statusline+=\ %a  " arguments list position
     set statusline+=\ %r  " readonly flag
     set statusline+=\ %m  " modified/modifiable flag
