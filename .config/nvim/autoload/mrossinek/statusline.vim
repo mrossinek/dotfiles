@@ -117,12 +117,13 @@ endfunction
 
 " GitGutter wrapper
 function! mrossinek#statusline#StatuslineGitInfo()
+    if !get(g:, 'gitgutter_enabled', 0) || empty(FugitiveHead())
+        return ''
+    endif
     let l:added_symbol = '➕'     " Unicode U+2795 heavy plus sign
     let l:modified_symbol = '➗'  " Unicode U+2797 heavy division sign
     let l:removed_symbol = '➖'   " Unicode U+2796 heavy minus sign
-    let hunks = GitGutterGetHunkSummary()
-    return '[ ' . hunks[0] . l:added_symbol .
-                \ hunks[1] . l:modified_symbol .
-                \ hunks[2] . l:removed_symbol .
-                \ ']'
+    let [l:added, l:modified, l:removed] = GitGutterGetHunkSummary()
+    return printf('[ %d%s%d%s%d%s]', l:added, l:added_symbol, l:modified,
+                \ l:modified_symbol, l:removed, l:removed_symbol)
 endfunction
