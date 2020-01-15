@@ -166,3 +166,6 @@
 [submodule ".config/nvim/pack/minpac/start/vim-dirvish"]
 	path = .config/nvim/pack/minpac/start/vim-dirvish
 	url = https://github.com/justinmk/vim-dirvish
+[submodule ".config/nvim/pack/minpac/start/BufOnly.vim"]
+	path = .config/nvim/pack/minpac/start/BufOnly.vim
+	url = https://github.com/vim-scripts/BufOnly.vim
