@@ -1144,3 +1144,8 @@ exec 'hi diffRemoved' . s:fg_diffdelete_fg
 exec 'hi diffLine' . s:fg_orange
 exec 'hi diffBDiffer' . s:fg_orange
 exec 'hi diffNewFile' . s:fg_comment
+" GitGutter
+exec 'hi GitGutterAddLineNr' . s:fg_diffadd_fg
+exec 'hi GitGutterChangeLineNr' . s:fg_diffchange_fg
+exec 'hi GitGutterDeleteLineNr' . s:fg_diffdelete_fg
+exec 'hi GitGutterChangeDeleteLineNr' . s:fg_difftext_fg
