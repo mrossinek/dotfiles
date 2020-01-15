@@ -124,6 +124,6 @@ function! mrossinek#statusline#StatuslineGitInfo()
     let l:modified_symbol = '➗'  " Unicode U+2797 heavy division sign
     let l:removed_symbol = '➖'   " Unicode U+2796 heavy minus sign
     let [l:added, l:modified, l:removed] = GitGutterGetHunkSummary()
-    return printf('[ %d%s%d%s%d%s]', l:added, l:added_symbol, l:modified,
+    return printf('[%d%s%d%s%d%s]', l:added, l:added_symbol, l:modified,
                 \ l:modified_symbol, l:removed, l:removed_symbol)
 endfunction
