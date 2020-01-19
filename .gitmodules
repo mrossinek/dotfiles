@@ -169,6 +169,6 @@
 [submodule ".config/nvim/pack/minpac/start/BufOnly.vim"]
 	path = .config/nvim/pack/minpac/start/BufOnly.vim
 	url = https://github.com/vim-scripts/BufOnly.vim
-[submodule "/home/max/.config/nvim/pack/minpac/start/tabular"]
-	path = /home/max/.config/nvim/pack/minpac/start/tabular
+[submodule ".config/nvim/pack/minpac/start/tabular"]
+	path = .config/nvim/pack/minpac/start/tabular
 	url = https://github.com/godlygeek/tabular
