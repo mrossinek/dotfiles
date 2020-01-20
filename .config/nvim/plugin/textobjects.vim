@@ -17,3 +17,21 @@ vnoremap a\| :<C-U>silent! normal! F\|vf\|<CR>
 onoremap a\| :normal va\|<CR>
 vnoremap i\| :<C-U>silent! normal! T\|vt\|<CR>
 onoremap i\| :normal vi\|<CR>
+
+" & object
+vnoremap a& :<C-U>silent! normal! F&vf&<CR>
+onoremap a& :normal va&<CR>
+vnoremap i& :<C-U>silent! normal! T&vt&<CR>
+onoremap i& :normal vi&<CR>
+
+" = object
+vnoremap a= :<C-U>silent! normal! F=vf=<CR>
+onoremap a= :normal va=<CR>
+vnoremap i= :<C-U>silent! normal! T=vt=<CR>
+onoremap i= :normal vi=<CR>
+
+" : object
+vnoremap a: :<C-U>silent! normal! F:vf:<CR>
+onoremap a: :normal va:<CR>
+vnoremap i: :<C-U>silent! normal! T:vt:<CR>
+onoremap i: :normal vi:<CR>
