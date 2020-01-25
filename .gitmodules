@@ -41,9 +41,6 @@
 [submodule ".config/nvim/pack/minpac/start/vim-commentary"]
 	path = .config/nvim/pack/minpac/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule ".config/nvim/pack/minpac/start/vim-surround"]
-	path = .config/nvim/pack/minpac/start/vim-surround
-	url = https://github.com/tpope/vim-surround
 [submodule ".config/nvim/pack/minpac/start/vim-repeat"]
 	path = .config/nvim/pack/minpac/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat
@@ -172,3 +169,6 @@
 [submodule ".config/nvim/pack/minpac/start/tabular"]
 	path = .config/nvim/pack/minpac/start/tabular
 	url = https://github.com/godlygeek/tabular
+[submodule ".config/nvim/pack/minpac/start/vim-sandwich"]
+	path = .config/nvim/pack/minpac/start/vim-sandwich
+	url = https://github.com/machakann/vim-sandwich
