@@ -172,3 +172,6 @@
 [submodule ".config/nvim/pack/minpac/start/vim-sandwich"]
 	path = .config/nvim/pack/minpac/start/vim-sandwich
 	url = https://github.com/machakann/vim-sandwich
+[submodule ".config/nvim/pack/minpac/opt/vim-dadbod"]
+	path = .config/nvim/pack/minpac/opt/vim-dadbod
+	url = https://github.com/tpope/vim-dadbod
