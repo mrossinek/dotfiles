@@ -38,6 +38,6 @@
         m = merge
         pl = pull
         ps = push
-        s = status
+        s = status --short
         t = tree
 	tree = log --graph --oneline --all
