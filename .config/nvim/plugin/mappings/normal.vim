@@ -1,6 +1,6 @@
 " additional function keys
-noremap <F13> <S-CR>
-noremap <F14> <C-CR>
+map <F13> <S-CR>
+map <F14> <C-CR>
 
 " window movement
 nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
