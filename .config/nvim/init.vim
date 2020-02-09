@@ -11,6 +11,7 @@ augroup PackOptLoad
     autocmd FileType python packadd jedi-vim | call jedi#configure_call_signatures()
     autocmd FileType python packadd pydoc.vim
     autocmd FileType python packadd SimpylFold
+    autocmd FileType python packadd deuterium
     autocmd FileType tex packadd vimtex
     autocmd FileType tex packadd quicktex
     autocmd FileType mail packadd deoplete-khard

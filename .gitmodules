@@ -175,3 +175,6 @@
 [submodule ".config/nvim/pack/minpac/opt/vim-dadbod"]
 	path = .config/nvim/pack/minpac/opt/vim-dadbod
 	url = https://github.com/tpope/vim-dadbod
+[submodule ".config/nvim/pack/minpac/opt/deuterium"]
+	path = .config/nvim/pack/minpac/opt/deuterium
+	url = https://gitlab.com/mrossinek/deuterium.git
