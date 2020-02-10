@@ -14,7 +14,7 @@ else:
     c.zoom.default = '150%'
 c.completion.height = '30%'
 c.downloads.position = 'bottom'
-c.url.start_pages = ['https://github.com/', 'https://start.duckduckgo.com']
+c.url.start_pages = ['https://github.com/', 'https://gitlab.com/', 'https://start.duckduckgo.com']
 
 # languages
 c.spellcheck.languages = ['en-US', 'de-DE']
