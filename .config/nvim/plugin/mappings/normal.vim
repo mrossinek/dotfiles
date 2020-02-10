@@ -39,10 +39,6 @@ nnoremap <leader>so :source %<cr>
 nnoremap <leader>sp :call mrossinek#functions#FixLastSpellingError()<cr>
 nnoremap <leader>sl :setlocal spelllang=
 
-" swap tag jumping
-nnoremap <C-]> g<C-]>
-nnoremap g<C-]> <C-]>
-
 " visual block mode is more useful than plain visual mode
 nnoremap v <C-v>
 nnoremap <C-v> v
