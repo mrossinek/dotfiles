@@ -19,3 +19,9 @@ augroup PackOptLoad
     autocmd FileType text packadd vim-grammarous
     autocmd FileType text doautocmd User MyGrammarous
 augroup end
+
+" localvimrc plugin: configure and load before any other plugin
+let g:localvimrc_sandbox = 0
+let g:localvimrc_ask = 0
+let g:localvimrc_event = ['BufWinEnter', 'BufRead']
+runtime START plugin/localvimrc.vim
