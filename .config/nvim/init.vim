@@ -3,21 +3,45 @@
 call mrossinek#functions#SetPythonProvider()
 
 " OPT Loading
-augroup PackOptLoad
+augroup filetype_cs
     autocmd!
-    autocmd FileType ledger packadd vim-ledger
-    autocmd FileType ledger doautocmd User MyLedger
     autocmd FileType cs packadd Omnisharp-vim
-    autocmd FileType python packadd jedi-vim | call jedi#configure_call_signatures()
-    autocmd FileType python packadd pydoc.vim
+augroup end
+
+augroup filetype_ledger
+    autocmd!
+    autocmd FileType ledger doautocmd User MyLedger
+    autocmd FileType ledger packadd vim-ledger
+augroup end
+
+augroup filetype_mail
+    autocmd!
+    autocmd FileType mail packadd deoplete-khard
+augroup end
+
+augroup filetype_markdown
+    autocmd!
+    autocmd FileType markdown packadd vim-markdown
+augroup end
+
+augroup filetype_python
+    autocmd!
     autocmd FileType python packadd SimpylFold
     autocmd FileType python packadd deuterium
-    autocmd FileType tex packadd vimtex
+    autocmd FileType python packadd jedi-vim
+    autocmd FileType python packadd pydoc.vim
+augroup end
+
+augroup filetype_tex
+    autocmd!
     autocmd FileType tex packadd quicktex
-    autocmd FileType mail packadd deoplete-khard
-    autocmd FileType markdown packadd vim-markdown
-    autocmd FileType text packadd vim-grammarous
+    autocmd FileType tex packadd vimtex
+augroup end
+
+augroup filetype_text
+    autocmd!
     autocmd FileType text doautocmd User MyGrammarous
+    autocmd FileType text packadd vim-grammarous
 augroup end
 
 " localvimrc plugin: configure and load before any other plugin
