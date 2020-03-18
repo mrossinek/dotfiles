@@ -38,7 +38,7 @@
 "~/cron_sync.sh"
         XF86Tools
 
- "~/actuate_cron.sh"
+"rofimoji"
         XF86Launch1
 
 "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
