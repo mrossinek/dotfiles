@@ -178,3 +178,15 @@
 [submodule ".config/nvim/pack/minpac/opt/deuterium"]
 	path = .config/nvim/pack/minpac/opt/deuterium
 	url = https://gitlab.com/mrossinek/deuterium.git
+[submodule ".config/nvim/pack/minpac/start/vim-pandoc"]
+	path = .config/nvim/pack/minpac/start/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc
+[submodule ".config/nvim/pack/minpac/start/vim-pandoc-syntax"]
+	path = .config/nvim/pack/minpac/start/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax
+[submodule ".config/nvim/pack/minpac/opt/vim-criticmarkup"]
+	path = .config/nvim/pack/minpac/opt/vim-criticmarkup
+	url = https://github.com/vim-pandoc/vim-criticmarkup
+[submodule ".config/nvim/pack/minpac/opt/vim-rmarkdown"]
+	path = .config/nvim/pack/minpac/opt/vim-rmarkdown
+	url = https://github.com/vim-pandoc/vim-rmarkdown

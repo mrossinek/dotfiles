@@ -32,16 +32,23 @@ augroup filetype_python
     autocmd FileType python packadd pydoc.vim
 augroup end
 
+augroup filetype_rmarkdown
+    autocmd!
+    autocmd! FileType rmarkdown packadd vim-rmarkdown
+augroup end
+
 augroup filetype_tex
     autocmd!
     autocmd FileType tex packadd quicktex
     autocmd FileType tex packadd vimtex
 augroup end
 
-augroup filetype_text
+augroup writing
     autocmd!
-    autocmd FileType text doautocmd User MyGrammarous
-    autocmd FileType text packadd vim-grammarous
+    autocmd FileType text,markdown,pandoc doautocmd User MyGrammarous
+    autocmd FileType text,markdown,pandoc packadd vim-grammarous
+    autocmd FileType text,markdown,pandoc packadd vim-criticmarkup
+    autocmd FileType text,markdown,pandoc packadd vim-verdict
 augroup end
 
 " localvimrc plugin: configure and load before any other plugin
