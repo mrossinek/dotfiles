@@ -20,6 +20,7 @@ set ssl_force_tls = yes
 set smtp_authenticators = 'gssapi:login'
 set mailcap_path = "~/.config/neomutt/mailcap"
 set pager_stop = yes  # don't jump to the next message at the bottom of a message
+set wait_key = no
 
 # editing
 set include
@@ -44,6 +45,7 @@ bind index,pager @ compose-to-sender
 # macros
 macro index 'c' "<change-folder>?<change-dir><home>^K=<enter>" "change the folder"
 macro index <f9> "<shell-escape>mbsync -a<enter>" "run mbsync to sync mail"
+macro compose H "F pandoc -s -f gfm -t html \ny^T^Utext/html; charset=utf-8\n" "convert mail from markdown to html"
 
 # khard integration
 set query_command= "khard email --parsable '%s'"
