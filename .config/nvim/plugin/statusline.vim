@@ -12,9 +12,10 @@ if has('statusline')
     set statusline+=\ %f  " filename
     set statusline+=\ %{mrossinek#statusline#StatuslineGitInfo()}
     set statusline+=\ %a  " arguments list position
-    set statusline+=\ %r  " readonly flag
     set statusline+=\ %m  " modified/modifiable flag
+    set statusline+=\ %r  " readonly flag
     set statusline+=%=    " right align the rest
+    set statusline+=%{mrossinek#statusline#StatuslineCurrentTag()}
     set statusline+=\ %y  " filetype
     set statusline+=\ %3*
     set statusline+=%{&fileencoding?&fileencoding!=#'utf-8':''}  " ignore utf-8

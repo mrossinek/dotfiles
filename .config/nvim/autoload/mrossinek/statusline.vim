@@ -127,3 +127,19 @@ function! mrossinek#statusline#StatuslineGitInfo()
     return printf('[%d%s %d%s %d%s]', l:added, l:added_symbol, l:modified,
                 \ l:modified_symbol, l:removed, l:removed_symbol)
 endfunction
+
+" tagbar#currenttag wrapper
+function! mrossinek#statusline#StatuslineCurrentTag()
+    let l:tag = tagbar#currenttag('%s', '')
+    if empty(l:tag)
+        return ''
+    endif
+    let l:file = tagbar#state#get_current_file(1)
+    if empty(l:file) || l:file.fpath != expand('%:p')
+        return ''
+    endif
+    if strlen(l:tag) > 20
+        let l:tag = '..' . l:tag[-18:]
+    endif
+    return printf('{%s}', l:tag)
+endfunction
