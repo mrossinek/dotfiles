@@ -2,7 +2,7 @@
 " system and other virtualenvs
 call mrossinek#functions#SetPythonProvider()
 
-" OPT Loading
+" filetype autocommands
 augroup filetype_cs
     autocmd!
     autocmd FileType cs packadd Omnisharp-vim
@@ -17,6 +17,7 @@ augroup end
 augroup filetype_mail
     autocmd!
     autocmd FileType mail packadd deoplete-khard
+    autocmd FileType mail nnoremap <leader>m :setlocal filetype=markdown.mail<CR>
 augroup end
 
 augroup filetype_markdown
@@ -49,6 +50,7 @@ augroup writing
     autocmd FileType text,markdown,pandoc packadd vim-grammarous
     autocmd FileType text,markdown,pandoc packadd vim-criticmarkup
     autocmd FileType text,markdown,pandoc packadd vim-verdict
+    autocmd FileType markdown,pandoc,rmarkdown inoremap <buffer> ;` ```<CR><CR>```<Up>
 augroup end
 
 " localvimrc plugin: configure and load before any other plugin

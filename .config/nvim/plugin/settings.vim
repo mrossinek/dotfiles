@@ -6,6 +6,7 @@ set complete+=kspell
 set completeopt-=preview
 set cursorline
 set expandtab
+set foldcolumn=1
 set foldlevel=99
 set foldlevelstart=1
 set foldmethod=indent
