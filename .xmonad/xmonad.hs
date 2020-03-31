@@ -12,6 +12,7 @@ import XMonad.Actions.CycleWS
 import XMonad.Actions.UpdatePointer
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.NamedScratchpad
 import XMonad.Hooks.EwmhDesktops
 import System.IO
 
@@ -30,7 +31,7 @@ main = do
         {
           logHook               = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
         , layoutHook            = spacingRaw True (Border 5 5 5 5) False (Border 5 5 5 5) True $ smartBorders $ myLayout
-        , manageHook            = myManageHook
+        , manageHook            = namedScratchpadManageHook myScratchPads <+> myManageHook <+> manageDocks
         , terminal              = myTerminal
         , modMask               = myModMask
         , normalBorderColor     = myNormalBorderColor
@@ -39,7 +40,7 @@ main = do
         `additionalKeys`
         [
           ((myModMask, xK_p), spawn "rofi -show combi")
-        , ((myModMask, xK_semicolon), spawn "alacritty --title 'float'")
+        , ((myModMask, xK_semicolon), namedScratchpadAction myScratchPads "terminal")
         , ((myModMask, xK_o), toggleWS)
         , ((myModMask, xK_w), screenWorkspace 0 >>= flip whenJust (windows . W.view) >> updatePointer (0.95, 0.05) (0, 0))
         , ((myModMask, xK_e), screenWorkspace 1 >>= flip whenJust (windows . W.view) >> updatePointer (0.95, 0.05) (0, 0))
@@ -78,6 +79,11 @@ myManageHook = composeAll
     , className =? "matplotlib" --> doFloat
     , className =? "Display" --> doCenterFloat
     , title =? "pass" --> doCenterFloat
-    , title =? "float" --> doCenterFloat
-    , manageDocks
     ]
+
+myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
+                ]
+    where
+    spawnTerm  = myTerminal ++  " --title scratchpad"
+    findTerm   = title =? "scratchpad"
+    manageTerm = customFloating $ W.RationalRect 0.125 0.125 0.75 0.75
