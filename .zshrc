@@ -97,8 +97,6 @@ alias -s tex=nvim
 alias -s org=w3m
 alias -s com=w3m
 alias fd='fd -I'  # since the .gitignore in ~ ignores all files
-# dotfiles bare repo
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # pygmentize cat
 # source: https://felixcrux.com/blog/syntax-highlighting-cat
