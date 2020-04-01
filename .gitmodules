@@ -21,10 +21,10 @@
 	path = .config/nvim/pack/minpac/opt/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
 [submodule ".config/nvim/pack/minpac/opt/vimwiki"]
-	path = .config/nvim/pack/minpac/opt/vimwiki
+	path = .config/nvim/pack/minpac/start/vimwiki
 	url = https://github.com/vimwiki/vimwiki
 [submodule ".config/nvim/pack/minpac/opt/taskwiki"]
-	path = .config/nvim/pack/minpac/opt/taskwiki
+	path = .config/nvim/pack/minpac/start/taskwiki
 	url = https://github.com/tbabej/taskwiki
 [submodule ".config/nvim/pack/minpac/opt/vim-grammarous"]
 	path = .config/nvim/pack/minpac/opt/vim-grammarous
