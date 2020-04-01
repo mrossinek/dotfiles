@@ -15,6 +15,9 @@ bind-key k prev
 bind-key J next-feed
 bind-key K prev-feed
 
+# macros
+macro m set browser "tsp mpv %u" ; open-in-browser-and-mark-read ; set browser "qutebrowser %u"
+
 # color theme
 color listfocus color7 color6
 color listnormal_unread color1 default bold
