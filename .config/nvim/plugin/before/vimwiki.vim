@@ -1,5 +1,14 @@
+let g:vimwiki_autowriteall = 0
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
-let g:vimwiki_list = [{'path': '~/Files/Notes/', 'index': 'Index', 'ext': '.md'}]
 
-let g:vimwiki_table_mappings = 0
+let wiki = {}
+let wiki.path = '~/Files/Notes/'
+let wiki.path_html = '~/Files/Notes/'
+let wiki.index = 'Index'
+let wiki.ext = '.md'
+let wiki.syntax = 'markdown'
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
+let wiki.automatic_nested_syntaxes = 1
+
+let g:vimwiki_list = [wiki]
