@@ -190,3 +190,6 @@
 [submodule ".config/nvim/pack/minpac/opt/vim-rmarkdown"]
 	path = .config/nvim/pack/minpac/opt/vim-rmarkdown
 	url = https://github.com/vim-pandoc/vim-rmarkdown
+[submodule ".zinit/bin"]
+	path = .zinit/bin
+	url = https://github.com/zdharma/zinit.git

@@ -3,10 +3,10 @@ if [[ ! -v GRML_OSTYPE ]]; then
     source ~/.grml.zshrc
 fi
 
-# zplugin
-source ~/.zplugin/bin/zplugin.zsh
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
+# zinit
+source ~/.zinit/bin/zinit.zsh
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
 # autoload modules
 autoload -Uz compinit promptinit
@@ -14,11 +14,11 @@ compinit
 promptinit
 
 # command completion config
-zplugin ice wait"0" blockf
-zplugin light zsh-users/zsh-completions
+zinit ice wait"0" blockf
+zinit light zsh-users/zsh-completions
 
-zplugin ice wait"0" atload"_zsh_autosuggest_start"
-zplugin light zsh-users/zsh-autosuggestions
+zinit ice wait"0" atload"_zsh_autosuggest_start"
+zinit light zsh-users/zsh-autosuggestions
 
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select
@@ -29,8 +29,8 @@ setopt vi
 export KEYTIMEOUT=1
 
 # history search
-zplugin ice wait"0"
-zplugin light zsh-users/zsh-history-substring-search
+zinit ice wait"0"
+zinit light zsh-users/zsh-history-substring-search
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -38,8 +38,8 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # syntax highlighting
-zplugin ice wait"1" atinit"zpcompinit; zpcdreplay" atload"unset 'FAST_HIGHLIGHT[chroma-whatis]' 'FAST_HIGHLIGHT[chroma-man]'"
-zplugin light zdharma/fast-syntax-highlighting
+zinit ice wait"1" atinit"zpcompinit; zpcdreplay" atload"unset 'FAST_HIGHLIGHT[chroma-whatis]' 'FAST_HIGHLIGHT[chroma-man]'"
+zinit light zdharma/fast-syntax-highlighting
 
 # ttyctl command: freeze/unfreeze terminal
 ttyctl -f
@@ -47,8 +47,8 @@ ttyctl -f
 # customize prompt
 autoload -U colors && colors
 # GIT
-zplugin ice wait"1" as"program" pick"bin/git-dsf"
-zplugin light zdharma/zsh-diff-so-fancy
+zinit ice wait"1" as"program" pick"bin/git-dsf"
+zinit light zdharma/zsh-diff-so-fancy
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '!'
