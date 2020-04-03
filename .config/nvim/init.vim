@@ -53,6 +53,11 @@ augroup writing
     autocmd FileType markdown,pandoc,rmarkdown inoremap <buffer> ;` ```<CR><CR>```<Up>
 augroup end
 
+augroup vimwiki_custom
+    autocmd!
+    autocmd FileType vimwiki call mrossinek#plugins#vimwiki_assert_filetype()
+augroup end
+
 " localvimrc plugin: configure and load before any other plugin
 let g:localvimrc_sandbox = 0
 let g:localvimrc_ask = 0

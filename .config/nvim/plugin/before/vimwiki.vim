@@ -10,5 +10,7 @@ let wiki.ext = '.md'
 let wiki.syntax = 'markdown'
 let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
 let wiki.automatic_nested_syntaxes = 1
+" the following binary is provided by https://gitlab.com/mrossinek/notewarrior
+let wiki.custom_wiki2html = '/usr/local/bin/wiki2html_pandoc'
 
 let g:vimwiki_list = [wiki]
