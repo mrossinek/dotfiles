@@ -3,6 +3,8 @@
 # set by alacritty itself.
 env:
   TERM: xterm-256color
+  WINIT_HIDPI_FACTOR: "1"
+  WINIT_X11_SCALE_FACTOR: "1"
 
 window:
   # Specified in number of columns/lines, not pixels.
@@ -49,11 +51,6 @@ scrolling:
   history: 10000
   # Number of lines the viewport will move for every line scrolled
   multiplier: 3
-
-  auto_scroll: false
-
-# (changes require restart)
-tabspaces: 4
 
 # (changes require restart)
 font:
