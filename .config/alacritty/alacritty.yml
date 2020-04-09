@@ -3,7 +3,6 @@
 # set by alacritty itself.
 env:
   TERM: xterm-256color
-  WINIT_HIDPI_FACTOR: "1"
   WINIT_X11_SCALE_FACTOR: "1"
 
 window:

@@ -88,16 +88,16 @@ with config.pattern('*://github.com/') as p:
     # when it's a result of an user interaction (like a click) - that not working is a Qt issue
 
 # fonts
-c.fonts.completion.entry = '12pt default_family'
-c.fonts.completion.category = 'bold 12pt default_family'
-c.fonts.debug_console = '12pt default_family'
+c.fonts.completion.entry = '10pt default_family'
+c.fonts.completion.category = 'bold 10pt default_family'
+c.fonts.debug_console = '10pt default_family'
 c.fonts.default_family = ['MesloLGS Nerd Font Mono', 'monospace']
-c.fonts.downloads = '12pt default_family'
-c.fonts.hints = 'bold 12pt default_family'
-c.fonts.keyhint = '12pt default_family'
-c.fonts.messages.error = '12pt default_family'
-c.fonts.messages.info = '12pt default_family'
-c.fonts.messages.warning = '12pt default_family'
-c.fonts.prompts = '12pt default_family'
-c.fonts.statusbar = '12pt default_family'
-c.fonts.tabs = '12pt default_family'
+c.fonts.downloads = '10pt default_family'
+c.fonts.hints = 'bold 10pt default_family'
+c.fonts.keyhint = '10pt default_family'
+c.fonts.messages.error = '10pt default_family'
+c.fonts.messages.info = '10pt default_family'
+c.fonts.messages.warning = '10pt default_family'
+c.fonts.prompts = '10pt default_family'
+c.fonts.statusbar = '10pt default_family'
+c.fonts.tabs = '10pt default_family'
