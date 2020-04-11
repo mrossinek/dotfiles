@@ -123,3 +123,8 @@ source ~/.zsh_private_aliases
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# basic options
+setopt ALWAYS_TO_END
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
