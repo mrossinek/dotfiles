@@ -98,6 +98,7 @@ alias -s org=w3m
 alias -s com=w3m
 alias fd='fd -I'  # since the .gitignore in ~ ignores all files
 alias open=xdg-open
+alias sudo='sudo '
 
 # pygmentize cat
 # source: https://felixcrux.com/blog/syntax-highlighting-cat
