@@ -6,6 +6,7 @@ geometry 3x1+0+0
 grow_gravity NW
 icon_gravity NW
 icon_size 24
+kludges force_icons_size
 log_level err
 max_geometry 0x0
 no_shrink false
