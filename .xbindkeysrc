@@ -86,8 +86,22 @@
 "rofi -modi json-dict -show json-dict -json-dict-path ${HOME}/.local/share/dicts/json -json-dict-mode 2"
         Mod4 + d
 
+# dunst controls
+
+"dunstctl close"
+        control + space
+
+"dunstctl close-all"
+        control+shift + space
+
+"dunstctl history-pop"
+        Control + period
+
+"dunstctl context"
+        Control + comma
+
 "dunstctl set-paused toggle"
-        Mod4 + x
+        Control + semicolon
 
 ##################################
 # End of xbindkeys configuration #
