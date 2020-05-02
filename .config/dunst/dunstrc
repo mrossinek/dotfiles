@@ -168,7 +168,7 @@ frame_color = "#8EC07C"
 close = ctrl+space
 
 # Close all notifications.
-close_all = ctrl+mod1+space
+close_all = ctrl+shift+space
 
 # Redisplay last message(s).
 # On the US keyboard layout "grave" is normally above TAB and left
@@ -176,7 +176,7 @@ close_all = ctrl+mod1+space
 history = ctrl+grave
 
 # Context menu.
-context = ctrl+mod1+period
+context = ctrl+period
 
 [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.

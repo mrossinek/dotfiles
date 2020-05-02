@@ -86,6 +86,9 @@
 "rofi -modi json-dict -show json-dict -json-dict-path ${HOME}/.local/share/dicts/json -json-dict-mode 2"
         Mod4 + d
 
+"dunstctl set-paused toggle"
+        Mod4 + x
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
