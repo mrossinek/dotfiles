@@ -1,43 +1,43 @@
 [include]
-        path = ~/.gitconfig_user.inc
+    path = ~/.gitconfig_user.inc
 
 [core]
-	editor = nvim
-        pager = delta --theme=TwoDark --color-only
+    editor = nvim
+    pager = delta --theme=TwoDark --color-only
 
 [diff]
-	tool = nvim -d
+    tool = nvim -d
 
 [merge]
-        tool = vimdiff
-        prompt = false
+    tool = vimdiff
+    prompt = false
 
 [mergetool]
-        prompt = yes
+    prompt = yes
 
 [mergetool "vimdiff"]
-        cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
 [color]
-	ui = true
+    ui = true
 
 [color "diff"]
-	meta = yellow
+    meta = yellow
 
 [alias]
-        a = add
-        br = branch
-        c = commit
-        cs = commit -S
-        ch = checkout
-        d = diff
-        dc = diff --cached
-        i = init
-        l = log
-        ls = ls-tree -r master
-        m = merge
-        pl = pull
-        ps = push
-        s = status --short
-        t = tree
-	tree = log --graph --oneline --all
+    a = add
+    br = branch
+    c = commit
+    cs = commit -S
+    ch = checkout
+    d = diff
+    dc = diff --cached
+    i = init
+    l = log
+    ls = ls-tree -r master
+    m = merge
+    pl = pull
+    ps = push
+    s = status --short
+    t = tree
+    tree = log --graph --oneline --all
