@@ -94,18 +94,10 @@ alias vimdiff='nvim -d'
 alias -s tex=nvim
 alias -s org=w3m
 alias -s com=w3m
+alias cat=bat
 alias fd='fd -I'  # since the .gitignore in ~ ignores all files
 alias open=xdg-open
 alias sudo='sudo '
-
-# pygmentize cat
-# source: https://felixcrux.com/blog/syntax-highlighting-cat
-function pygmentize_cat {
-  for arg in "$@"; do
-    pygmentize -O style=default -g "${arg}" 2> /dev/null || /bin/cat "${arg}"
-  done
-}
-command -v pygmentize > /dev/null && alias cat=pygmentize_cat
 
 # Make CTRL-Z background things and unbackground them.
 function fg-bg() {
