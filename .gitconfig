@@ -32,6 +32,7 @@
     ch = checkout
     d = diff
     dc = diff --cached
+    gr = log --graph --oneline --all  # mnemonic: graph
     i = init
     l = log
     ls = ls-tree -r master
@@ -40,4 +41,4 @@
     ps = push
     s = status --short
     t = tree
-    tree = log --graph --oneline --all
+    wc = whatchanged
