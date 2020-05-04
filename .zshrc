@@ -47,8 +47,6 @@ ttyctl -f
 # customize prompt
 autoload -U colors && colors
 # GIT
-zinit ice wait"1" as"program" pick"bin/git-dsf"
-zinit light zdharma/zsh-diff-so-fancy
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '!'

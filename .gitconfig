@@ -3,7 +3,7 @@
 
 [core]
 	editor = nvim
-        pager = diff-so-fancy | less -FXRi
+	pager = delta
 
 [diff]
 	tool = nvim -d
