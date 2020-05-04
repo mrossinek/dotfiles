@@ -49,8 +49,7 @@ config.bind('m', 'spawn umpv {url}')
 config.bind(';m', 'hint links spawn umpv {hint-url}')
 config.bind(';M', 'hint --rapid links spawn umpv {hint-url}')
 config.bind('t', 'set-cmd-text -s :open -t')
-config.bind('xt', 'set tabs.show never')
-config.bind('xT', 'set tabs.show always')
+config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('<Tab>', 'nop')
 
 # search engines
