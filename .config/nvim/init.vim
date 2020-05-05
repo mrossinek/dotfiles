@@ -20,22 +20,12 @@ augroup filetype_mail
     autocmd FileType mail nnoremap <leader>m :setlocal filetype=markdown.mail<CR>
 augroup end
 
-augroup filetype_markdown
-    autocmd!
-    autocmd FileType markdown packadd vim-markdown
-augroup end
-
 augroup filetype_python
     autocmd!
     autocmd FileType python packadd SimpylFold
     autocmd FileType python packadd deuterium
     autocmd FileType python packadd jedi-vim
     autocmd FileType python packadd pydoc.vim
-augroup end
-
-augroup filetype_rmarkdown
-    autocmd!
-    autocmd! FileType rmarkdown packadd vim-rmarkdown
 augroup end
 
 augroup filetype_tex
@@ -46,11 +36,11 @@ augroup end
 
 augroup writing
     autocmd!
-    autocmd FileType text,markdown,pandoc doautocmd User MyGrammarous
-    autocmd FileType text,markdown,pandoc packadd vim-grammarous
-    autocmd FileType text,markdown,pandoc packadd vim-criticmarkup
-    autocmd FileType text,markdown,pandoc packadd vim-verdict
-    autocmd FileType markdown,pandoc,rmarkdown inoremap <buffer> ;` ```<CR><CR>```<Up>
+    autocmd FileType text,vimwiki,markdown,pandoc doautocmd User MyGrammarous
+    autocmd FileType text,vimwiki,markdown,pandoc packadd vim-grammarous
+    autocmd FileType text,vimwiki,markdown,pandoc packadd vim-criticmarkup
+    autocmd FileType text,vimwiki,markdown,pandoc packadd vim-verdict
+    autocmd FileType vimwiki,markdown,pandoc inoremap <buffer> ;` ```<CR><CR>```<Up>
 augroup end
 
 augroup vimwiki_custom

@@ -16,9 +16,6 @@
 [submodule ".config/nvim/pack/minpac/opt/deoplete-khard"]
 	path = .config/nvim/pack/minpac/opt/deoplete-khard
 	url = https://github.com/nicoe/deoplete-khard
-[submodule ".config/nvim/pack/minpac/opt/vim-markdown"]
-	path = .config/nvim/pack/minpac/opt/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown
 [submodule ".config/nvim/pack/minpac/opt/vimwiki"]
 	path = .config/nvim/pack/minpac/start/vimwiki
 	url = https://github.com/vimwiki/vimwiki
@@ -184,9 +181,9 @@
 [submodule ".config/nvim/pack/minpac/opt/vim-criticmarkup"]
 	path = .config/nvim/pack/minpac/opt/vim-criticmarkup
 	url = https://github.com/vim-pandoc/vim-criticmarkup
-[submodule ".config/nvim/pack/minpac/opt/vim-rmarkdown"]
-	path = .config/nvim/pack/minpac/opt/vim-rmarkdown
-	url = https://github.com/vim-pandoc/vim-rmarkdown
 [submodule ".zinit/bin"]
 	path = .zinit/bin
 	url = https://github.com/zdharma/zinit.git
+[submodule ".config/nvim/pack/minpac/start/vim-markdown"]
+	path = .config/nvim/pack/minpac/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
