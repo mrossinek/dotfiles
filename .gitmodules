@@ -106,9 +106,6 @@
 [submodule ".config/nvim/pack/minpac/start/vim-gitgutter"]
 	path = .config/nvim/pack/minpac/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule ".config/nvim/pack/minpac/start/vim-rhubarb"]
-	path = .config/nvim/pack/minpac/start/vim-rhubarb
-	url = https://github.com/tpope/vim-rhubarb
 [submodule ".config/nvim/pack/minpac/start/vim-fugitive"]
 	path = .config/nvim/pack/minpac/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
@@ -166,9 +163,6 @@
 [submodule ".config/nvim/pack/minpac/start/vim-sandwich"]
 	path = .config/nvim/pack/minpac/start/vim-sandwich
 	url = https://github.com/machakann/vim-sandwich
-[submodule ".config/nvim/pack/minpac/opt/vim-dadbod"]
-	path = .config/nvim/pack/minpac/opt/vim-dadbod
-	url = https://github.com/tpope/vim-dadbod
 [submodule ".config/nvim/pack/minpac/opt/deuterium"]
 	path = .config/nvim/pack/minpac/opt/deuterium
 	url = https://gitlab.com/mrossinek/deuterium.git
