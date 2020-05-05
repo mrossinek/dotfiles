@@ -16,7 +16,6 @@
 [submodule ".config/nvim/pack/minpac/opt/deoplete-khard"]
 	path = .config/nvim/pack/minpac/opt/deoplete-khard
 	url = https://github.com/nicoe/deoplete-khard
-	ignore = untracked
 [submodule ".config/nvim/pack/minpac/opt/vim-markdown"]
 	path = .config/nvim/pack/minpac/opt/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
@@ -65,7 +64,6 @@
 [submodule ".config/nvim/pack/minpac/start/ReplaceWithRegister"]
 	path = .config/nvim/pack/minpac/start/ReplaceWithRegister
 	url = https://github.com/vim-scripts/ReplaceWithRegister
-	ignore = dirty
 [submodule ".config/nvim/pack/minpac/start/vim-trailing-whitespace"]
 	path = .config/nvim/pack/minpac/start/vim-trailing-whitespace
 	url = https://github.com/bronson/vim-trailing-whitespace
@@ -138,7 +136,6 @@
 [submodule ".config/nvim/pack/minpac/start/tmux-complete.vim"]
 	path = .config/nvim/pack/minpac/start/tmux-complete.vim
 	url = https://github.com/wellle/tmux-complete.vim
-	ignore = untracked
 [submodule ".config/nvim/pack/minpac/start/vim-plugin-AnsiEsc"]
 	path = .config/nvim/pack/minpac/start/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc

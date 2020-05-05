@@ -1,0 +1,6 @@
+# code tags
+tags
+# project-specific vim configuration
+.lvimrc
+# python cache files should generally be ignored
+__pycache__/
