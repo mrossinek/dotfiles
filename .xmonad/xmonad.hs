@@ -21,8 +21,8 @@ myModMask               = mod4Mask
 myNormalBorderColor     = "#969694"
 myFocusedBorderColor    = "#77b2f6"
 
-myXmonadBar = "dzen2 -x 72 -y 0 -w 500 -ta l -dock -e 'button3:'"
-myStatusBar = "conky | dzen2 -x 500 -y 0 -ta r -dock -e 'button3:'"
+myXmonadBar = "dzen2 -x 72 -y 0 -w 1000 -ta l -dock -e 'button3:'"
+myStatusBar = "conky | dzen2 -x 1000 -y 0 -ta r -dock -e 'button3:'"
 
 main = do
     dzenLeftBar  <- spawnPipe myXmonadBar
@@ -68,7 +68,7 @@ myLogHook h = dynamicLogWithPP $ def
     , ppWsSep   = ""
     , ppSep     = "|"
     , ppLayout  = (>> "")
-    , ppTitle   = (" " ++) . dzenColor "#f2f2f2" "" . shorten 50
+    , ppTitle   = (" " ++) . dzenColor "#f2f2f2" "" . shorten 64
     , ppOutput  = hPutStrLn h
     }
 
