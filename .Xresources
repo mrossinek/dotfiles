@@ -7,7 +7,7 @@ Xft.hintstyle: hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-dzen2.font: MesloLGS Nerd Font Mono:size=10
+dzen2.font: MesloLGS Nerd Font Mono:size=11
 
 ! PaperColor Theme
 *.foreground: #f2f2f2
