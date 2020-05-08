@@ -66,4 +66,6 @@ alacritty -e zsh -ic 'tmux' &
 qutebrowser &
 snixembed --fork
 stalonetray &
+conky -c ~/.config/conky/conky_left.conf
+conky -c ~/.config/conky/conky_right.conf
 exec xmonad

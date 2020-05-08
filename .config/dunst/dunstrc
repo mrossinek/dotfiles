@@ -221,37 +221,12 @@ timeout = 30
 # NOTE: It might be helpful to run dunst -print in a terminal in order
 # to find fitting options for rules.
 
-#[espeak]
-#    summary = "*"
-#    script = dunst_espeak.sh
+[spotify]
+    appname = Spotify
+    script = ~/.config/conky/scripts/playerctl.sh
 
-#[script-test]
-#    summary = "*script*"
-#    script = dunst_test.sh
+[mpd]
+    appname = Music Player Daemon
+    script = ~/.config/conky/scripts/playerctl.sh
 
-#[ignore]
-#    # This notification will not be displayed
-#    summary = "foobar"
-#    format = ""
-
-#[signed_on]
-#    appname = Pidgin
-#    summary = "*signed on*"
-#    urgency = low
-#
-#[signed_off]
-#    appname = Pidgin
-#    summary = *signed off*
-#    urgency = low
-#
-#[says]
-#    appname = Pidgin
-#    summary = *says*
-#    urgency = critical
-#
-#[twitter]
-#    appname = Pidgin
-#    summary = *twitter.com*
-#    urgency = normal
-#
 # vim: ft=cfg

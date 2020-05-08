@@ -21,15 +21,13 @@ myModMask               = mod4Mask
 myNormalBorderColor     = "#969694"
 myFocusedBorderColor    = "#77b2f6"
 
-myXmonadBar = "dzen2 -x 72 -y 0 -w 1000 -ta l -dock -e 'button3:'"
-myStatusBar = "conky | dzen2 -x 1000 -y 0 -ta r -dock -e 'button3:'"
+myXmonadBar = "dzen2 -x 72 -y 0 -ta l -dock -e 'button3:'"
 
 main = do
-    dzenLeftBar  <- spawnPipe myXmonadBar
-    dzenRightBar <- spawnPipe myStatusBar
+    dzenBar  <- spawnPipe myXmonadBar
     xmonad $ ewmh desktopConfig
         {
-          logHook               = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
+          logHook               = myLogHook dzenBar >> fadeInactiveLogHook 0xdddddddd
         , layoutHook            = spacingRaw True (Border 5 5 5 5) False (Border 5 5 5 5) True $ smartBorders $ myLayout
         , manageHook            = namedScratchpadManageHook myScratchPads <+> myManageHook <+> manageDocks
         , terminal              = myTerminal
@@ -68,7 +66,7 @@ myLogHook h = dynamicLogWithPP $ def
     , ppWsSep   = ""
     , ppSep     = "|"
     , ppLayout  = (>> "")
-    , ppTitle   = (" " ++) . dzenColor "#f2f2f2" "" . shorten 64
+    , ppTitle   = (" " ++) . dzenColor "#f2f2f2" ""
     , ppOutput  = hPutStrLn h
     }
 
