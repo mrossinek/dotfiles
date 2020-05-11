@@ -5,6 +5,7 @@
 
 hi clear
 syntax reset
+let g:colors_name = 'mrossinek-papercolor'
 
 " define colors
 let color00 = '236'  " #303030

@@ -2,6 +2,8 @@
 " system and other virtualenvs
 call mrossinek#functions#SetPythonProvider()
 
+colorscheme mrossinek-papercolor
+
 " filetype autocommands
 augroup filetype_cs
     autocmd!
