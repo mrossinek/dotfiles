@@ -4,7 +4,7 @@ let g:ale_linters_explicit = 1
 let g:ale_linters =     {
                         \       'cpp': ['clangd', 'gcc'],
                         \       'cuda': ['nvcc'],
-                        \       'haskell': ['hie', 'ghc'],
+                        \       'haskell': ['ghc'],
                         \       'help': [],
                         \       'java': ['javalsp', 'checkstyle'],
                         \       'markdown': ['prettier'],
