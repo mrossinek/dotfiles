@@ -305,8 +305,7 @@ exec 'hi CursorLineNr' . s:fg_cursorlinenr_fg . s:bg_cursorlinenr_bg . s:ft_none
 exec 'hi CursorColumn'  . s:bg_cursorcolumn . s:ft_none
 exec 'hi PMenu' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
 exec 'hi PMenuSel' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_reverse
-" disabled to ensure transparency
-" exec 'hi SignColumn' . s:fg_green . s:ft_none
+exec 'hi SignColumn' . s:bg_transparent . s:ft_none
 exec 'hi ColorColumn'  . s:bg_cursorcolumn . s:ft_none
 " Tabline
 exec 'hi TabLine' . s:fg_tabline_inactive_fg . s:bg_tabline_inactive_bg . s:ft_none
