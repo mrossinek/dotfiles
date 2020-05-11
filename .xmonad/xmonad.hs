@@ -5,6 +5,8 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Actions.Minimize
+import XMonad.Layout.Minimize
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 import XMonad.Actions.FloatKeys
@@ -28,7 +30,7 @@ main = do
     xmonad $ ewmh desktopConfig
         {
           logHook               = myLogHook dzenBar >> fadeInactiveLogHook 0xdddddddd
-        , layoutHook            = spacingRaw True (Border 5 5 5 5) False (Border 5 5 5 5) True $ smartBorders $ myLayout
+        , layoutHook            = spacingRaw True (Border 5 5 5 5) False (Border 5 5 5 5) True $ smartBorders $ minimize $ myLayout
         , manageHook            = namedScratchpadManageHook myScratchPads <+> myManageHook <+> manageDocks
         , terminal              = myTerminal
         , modMask               = myModMask
@@ -47,7 +49,9 @@ main = do
         , ((myModMask, xK_Right), moveTo Next NonEmptyWS)
         , ((myModMask .|. shiftMask, xK_Left), shiftToPrev >> prevWS)
         , ((myModMask .|. shiftMask, xK_Right), shiftToNext >> nextWS)
-        , ((myModMask, xK_Down), withFocused (keysResizeWindow (-500, -500) (0.5, 0.5)))
+        , ((myModMask, xK_Down), withFocused (keysResizeWindow (-500, -100) (0.5, 0.5)))
+        , ((myModMask, xK_m), withFocused minimizeWindow)
+        , ((myModMask .|. shiftMask, xK_m), withLastMinimized maximizeWindowAndFocus)
         ]
 
 myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full) ||| Full
@@ -84,4 +88,4 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
     where
     spawnTerm  = myTerminal ++  " --title scratchpad"
     findTerm   = title =? "scratchpad"
-    manageTerm = customFloating $ W.RationalRect 0.125 0.125 0.75 0.75
+    manageTerm = customFloating $ W.RationalRect 0.125 0.05 0.7 0.85
