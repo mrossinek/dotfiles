@@ -1,22 +1,22 @@
+import System.IO
 import XMonad
-import qualified XMonad.StackSet as W
+import XMonad.Actions.CycleWS
+import XMonad.Actions.FloatKeys
+import XMonad.Actions.Minimize
+import XMonad.Actions.UpdatePointer
 import XMonad.Config.Desktop
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
-import XMonad.Actions.Minimize
 import XMonad.Layout.Minimize
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
-import XMonad.Actions.FloatKeys
-import XMonad.Actions.CycleWS
-import XMonad.Actions.UpdatePointer
-import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.NamedScratchpad
-import XMonad.Hooks.EwmhDesktops
-import System.IO
+import XMonad.Util.Run(spawnPipe)
+import qualified XMonad.StackSet as W
 
 myTerminal              = "alacritty"
 myModMask               = mod4Mask
