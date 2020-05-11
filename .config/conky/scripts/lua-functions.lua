@@ -19,11 +19,16 @@ function print_icon ( cr, icon, size, xpos, ypos, red, green, blue, alpha )
 end
 
 -- prints normal text
-function print_text ( cr, text, size, align, xpos, ypos, red, green, blue, alpha )
+function print_text ( cr, text, size, align, xpos, ypos, red, green, blue, alpha, bold )
     local extents=cairo_text_extents_t:create()
     tolua.takeownership(extents)
 
-    cairo_select_font_face ( cr, "MesloLGS Nerd Font Mono", CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_NORMAL )
+    if bold == 'bold' then
+        weight = CAIRO_FONT_WEIGHT_BOLD
+    else
+        weight = CAIRO_FONT_WEIGHT_NORMAL
+    end
+    cairo_select_font_face ( cr, "MesloLGS Nerd Font Mono", CAIRO_FONT_SLANT_NORMAL, weight )
     cairo_set_font_size ( cr, size )
 
     cairo_text_extents(cr, text, extents)
@@ -130,7 +135,7 @@ function fill_hexagon ( cr, corner, xpos, ypos, edge, percent, red, green, blue,
     cairo_stroke ( cr )
 
     text = tostring ( percent ) .. "%"
-    print_text ( cr, text, 20, "center", origin_x, origin_y, 1, 1, 1, 1 )
+    print_text ( cr, text, 20, "center", origin_x, origin_y, 1, 1, 1, 1, "normal" )
 end
 
 
@@ -138,20 +143,20 @@ function conky_time ( cr )
     cairo_translate ( cr, 200, 0 )
 
     draw_hexagon ( cr, 0, 320, 115, 80, 0.7, 0.7, 0.7, 1 )
-    print_text ( cr, conky_parse ( "${time %I:%M}" ), 40, "center", 320, 115, 1, 1, 1, 1 )
+    print_text ( cr, conky_parse ( "${time %I:%M}" ), 40, "center", 320, 115, 1, 1, 1, 1, "bold" )
 
     annotate_hexagon ( cr, 1, 320, 115, 80, 15, 0.7, 0.7, 0.7, 1 )
-    print_text ( cr, conky_parse ( "${kernel}" ), 20, "left", 20, 25, 1, 1, 1, 1 )
+    print_text ( cr, conky_parse ( "${kernel}" ), 20, "left", 20, 25, 1, 1, 1, 1, "normal" )
     annotate_hexagon ( cr, 2, 320, 115, 80, 15, 0.7, 0.7, 0.7, 1 )
-    print_text ( cr, conky_parse ( "${uptime_short}" ), 20, "left", 20, 110, 1, 1, 1, 1 )
+    print_text ( cr, conky_parse ( "${uptime_short}" ), 20, "left", 20, 110, 1, 1, 1, 1, "normal" )
     annotate_hexagon ( cr, 6, 320, 115, 80, 15, 0.7, 0.7, 0.7, 1 )
-    print_text ( cr, conky_parse ( "${time %a %b %d}" ), 20, "left", 20, 190, 1, 1, 1, 1 )
+    print_text ( cr, conky_parse ( "${time %a %b %d}" ), 20, "left", 20, 190, 1, 1, 1, 1, "normal" )
 
     local file = io.popen("cal -m | tail -n +2")
     local line = file:read("*l")
     offset = 35
     while line do
-        print_text ( cr, line, 20, "left", 20, 190 + offset, 1, 1, 1, 1 )
+        print_text ( cr, line, 20, "left", 20, 190 + offset, 1, 1, 1, 1, "normal" )
         line = file:read("*l")
         offset = offset + 20
     end
@@ -159,7 +164,7 @@ function conky_time ( cr )
 end
 
 function conky_personal ( cr )
-    cairo_translate ( cr, 0, 450 )
+    cairo_translate ( cr, 0, 500 )
 
     -- mail
     draw_hexagon ( cr, 2, 70, 0, 60, 0.7, 0.7, 0.7, 1 )
@@ -167,7 +172,7 @@ function conky_personal ( cr )
     local file = io.open("/home/max/.mailcount")
     text = file:read("*n")
     file:close()
-    print_text ( cr, text, 30, "center", 100, 70, 1, 1, 1, 1 )
+    print_text ( cr, text, 30, "center", 100, 70, 1, 1, 1, 1, "normal" )
 
     -- tasks
     draw_hexagon ( cr, 1, 130, 0, 60, 0.7, 0.7, 0.7, 1 )
@@ -175,7 +180,7 @@ function conky_personal ( cr )
     local file = io.popen("task count status:PENDING")
     text = file:read("*n")
     file:close()
-    print_text ( cr, text, 30, "center", 190, 25, 1, 1, 1, 1 )
+    print_text ( cr, text, 30, "center", 190, 25, 1, 1, 1, 1, "normal" )
 
     -- news
     draw_hexagon ( cr, 2, 250, 0, 60, 0.7, 0.7, 0.7, 1 )
@@ -183,11 +188,11 @@ function conky_personal ( cr )
     local file = io.open("/home/max/.newscount")
     text = file:read("*n")
     file:close()
-    print_text ( cr, text, 30, "center", 280, 70, 1, 1, 1, 1 )
+    print_text ( cr, text, 30, "center", 280, 70, 1, 1, 1, 1, "normal" )
 end
 
 function conky_laptop ( cr )
-    cairo_translate ( cr, 0, 200 )
+    cairo_translate ( cr, 0, 325 )
 
     -- brightness
     draw_hexagon ( cr, 6, 70, 60, 60, 0.7, 0.7, 0.7, 1 )
@@ -223,7 +228,7 @@ function conky_laptop ( cr )
 end
 
 function conky_music ( cr )
-    cairo_translate ( cr, -200, 450 )
+    cairo_translate ( cr, -200, 300 )
 
     cover = "/tmp/conky.cover.png"
 
@@ -260,8 +265,8 @@ function conky_music ( cr )
     artist = file:read("*l")
     title = file:read("*l")
     file:close()
-    print_text ( cr, artist, 20, "left", 20, 240, 1, 1, 1, 1)
-    print_text ( cr, title, 20, "left", 20, 270, 1, 1, 1, 1)
+    print_text ( cr, artist, 20, "left", 20, 240, 1, 1, 1, 1, "normal")
+    print_text ( cr, title, 20, "left", 20, 270, 1, 1, 1, 1, "normal")
 
     cairo_pattern_destroy ( pattern )
     cairo_surface_destroy (image)
@@ -292,11 +297,11 @@ function conky_networking ( cr )
 
     draw_hexagon ( cr, 6, 150, 170, 60, 0.7, 0.7, 0.7, 1 )
     print_icon ( cr, "", 40, 180, 100, 1, 1, 1, 1 )
-    print_text ( cr, upload, 24, "center", 180, 140, 1, 1, 1, 1 )
+    print_text ( cr, upload, 24, "center", 180, 140, 1, 1, 1, 1, "normal" )
 
     draw_hexagon ( cr, 2, 150, 170, 60, 0.7, 0.7, 0.7, 1 )
     print_icon ( cr, "", 40, 180, 205, 1, 1, 1, 1 )
-    print_text ( cr, download, 24, "center", 180, 245, 1, 1, 1, 1 )
+    print_text ( cr, download, 24, "center", 180, 245, 1, 1, 1, 1, "normal" )
 
     vpn_icon = conky_parse ( "${if_existing /proc/net/route tun0}${endif}" )
     if vpn_icon ~= ''
