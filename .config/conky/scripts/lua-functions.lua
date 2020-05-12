@@ -399,10 +399,6 @@ function conky_cpu(cr)
                  cpu_origin_y - cpu_height - 52, 20, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 18, 45, -210, 0.7, 0.7, 0.7, 1)
 
-    cairo_select_font_face(cr, "MesloLGS Nerd Font Mono",
-                           CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_NORMAL)
-    cairo_set_font_size(cr, 20)
-
     thread_edge = 30
     thread_height = math.sqrt(3) * thread_edge / 2
 
@@ -492,10 +488,6 @@ function conky_main_right()
     cr = cairo_create(cs)
     local updates = tonumber(conky_parse('${updates}'))
     if updates > 1 then
-        cairo_select_font_face(cr, "MesloLGS Nerd Font Mono",
-                               CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_NORMAL)
-        cairo_set_font_size(cr, 20)
-
         cairo_set_line_width(cr, 4)
         cairo_set_line_cap(cr, CAIRO_LINE_CAP_ROUND);
 
