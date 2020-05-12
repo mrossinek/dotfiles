@@ -152,23 +152,23 @@ function fill_hexagon(cr, corner, xpos, ypos, edge, percent, red, green, blue,
 end
 
 function conky_time(cr)
-    cairo_translate(cr, 200, 0)
+    cairo_translate(cr, 150, 0)
 
-    draw_hexagon(cr, 0, 320, 115, 80, 0.7, 0.7, 0.7, 1)
-    print_text(cr, conky_parse("${time %I:%M}"), "MesloLGS Nerd Font Mono", "bold", 40, "center", 320, 115, 1, 1, 1, 1)
+    draw_hexagon(cr, 0, 350, 125, 90, 0.7, 0.7, 0.7, 1)
+    print_text(cr, conky_parse("${time %I:%M}"), "MesloLGS Nerd Font Mono", "bold", 50, "center", 350, 125, 1, 1, 1, 1)
 
-    annotate_hexagon(cr, 1, 320, 115, 80, 15, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 1, 350, 125, 90, 15, 0.7, 0.7, 0.7, 1)
     print_text(cr, conky_parse("${kernel}"), "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 25, 1, 1, 1, 1)
-    annotate_hexagon(cr, 2, 320, 115, 80, 15, 0.7, 0.7, 0.7, 1)
-    print_text(cr, conky_parse("${uptime_short}"), "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 110, 1, 1, 1, 1)
-    annotate_hexagon(cr, 6, 320, 115, 80, 15, 0.7, 0.7, 0.7, 1)
-    print_text(cr, conky_parse("${time %a %b %d}"), "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 190, 1, 1, 1, 1)
+    annotate_hexagon(cr, 2, 350, 125, 90, 15, 0.7, 0.7, 0.7, 1)
+    print_text(cr, conky_parse("${uptime_short}"), "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 115, 1, 1, 1, 1)
+    annotate_hexagon(cr, 6, 350, 125, 90, 15, 0.7, 0.7, 0.7, 1)
+    print_text(cr, conky_parse("${time %a %b %d}"), "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 210, 1, 1, 1, 1)
 
     local file = io.popen("cal -m | tail -n +2")
     local line = file:read("*l")
     offset = 35
     while line do
-        print_text(cr, line, "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 190 + offset, 1, 1, 1, 1)
+        print_text(cr, line, "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 210 + offset, 1, 1, 1, 1)
         line = file:read("*l")
         offset = offset + 20
     end
@@ -176,7 +176,7 @@ function conky_time(cr)
 end
 
 function conky_personal(cr)
-    cairo_translate(cr, 0, 500)
+    cairo_translate(cr, 50, 500)
 
     -- mail
     draw_hexagon(cr, 2, 70, 0, 60, 0.7, 0.7, 0.7, 1)
