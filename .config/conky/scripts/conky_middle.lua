@@ -200,12 +200,14 @@ function conky_main()
     --   every 33.3 minutes with conky interval of 5 in battery mode
     if (updates % 400) == 0 and updates > 100 then
         online = os.execute("wget -q --spider http://duckduckgo.com")
-        if online then
+        local lock = io.open("/home/max/.sync_lock")
+        if online and lock == nil then
             -- fetch weather forecast
             os.execute("bash $HOME/.weather/weather-watcher.sh")
             -- fetch stock data
             os.execute("python $HOME/.stocks/stock-watcher.py")
         end
+        lock:close()
     end
 
     if updates > 1 then

@@ -164,7 +164,8 @@ function conky_main()
     --   every 33.3 minutes with conky interval of 5 in battery mode
     if (updates % 400) == 0 and updates > 100 then
         online = os.execute("wget -q --spider http://duckduckgo.com")
-        if online then
+        local lock = io.open("/home/max/.sync_lock")
+        if online and lock == nil then
             -- gracefully unlock password store
             os.execute("alacritty --title 'pass' -e pass unlock")
             -- fetch all new mail
@@ -179,6 +180,7 @@ function conky_main()
             -- sync contacts and calendar
             os.execute("vdirsyncer sync")
         end
+        lock:close()
     end
 
     if updates > 1 then
