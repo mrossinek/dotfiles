@@ -80,8 +80,37 @@ end
 function conky_gpu(cr)
     cairo_translate(cr, 0, 500)
 
-    draw_hexagon(cr, 0, 110, 0, 80, 0.7, 0.7, 0.7, 1)
-    print_icon(cr, "", "Font Awesome 5 Free", "bold", 70, 110, 0, 1, 1, 1, 1)
+    -- use nvidia logo as icon
+    local image = cairo_image_surface_create_from_png("/usr/share/pixmaps/nvidia-settings.png")
+    w = cairo_image_surface_get_width(image)
+    h = cairo_image_surface_get_height(image)
+
+    pattern = cairo_pattern_create_for_surface(image)
+
+    local matrix = cairo_matrix_t:create()
+    tolua.takeownership(matrix)
+
+    cairo_matrix_init_scale(matrix, w / 128, h / 128)
+    cairo_matrix_translate(matrix, -40, 60)
+    cairo_pattern_set_matrix(pattern, matrix)
+    cairo_set_source(cr, pattern)
+
+    origin_x, origin_y = 110, 0
+    edge = 80
+    local height = math.sqrt(3) * edge / 2
+    cairo_move_to(cr, origin_x - edge, origin_y)
+    cairo_line_to(cr, origin_x - edge / 2, origin_y - height)
+    cairo_line_to(cr, origin_x + edge / 2, origin_y - height)
+    cairo_line_to(cr, origin_x + edge, origin_y)
+    cairo_line_to(cr, origin_x + edge / 2, origin_y + height)
+    cairo_line_to(cr, origin_x - edge / 2, origin_y + height)
+    cairo_line_to(cr, origin_x - edge, origin_y)
+    cairo_fill(cr)
+
+    draw_hexagon(cr, 0, origin_x, origin_y, edge, 0.7, 0.7, 0.7, 1)
+
+    cairo_pattern_destroy(pattern)
+    cairo_surface_destroy(image)
 
     gpu_util = tonumber(conky_parse("${nvidia gpuutil 1}"))
     fill_hexagon(cr, 6, 190, 0, 40, gpu_util, 0.7, 0.7, 0.7, 1)
