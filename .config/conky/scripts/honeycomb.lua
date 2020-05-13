@@ -73,7 +73,8 @@ function compute_hexagon_origin(corner, xpos, ypos, edge)
 end
 
 -- draws a hexagon from a given corner position
-function draw_hexagon(cr, corner, xpos, ypos, edge, red, green, blue, alpha)
+function draw_hexagon(cr, corner, xpos, ypos, edge, width, red, green, blue,
+                      alpha)
     origin_x, origin_y = compute_hexagon_origin(corner, xpos, ypos, edge)
     local height = math.sqrt(3) * edge / 2
     cairo_move_to(cr, origin_x - edge, origin_y)
@@ -84,12 +85,13 @@ function draw_hexagon(cr, corner, xpos, ypos, edge, red, green, blue, alpha)
     cairo_line_to(cr, origin_x - edge / 2, origin_y + height)
     cairo_line_to(cr, origin_x - edge, origin_y)
     cairo_set_source_rgba(cr, red, green, blue, alpha)
+    cairo_set_line_width(cr, width)
     cairo_stroke(cr)
 end
 
 -- annotates a hexagon with a horizontal line at the speicifed corner
-function annotate_hexagon(cr, corner, origin_x, origin_y, edge, x_end, red,
-                          green, blue, alpha)
+function annotate_hexagon(cr, corner, origin_x, origin_y, edge, width, x_end,
+                          red, green, blue, alpha)
     local fac = 6 / 5
     local height = math.sqrt(3) * edge / 2
     if corner == 1 then
@@ -116,12 +118,13 @@ function annotate_hexagon(cr, corner, origin_x, origin_y, edge, x_end, red,
         cairo_line_to(cr, x_end, origin_y + height * fac)
     end
     cairo_set_source_rgba(cr, red, green, blue, alpha)
+    cairo_set_line_width(cr, width)
     cairo_stroke(cr)
 end
 
 -- fills the percentage area of a specified hexagon
-function fill_hexagon(cr, corner, xpos, ypos, edge, percent, unit, font, bold,
-                      size, red, green, blue, alpha)
+function fill_hexagon(cr, corner, xpos, ypos, edge, width, percent, unit, font,
+                      bold, size, red, green, blue, alpha)
     origin_x, origin_y = compute_hexagon_origin(corner, xpos, ypos, edge)
     local height = math.sqrt(3) * edge / 2
 
@@ -145,9 +148,10 @@ function fill_hexagon(cr, corner, xpos, ypos, edge, percent, unit, font, bold,
     cairo_close_path(cr)
     cairo_set_source_rgba(cr, red, green, blue, alpha)
     cairo_fill(cr)
+    cairo_set_line_width(cr, width)
     cairo_stroke(cr)
 
     text = tostring(percent) .. unit
-    print_text(cr, text, font, bold, size, "center",
-               origin_x, origin_y, 1, 1, 1, 1)
+    print_text(cr, text, font, bold, size, "center", origin_x, origin_y, 1, 1,
+               1, 1)
 end
