@@ -42,8 +42,11 @@ function print_text(cr, text, font, bold, size, align, xpos, ypos, red, green,
     if align == 'center' then
         x = xpos - (extents.width / 2 + extents.x_bearing)
         y = ypos - (extents.height / 2 + extents.y_bearing)
-    else
+    elseif align == 'left' then
         x, y = xpos, ypos
+    elseif align == 'right' then
+        x = xpos - (extents.width + extents.x_bearing)
+        y = ypos
     end
     cairo_move_to(cr, x, y)
     cairo_set_source_rgba(cr, red, green, blue, alpha)
