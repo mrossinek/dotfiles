@@ -198,15 +198,14 @@ function conky_main()
     -- interval 400 means:
     --   every 10 minutes with conky interval of 1.5 with power supply connected
     --   every 33.3 minutes with conky interval of 5 in battery mode
-    if (updates % 400) == 0 or conky_start == 1 then
+    if (updates % 400) == 0 and updates > 100 then
         online = os.execute("wget -q --spider http://duckduckgo.com")
-        if online == 0 then
+        if online then
             -- fetch weather forecast
             os.execute("bash $HOME/.weather/weather-watcher.sh")
             -- fetch stock data
             os.execute("python $HOME/.stocks/stock-watcher.py")
         end
-        conky_start = nil
     end
 
     if updates > 1 then
