@@ -88,4 +88,4 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
     where
     spawnTerm  = myTerminal ++  " --title scratchpad"
     findTerm   = title =? "scratchpad"
-    manageTerm = customFloating $ W.RationalRect 0.125 0.05 0.7 0.85
+    manageTerm = customFloating $ W.RationalRect 0.125 0.05 0.7 0.9
