@@ -7,6 +7,7 @@ let g:ale_linters =     {
                         \       'haskell': ['ghc'],
                         \       'help': [],
                         \       'java': ['javalsp', 'checkstyle'],
+                        \       'lua': ['luac'],
                         \       'markdown': ['prettier'],
                         \       'python': ['pyls', 'pylint', 'flake8'],
                         \       'sh': ['shellcheck'],
