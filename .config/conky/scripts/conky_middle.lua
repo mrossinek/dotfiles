@@ -195,10 +195,10 @@ function conky_main()
     cr = cairo_create(cs)
     local updates = tonumber(conky_parse('${updates}'))
 
-    -- interval 400 means:
-    --   every 10 minutes with conky interval of 1.5 with power supply connected
-    --   every 33.3 minutes with conky interval of 5 in battery mode
-    if (updates % 400) == 0 and updates > 100 then
+    -- interval 1200 means:
+    --   every 30 minutes with conky interval of 1.5 with power supply connected
+    --   every 100 minutes with conky interval of 5 in battery mode
+    if (updates % 1200) == 0 and updates > 100 then
         online = os.execute("wget -q --spider http://duckduckgo.com")
         local lock = io.open("/home/max/.sync_lock")
         if online and lock == nil then
