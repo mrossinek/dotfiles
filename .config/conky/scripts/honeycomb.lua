@@ -2,7 +2,8 @@ require 'cairo'
 require 'imlib2'
 
 -- prints an icon in the specified font
-function print_icon(cr, icon, font, bold, size, xpos, ypos, red, green, blue, alpha)
+function print_icon(cr, icon, font, bold, size, xpos, ypos, red, green, blue,
+                    alpha)
     local extents = cairo_text_extents_t:create()
     tolua.takeownership(extents)
 
@@ -24,7 +25,8 @@ function print_icon(cr, icon, font, bold, size, xpos, ypos, red, green, blue, al
 end
 
 -- prints normal text
-function print_text(cr, text, font, bold, size, align, xpos, ypos, red, green, blue, alpha)
+function print_text(cr, text, font, bold, size, align, xpos, ypos, red, green,
+                    blue, alpha)
     local extents = cairo_text_extents_t:create()
     tolua.takeownership(extents)
 
@@ -146,5 +148,6 @@ function fill_hexagon(cr, corner, xpos, ypos, edge, percent, red, green, blue,
     cairo_stroke(cr)
 
     text = tostring(percent) .. "%"
-    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "center", origin_x, origin_y, 1, 1, 1, 1)
+    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "center",
+               origin_x, origin_y, 1, 1, 1, 1)
 end

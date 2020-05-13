@@ -6,20 +6,25 @@ function conky_time(cr)
     cairo_translate(cr, 150, 0)
 
     draw_hexagon(cr, 0, 350, 125, 90, 0.7, 0.7, 0.7, 1)
-    print_text(cr, conky_parse("${time %I:%M}"), "MesloLGS Nerd Font Mono", "bold", 50, "center", 350, 125, 1, 1, 1, 1)
+    print_text(cr, conky_parse("${time %I:%M}"), "MesloLGS Nerd Font Mono",
+               "bold", 50, "center", 350, 125, 1, 1, 1, 1)
 
     annotate_hexagon(cr, 1, 350, 125, 90, 15, 0.7, 0.7, 0.7, 1)
-    print_text(cr, conky_parse("${kernel}"), "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 25, 1, 1, 1, 1)
+    print_text(cr, conky_parse("${kernel}"), "MesloLGS Nerd Font Mono",
+               "normal", 20, "left", 20, 25, 1, 1, 1, 1)
     annotate_hexagon(cr, 2, 350, 125, 90, 15, 0.7, 0.7, 0.7, 1)
-    print_text(cr, conky_parse("${uptime_short}"), "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 115, 1, 1, 1, 1)
+    print_text(cr, conky_parse("${uptime_short}"), "MesloLGS Nerd Font Mono",
+               "normal", 20, "left", 20, 115, 1, 1, 1, 1)
     annotate_hexagon(cr, 6, 350, 125, 90, 15, 0.7, 0.7, 0.7, 1)
-    print_text(cr, conky_parse("${time %a %b %d}"), "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 210, 1, 1, 1, 1)
+    print_text(cr, conky_parse("${time %a %b %d}"), "MesloLGS Nerd Font Mono",
+               "normal", 20, "left", 20, 210, 1, 1, 1, 1)
 
     local file = io.popen("cal -m | tail -n +2")
     local line = file:read("*l")
     offset = 35
     while line do
-        print_text(cr, line, "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 210 + offset, 1, 1, 1, 1)
+        print_text(cr, line, "MesloLGS Nerd Font Mono", "normal", 20, "left",
+                   20, 210 + offset, 1, 1, 1, 1)
         line = file:read("*l")
         offset = offset + 20
     end
@@ -35,15 +40,18 @@ function conky_personal(cr)
     local file = io.open("/home/max/.mailcount")
     text = file:read("*n")
     file:close()
-    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 30, "center", 100, 70, 1, 1, 1, 1)
+    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 30, "center", 100,
+               70, 1, 1, 1, 1)
 
     -- tasks
     draw_hexagon(cr, 1, 130, 0, 60, 0.7, 0.7, 0.7, 1)
-    print_icon(cr, "", "Font Awesome 5 Free", "bold", 40, 190, -20, 1, 1, 1, 1)
+    print_icon(cr, "", "Font Awesome 5 Free", "bold", 40, 190, -20, 1, 1, 1,
+               1)
     local file = io.popen("task count status:PENDING")
     text = file:read("*n")
     file:close()
-    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 30, "center", 190, 25, 1, 1, 1, 1)
+    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 30, "center", 190,
+               25, 1, 1, 1, 1)
 
     -- news
     draw_hexagon(cr, 2, 250, 0, 60, 0.7, 0.7, 0.7, 1)
@@ -51,7 +59,8 @@ function conky_personal(cr)
     local file = io.open("/home/max/.newscount")
     text = file:read("*n")
     file:close()
-    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 30, "center", 280, 70, 1, 1, 1, 1)
+    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 30, "center", 280,
+               70, 1, 1, 1, 1)
 end
 
 function conky_laptop(cr)
@@ -129,8 +138,10 @@ function conky_music(cr)
     artist = file:read("*l")
     title = file:read("*l")
     file:close()
-    print_text(cr, artist, "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 240, 1, 1, 1, 1)
-    print_text(cr, title, "MesloLGS Nerd Font Mono", "normal", 20, "left", 20, 270, 1, 1, 1, 1)
+    print_text(cr, artist, "MesloLGS Nerd Font Mono", "normal", 20, "left", 20,
+               240, 1, 1, 1, 1)
+    print_text(cr, title, "MesloLGS Nerd Font Mono", "normal", 20, "left", 20,
+               270, 1, 1, 1, 1)
 
     cairo_pattern_destroy(pattern)
     cairo_surface_destroy(image)
