@@ -53,7 +53,7 @@ function conky_weather(cr)
     update = {}
     line = file:read("*l")
     for str in string.gmatch(line, "([^ ]+)") do table.insert(update, str) end
-    print_text(cr, "Update", "MesloLGS Nerd Font Mono", "normal", 20, "center",
+    print_text(cr, "Update:", "MesloLGS Nerd Font Mono", "normal", 20, "center",
                600, 220, 1, 1, 1, 1)
     print_text(cr, update[2] .. " " .. update[3], "MesloLGS Nerd Font Mono",
                "normal", 20, "center", 600, 260, 1, 1, 1, 1)
@@ -179,6 +179,10 @@ function conky_stocks(cr)
                                  stock[4]), "MesloLGS Nerd Font Mono", "normal",
                20, "left", 620, 140, 1, 1, 1, 1)
 
+    line = file:read("*l")
+    print_text(cr, "Update: " .. line, "MesloLGS Nerd Font Mono", "normal", 20,
+               "center", 600, 175, 1, 1, 1, 1)
+
     file:close()
 end
 
@@ -195,8 +199,13 @@ function conky_main()
     --   every 10 minutes with conky interval of 1.5 with power supply connected
     --   every 33.3 minutes with conky interval of 5 in battery mode
     if (updates % 400) == 0 or conky_start == 1 then
-        os.execute("bash $HOME/.weather/weather-watcher.sh")
-        os.execute("python $HOME/.stocks/stock-watcher.py")
+        online = os.execute("wget -q --spider http://duckduckgo.com")
+        if online == 0 then
+            -- fetch weather forecast
+            os.execute("bash $HOME/.weather/weather-watcher.sh")
+            -- fetch stock data
+            os.execute("python $HOME/.stocks/stock-watcher.py")
+        end
         conky_start = nil
     end
 
