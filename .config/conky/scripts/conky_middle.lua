@@ -23,10 +23,10 @@ function conky_weather(cr)
                "center", 480, 230, 1, 1, 1, 1)
     print_icon(cr, tomorrow[2], "Weather Icons", "normal", 50, 480, 170, 1, 1,
                1, 1)
-    draw_hexagon(cr, 5, 400, 190, 40, 2, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 5, 400, 190, 40, 1, 0.7, 0.7, 0.7, 1)
     print_text(cr, tomorrow[3] .. "°C", "MesloLGS Nerd Font Mono", "normal",
                24, "center", 380, 155, 1, 1, 1, 1)
-    draw_hexagon(cr, 3, 400, 190, 40, 2, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 3, 400, 190, 40, 1, 0.7, 0.7, 0.7, 1)
     print_text(cr, tomorrow[4] .. "°C", "MesloLGS Nerd Font Mono", "normal",
                24, "center", 380, 225, 1, 1, 1, 1)
 
@@ -41,10 +41,10 @@ function conky_weather(cr)
                "center", 720, 230, 1, 1, 1, 1)
     print_icon(cr, after_tomorrow[2], "Weather Icons", "normal", 50, 720, 170,
                1, 1, 1, 1)
-    draw_hexagon(cr, 6, 800, 190, 40, 2, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 6, 800, 190, 40, 1, 0.7, 0.7, 0.7, 1)
     print_text(cr, after_tomorrow[3] .. "°C", "MesloLGS Nerd Font Mono",
                "normal", 24, "center", 820, 155, 1, 1, 1, 1)
-    draw_hexagon(cr, 2, 800, 190, 40, 2, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 2, 800, 190, 40, 1, 0.7, 0.7, 0.7, 1)
     print_text(cr, after_tomorrow[4] .. "°C", "MesloLGS Nerd Font Mono",
                "normal", 24, "center", 820, 225, 1, 1, 1, 1)
 

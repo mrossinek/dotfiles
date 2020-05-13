@@ -5,7 +5,7 @@ conky_start = 1
 function conky_time(cr)
     cairo_translate(cr, 150, 0)
 
-    draw_hexagon(cr, 0, 350, 125, 90, 4, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 0, 350, 125, 90, 6, 0.7, 0.7, 0.7, 1)
     print_text(cr, conky_parse("${time %I:%M}"), "MesloLGS Nerd Font Mono",
                "bold", 50, "center", 350, 125, 1, 1, 1, 1)
 
@@ -67,15 +67,25 @@ function conky_laptop(cr)
     cairo_translate(cr, 0, 325)
 
     -- brightness
+    brightness = tonumber(conky_parse("${exec xbacklight -get}"))
+    fill_hexagon(cr, 4, 70, 60, 40, 2, brightness, "%",
+                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
+    draw_hexagon(cr, 4, 70, 60, 40, 2, 0.7, 0.7, 0.7, 1)
+
     draw_hexagon(cr, 6, 70, 60, 60, 4, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 60, 100, 10, 1, 1, 1, 1)
 
-    brightness = tonumber(conky_parse("${exec xbacklight -get}"))
-    fill_hexagon(cr, 4, 70, 60, 40, 4, brightness, "%",
-                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
-    draw_hexagon(cr, 4, 70, 60, 40, 4, 0.7, 0.7, 0.7, 1)
-
     -- battery
+    bat0_perc = tonumber(conky_parse("${battery_percent BAT0}"))
+    fill_hexagon(cr, 4, 160, 112, 40, 2, bat0_perc, "%",
+                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
+    draw_hexagon(cr, 4, 160, 112, 40, 2, 0.7, 0.7, 0.7, 1)
+
+    bat1_perc = tonumber(conky_parse("${battery_percent BAT1}"))
+    fill_hexagon(cr, 1, 220, 112, 40, 2, bat1_perc, "%",
+                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
+    draw_hexagon(cr, 1, 220, 112, 40, 2, 0.7, 0.7, 0.7, 1)
+
     draw_hexagon(cr, 1, 130, 60, 60, 4, 0.7, 0.7, 0.7, 1)
     local file = io.open("/sys/class/power_supply/AC/online")
     ac = file:read("*n")
@@ -83,25 +93,16 @@ function conky_laptop(cr)
     icon = (ac == 1 and "" or "")
     print_icon(cr, icon, "Font Awesome 5 Free", "bold", 60, 190, 60, 1, 1, 1, 1)
 
-    bat0_perc = tonumber(conky_parse("${battery_percent BAT0}"))
-    fill_hexagon(cr, 4, 160, 112, 40, 4, bat0_perc, "%",
-                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
-    draw_hexagon(cr, 4, 160, 112, 40, 4, 0.7, 0.7, 0.7, 1)
-
-    bat1_perc = tonumber(conky_parse("${battery_percent BAT1}"))
-    fill_hexagon(cr, 1, 220, 112, 40, 4, bat1_perc, "%",
-                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
-    draw_hexagon(cr, 1, 220, 112, 40, 4, 0.7, 0.7, 0.7, 1)
-
     -- volume
+    volume = tonumber(conky_parse(
+                          "${exec pactl list sinks | grep Volume | grep -o '[0-9]*%' | head -1 | sed 's/%//'}"))
+    fill_hexagon(cr, 1, 310, 60, 40, 2, volume, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.35, 0.35, 0.35, 1)
+    draw_hexagon(cr, 1, 310, 60, 40, 2, 0.7, 0.7, 0.7, 1)
+
     draw_hexagon(cr, 6, 250, 60, 60, 4, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 60, 280, 10, 1, 1, 1, 1)
 
-    volume = tonumber(conky_parse(
-                          "${exec pactl list sinks | grep Volume | grep -o '[0-9]*%' | head -1 | sed 's/%//'}"))
-    fill_hexagon(cr, 1, 310, 60, 40, 4, volume, "%", "MesloLGS Nerd Font Mono",
-                 "normal", 20, 0.35, 0.35, 0.35, 1)
-    draw_hexagon(cr, 1, 310, 60, 40, 4, 0.7, 0.7, 0.7, 1)
 end
 
 function conky_music(cr)
