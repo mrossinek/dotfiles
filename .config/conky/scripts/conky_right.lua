@@ -71,7 +71,8 @@ function conky_laptop(cr)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 60, 100, 10, 1, 1, 1, 1)
 
     brightness = tonumber(conky_parse("${exec xbacklight -get}"))
-    fill_hexagon(cr, 4, 70, 60, 40, brightness, 0.35, 0.35, 0.35, 1)
+    fill_hexagon(cr, 4, 70, 60, 40, brightness, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 4, 70, 60, 40, 0.7, 0.7, 0.7, 1)
 
     -- battery
@@ -83,11 +84,13 @@ function conky_laptop(cr)
     print_icon(cr, icon, "Font Awesome 5 Free", "bold", 60, 190, 60, 1, 1, 1, 1)
 
     bat0_perc = tonumber(conky_parse("${battery_percent BAT0}"))
-    fill_hexagon(cr, 4, 160, 112, 40, bat0_perc, 0.35, 0.35, 0.35, 1)
+    fill_hexagon(cr, 4, 160, 112, 40, bat0_perc, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 4, 160, 112, 40, 0.7, 0.7, 0.7, 1)
 
     bat1_perc = tonumber(conky_parse("${battery_percent BAT1}"))
-    fill_hexagon(cr, 1, 220, 112, 40, bat1_perc, 0.35, 0.35, 0.35, 1)
+    fill_hexagon(cr, 1, 220, 112, 40, bat1_perc, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 1, 220, 112, 40, 0.7, 0.7, 0.7, 1)
 
     -- volume
@@ -96,7 +99,8 @@ function conky_laptop(cr)
 
     volume = tonumber(conky_parse(
                           "${exec pactl list sinks | grep Volume | grep -o '[0-9]*%' | head -1 | sed 's/%//'}"))
-    fill_hexagon(cr, 1, 310, 60, 40, volume, 0.35, 0.35, 0.35, 1)
+    fill_hexagon(cr, 1, 310, 60, 40, volume, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 1, 310, 60, 40, 0.7, 0.7, 0.7, 1)
 end
 

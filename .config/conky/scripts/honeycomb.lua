@@ -120,8 +120,8 @@ function annotate_hexagon(cr, corner, origin_x, origin_y, edge, x_end, red,
 end
 
 -- fills the percentage area of a specified hexagon
-function fill_hexagon(cr, corner, xpos, ypos, edge, percent, red, green, blue,
-                      alpha)
+function fill_hexagon(cr, corner, xpos, ypos, edge, percent, unit, font, bold,
+                      size, red, green, blue, alpha)
     origin_x, origin_y = compute_hexagon_origin(corner, xpos, ypos, edge)
     local height = math.sqrt(3) * edge / 2
 
@@ -147,7 +147,7 @@ function fill_hexagon(cr, corner, xpos, ypos, edge, percent, red, green, blue,
     cairo_fill(cr)
     cairo_stroke(cr)
 
-    text = tostring(percent) .. "%"
-    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "center",
+    text = tostring(percent) .. unit
+    print_text(cr, text, font, bold, size, "center",
                origin_x, origin_y, 1, 1, 1, 1)
 end

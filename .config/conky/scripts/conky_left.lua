@@ -20,7 +20,9 @@ function conky_networking(cr)
         download = conky_parse("${downspeed " .. net .. "}")
         wifi_qual = tonumber(conky_parse(
                                  "${wireless_link_qual_perc " .. net .. "}"))
-        fill_hexagon(cr, 2, 60, 222, 40, wifi_qual, 0.35, 0.35, 0.35, 1)
+        fill_hexagon(cr, 2, 60, 222, 40, wifi_qual, "%",
+                     "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35,
+                     1)
         draw_hexagon(cr, 2, 60, 222, 40, 0.7, 0.7, 0.7, 1)
         draw_hexagon(cr, 1, 100, 290, 20, 0.7, 0.7, 0.7, 1)
         print_icon(cr, "", "Font Awesome 5 Free", "bold", 18, 120, 290, 0.7,
@@ -56,24 +58,28 @@ function conky_storage(cr)
     draw_hexagon(cr, 5, 120, 90, 60, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 40, 90, 35, 1, 1, 1, 1)
     root_perc = tonumber(conky_parse("${fs_used_perc /}"))
-    fill_hexagon(cr, 1, 120, -15, 40, root_perc, 0.7, 0.7, 0.7, 1)
+    fill_hexagon(cr, 1, 120, -15, 40, root_perc, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 1, 120, -15, 40, 0.7, 0.7, 0.7, 1)
 
     -- ram
     draw_hexagon(cr, 1, 120, 90, 60, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 40, 180, 90, 1, 1, 1, 1)
     mem_perc = tonumber(conky_parse("${memperc}"))
-    fill_hexagon(cr, 6, 240, 90, 40, mem_perc, 0.7, 0.7, 0.7, 1)
+    fill_hexagon(cr, 6, 240, 90, 40, mem_perc, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 6, 240, 90, 40, 0.7, 0.7, 0.7, 1)
     swap_perc = tonumber(conky_parse("${swapperc}"))
-    fill_hexagon(cr, 2, 240, 90, 40, swap_perc, 0.7, 0.7, 0.7, 1)
+    fill_hexagon(cr, 2, 240, 90, 40, swap_perc, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 2, 240, 90, 40, 0.7, 0.7, 0.7, 1)
 
     -- home perc
     draw_hexagon(cr, 3, 120, 90, 60, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 40, 90, 140, 1, 1, 1, 1)
     home_perc = tonumber(conky_parse("${fs_used_perc /home/}"))
-    fill_hexagon(cr, 1, 120, 195, 40, home_perc, 0.7, 0.7, 0.7, 1)
+    fill_hexagon(cr, 1, 120, 195, 40, home_perc, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 1, 120, 195, 40, 0.7, 0.7, 0.7, 1)
 end
 
@@ -113,21 +119,24 @@ function conky_gpu(cr)
     cairo_surface_destroy(image)
 
     gpu_util = tonumber(conky_parse("${nvidia gpuutil 1}"))
-    fill_hexagon(cr, 6, 190, 0, 40, gpu_util, 0.7, 0.7, 0.7, 1)
+    fill_hexagon(cr, 6, 190, 0, 40, gpu_util, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 6, 190, 0, 40, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 1, 230, -70, 20, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 18, 250, -70, 0.7, 0.7,
                0.7, 1)
 
     gpu_memutil = tonumber(conky_parse("${nvidia memutil 1}"))
-    fill_hexagon(cr, 2, 190, 0, 40, gpu_memutil, 0.7, 0.7, 0.7, 1)
+    fill_hexagon(cr, 2, 190, 0, 40, gpu_memutil, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 2, 190, 0, 40, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 1, 230, 70, 20, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 18, 250, 70, 0.7, 0.7,
                0.7, 1)
 
     gpu_temp = tonumber(conky_parse("${nvidia temp 1}"))
-    fill_hexagon(cr, 5, 150, -70, 40, gpu_temp, 0.7, 0.7, 0.7, 1)
+    fill_hexagon(cr, 5, 150, -70, 40, gpu_temp, "°C", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 5, 150, -70, 40, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 4, 110, -140, 20, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 18, 90, -140, 0.7, 0.7,
@@ -151,7 +160,8 @@ function conky_cpu(cr)
 
     cpu_temp = tonumber(conky_parse("${hwmon 2 temp 1 0.001}"))
     fill_hexagon(cr, 6, cpu_origin_x - cpu_edge / 2, cpu_origin_y - cpu_height,
-                 30, cpu_temp, 0.35, 0.35, 0.35, 1)
+                 30, cpu_temp, "°C", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 6, cpu_origin_x - cpu_edge / 2, cpu_origin_y - cpu_height,
                  30, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 4, cpu_origin_x - cpu_edge / 2,
@@ -164,52 +174,59 @@ function conky_cpu(cr)
 
     cpu_perc_1 = tonumber(conky_parse("${cpu cpu1}"))
     fill_hexagon(cr, 5, cpu_corner_3_x, cpu_corner_3_y, thread_edge, cpu_perc_1,
-                 0.35, 0.35, 0.35, 1)
+                 "%", "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35,
+                 1)
     draw_hexagon(cr, 5, cpu_corner_3_x, cpu_corner_3_y, thread_edge, 0.7, 0.7,
                  0.7, 1)
 
     cpu_perc_2 = tonumber(conky_parse("${cpu cpu2}"))
     fill_hexagon(cr, 6, cpu_corner_3_x + thread_edge / 2,
-                 cpu_corner_3_y - thread_height, thread_edge, cpu_perc_2, 0.35,
-                 0.35, 0.35, 1)
+                 cpu_corner_3_y - thread_height, thread_edge, cpu_perc_2, "%",
+                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 6, cpu_corner_3_x + thread_edge / 2,
                  cpu_corner_3_y - thread_height, thread_edge, 0.7, 0.7, 0.7, 1)
 
     cpu_perc_3 = tonumber(conky_parse("${cpu cpu3}"))
     fill_hexagon(cr, 1, cpu_corner_3_x, cpu_corner_3_y, thread_edge, cpu_perc_3,
-                 0.35, 0.35, 0.35, 1)
+                 "%", "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35,
+                 1)
     draw_hexagon(cr, 1, cpu_corner_3_x, cpu_corner_3_y, thread_edge, 0.7, 0.7,
                  0.7, 1)
 
     cpu_perc_4 = tonumber(conky_parse("${cpu cpu4}"))
     fill_hexagon(cr, 6, cpu_corner_3_x + 2 * thread_edge, cpu_corner_3_y,
-                 thread_edge, cpu_perc_4, 0.35, 0.35, 0.35, 1)
+                 thread_edge, cpu_perc_4, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 6, cpu_corner_3_x + 2 * thread_edge, cpu_corner_3_y,
                  thread_edge, 0.7, 0.7, 0.7, 1)
 
     cpu_perc_5 = tonumber(conky_parse("${cpu cpu5}"))
     fill_hexagon(cr, 6, cpu_corner_4_x, cpu_corner_4_y, thread_edge, cpu_perc_5,
-                 0.35, 0.35, 0.35, 1)
+                 "%", "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35,
+                 1)
     draw_hexagon(cr, 6, cpu_corner_4_x, cpu_corner_4_y, thread_edge, 0.7, 0.7,
                  0.7, 1)
 
     cpu_perc_6 = tonumber(conky_parse("${cpu cpu6}"))
     fill_hexagon(cr, 1, cpu_corner_4_x + thread_edge,
                  cpu_corner_4_y - 2 * thread_height, thread_edge, cpu_perc_6,
-                 0.35, 0.35, 0.35, 1)
+                 "%", "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35,
+                 1)
     draw_hexagon(cr, 1, cpu_corner_4_x + thread_edge,
                  cpu_corner_4_y - 2 * thread_height, thread_edge, 0.7, 0.7, 0.7,
                  1)
 
     cpu_perc_7 = tonumber(conky_parse("${cpu cpu7}"))
     fill_hexagon(cr, 2, cpu_corner_4_x, cpu_corner_4_y, thread_edge, cpu_perc_7,
-                 0.35, 0.35, 0.35, 1)
+                 "%", "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35,
+                 1)
     draw_hexagon(cr, 2, cpu_corner_4_x, cpu_corner_4_y, thread_edge, 0.7, 0.7,
                  0.7, 1)
 
     cpu_perc_8 = tonumber(conky_parse("${cpu cpu8}"))
     fill_hexagon(cr, 1, cpu_corner_4_x + thread_edge, cpu_corner_4_y,
-                 thread_edge, cpu_perc_8, 0.35, 0.35, 0.35, 1)
+                 thread_edge, cpu_perc_8, "%", "MesloLGS Nerd Font Mono",
+                 "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 1, cpu_corner_4_x + thread_edge, cpu_corner_4_y,
                  thread_edge, 0.7, 0.7, 0.7, 1)
 end
