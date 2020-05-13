@@ -73,8 +73,11 @@ function conky_main()
     cr = cairo_create(cs)
     local updates = tonumber(conky_parse('${updates}'))
 
-    if (updates % 500) == 0 or conky_start == 1 then
-        os.execute("bash /home/max/.weather/weather_watcher.sh")
+    -- interval 400 means:
+    --   every 10 minutes with conky interval of 1.5 with power supply connected
+    --   every 33.3 minutes with conky interval of 5 in battery mode
+    if (updates % 400) == 0 or conky_start == 1 then
+        os.execute("bash $HOME/.weather/weather-watcher.sh")
         conky_start = nil
     end
 

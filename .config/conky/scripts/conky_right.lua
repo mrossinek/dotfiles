@@ -159,6 +159,12 @@ function conky_main()
                                          conky_window.width, conky_window.height)
     cr = cairo_create(cs)
     local updates = tonumber(conky_parse('${updates}'))
+
+    -- interval 400 means:
+    --   every 10 minutes with conky interval of 1.5 with power supply connected
+    --   every 33.3 minutes with conky interval of 5 in battery mode
+    if (updates % 400) == 0 or conky_start == 1 then conky_start = nil end
+
     if updates > 1 then
         cairo_set_line_cap(cr, CAIRO_LINE_CAP_ROUND);
 
