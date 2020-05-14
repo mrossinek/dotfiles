@@ -176,6 +176,7 @@ function conky_main()
             os.execute("bash $HOME/.config/conky/scripts/news-counter.sh")
             -- sync tasks
             os.execute("task sync")
+            os.execute("bugwarrior-pull")
             os.execute("task rc:~/.config/bugwarrior/taskrc sync")
             -- sync contacts and calendar
             os.execute("vdirsyncer sync")
