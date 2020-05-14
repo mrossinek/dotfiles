@@ -18,7 +18,6 @@ function conky_networking(cr)
         download = conky_parse("${downspeed " .. net .. "}")
         wifi_qual = tonumber(conky_parse(
                                  "${wireless_link_qual_perc " .. net .. "}"))
-        if not wifi_qual then wifi_qual = 0 end
         fill_hexagon(cr, 2, 60, 222, 40, 2, wifi_qual, "%",
                      "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35,
                      1)
