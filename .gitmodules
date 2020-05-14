@@ -172,12 +172,12 @@
 [submodule ".config/nvim/pack/minpac/start/vim-pandoc-syntax"]
 	path = .config/nvim/pack/minpac/start/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax
-[submodule ".config/nvim/pack/minpac/opt/vim-criticmarkup"]
-	path = .config/nvim/pack/minpac/opt/vim-criticmarkup
-	url = https://github.com/vim-pandoc/vim-criticmarkup
 [submodule ".zinit/bin"]
 	path = .zinit/bin
 	url = https://github.com/zdharma/zinit.git
 [submodule ".config/nvim/pack/minpac/start/vim-markdown"]
 	path = .config/nvim/pack/minpac/start/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
+[submodule ".config/nvim/pack/minpac/opt/vim-criticmarkup"]
+	path = .config/nvim/pack/minpac/opt/vim-criticmarkup
+	url = https://github.com/mrossinek/vim-criticmarkup
