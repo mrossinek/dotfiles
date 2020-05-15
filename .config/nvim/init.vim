@@ -48,6 +48,7 @@ augroup end
 augroup vimwiki_custom
     autocmd!
     autocmd FileType vimwiki call mrossinek#plugins#vimwiki_assert_filetype()
+    autocmd BufEnter *md call mrossinek#plugins#vimwiki_assert_filetype()
 augroup end
 
 " localvimrc plugin: configure and load before any other plugin
