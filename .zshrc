@@ -91,6 +91,7 @@ export GPG_TTY=$(tty)
 export LESS="-iFMRX"
 
 # aliases
+alias la='ls -lA --color=auto -v'
 alias vi=nvim
 alias vim=nvim
 alias vimdiff='nvim -d'
