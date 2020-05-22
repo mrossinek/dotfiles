@@ -100,8 +100,10 @@ alias -s org=w3m
 alias -s com=w3m
 alias cat=bat
 alias fd='fd -I'  # since the .gitignore in ~ ignores all files
-alias open=xdg-open
 alias sudo='sudo '
+if [[ "$(uname)" == 'Linux' ]]; then
+    alias open=xdg-open
+fi
 
 # Make CTRL-Z background things and unbackground them.
 function fg-bg() {
