@@ -4,7 +4,7 @@ System information:
 
 * Window manager: [XMonad](https://xmonad.org/) and [picom](https://github.com/yshui/picom)
 * Application manager: [rofi](https://github.com/davatorium/rofi)
-* Statusbar: [dzen2](https://github.com/robm/dzen) and [conky](https://github.com/brndnmtthws/conky)
+* System Monitor: [conky](https://github.com/brndnmtthws/conky)
 * Notifications: [dunst](https://dunst-project.org/) and [stalonetray](http://stalonetray.sourceforge.net/)
 * Editor: [neovim](https://neovim.io/)
 * Shell: [zsh](https://wiki.archlinux.org/index.php/Zsh)
