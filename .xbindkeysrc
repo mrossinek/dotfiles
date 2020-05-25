@@ -32,10 +32,7 @@
 "~/easy_trackpoint.sh"
         Mod4 + g
 
-"~/yank_pass.sh"
-        Mod4 + s
-
-"~/cron_sync.sh"
+"rofi-pass"
         XF86Tools
 
 "rofimoji"
