@@ -65,167 +65,110 @@ function conky_weather(cr)
     file:close()
 end
 
+function parse_stock(file)
+    line = file:read("*l")
+    stock = {}
+    for str in string.gmatch(line, "([^ ]+)") do table.insert(stock, str) end
+    text = ''
+    if stock[2] == 'NaN' then
+        text = text .. string.format("%6s", stock[2])
+    else
+        text = text .. string.format("%6.2f", stock[2])
+    end
+    if stock[3] == 'NaN' then
+        text = text .. string.format("%6s", stock[3])
+    else
+        text = text .. string.format("%+6.2f", stock[3])
+    end
+    if stock[4] == 'NaN' then
+        text = text .. string.format("%6s", stock[4])
+    else
+        text = text .. string.format("%+6.2f%%", stock[4])
+    end
+    return stock[1], text
+end
+
 function conky_stocks(cr)
     cairo_translate(cr, 0, 1200)
     local file = io.open('/home/max/.stocks/prices.txt')
 
     draw_hexagon(cr, 0, 50, 10, 40, 4, 0.7, 0.7, 0.7, 1)
     annotate_hexagon(cr, 4, 50, 10, 40, 2, 580, 0.7, 0.7, 0.7, 1)
-    line = file:read("*l")
-    stock = {}
-    for str in string.gmatch(line, "([^ ]+)") do table.insert(stock, str) end
-    print_text(cr, stock[1]:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
                "normal", 20, "center", 50, 10, 1, 1, 1, 1)
-    if stock[2] == 'NaN' or stock[3] == 'NaN' or stock[4] == 'NaN' then
-        text = "Unavailable"
-    else
-        text = string.format("%6.2f %+6.2f %+6.2f%%", stock[2], stock[3],
-                             stock[4])
-    end
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
                0, 1, 1, 1, 1)
     --
     draw_hexagon(cr, 0, 1150, 10, 40, 4, 0.7, 0.7, 0.7, 1)
     annotate_hexagon(cr, 1, 1150, 10, 40, 2, 620, 0.7, 0.7, 0.7, 1)
-    line = file:read("*l")
-    stock = {}
-    for str in string.gmatch(line, "([^ ]+)") do table.insert(stock, str) end
-    print_text(cr, stock[1]:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
                "normal", 20, "center", 1150, 10, 1, 1, 1, 1)
-    if stock[2] == 'NaN' or stock[3] == 'NaN' or stock[4] == 'NaN' then
-        text = "Unavailable"
-    else
-        text = string.format("%6.2f %+6.2f %+6.2f%%", stock[2], stock[3],
-                             stock[4])
-    end
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
                0, 1, 1, 1, 1)
     --
     draw_hexagon(cr, 0, 110, 45, 40, 4, 0.7, 0.7, 0.7, 1)
     annotate_hexagon(cr, 4, 110, 45, 40, 2, 580, 0.7, 0.7, 0.7, 1)
-    line = file:read("*l")
-    stock = {}
-    for str in string.gmatch(line, "([^ ]+)") do table.insert(stock, str) end
-    print_text(cr, stock[1]:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
                "normal", 20, "center", 110, 45, 1, 1, 1, 1)
-    if stock[2] == 'NaN' or stock[3] == 'NaN' or stock[4] == 'NaN' then
-        text = "Unavailable"
-    else
-        text = string.format("%6.2f %+6.2f %+6.2f%%", stock[2], stock[3],
-                             stock[4])
-    end
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
                35, 1, 1, 1, 1)
     --
     draw_hexagon(cr, 0, 1090, 45, 40, 4, 0.7, 0.7, 0.7, 1)
     annotate_hexagon(cr, 1, 1090, 45, 40, 2, 620, 0.7, 0.7, 0.7, 1)
-    line = file:read("*l")
-    stock = {}
-    for str in string.gmatch(line, "([^ ]+)") do table.insert(stock, str) end
-    print_text(cr, stock[1]:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
                "normal", 20, "center", 1090, 45, 1, 1, 1, 1)
-    if stock[2] == 'NaN' or stock[3] == 'NaN' or stock[4] == 'NaN' then
-        text = "Unavailable"
-    else
-        text = string.format("%6.2f %+6.2f %+6.2f%%", stock[2], stock[3],
-                             stock[4])
-    end
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
                35, 1, 1, 1, 1)
     --
     draw_hexagon(cr, 0, 170, 80, 40, 4, 0.7, 0.7, 0.7, 1)
     annotate_hexagon(cr, 4, 170, 80, 40, 2, 580, 0.7, 0.7, 0.7, 1)
-    line = file:read("*l")
-    stock = {}
-    for str in string.gmatch(line, "([^ ]+)") do table.insert(stock, str) end
-    print_text(cr, stock[1]:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
                "normal", 20, "center", 170, 80, 1, 1, 1, 1)
-    if stock[2] == 'NaN' or stock[3] == 'NaN' or stock[4] == 'NaN' then
-        text = "Unavailable"
-    else
-        text = string.format("%6.2f %+6.2f %+6.2f%%", stock[2], stock[3],
-                             stock[4])
-    end
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
                70, 1, 1, 1, 1)
     --
     draw_hexagon(cr, 0, 1030, 80, 40, 4, 0.7, 0.7, 0.7, 1)
     annotate_hexagon(cr, 1, 1030, 80, 40, 2, 620, 0.7, 0.7, 0.7, 1)
-    line = file:read("*l")
-    stock = {}
-    for str in string.gmatch(line, "([^ ]+)") do table.insert(stock, str) end
-    print_text(cr, stock[1]:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
                "normal", 20, "center", 1030, 80, 1, 1, 1, 1)
-    if stock[2] == 'NaN' or stock[3] == 'NaN' or stock[4] == 'NaN' then
-        text = "Unavailable"
-    else
-        text = string.format("%6.2f %+6.2f %+6.2f%%", stock[2], stock[3],
-                             stock[4])
-    end
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
                70, 1, 1, 1, 1)
     --
     draw_hexagon(cr, 0, 230, 115, 40, 4, 0.7, 0.7, 0.7, 1)
     annotate_hexagon(cr, 4, 230, 115, 40, 2, 580, 0.7, 0.7, 0.7, 1)
-    line = file:read("*l")
-    stock = {}
-    for str in string.gmatch(line, "([^ ]+)") do table.insert(stock, str) end
-    print_text(cr, stock[1]:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
                "normal", 20, "center", 230, 115, 1, 1, 1, 1)
-    if stock[2] == 'NaN' or stock[3] == 'NaN' or stock[4] == 'NaN' then
-        text = "Unavailable"
-    else
-        text = string.format("%6.2f %+6.2f %+6.2f%%", stock[2], stock[3],
-                             stock[4])
-    end
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
                105, 1, 1, 1, 1)
     --
     draw_hexagon(cr, 0, 970, 115, 40, 4, 0.7, 0.7, 0.7, 1)
     annotate_hexagon(cr, 1, 970, 115, 40, 2, 620, 0.7, 0.7, 0.7, 1)
-    line = file:read("*l")
-    stock = {}
-    for str in string.gmatch(line, "([^ ]+)") do table.insert(stock, str) end
-    print_text(cr, stock[1]:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
                "normal", 20, "center", 970, 115, 1, 1, 1, 1)
-    if stock[2] == 'NaN' or stock[3] == 'NaN' or stock[4] == 'NaN' then
-        text = "Unavailable"
-    else
-        text = string.format("%6.2f %+6.2f %+6.2f%%", stock[2], stock[3],
-                             stock[4])
-    end
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
                105, 1, 1, 1, 1)
     --
     draw_hexagon(cr, 0, 290, 150, 40, 4, 0.7, 0.7, 0.7, 1)
     annotate_hexagon(cr, 4, 290, 150, 40, 2, 580, 0.7, 0.7, 0.7, 1)
-    line = file:read("*l")
-    stock = {}
-    for str in string.gmatch(line, "([^ ]+)") do table.insert(stock, str) end
-    print_text(cr, stock[1]:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
                "normal", 20, "center", 290, 150, 1, 1, 1, 1)
-    if stock[2] == 'NaN' or stock[3] == 'NaN' or stock[4] == 'NaN' then
-        text = "Unavailable"
-    else
-        text = string.format("%6.2f %+6.2f %+6.2f%%", stock[2], stock[3],
-                             stock[4])
-    end
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
                140, 1, 1, 1, 1)
     --
     draw_hexagon(cr, 0, 910, 150, 40, 4, 0.7, 0.7, 0.7, 1)
     annotate_hexagon(cr, 1, 910, 150, 40, 2, 620, 0.7, 0.7, 0.7, 1)
-    line = file:read("*l")
-    stock = {}
-    for str in string.gmatch(line, "([^ ]+)") do table.insert(stock, str) end
-    print_text(cr, stock[1]:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
                "normal", 20, "center", 910, 150, 1, 1, 1, 1)
-    if stock[2] == 'NaN' or stock[3] == 'NaN' or stock[4] == 'NaN' then
-        text = "Unavailable"
-    else
-        text = string.format("%6.2f %+6.2f %+6.2f%%", stock[2], stock[3],
-                             stock[4])
-    end
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
                140, 1, 1, 1, 1)
 
