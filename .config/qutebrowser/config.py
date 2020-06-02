@@ -87,16 +87,5 @@ with config.pattern('*://github.com/') as p:
     # when it's a result of an user interaction (like a click) - that not working is a Qt issue
 
 # fonts
-c.fonts.completion.entry = '12pt default_family'
-c.fonts.completion.category = 'bold 12pt default_family'
-c.fonts.debug_console = '12pt default_family'
-c.fonts.default_family = ['MesloLGS Nerd Font Mono', 'monospace']
-c.fonts.downloads = '12pt default_family'
-c.fonts.hints = 'bold 12pt default_family'
-c.fonts.keyhint = '12pt default_family'
-c.fonts.messages.error = '12pt default_family'
-c.fonts.messages.info = '12pt default_family'
-c.fonts.messages.warning = '12pt default_family'
-c.fonts.prompts = '12pt default_family'
-c.fonts.statusbar = '12pt default_family'
-c.fonts.tabs = '12pt default_family'
+c.fonts.default_family = 'monospace'
+c.fonts.default_size = '16pt' if platform == 'darwin' else '12pt'
