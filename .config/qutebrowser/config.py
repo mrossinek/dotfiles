@@ -88,4 +88,4 @@ with config.pattern('*://github.com/') as p:
 
 # fonts
 c.fonts.default_family = 'monospace'
-c.fonts.default_size = '16pt' if platform == 'darwin' else '12pt'
+c.fonts.default_size = '14pt' if platform == 'darwin' else '12pt'
