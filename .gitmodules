@@ -181,3 +181,6 @@
 [submodule ".config/nvim/pack/minpac/start/vim-dirgutter"]
 	path = .config/nvim/pack/minpac/start/vim-dirgutter
 	url = https://gitlab.com/mrossinek/vim-dirgutter
+[submodule ".config/nvim/pack/minpac/opt/vim-criticmarkup"]
+	path = .config/nvim/pack/minpac/opt/vim-criticmarkup
+	url = https://github.com/vim-pandoc/vim-criticmarkup
