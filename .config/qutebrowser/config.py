@@ -1,5 +1,4 @@
 from os import path
-from sys import platform
 # pylint: disable=C0111
 c = c  # noqa: F821 pylint: disable=E0602,C0103
 config = config  # noqa: F821 pylint: disable=E0602,C0103
@@ -8,10 +7,7 @@ config = config  # noqa: F821 pylint: disable=E0602,C0103
 config.load_autoconfig()
 
 # UI
-if platform == 'darwin':
-    c.zoom.default = '100%'
-else:
-    c.zoom.default = '150%'
+c.zoom.default = '150%'
 c.completion.height = '30%'
 c.downloads.position = 'bottom'
 c.url.start_pages = ['https://github.com/', 'https://gitlab.com/', 'https://start.duckduckgo.com']
@@ -88,4 +84,4 @@ with config.pattern('*://github.com/') as p:
 
 # fonts
 c.fonts.default_family = 'monospace'
-c.fonts.default_size = '14pt' if platform == 'darwin' else '12pt'
+c.fonts.default_size = '12pt'
