@@ -87,6 +87,9 @@ zstyle ':prompt:grml:right:setup' items time sad-smiley
 # enable gpg signing
 export GPG_TTY=$(tty)
 
+export EDITOR=nvim
+export BROWSER=xdg-open
+
 # less options
 export LESS="-iFMRX"
 
