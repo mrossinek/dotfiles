@@ -52,9 +52,9 @@ end
 function conky_storage(cr)
     cairo_translate(cr, 0, 450)
 
-    -- root usage
-    root_perc = tonumber(conky_parse("${fs_used_perc /}"))
-    fill_hexagon(cr, 1, 120, -15, 40, 2, root_perc, "%",
+    -- home usage
+    home_perc = tonumber(conky_parse("${fs_used_perc /home/}"))
+    fill_hexagon(cr, 1, 120, -15, 40, 2, home_perc, "%",
                  "MesloLGS Nerd Font Mono", "normal", 20, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 1, 120, -15, 40, 2, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 5, 120, 90, 60, 4, 0.7, 0.7, 0.7, 1)
@@ -72,9 +72,9 @@ function conky_storage(cr)
     draw_hexagon(cr, 1, 120, 90, 60, 4, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 40, 180, 90, 1, 1, 1, 1)
 
-    -- home perc
-    home_perc = tonumber(conky_parse("${fs_used_perc /home/}"))
-    fill_hexagon(cr, 1, 120, 195, 40, 2, home_perc, "%",
+    -- root usage
+    root_perc = tonumber(conky_parse("${fs_used_perc /}"))
+    fill_hexagon(cr, 1, 120, 195, 40, 2, root_perc, "%",
                  "MesloLGS Nerd Font Mono", "normal", 20, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 1, 120, 195, 40, 2, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 3, 120, 90, 60, 4, 0.7, 0.7, 0.7, 1)
