@@ -86,19 +86,19 @@
 # dunst controls
 
 "dunstctl close"
-        control + space
+        control+alt + space
 
 "dunstctl close-all"
-        control+shift + space
+        control+alt + space
 
 "dunstctl history-pop"
-        Control + period
+        control+alt + period
 
 "dunstctl context"
-        Control + comma
+        control+alt + comma
 
 "dunstctl set-paused toggle"
-        Control + semicolon
+        control+alt + semicolon
 
 ##################################
 # End of xbindkeys configuration #
