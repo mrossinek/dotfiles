@@ -38,7 +38,6 @@ c.bindings.key_mappings = {'<Alt+Down>': 'J', '<Alt+Up>': 'K'}
 # bindings
 config.bind(';A', 'hint links spawn buku -a {hint-url}')
 config.bind('<Alt+o>', 'spawn buku_run')
-config.bind('<Alt+p>', 'spawn --userscript qute-pass')
 config.bind('<Alt+Tab>', 'tab-focus last')
 config.bind('A', 'spawn buku -a {url}')
 config.bind('m', 'spawn umpv {url}')
