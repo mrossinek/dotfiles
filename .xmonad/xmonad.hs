@@ -23,7 +23,7 @@ myModMask               = mod4Mask
 myNormalBorderColor     = "#969694"
 myFocusedBorderColor    = "#77b2f6"
 
-myXmonadBar = "dzen2 -x 72 -y 0 -ta l -dock -e 'button3:'"
+myXmonadBar = "dzen2 -x 120 -y 0 -ta l -dock -e 'button3:'"
 
 main = do
     dzenBar  <- spawnPipe myXmonadBar
