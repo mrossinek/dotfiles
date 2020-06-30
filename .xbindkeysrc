@@ -89,7 +89,7 @@
         control+alt + space
 
 "dunstctl close-all"
-        control+alt + space
+        control+alt+shift + space
 
 "dunstctl history-pop"
         control+alt + period
