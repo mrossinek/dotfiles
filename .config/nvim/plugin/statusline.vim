@@ -9,7 +9,8 @@ if has('statusline')
     set statusline+=%1*
     set statusline+=\ %{mrossinek#statusline#StatuslineMode()}
     set statusline+=\ %2*
-    set statusline+=\ %f  " filename
+    set statusline+=\ %<    " if line becomes too long, shorten it here
+    set statusline+=%f  " filename
     set statusline+=\ %{mrossinek#statusline#StatuslineGitInfo()}
     set statusline+=\ %a  " arguments list position
     set statusline+=\ %m  " modified/modifiable flag
