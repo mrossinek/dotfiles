@@ -7,3 +7,5 @@ image/jpeg=feh.desktop
 image/x-exr=tev.desktop
 video/webm=mpv.desktop
 x-scheme-handler/viber=viber.desktop
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
