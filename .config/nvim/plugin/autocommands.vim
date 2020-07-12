@@ -21,6 +21,8 @@ augroup end
 augroup FlashYanked
     autocmd!
     if exists('##TextYankPost')
-        autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank('ExtraWhiteSpace', 200)
+        autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({
+                    \ higroup="ExtraWhiteSpace",
+                    \ timeout=200})
     endif
 augroup end
