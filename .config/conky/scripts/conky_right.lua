@@ -91,6 +91,20 @@ function conky_laptop(cr)
     icon = (ac == 1 and "" or "")
     print_icon(cr, icon, "Font Awesome 5 Free", "bold", 60, 190, 60, 1, 1, 1, 1)
 
+    -- bluetooth
+    bluetooth_state = tonumber(conky_parse(
+                                   "${exec if bluetoothctl info; then echo 2; else if bluetoothctl list | grep default; then echo 1; else echo 0; fi; fi | tail -1}"))
+    if bluetooth_state == 2 then
+        bluetooth_color = {0.0, 0.35, 0.75}
+    elseif bluetooth_state == 1 then
+        bluetooth_color = {1.0, 1.0, 1.0}
+    else
+        bluetooth_color = {0.35, 0.35, 0.35}
+    end
+    draw_hexagon(cr, 1, 130, -44, 60, 4, 0.7, 0.7, 0.7, 1)
+    print_icon(cr, "", "Font Awesome 5 Brands", "bold", 60, 190, -44,
+               bluetooth_color[1], bluetooth_color[2], bluetooth_color[3], 1.0)
+
     -- volume
     volume = tonumber(conky_parse(
                           "${exec pactl list sinks | grep Volume | grep -o '[0-9]*%' | head -1 | sed 's/%//'}"))
