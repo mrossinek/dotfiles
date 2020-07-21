@@ -93,6 +93,10 @@ export BROWSER=xdg-open
 # less options
 export LESS="-iFMRX"
 
+# nnn options
+export NNN_OPTS="erx"
+export NNN_TRASH=1
+
 # aliases
 alias la='ls -lA -v'
 alias vi=nvim
