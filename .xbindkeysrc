@@ -41,9 +41,6 @@
 "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
         XF86Launch2
 
-"~/toggle_screen.sh"
-        XF86Display
-
 "~/xrandr_duplicate.sh"
         Shift + XF86Display
 
