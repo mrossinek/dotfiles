@@ -97,6 +97,10 @@ export LESS="-iFMRX"
 export NNN_OPTS="erx"
 export NNN_TRASH=1
 
+# ddgr: disable history expansion and set bang alias
+set +H
+alias bang="ddgr --gb --np"
+
 # aliases
 alias la='ls -lA -v'
 alias vi=nvim
