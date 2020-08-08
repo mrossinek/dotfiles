@@ -4,6 +4,8 @@ reload-time 60
 
 max-items 500
 
+scrolloff 5
+
 # rebind keys
 unbind-key j
 unbind-key k
