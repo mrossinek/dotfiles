@@ -199,7 +199,6 @@ function conky_main()
             -- fetch stock data
             os.execute("python $HOME/.stocks/stock-watcher.py")
         end
-        lock:close()
     end
 
     if updates > 1 then
