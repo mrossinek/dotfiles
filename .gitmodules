@@ -190,3 +190,6 @@
 [submodule ".config/nvim/pack/minpac/opt/jupytext.vim"]
 	path = .config/nvim/pack/minpac/opt/jupytext.vim
 	url = https://github.com/goerz/jupytext.vim
+[submodule ".config/nvim/pack/minpac/start/quick-scope"]
+	path = .config/nvim/pack/minpac/start/quick-scope
+	url = https://github.com/unblevable/quick-scope
