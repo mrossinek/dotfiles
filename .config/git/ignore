@@ -3,6 +3,7 @@ tags
 # project-specific vim configuration
 .lvimrc
 # direnv configuration
+.direnv/
 .envrc
 # python cache files should generally be ignored
 __pycache__/
