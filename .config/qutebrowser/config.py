@@ -1,10 +1,22 @@
-from os import path
+import os
+import sys
 # pylint: disable=C0111
 c = c  # noqa: F821 pylint: disable=E0602,C0103
 config = config  # noqa: F821 pylint: disable=E0602,C0103
 
 # load autoconfig
 config.load_autoconfig()
+
+# jblock
+sys.path.append(os.path.join(sys.path[0], 'jblock'))
+config.source("jblock/jblock/integrations/qutebrowser.py")
+c.content.host_blocking.enabled = False
+c.content.host_blocking.lists = [
+    "https://easylist.to/easylist/easylist.txt",
+    "https://easylist.to/easylist/easyprivacy.txt",
+    "https://easylist-downloads.adblockplus.org/easylist-cookie.txt",
+    "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt",
+    ]
 
 # UI
 c.zoom.default = '150%'
@@ -69,7 +81,8 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
 # set user agent
-with open(path.join(path.abspath(path.dirname(__file__)), 'user_agent.txt'), 'r') as user_agent:
+with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'user_agent.txt'), 'r') as \
+        user_agent:
     c.content.headers.user_agent = user_agent.read().replace('\n', '')
 
 # patterns
