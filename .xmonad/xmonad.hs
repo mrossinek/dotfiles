@@ -80,7 +80,6 @@ myManageHook = composeAll
     , className =? "R_x11" --> doFloat
     , className =? "matplotlib" --> doFloat
     , className =? "Display" --> doCenterFloat
-    , title =? "pass" --> doCenterFloat
     , title =? "qutebrowser external editor" --> doCenterFloat
     ]
 
