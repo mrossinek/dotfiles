@@ -97,3 +97,7 @@ with config.pattern('*://github.com/') as p:
 # fonts
 c.fonts.default_family = 'monospace'
 c.fonts.default_size = '12pt'
+
+# editor
+c.editor.command = ["alacritty", "-t", "qutebrowser external editor", "-e", "nvim", "-f", "{file}",
+                    "-c", "normal {line}G{column0}l"]

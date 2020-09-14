@@ -81,6 +81,7 @@ myManageHook = composeAll
     , className =? "matplotlib" --> doFloat
     , className =? "Display" --> doCenterFloat
     , title =? "pass" --> doCenterFloat
+    , title =? "qutebrowser external editor" --> doCenterFloat
     ]
 
 myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
