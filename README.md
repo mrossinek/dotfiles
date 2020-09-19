@@ -23,4 +23,4 @@ System information:
 * Music: [beets](https://beets.io/) and [mpc](https://www.musicpd.org/clients/mpc/)
 * Video: [mpv](https://mpv.io/)
 
-![Screenshot](.dotfiles_screenshot.jpg "Screenshot")
+![Screenshot](screenshot.jpg "Screenshot")
