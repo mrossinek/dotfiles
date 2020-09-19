@@ -184,8 +184,8 @@
 [submodule ".config/nvim/pack/minpac/opt/vim-criticmarkup"]
 	path = .config/nvim/pack/minpac/opt/vim-criticmarkup
 	url = https://github.com/vim-pandoc/vim-criticmarkup
-[submodule ".tmux/plugins/tpm"]
-	path = .tmux/plugins/tpm
+[submodule "tpm"]
+	path = tmux/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule ".config/nvim/pack/minpac/opt/jupytext.vim"]
 	path = .config/nvim/pack/minpac/opt/jupytext.vim
