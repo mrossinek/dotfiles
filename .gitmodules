@@ -1,198 +1,198 @@
-[submodule ".config/nvim/pack/minpac/opt/vim-ledger"]
-	path = nvim/.config/nvim/pack/minpac/opt/vim-ledger
-	url = https://github.com/ledger/vim-ledger
-[submodule ".config/nvim/pack/minpac/opt/jedi-vim"]
-	path = nvim/.config/nvim/pack/minpac/opt/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim
-[submodule ".config/nvim/pack/minpac/opt/pydoc.vim"]
-	path = nvim/.config/nvim/pack/minpac/opt/pydoc.vim
-	url = https://github.com/fs111/pydoc.vim
-[submodule ".config/nvim/pack/minpac/opt/SimpylFold"]
-	path = nvim/.config/nvim/pack/minpac/opt/SimpylFold
-	url = https://github.com/tmhedberg/SimpylFold
-[submodule ".config/nvim/pack/minpac/opt/vimtex"]
-	path = nvim/.config/nvim/pack/minpac/opt/vimtex
-	url = https://github.com/lervag/vimtex
-[submodule ".config/nvim/pack/minpac/opt/deoplete-khard"]
-	path = nvim/.config/nvim/pack/minpac/opt/deoplete-khard
-	url = https://github.com/nicoe/deoplete-khard
-[submodule ".config/nvim/pack/minpac/opt/vimwiki"]
-	path = nvim/.config/nvim/pack/minpac/start/vimwiki
-	url = https://github.com/vimwiki/vimwiki
-[submodule ".config/nvim/pack/minpac/opt/taskwiki"]
-	path = nvim/.config/nvim/pack/minpac/start/taskwiki
-	url = https://github.com/tbabej/taskwiki
-[submodule ".config/nvim/pack/minpac/opt/vim-grammarous"]
-	path = nvim/.config/nvim/pack/minpac/opt/vim-grammarous
-	url = https://github.com/rhysd/vim-grammarous
-[submodule ".config/nvim/pack/minpac/opt/vim-verdict"]
-	path = nvim/.config/nvim/pack/minpac/opt/vim-verdict
-	url = https://gitlab.com/mrossinek/vim-verdict
-[submodule ".config/nvim/pack/minpac/start/vim-localvimrc"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-localvimrc
-	url = https://github.com/embear/vim-localvimrc
-[submodule ".config/nvim/pack/minpac/start/vim-unimpaired"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired
-[submodule ".config/nvim/pack/minpac/start/vim-commentary"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-commentary
-	url = https://github.com/tpope/vim-commentary
-[submodule ".config/nvim/pack/minpac/start/vim-repeat"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-repeat
-	url = https://github.com/tpope/vim-repeat
-[submodule ".config/nvim/pack/minpac/start/vim-abolish"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-abolish
-	url = https://github.com/tpope/vim-abolish
-[submodule ".config/nvim/pack/minpac/start/vim-vinegar"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-vinegar
-	url = https://github.com/tpope/vim-vinegar
-[submodule ".config/nvim/pack/minpac/start/replay"]
-	path = nvim/.config/nvim/pack/minpac/start/replay
-	url = https://github.com/wincent/replay
-[submodule ".config/nvim/pack/minpac/start/loupe"]
-	path = nvim/.config/nvim/pack/minpac/start/loupe
-	url = https://github.com/wincent/loupe
-[submodule ".config/nvim/pack/minpac/start/vcs-jump"]
-	path = nvim/.config/nvim/pack/minpac/start/vcs-jump
-	url = https://github.com/wincent/vcs-jump
-[submodule ".config/nvim/pack/minpac/start/vim-exchange"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-exchange
-	url = https://github.com/tommcdo/vim-exchange
-[submodule ".config/nvim/pack/minpac/start/ReplaceWithRegister"]
-	path = nvim/.config/nvim/pack/minpac/start/ReplaceWithRegister
-	url = https://github.com/vim-scripts/ReplaceWithRegister
-[submodule ".config/nvim/pack/minpac/start/vim-trailing-whitespace"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-trailing-whitespace
-	url = https://github.com/bronson/vim-trailing-whitespace
-[submodule ".config/nvim/pack/minpac/start/vim-indent-object"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-indent-object
-	url = https://github.com/michaeljsmith/vim-indent-object
-[submodule ".config/nvim/pack/minpac/start/vim-peekaboo"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-peekaboo
-	url = https://github.com/junegunn/vim-peekaboo
-[submodule ".config/nvim/pack/minpac/start/vim-markbar"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-markbar
-	url = https://github.com/Yilin-Yang/vim-markbar
-[submodule ".config/nvim/pack/minpac/start/undotree"]
-	path = nvim/.config/nvim/pack/minpac/start/undotree
-	url = https://github.com/mbbill/undotree
-[submodule ".config/nvim/pack/minpac/start/goyo.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/goyo.vim
-	url = https://github.com/junegunn/goyo.vim
-[submodule ".config/nvim/pack/minpac/start/NrrwRgn"]
-	path = nvim/.config/nvim/pack/minpac/start/NrrwRgn
-	url = https://github.com/chrisbra/NrrwRgn
-[submodule ".config/nvim/pack/minpac/start/linediff.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/linediff.vim
-	url = https://github.com/AndrewRadev/linediff.vim
-[submodule ".config/nvim/pack/minpac/start/asyncrun.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/asyncrun.vim
-	url = https://github.com/skywind3000/asyncrun.vim
-[submodule ".config/nvim/pack/minpac/start/supertab"]
-	path = nvim/.config/nvim/pack/minpac/start/supertab
-	url = https://github.com/ervandew/supertab
-[submodule ".config/nvim/pack/minpac/start/ale"]
-	path = nvim/.config/nvim/pack/minpac/start/ale
-	url = https://github.com/dense-analysis/ale
-[submodule ".config/nvim/pack/minpac/start/deoplete.nvim"]
-	path = nvim/.config/nvim/pack/minpac/start/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim
-[submodule ".config/nvim/pack/minpac/start/tagbar"]
-	path = nvim/.config/nvim/pack/minpac/start/tagbar
-	url = https://github.com/majutsushi/tagbar
-[submodule ".config/nvim/pack/minpac/start/vim-cmake"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-cmake
-	url = https://github.com/vhdirk/vim-cmake
-[submodule ".config/nvim/pack/minpac/start/vim-gitgutter"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
-[submodule ".config/nvim/pack/minpac/start/vim-fugitive"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule ".config/nvim/pack/minpac/start/fugitive-gitlab.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/fugitive-gitlab.vim
-	url = https://github.com/shumphrey/fugitive-gitlab.vim
-[submodule ".config/nvim/pack/minpac/start/gv.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/gv.vim
-	url = https://github.com/junegunn/gv.vim
-[submodule ".config/nvim/pack/minpac/start/vim-tmux-focus-events"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-focus-events
-	url = https://github.com/tmux-plugins/vim-tmux-focus-events
-[submodule ".config/nvim/pack/minpac/start/vim-tmux-navigator"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator
-[submodule ".config/nvim/pack/minpac/start/vim-tmux-controller"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-controller
-	url = https://gitlab.com/mrossinek/vim-tmux-controller
-[submodule ".config/nvim/pack/minpac/start/displayp.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/displayp.vim
-	url = https://gitlab.com/mrossinek/displayp.vim
-[submodule ".config/nvim/pack/minpac/start/tmux-complete.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/tmux-complete.vim
-	url = https://github.com/wellle/tmux-complete.vim
-[submodule ".config/nvim/pack/minpac/start/vim-plugin-AnsiEsc"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-plugin-AnsiEsc
-	url = https://github.com/powerman/vim-plugin-AnsiEsc
-[submodule ".config/nvim/pack/minpac/start/Colorizer"]
-	path = nvim/.config/nvim/pack/minpac/start/Colorizer
-	url = https://github.com/chrisbra/Colorizer
-[submodule ".config/nvim/pack/minpac/start/vim-buftabline"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-buftabline
-	url = https://github.com/ap/vim-buftabline
-[submodule ".config/nvim/pack/minpac/start/vim-doge"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-doge
-	url = https://github.com/kkoomen/vim-doge
-[submodule ".config/nvim/pack/minpac/opt/quicktex"]
-	path = nvim/.config/nvim/pack/minpac/opt/quicktex
-	url = https://github.com/brennier/quicktex
-[submodule ".config/nvim/pack/minpac/start/vim-sneak"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-sneak
-	url = https://github.com/justinmk/vim-sneak
-[submodule ".config/nvim/pack/minpac/start/vim-eunuch"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-eunuch
-	url = https://github.com/tpope/vim-eunuch
-[submodule ".config/nvim/pack/minpac/start/vim-dirvish"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-dirvish
-	url = https://github.com/justinmk/vim-dirvish
-[submodule ".config/nvim/pack/minpac/start/BufOnly.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/BufOnly.vim
-	url = https://github.com/vim-scripts/BufOnly.vim
-[submodule ".config/nvim/pack/minpac/start/tabular"]
-	path = nvim/.config/nvim/pack/minpac/start/tabular
-	url = https://github.com/godlygeek/tabular
-[submodule ".config/nvim/pack/minpac/start/vim-sandwich"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-sandwich
-	url = https://github.com/machakann/vim-sandwich
-[submodule ".config/nvim/pack/minpac/opt/deuterium"]
-	path = nvim/.config/nvim/pack/minpac/opt/deuterium
-	url = https://gitlab.com/mrossinek/deuterium.git
-[submodule ".config/nvim/pack/minpac/start/vim-pandoc"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-pandoc
-	url = https://github.com/vim-pandoc/vim-pandoc
-[submodule ".config/nvim/pack/minpac/start/vim-pandoc-syntax"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-pandoc-syntax
-	url = https://github.com/vim-pandoc/vim-pandoc-syntax
-[submodule "zinit"]
-	path = zsh/.zinit/bin
-	url = https://github.com/zdharma/zinit.git
-[submodule ".config/nvim/pack/minpac/start/vim-markdown"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown
-[submodule ".config/nvim/pack/minpac/start/vim-dirgutter"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-dirgutter
-	url = https://gitlab.com/mrossinek/vim-dirgutter
-[submodule ".config/nvim/pack/minpac/opt/vim-criticmarkup"]
-	path = nvim/.config/nvim/pack/minpac/opt/vim-criticmarkup
-	url = https://github.com/vim-pandoc/vim-criticmarkup
-[submodule "tpm"]
-	path = tmux/.tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
-[submodule ".config/nvim/pack/minpac/opt/jupytext.vim"]
-	path = nvim/.config/nvim/pack/minpac/opt/jupytext.vim
-	url = https://github.com/goerz/jupytext.vim
-[submodule ".config/nvim/pack/minpac/start/quick-scope"]
-	path = nvim/.config/nvim/pack/minpac/start/quick-scope
-	url = https://github.com/unblevable/quick-scope
 [submodule "jblock"]
 	path = qutebrowser/.config/qutebrowser/jblock
 	url = https://gitlab.com/jgkamat/jblock
+[submodule "tpm"]
+	path = tmux/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "zinit"]
+	path = zsh/.zinit/bin
+	url = https://github.com/zdharma/zinit.git
+[submodule "vim-ledger"]
+	path = nvim/.config/nvim/pack/minpac/opt/vim-ledger
+	url = https://github.com/ledger/vim-ledger
+[submodule "jedi-vim"]
+	path = nvim/.config/nvim/pack/minpac/opt/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim
+[submodule "pydoc.vim"]
+	path = nvim/.config/nvim/pack/minpac/opt/pydoc.vim
+	url = https://github.com/fs111/pydoc.vim
+[submodule "SimpylFold"]
+	path = nvim/.config/nvim/pack/minpac/opt/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold
+[submodule "vimtex"]
+	path = nvim/.config/nvim/pack/minpac/opt/vimtex
+	url = https://github.com/lervag/vimtex
+[submodule "deoplete-khard"]
+	path = nvim/.config/nvim/pack/minpac/opt/deoplete-khard
+	url = https://github.com/nicoe/deoplete-khard
+[submodule "vimwiki"]
+	path = nvim/.config/nvim/pack/minpac/start/vimwiki
+	url = https://github.com/vimwiki/vimwiki
+[submodule "taskwiki"]
+	path = nvim/.config/nvim/pack/minpac/start/taskwiki
+	url = https://github.com/tbabej/taskwiki
+[submodule "vim-grammarous"]
+	path = nvim/.config/nvim/pack/minpac/opt/vim-grammarous
+	url = https://github.com/rhysd/vim-grammarous
+[submodule "vim-verdict"]
+	path = nvim/.config/nvim/pack/minpac/opt/vim-verdict
+	url = https://gitlab.com/mrossinek/vim-verdict
+[submodule "vim-localvimrc"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-localvimrc
+	url = https://github.com/embear/vim-localvimrc
+[submodule "vim-unimpaired"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "vim-commentary"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim-repeat"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "vim-abolish"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-abolish
+	url = https://github.com/tpope/vim-abolish
+[submodule "vim-vinegar"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar
+[submodule "replay"]
+	path = nvim/.config/nvim/pack/minpac/start/replay
+	url = https://github.com/wincent/replay
+[submodule "loupe"]
+	path = nvim/.config/nvim/pack/minpac/start/loupe
+	url = https://github.com/wincent/loupe
+[submodule "vcs-jump"]
+	path = nvim/.config/nvim/pack/minpac/start/vcs-jump
+	url = https://github.com/wincent/vcs-jump
+[submodule "vim-exchange"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-exchange
+	url = https://github.com/tommcdo/vim-exchange
+[submodule "ReplaceWithRegister"]
+	path = nvim/.config/nvim/pack/minpac/start/ReplaceWithRegister
+	url = https://github.com/vim-scripts/ReplaceWithRegister
+[submodule "vim-trailing-whitespace"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-trailing-whitespace
+	url = https://github.com/bronson/vim-trailing-whitespace
+[submodule "vim-indent-object"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-indent-object
+	url = https://github.com/michaeljsmith/vim-indent-object
+[submodule "vim-peekaboo"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-peekaboo
+	url = https://github.com/junegunn/vim-peekaboo
+[submodule "vim-markbar"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-markbar
+	url = https://github.com/Yilin-Yang/vim-markbar
+[submodule "undotree"]
+	path = nvim/.config/nvim/pack/minpac/start/undotree
+	url = https://github.com/mbbill/undotree
+[submodule "goyo.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/goyo.vim
+	url = https://github.com/junegunn/goyo.vim
+[submodule "NrrwRgn"]
+	path = nvim/.config/nvim/pack/minpac/start/NrrwRgn
+	url = https://github.com/chrisbra/NrrwRgn
+[submodule "linediff.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/linediff.vim
+	url = https://github.com/AndrewRadev/linediff.vim
+[submodule "asyncrun.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim
+[submodule "supertab"]
+	path = nvim/.config/nvim/pack/minpac/start/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "ale"]
+	path = nvim/.config/nvim/pack/minpac/start/ale
+	url = https://github.com/dense-analysis/ale
+[submodule "deoplete.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule "tagbar"]
+	path = nvim/.config/nvim/pack/minpac/start/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "vim-cmake"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-cmake
+	url = https://github.com/vhdirk/vim-cmake
+[submodule "vim-gitgutter"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule "vim-fugitive"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "fugitive-gitlab.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/fugitive-gitlab.vim
+	url = https://github.com/shumphrey/fugitive-gitlab.vim
+[submodule "gv.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/gv.vim
+	url = https://github.com/junegunn/gv.vim
+[submodule "vim-tmux-focus-events"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-focus-events
+	url = https://github.com/tmux-plugins/vim-tmux-focus-events
+[submodule "vim-tmux-navigator"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "vim-tmux-controller"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-controller
+	url = https://gitlab.com/mrossinek/vim-tmux-controller
+[submodule "displayp.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/displayp.vim
+	url = https://gitlab.com/mrossinek/displayp.vim
+[submodule "tmux-complete.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/tmux-complete.vim
+	url = https://github.com/wellle/tmux-complete.vim
+[submodule "vim-plugin-AnsiEsc"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-plugin-AnsiEsc
+	url = https://github.com/powerman/vim-plugin-AnsiEsc
+[submodule "Colorizer"]
+	path = nvim/.config/nvim/pack/minpac/start/Colorizer
+	url = https://github.com/chrisbra/Colorizer
+[submodule "vim-buftabline"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-buftabline
+	url = https://github.com/ap/vim-buftabline
+[submodule "vim-doge"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-doge
+	url = https://github.com/kkoomen/vim-doge
+[submodule "quicktex"]
+	path = nvim/.config/nvim/pack/minpac/opt/quicktex
+	url = https://github.com/brennier/quicktex
+[submodule "vim-sneak"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-sneak
+	url = https://github.com/justinmk/vim-sneak
+[submodule "vim-eunuch"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
+[submodule "vim-dirvish"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish
+[submodule "BufOnly.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/BufOnly.vim
+	url = https://github.com/vim-scripts/BufOnly.vim
+[submodule "tabular"]
+	path = nvim/.config/nvim/pack/minpac/start/tabular
+	url = https://github.com/godlygeek/tabular
+[submodule "vim-sandwich"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-sandwich
+	url = https://github.com/machakann/vim-sandwich
+[submodule "deuterium"]
+	path = nvim/.config/nvim/pack/minpac/opt/deuterium
+	url = https://gitlab.com/mrossinek/deuterium.git
+[submodule "vim-pandoc"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc
+[submodule "vim-pandoc-syntax"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax
+[submodule "vim-markdown"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
+[submodule "vim-dirgutter"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-dirgutter
+	url = https://gitlab.com/mrossinek/vim-dirgutter
+[submodule "vim-criticmarkup"]
+	path = nvim/.config/nvim/pack/minpac/opt/vim-criticmarkup
+	url = https://github.com/vim-pandoc/vim-criticmarkup
+[submodule "jupytext.vim"]
+	path = nvim/.config/nvim/pack/minpac/opt/jupytext.vim
+	url = https://github.com/goerz/jupytext.vim
+[submodule "quick-scope"]
+	path = nvim/.config/nvim/pack/minpac/start/quick-scope
+	url = https://github.com/unblevable/quick-scope
