@@ -193,6 +193,6 @@
 [submodule ".config/nvim/pack/minpac/start/quick-scope"]
 	path = .config/nvim/pack/minpac/start/quick-scope
 	url = https://github.com/unblevable/quick-scope
-[submodule ".config/qutebrowser/jblock"]
-	path = .config/qutebrowser/jblock
+[submodule "jblock"]
+	path = qutebrowser/.config/qutebrowser/jblock
 	url = https://gitlab.com/jgkamat/jblock
