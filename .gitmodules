@@ -199,3 +199,12 @@
 [submodule "lsp-status.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/lsp-status.nvim
 	url = https://github.com/nvim-lua/lsp-status.nvim
+[submodule "plenary.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/plenary.vim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "popup.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/popup.nvim
+	url = https://github.com/nvim-lua/popup.nvim
+[submodule "telescope.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/telescope.nvim
+	url = https://github.com/nvim-lua/telescope.nvim
