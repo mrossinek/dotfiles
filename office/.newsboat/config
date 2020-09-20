@@ -6,6 +6,8 @@ max-items 500
 
 scrolloff 5
 
+browser "qutebrowser %u"
+
 # rebind keys
 unbind-key j
 unbind-key k

@@ -79,7 +79,7 @@ zstyle ':prompt:grml:right:setup' items time sad-smiley
 export GPG_TTY=$(tty)
 
 export EDITOR=nvim
-export BROWSER=xdg-open
+export BROWSER="xdg-open:qutebrowser"
 
 # less options
 export LESS="-iFMRX"
