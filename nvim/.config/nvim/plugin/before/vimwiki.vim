@@ -14,4 +14,8 @@ let wiki.template_path = ''  " disable html templates
 " the following binary is provided by https://gitlab.com/mrossinek/notewarrior
 let wiki.custom_wiki2html = '/usr/local/bin/wiki2html_pandoc'
 
-let g:vimwiki_list = [wiki]
+if exists('g:vimwiki_list')
+    let g:vimwiki_list += [wiki]
+else
+    let g:vimwiki_list = [wiki]
+endif
