@@ -199,3 +199,6 @@
 [submodule "nvim-colorizer.lua"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-colorizer.lua
 	url = https://github.com/norcalli/nvim-colorizer.lua
+[submodule "targets.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/targets.vim
+	url = https://github.com/wellle/targets.vim
