@@ -1,3 +1,4 @@
+import Data.Time
 import System.IO
 import XMonad
 import XMonad.Actions.CycleWS
@@ -14,6 +15,7 @@ import XMonad.Layout.Minimize
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.Loggers
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run(spawnPipe)
 import qualified XMonad.StackSet as W
@@ -69,8 +71,9 @@ myLogHook h = dynamicLogWithPP $ def
     , ppUrgent  = dzenColor "#ff0000" "#ff0000" . pad
     , ppWsSep   = ""
     , ppSep     = "|"
-    , ppLayout  = (>> "")
     , ppTitle   = (" " ++) . dzenColor "#f2f2f2" ""
+    , ppExtras  = [(padL $ date "%a %d %b %I:%M")]
+    , ppOrder   = \ (ws:_:t:xs) -> xs ++ [ws, t]  -- use l in place of _ for layout
     , ppOutput  = hPutStrLn h
     }
 
