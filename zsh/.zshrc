@@ -3,22 +3,14 @@ if [[ ! -v GRML_OSTYPE ]]; then
     source ~/.grml.zshrc
 fi
 
-# zinit
-source ~/.zinit/bin/zinit.zsh
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
 # autoload modules
 autoload -Uz compinit promptinit
 compinit
 promptinit
 
 # command completion config
-zinit ice wait"0" blockf
-zinit light zsh-users/zsh-completions
-
-zinit ice wait"0" atload"_zsh_autosuggest_start"
-zinit light zsh-users/zsh-autosuggestions
+fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select
@@ -29,8 +21,7 @@ setopt vi
 export KEYTIMEOUT=1
 
 # history search
-zinit ice wait"0"
-zinit light zsh-users/zsh-history-substring-search
+source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -38,8 +29,8 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # syntax highlighting
-zinit ice wait"1" atinit"zpcompinit; zpcdreplay" atload"unset 'FAST_HIGHLIGHT[chroma-whatis]' 'FAST_HIGHLIGHT[chroma-man]'"
-zinit light zdharma/fast-syntax-highlighting
+source ~/.zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
 
 # ttyctl command: freeze/unfreeze terminal
 ttyctl -f

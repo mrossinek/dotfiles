@@ -7,9 +7,18 @@
 [submodule "jblock"]
 	path = qutebrowser/.config/qutebrowser/jblock
 	url = https://gitlab.com/jgkamat/jblock
-[submodule "zinit"]
-	path = zsh/.zinit/bin
-	url = https://github.com/zdharma/zinit.git
+[submodule "zsh-completions"]
+	path = zsh/.zsh/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
+[submodule "zsh-autosuggestions"]
+	path = zsh/.zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "zsh-history-substring-search"]
+	path = zsh/.zsh/plugins/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search
+[submodule "fast-syntax-highlighting"]
+	path = zsh/.zsh/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma/fast-syntax-highlighting
 [submodule "vim-ledger"]
 	path = nvim/.config/nvim/pack/minpac/opt/vim-ledger
 	url = https://github.com/ledger/vim-ledger
