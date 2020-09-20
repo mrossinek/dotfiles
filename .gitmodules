@@ -22,21 +22,9 @@
 [submodule "vim-ledger"]
 	path = nvim/.config/nvim/pack/minpac/opt/vim-ledger
 	url = https://github.com/ledger/vim-ledger
-[submodule "jedi-vim"]
-	path = nvim/.config/nvim/pack/minpac/opt/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim
-[submodule "pydoc.vim"]
-	path = nvim/.config/nvim/pack/minpac/opt/pydoc.vim
-	url = https://github.com/fs111/pydoc.vim
-[submodule "SimpylFold"]
-	path = nvim/.config/nvim/pack/minpac/opt/SimpylFold
-	url = https://github.com/tmhedberg/SimpylFold
 [submodule "vimtex"]
 	path = nvim/.config/nvim/pack/minpac/opt/vimtex
 	url = https://github.com/lervag/vimtex
-[submodule "deoplete-khard"]
-	path = nvim/.config/nvim/pack/minpac/opt/deoplete-khard
-	url = https://github.com/nicoe/deoplete-khard
 [submodule "vimwiki"]
 	path = nvim/.config/nvim/pack/minpac/start/vimwiki
 	url = https://github.com/vimwiki/vimwiki
@@ -106,12 +94,6 @@
 [submodule "supertab"]
 	path = nvim/.config/nvim/pack/minpac/start/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "ale"]
-	path = nvim/.config/nvim/pack/minpac/start/ale
-	url = https://github.com/dense-analysis/ale
-[submodule "deoplete.nvim"]
-	path = nvim/.config/nvim/pack/minpac/start/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim
 [submodule "tagbar"]
 	path = nvim/.config/nvim/pack/minpac/start/tagbar
 	url = https://github.com/majutsushi/tagbar
@@ -205,3 +187,15 @@
 [submodule "quickfix-reflector.vim"]
 	path = nvim/.config/nvim/pack/minpac/start/quickfix-reflector.vim
 	url = https://github.com/stefandtw/quickfix-reflector.vim
+[submodule "nvim-lspconfig"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule "completion-nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/completion-nvim
+	url = https://github.com/nvim-lua/completion-nvim
+[submodule "diagnostic-nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/diagnostic-nvim
+	url = https://github.com/nvim-lua/diagnostic-nvim
+[submodule "lsp-status.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/lsp-status.nvim
+	url = https://github.com/nvim-lua/lsp-status.nvim

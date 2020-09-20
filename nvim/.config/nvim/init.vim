@@ -22,14 +22,6 @@ augroup filetype_mail
     autocmd FileType mail nnoremap <leader>m :setlocal filetype=markdown.mail<CR>
 augroup end
 
-augroup filetype_python
-    autocmd!
-    autocmd FileType python packadd SimpylFold
-    autocmd FileType python packadd deuterium
-    autocmd FileType python packadd jedi-vim
-    autocmd FileType python packadd pydoc.vim
-augroup end
-
 augroup filetype_tex
     autocmd!
     autocmd FileType tex packadd quicktex

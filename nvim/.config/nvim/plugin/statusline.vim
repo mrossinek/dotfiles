@@ -16,15 +16,12 @@ if has('statusline')
     set statusline+=\ %m  " modified/modifiable flag
     set statusline+=\ %r  " readonly flag
     set statusline+=%=    " right align the rest
-    set statusline+=%{mrossinek#statusline#StatuslineCurrentTag()}
     set statusline+=\ %y  " filetype
     set statusline+=\ %3*
     set statusline+=%{&fileencoding?&fileencoding!=#'utf-8':''}  " ignore utf-8
     set statusline+=%4.4p%%  " file position in percentage (padded)
     set statusline+=%{mrossinek#statusline#StatuslineIndicatePos()}
-    set statusline+=%4*
-    set statusline+=%{mrossinek#statusline#StatuslineALECount('error')}
-    set statusline+=%5*
-    set statusline+=%{mrossinek#statusline#StatuslineALECount('warning')}
+    set statusline+=\ %4*
+    set statusline+=%{mrossinek#statusline#StatuslineLSPInfo()}
     set statusline+=%*  " reset highlighting
 endif

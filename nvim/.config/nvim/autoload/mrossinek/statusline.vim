@@ -23,11 +23,9 @@ function! mrossinek#statusline#StatuslineInitHighlighting()
     " User 3: info field: match CursorColumn
     highlight! link User3 CursorColumn
 
-    " User 4+5: ALE info fields
-    highlight! link StatuslineALEError SpellBad
-    highlight! link StatuslineALEWarning SpellCap
-    highlight! link User4 StatuslineALEError
-    highlight! link User5 StatuslineALEWarning
+    " User 4: LSP info
+    highlight! link StatuslineLSPInfo SignColumn
+    highlight! link User4 StatuslineLSPInfo
 endfunction
 
 " update highlighting when buffer becomes modified
@@ -84,35 +82,12 @@ function! mrossinek#statusline#StatuslineIndicatePos()
 endfunction
 
 " ALE wrapper: error and warning counter
-function! mrossinek#statusline#StatuslineALECount(type)
-    " if running: print dots
-    if ale#engine#IsCheckingBuffer(bufnr('')) == 1
-        if a:type ==# 'error'
-            return '  ...  '
-        else
-            return ''
-        endif
-    endif
+function! mrossinek#statusline#StatuslineLSPInfo()
+  if luaeval('#vim.lsp.buf_get_clients() > 0')
+    return luaeval("require('lsp-status').status()")
+  endif
 
-    let counts = ale#statusline#Count(bufnr(''))
-    if type(counts) == type({}) && has_key(counts, 'error')
-        " Use the current Dictionary format.
-        let num_err = counts.error + counts.style_error
-        let num_warn = counts.total - num_err
-    else
-        " Use the old List format.
-        let num_err = counts[0]
-        let num_warn = counts[1]
-    endif
-
-    if a:type ==# 'error' && num_err > 0
-        let l:ret = '  E: ' . num_err . ' '
-    elseif a:type ==# 'warning' && num_warn > 0
-        let l:ret = '  W: ' . num_warn . ' '
-    else
-        let l:ret = ''
-    endif
-    return l:ret
+  return ''
 endfunction
 
 " GitGutter wrapper
@@ -126,20 +101,4 @@ function! mrossinek#statusline#StatuslineGitInfo()
     let [l:added, l:modified, l:removed] = GitGutterGetHunkSummary()
     return printf('[%d%s %d%s %d%s]', l:added, l:added_symbol, l:modified,
                 \ l:modified_symbol, l:removed, l:removed_symbol)
-endfunction
-
-" tagbar#currenttag wrapper
-function! mrossinek#statusline#StatuslineCurrentTag()
-    let l:tag = tagbar#currenttag('%s', '')
-    if empty(l:tag)
-        return ''
-    endif
-    let l:file = tagbar#state#get_current_file(1)
-    if empty(l:file) || l:file.fpath != expand('%:p')
-        return ''
-    endif
-    if strlen(l:tag) > 20
-        let l:tag = '..' . l:tag[-18:]
-    endif
-    return printf('{%s}', l:tag)
 endfunction

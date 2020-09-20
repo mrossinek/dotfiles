@@ -1,1 +1,0 @@
-call deoplete#enable()
