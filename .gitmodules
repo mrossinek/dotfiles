@@ -148,9 +148,6 @@
 [submodule "vim-plugin-AnsiEsc"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
-[submodule "Colorizer"]
-	path = nvim/.config/nvim/pack/minpac/start/Colorizer
-	url = https://github.com/chrisbra/Colorizer
 [submodule "vim-buftabline"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-buftabline
 	url = https://github.com/ap/vim-buftabline
@@ -199,3 +196,6 @@
 [submodule "quick-scope"]
 	path = nvim/.config/nvim/pack/minpac/start/quick-scope
 	url = https://github.com/unblevable/quick-scope
+[submodule "nvim-colorizer.lua"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-colorizer.lua
+	url = https://github.com/norcalli/nvim-colorizer.lua

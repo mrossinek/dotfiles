@@ -8,129 +8,129 @@ syntax reset
 let g:colors_name = 'mrossinek-papercolor'
 
 " define colors
-let color00 = '236'  " #303030
-let color01 = '125'  " #af005f
-let color02 = '70'  " #5faf00
-let color03 = '179'  " #d7af5f
-let color04 = '74'  " #5fafd7
-let color05 = '244'  " #808080
-let color06 = '173'  " #d7875f
-let color07 = '252'  " #d0d0d0
-let color08 = '240'  " #585858
-let color09 = '71'  " #5faf5f
-let color10 = '148'  " #afd700
-let color11 = '140'  " #af87d7
-let color12 = '214'  " #ffaf00
-let color13 = '205'  " #ff5faf
-let color14 = '37'  " #00afaf
-let color15 = '66'  " #5f8787
-let color16 = '74'  " #5fafd7
-let color17 = '178'  " #d7af00
-let cursor_fg = '236'  " #303030
-let cursor_bg = '251'  " #c6c6c6
-let cursorline = '238'  " #444444
-let cursorcolumn = '238'  " #444444
-let cursorlinenr_fg = '226'  " #ffff00
-let cursorlinenr_bg = '236'  " #303030
-let popupmenu_fg = '251'  " #c6c6c6
-let popupmenu_bg = '238'  " #444444
-let search_fg = '190'  " #d7ff00
-let search_bg = '236'  " #303030
-let linenumber_fg = '240'  " #585858
-let linenumber_bg = '236'  " #303030
-let vertsplit_fg = '66'  " #5f8787
-let vertsplit_bg = '236'  " #303030
-let statusline_active_fg = '236'  " #303030
-let statusline_active_bg = '66'  " #5f8787
-let statusline_inactive_fg = '250'  " #bcbcbc
-let statusline_inactive_bg = '237'  " #3a3a3a
-let todo_fg = '208'  " #ff8700
-let todo_bg = '236'  " #303030
-let error_fg = '125'  " #af005f
-let error_bg = '52'  " #5f0000
-let matchparen_bg = '239'  " #4e4e4e
-let matchparen_fg = '251'  " #c6c6c6
-let visual_fg = '16'  " #000000
-let visual_bg = '103'  " #8787af
-let folded_fg = '177'  " #d787ff
-let folded_bg = '53'  " #5f005f
-let wildmenu_fg = '236'  " #303030
-let wildmenu_bg = '148'  " #afd700
-let spellbad = '52'  " #5f0000
-let spellcap = '53'  " #5f005f
-let spellrare = '22'  " #005f00
-let spelllocal = '17'  " #00005f
-let diffadd_fg = '112'  " #87d700
-let diffadd_bg = '22'  " #005f00
-let diffdelete_fg = '125'  " #af005f
-let diffdelete_bg = '52'  " #5f0000
-let difftext_fg = '87'  " #5fffff
-let difftext_bg = '30'  " #008787
-let diffchange_fg = '252'  " #d0d0d0
-let diffchange_bg = '23'  " #005f5f
-let tabline_bg = '236'  " #303030
-let tabline_active_fg = '233'  " #121212
-let tabline_active_bg = '37'  " #00afaf
-let tabline_inactive_fg = '250'  " #bcbcbc
-let tabline_inactive_bg = '240'  " #585858
-let buftabline_bg = '236'  " #303030
-let buftabline_current_fg = '233'  " #121212
-let buftabline_current_bg = '37'  " #00afaf
-let buftabline_active_fg = '37'  " #00afaf
-let buftabline_active_bg = '240'  " #585858
-let buftabline_inactive_fg = '250'  " #bcbcbc
-let buftabline_inactive_bg = '240'  " #585858
+let color00                = ['236' , '#303030']
+let color01                = ['125' , '#af005f']
+let color02                = ['70'  , '#5faf00']
+let color03                = ['179' , '#d7af5f']
+let color04                = ['74'  , '#5fafd7']
+let color05                = ['244' , '#808080']
+let color06                = ['173' , '#d7875f']
+let color07                = ['252' , '#d0d0d0']
+let color08                = ['240' , '#585858']
+let color09                = ['71'  , '#5faf5f']
+let color10                = ['148' , '#afd700']
+let color11                = ['140' , '#af87d7']
+let color12                = ['214' , '#ffaf00']
+let color13                = ['205' , '#ff5faf']
+let color14                = ['37'  , '#00afaf']
+let color15                = ['66'  , '#5f8787']
+let color16                = ['74'  , '#5fafd7']
+let color17                = ['178' , '#d7af00']
+let cursor_fg              = ['236' , '#303030']
+let cursor_bg              = ['251' , '#c6c6c6']
+let cursorline             = ['238' , '#444444']
+let cursorcolumn           = ['238' , '#444444']
+let cursorlinenr_fg        = ['226' , '#ffff00']
+let cursorlinenr_bg        = ['236' , '#303030']
+let popupmenu_fg           = ['251' , '#c6c6c6']
+let popupmenu_bg           = ['238' , '#444444']
+let search_fg              = ['190' , '#d7ff00']
+let search_bg              = ['236' , '#303030']
+let linenumber_fg          = ['240' , '#585858']
+let linenumber_bg          = ['236' , '#303030']
+let vertsplit_fg           = ['66'  , '#5f8787']
+let vertsplit_bg           = ['236' , '#303030']
+let statusline_active_fg   = ['236' , '#303030']
+let statusline_active_bg   = ['66'  , '#5f8787']
+let statusline_inactive_fg = ['250' , '#bcbcbc']
+let statusline_inactive_bg = ['237' , '#3a3a3a']
+let todo_fg                = ['208' , '#ff8700']
+let todo_bg                = ['236' , '#303030']
+let error_fg               = ['125' , '#af005f']
+let error_bg               = ['52'  , '#5f0000']
+let matchparen_bg          = ['239' , '#4e4e4e']
+let matchparen_fg          = ['251' , '#c6c6c6']
+let visual_fg              = ['16'  , '#000000']
+let visual_bg              = ['103' , '#8787af']
+let folded_fg              = ['177' , '#d787ff']
+let folded_bg              = ['53'  , '#5f005f']
+let wildmenu_fg            = ['236' , '#303030']
+let wildmenu_bg            = ['148' , '#afd700']
+let spellbad               = ['52'  , '#5f0000']
+let spellcap               = ['53'  , '#5f005f']
+let spellrare              = ['22'  , '#005f00']
+let spelllocal             = ['17'  , '#00005f']
+let diffadd_fg             = ['112' , '#87d700']
+let diffadd_bg             = ['22'  , '#005f00']
+let diffdelete_fg          = ['125' , '#af005f']
+let diffdelete_bg          = ['52'  , '#5f0000']
+let difftext_fg            = ['87'  , '#5fffff']
+let difftext_bg            = ['30'  , '#008787']
+let diffchange_fg          = ['252' , '#d0d0d0']
+let diffchange_bg          = ['23'  , '#005f5f']
+let tabline_bg             = ['236' , '#303030']
+let tabline_active_fg      = ['233' , '#121212']
+let tabline_active_bg      = ['37'  , '#00afaf']
+let tabline_inactive_fg    = ['250' , '#bcbcbc']
+let tabline_inactive_bg    = ['240' , '#585858']
+let buftabline_bg          = ['236' , '#303030']
+let buftabline_current_fg  = ['233' , '#121212']
+let buftabline_current_bg  = ['37'  , '#00afaf']
+let buftabline_active_fg   = ['37'  , '#00afaf']
+let buftabline_active_bg   = ['240' , '#585858']
+let buftabline_inactive_fg = ['250' , '#bcbcbc']
+let buftabline_inactive_bg = ['240' , '#585858']
 
 " format attributes
-let s:ft_bold    = ' cterm=bold gui=bold '
-let s:ft_none    = ' cterm=none gui=none '
-let s:ft_reverse = ' cterm=reverse gui=reverse '
-let s:ft_italic  = ' cterm=italic gui=italic '
+let s:ft_bold        = ' cterm=bold        gui=bold'
+let s:ft_none        = ' cterm=none        gui=none '
+let s:ft_reverse     = ' cterm=reverse     gui=reverse '
+let s:ft_italic      = ' cterm=italic      gui=italic '
 let s:ft_italic_bold = ' cterm=italic,bold gui=italic,bold '
 
 " define derived colors
 " BASIC COLORS:
-let s:fg_background = ' ctermfg=' . color00 . ' '
-let s:bg_background = ' ctermbg=' . color00 . ' '
-let s:fg_negative = ' ctermfg=' . color01 . ' '
-let s:bg_negative = ' ctermbg=' . color01 . ' '
-let s:fg_positive = ' ctermfg=' . color02 . ' '
-let s:bg_positive = ' ctermbg=' . color02 . ' '
-let s:fg_olive = ' ctermfg=' . color03 . ' '
-let s:bg_olive = ' ctermbg=' . color03 . ' '
-let s:fg_neutral = ' ctermfg=' . color04 . ' '
-let s:bg_neutral = ' ctermbg=' . color04 . ' '
-let s:fg_comment = ' ctermfg=' . color05 . ' '
-let s:bg_comment = ' ctermbg=' . color05 . ' '
-let s:fg_navy = ' ctermfg=' . color06 . ' '
-let s:bg_navy = ' ctermbg=' . color06 . ' '
-let s:fg_foreground = ' ctermfg=' . color07 . ' '
-let s:bg_foreground = ' ctermbg=' . color07 . ' '
-let s:fg_nontext = ' ctermfg=' . color08 . ' '
-let s:bg_nontext = ' ctermbg=' . color08 . ' '
-let s:fg_red = ' ctermfg=' . color09 . ' '
-let s:bg_red = ' ctermbg=' . color09 . ' '
-let s:fg_pink = ' ctermfg=' . color10 . ' '
-let s:bg_pink = ' ctermbg=' . color10 . ' '
-let s:fg_purple = ' ctermfg=' . color11 . ' '
-let s:bg_purple = ' ctermbg=' . color11 . ' '
-let s:fg_accent = ' ctermfg=' . color12 . ' '
-let s:bg_accent = ' ctermbg=' . color12 . ' '
-let s:fg_orange = ' ctermfg=' . color13 . ' '
-let s:bg_orange = ' ctermbg=' . color13 . ' '
-let s:fg_blue = ' ctermfg=' . color14 . ' '
-let s:bg_blue = ' ctermbg=' . color14 . ' '
-let s:fg_highlight = ' ctermfg=' . color15 . ' '
-let s:bg_highlight = ' ctermbg=' . color15 . ' '
-let s:fg_transparent = ' ctermfg=' . color00 . ' '
-let s:bg_transparent = ' ctermbg=' . color00 . ' '
+let s:fg_background  = ' ctermfg = ' . color00[0] . ' guifg = ' . color00[1] . ' '
+let s:bg_background  = ' ctermbg = ' . color00[0] . ' guibg = ' . color00[1] . ' '
+let s:fg_negative    = ' ctermfg = ' . color01[0] . ' guifg = ' . color01[1] . ' '
+let s:bg_negative    = ' ctermbg = ' . color01[0] . ' guibg = ' . color01[1] . ' '
+let s:fg_positive    = ' ctermfg = ' . color02[0] . ' guifg = ' . color02[1] . ' '
+let s:bg_positive    = ' ctermbg = ' . color02[0] . ' guibg = ' . color02[1] . ' '
+let s:fg_olive       = ' ctermfg = ' . color03[0] . ' guifg = ' . color03[1] . ' '
+let s:bg_olive       = ' ctermbg = ' . color03[0] . ' guibg = ' . color03[1] . ' '
+let s:fg_neutral     = ' ctermfg = ' . color04[0] . ' guifg = ' . color04[1] . ' '
+let s:bg_neutral     = ' ctermbg = ' . color04[0] . ' guibg = ' . color04[1] . ' '
+let s:fg_comment     = ' ctermfg = ' . color05[0] . ' guifg = ' . color05[1] . ' '
+let s:bg_comment     = ' ctermbg = ' . color05[0] . ' guibg = ' . color05[1] . ' '
+let s:fg_navy        = ' ctermfg = ' . color06[0] . ' guifg = ' . color06[1] . ' '
+let s:bg_navy        = ' ctermbg = ' . color06[0] . ' guibg = ' . color06[1] . ' '
+let s:fg_foreground  = ' ctermfg = ' . color07[0] . ' guifg = ' . color07[1] . ' '
+let s:bg_foreground  = ' ctermbg = ' . color07[0] . ' guibg = ' . color07[1] . ' '
+let s:fg_nontext     = ' ctermfg = ' . color08[0] . ' guifg = ' . color08[1] . ' '
+let s:bg_nontext     = ' ctermbg = ' . color08[0] . ' guibg = ' . color08[1] . ' '
+let s:fg_red         = ' ctermfg = ' . color09[0] . ' guifg = ' . color09[1] . ' '
+let s:bg_red         = ' ctermbg = ' . color09[0] . ' guibg = ' . color09[1] . ' '
+let s:fg_pink        = ' ctermfg = ' . color10[0] . ' guifg = ' . color10[1] . ' '
+let s:bg_pink        = ' ctermbg = ' . color10[0] . ' guibg = ' . color10[1] . ' '
+let s:fg_purple      = ' ctermfg = ' . color11[0] . ' guifg = ' . color11[1] . ' '
+let s:bg_purple      = ' ctermbg = ' . color11[0] . ' guibg = ' . color11[1] . ' '
+let s:fg_accent      = ' ctermfg = ' . color12[0] . ' guifg = ' . color12[1] . ' '
+let s:bg_accent      = ' ctermbg = ' . color12[0] . ' guibg = ' . color12[1] . ' '
+let s:fg_orange      = ' ctermfg = ' . color13[0] . ' guifg = ' . color13[1] . ' '
+let s:bg_orange      = ' ctermbg = ' . color13[0] . ' guibg = ' . color13[1] . ' '
+let s:fg_blue        = ' ctermfg = ' . color14[0] . ' guifg = ' . color14[1] . ' '
+let s:bg_blue        = ' ctermbg = ' . color14[0] . ' guibg = ' . color14[1] . ' '
+let s:fg_highlight   = ' ctermfg = ' . color15[0] . ' guifg = ' . color15[1] . ' '
+let s:bg_highlight   = ' ctermbg = ' . color15[0] . ' guibg = ' . color15[1] . ' '
+let s:fg_transparent = ' ctermfg = ' . color00[0] . ' guifg = ' . color00[1] . ' '
+let s:bg_transparent = ' ctermbg = ' . color00[0] . ' guibg = ' . color00[1] . ' '
 " EXTENDED COLORS:
-let s:fg_aqua = ' ctermfg=' . color16 . ' '
-let s:bg_aqua = ' ctermbg=' . color16 . ' '
-let s:fg_green = ' ctermfg=' . color17 . ' '
-let s:bg_green = ' ctermbg=' . color17 . ' '
-let s:fg_wine = ' ctermfg=' . color11 . ' '
-let s:bg_wine = ' ctermbg=' . color11 . ' '
+let s:fg_aqua  = ' ctermfg = ' . color16[0] . ' guifg = ' . color16[1] . ' '
+let s:bg_aqua  = ' ctermbg = ' . color16[0] . ' guibg = ' . color16[1] . ' '
+let s:fg_green = ' ctermfg = ' . color17[0] . ' guifg = ' . color17[1] . ' '
+let s:bg_green = ' ctermbg = ' . color17[0] . ' guibg = ' . color17[1] . ' '
+let s:fg_wine  = ' ctermfg = ' . color11[0] . ' guifg = ' . color11[1] . ' '
+let s:bg_wine  = ' ctermbg = ' . color11[0] . ' guibg = ' . color11[1] . ' '
 " Terminal:
 let g:terminal_color_0  = color00[0]
 let g:terminal_color_1  = color01[0]
@@ -148,135 +148,138 @@ let g:terminal_color_12 = color12[0]
 let g:terminal_color_13 = color13[0]
 let g:terminal_color_14 = color14[0]
 let g:terminal_color_15 = color15[0]
-let g:terminal_ansi_colors = [color00[0], color01[0], color02[0], color03[0],
-            \ color04[0], color05[0], color06[0], color07[0], color08[0], color09[0],
-            \ color10[0], color11[0], color12[0], color13[0], color14[0], color15[0]]
+let g:terminal_ansi_colors = [
+            \ color00[0], color01[0], color02[0], color03[0],
+            \ color04[0], color05[0], color06[0], color07[0],
+            \ color08[0], color09[0], color10[0], color11[0],
+            \ color12[0], color13[0], color14[0], color15[0]
+            \ ]
 " LineNumber:
-let s:fg_linenumber_fg = ' ctermfg=' . linenumber_fg . ' '
-let s:bg_linenumber_fg = ' ctermbg=' . linenumber_fg . ' '
-let s:fg_linenumber_bg = ' ctermfg=' . linenumber_bg . ' '
-let s:bg_linenumber_bg = ' ctermbg=' . linenumber_bg . ' '
+let s:fg_linenumber_fg          = ' ctermfg = ' . linenumber_fg[0] . ' guifg = ' . linenumber_fg[1] . ' '
+let s:bg_linenumber_fg          = ' ctermbg = ' . linenumber_bg[0] . ' guibg = ' . linenumber_bg[1] . ' '
+let s:fg_linenumber_bg          = ' ctermfg = ' . linenumber_fg[0] . ' guifg = ' . linenumber_fg[1] . ' '
+let s:bg_linenumber_bg          = ' ctermbg = ' . linenumber_bg[0] . ' guibg = ' . linenumber_bg[1] . ' '
 " Vertical Split:
-let s:fg_vertsplit_fg = ' ctermfg=' . vertsplit_fg . ' '
-let s:bg_vertsplit_fg = ' ctermbg=' . vertsplit_fg . ' '
-let s:fg_vertsplit_bg = ' ctermfg=' . vertsplit_bg . ' '
-let s:bg_vertsplit_bg = ' ctermbg=' . vertsplit_bg . ' '
+let s:fg_vertsplit_fg           = ' ctermfg = ' . vertsplit_fg[0] . ' guifg = ' . vertsplit_fg[1] . ' '
+let s:bg_vertsplit_fg           = ' ctermbg = ' . vertsplit_bg[0] . ' guibg = ' . vertsplit_bg[1] . ' '
+let s:fg_vertsplit_bg           = ' ctermfg = ' . vertsplit_fg[0] . ' guifg = ' . vertsplit_fg[1] . ' '
+let s:bg_vertsplit_bg           = ' ctermbg = ' . vertsplit_bg[0] . ' guibg = ' . vertsplit_bg[1] . ' '
 " Statusline:
-let s:fg_statusline_active_fg = ' ctermfg=' . statusline_active_fg . ' '
-let s:bg_statusline_active_fg = ' ctermbg=' . statusline_active_fg . ' '
-let s:fg_statusline_active_bg = ' ctermfg=' . statusline_active_bg . ' '
-let s:bg_statusline_active_bg = ' ctermbg=' . statusline_active_bg . ' '
-let s:fg_statusline_inactive_fg = ' ctermfg=' . statusline_inactive_fg . ' '
-let s:bg_statusline_inactive_fg = ' ctermbg=' . statusline_inactive_fg . ' '
-let s:fg_statusline_inactive_bg = ' ctermfg=' . statusline_inactive_bg . ' '
-let s:bg_statusline_inactive_bg = ' ctermbg=' . statusline_inactive_bg . ' '
+let s:fg_statusline_active_fg   = ' ctermfg = ' . statusline_active_fg[0] . ' guifg = ' . statusline_active_fg[1] . ' '
+let s:bg_statusline_active_fg   = ' ctermbg = ' . statusline_active_bg[0] . ' guibg = ' . statusline_active_bg[1] . ' '
+let s:fg_statusline_active_bg   = ' ctermfg = ' . statusline_active_fg[0] . ' guifg = ' . statusline_active_fg[1] . ' '
+let s:bg_statusline_active_bg   = ' ctermbg = ' . statusline_active_bg[0] . ' guibg = ' . statusline_active_bg[1] . ' '
+let s:fg_statusline_inactive_fg = ' ctermfg = ' . statusline_inactive_fg[0] . ' guifg = ' . statusline_inactive_fg[1] . ' '
+let s:bg_statusline_inactive_fg = ' ctermbg = ' . statusline_inactive_bg[0] . ' guibg = ' . statusline_inactive_bg[1] . ' '
+let s:fg_statusline_inactive_bg = ' ctermfg = ' . statusline_inactive_fg[0] . ' guifg = ' . statusline_inactive_fg[1] . ' '
+let s:bg_statusline_inactive_bg = ' ctermbg = ' . statusline_inactive_bg[0] . ' guibg = ' . statusline_inactive_bg[1] . ' '
 " Cursor:
-let s:fg_cursor_fg = ' ctermfg=' . cursor_fg . ' '
-let s:bg_cursor_fg = ' ctermbg=' . cursor_fg . ' '
-let s:fg_cursor_bg = ' ctermfg=' . cursor_bg . ' '
-let s:bg_cursor_bg = ' ctermbg=' . cursor_bg . ' '
-let s:fg_cursorline = ' ctermfg=' . cursorline . ' '
-let s:bg_cursorline = ' ctermbg=' . cursorline . ' '
+let s:fg_cursor_fg              = ' ctermfg = ' . cursor_fg[0] . ' guifg = ' . cursor_fg[1] . ' '
+let s:bg_cursor_fg              = ' ctermbg = ' . cursor_bg[0] . ' guibg = ' . cursor_bg[1] . ' '
+let s:fg_cursor_bg              = ' ctermfg = ' . cursor_fg[0] . ' guifg = ' . cursor_fg[1] . ' '
+let s:bg_cursor_bg              = ' ctermbg = ' . cursor_bg[0] . ' guibg = ' . cursor_bg[1] . ' '
+let s:fg_cursorline             = ' ctermfg = ' . cursorline[0] . ' guifg = ' . cursorline[1] . ' '
+let s:bg_cursorline             = ' ctermbg = ' . cursorline[0] . ' guibg = ' . cursorline[1] . ' '
 " CursorColumn:
-let s:fg_cursorcolumn = ' ctermfg=' . cursorcolumn . ' '
-let s:bg_cursorcolumn = ' ctermbg=' . cursorcolumn . ' '
+let s:fg_cursorcolumn           = ' ctermfg = ' . cursorcolumn[0] . ' guifg = ' . cursorcolumn[1] . ' '
+let s:bg_cursorcolumn           = ' ctermbg = ' . cursorcolumn[0] . ' guibg = ' . cursorcolumn[1] . ' '
 " CursorLine Number:
-let s:fg_cursorlinenr_fg = ' ctermfg=' . cursorlinenr_fg . ' '
-let s:bg_cursorlinenr_fg = ' ctermbg=' . cursorlinenr_fg . ' '
-let s:fg_cursorlinenr_bg = ' ctermfg=' . cursorlinenr_bg . ' '
-let s:bg_cursorlinenr_bg = ' ctermbg=' . cursorlinenr_bg . ' '
+let s:fg_cursorlinenr_fg        = ' ctermfg = ' . cursorlinenr_fg[0] . ' guifg = ' . cursorlinenr_fg[1] . ' '
+let s:bg_cursorlinenr_fg        = ' ctermbg = ' . cursorlinenr_bg[0] . ' guibg = ' . cursorlinenr_bg[1] . ' '
+let s:fg_cursorlinenr_bg        = ' ctermfg = ' . cursorlinenr_fg[0] . ' guifg = ' . cursorlinenr_fg[1] . ' '
+let s:bg_cursorlinenr_bg        = ' ctermbg = ' . cursorlinenr_bg[0] . ' guibg = ' . cursorlinenr_bg[1] . ' '
 " Popup Menu:
-let s:fg_popupmenu_fg = ' ctermfg=' . popupmenu_fg . ' '
-let s:bg_popupmenu_fg = ' ctermbg=' . popupmenu_fg . ' '
-let s:fg_popupmenu_bg = ' ctermfg=' . popupmenu_bg . ' '
-let s:bg_popupmenu_bg = ' ctermbg=' . popupmenu_bg . ' '
+let s:fg_popupmenu_fg           = ' ctermfg = ' . popupmenu_fg[0] . ' guifg = ' . popupmenu_fg[1] . ' '
+let s:bg_popupmenu_fg           = ' ctermbg = ' . popupmenu_bg[0] . ' guibg = ' . popupmenu_bg[1] . ' '
+let s:fg_popupmenu_bg           = ' ctermfg = ' . popupmenu_fg[0] . ' guifg = ' . popupmenu_fg[1] . ' '
+let s:bg_popupmenu_bg           = ' ctermbg = ' . popupmenu_bg[0] . ' guibg = ' . popupmenu_bg[1] . ' '
 " Search:
-let s:fg_search_fg = ' ctermfg=' . search_fg . ' '
-let s:bg_search_fg = ' ctermbg=' . search_fg . ' '
-let s:fg_search_bg = ' ctermfg=' . search_bg . ' '
-let s:bg_search_bg = ' ctermbg=' . search_bg . ' '
+let s:fg_search_fg              = ' ctermfg = ' . search_fg[0] . ' guifg = ' . search_fg[1] . ' '
+let s:bg_search_fg              = ' ctermbg = ' . search_bg[0] . ' guibg = ' . search_bg[1] . ' '
+let s:fg_search_bg              = ' ctermfg = ' . search_fg[0] . ' guifg = ' . search_fg[1] . ' '
+let s:bg_search_bg              = ' ctermbg = ' . search_bg[0] . ' guibg = ' . search_bg[1] . ' '
 " Todo:
-let s:fg_todo_fg = ' ctermfg=' . todo_fg . ' '
-let s:bg_todo_fg = ' ctermbg=' . todo_fg . ' '
-let s:fg_todo_bg = ' ctermfg=' . todo_bg . ' '
-let s:bg_todo_bg = ' ctermbg=' . todo_bg . ' '
+let s:fg_todo_fg                = ' ctermfg = ' . todo_fg[0] . ' guifg = ' . todo_fg[1] . ' '
+let s:bg_todo_fg                = ' ctermbg = ' . todo_bg[0] . ' guibg = ' . todo_bg[1] . ' '
+let s:fg_todo_bg                = ' ctermfg = ' . todo_fg[0] . ' guifg = ' . todo_fg[1] . ' '
+let s:bg_todo_bg                = ' ctermbg = ' . todo_bg[0] . ' guibg = ' . todo_bg[1] . ' '
 " Error:
-let s:fg_error_fg = ' ctermfg=' . error_fg . ' '
-let s:bg_error_fg = ' ctermbg=' . error_fg . ' '
-let s:fg_error_bg = ' ctermfg=' . error_bg . ' '
-let s:bg_error_bg = ' ctermbg=' . error_bg . ' '
+let s:fg_error_fg               = ' ctermfg = ' . error_fg[0] . ' guifg = ' . error_fg[1] . ' '
+let s:bg_error_fg               = ' ctermbg = ' . error_bg[0] . ' guibg = ' . error_bg[1] . ' '
+let s:fg_error_bg               = ' ctermfg = ' . error_fg[0] . ' guifg = ' . error_fg[1] . ' '
+let s:bg_error_bg               = ' ctermbg = ' . error_bg[0] . ' guibg = ' . error_bg[1] . ' '
 " Match Parenthesis:
-let s:fg_matchparen_fg = ' ctermfg=' . matchparen_fg . ' '
-let s:bg_matchparen_fg = ' ctermbg=' . matchparen_fg . ' '
-let s:fg_matchparen_bg = ' ctermfg=' . matchparen_bg . ' '
-let s:bg_matchparen_bg = ' ctermbg=' . matchparen_bg . ' '
+let s:fg_matchparen_fg          = ' ctermfg = ' . matchparen_fg[0] . ' guifg = ' . matchparen_fg[1] . ' '
+let s:bg_matchparen_fg          = ' ctermbg = ' . matchparen_bg[0] . ' guibg = ' . matchparen_bg[1] . ' '
+let s:fg_matchparen_bg          = ' ctermfg = ' . matchparen_fg[0] . ' guifg = ' . matchparen_fg[1] . ' '
+let s:bg_matchparen_bg          = ' ctermbg = ' . matchparen_bg[0] . ' guibg = ' . matchparen_bg[1] . ' '
 " Visual:
-let s:fg_visual_fg = ' ctermfg=' . visual_fg . ' '
-let s:bg_visual_fg = ' ctermbg=' . visual_fg . ' '
-let s:fg_visual_bg = ' ctermfg=' . visual_bg . ' '
-let s:bg_visual_bg = ' ctermbg=' . visual_bg . ' '
+let s:fg_visual_fg              = ' ctermfg = ' . visual_fg[0] . ' guifg = ' . visual_fg[1] . ' '
+let s:bg_visual_fg              = ' ctermbg = ' . visual_bg[0] . ' guibg = ' . visual_bg[1] . ' '
+let s:fg_visual_bg              = ' ctermfg = ' . visual_fg[0] . ' guifg = ' . visual_fg[1] . ' '
+let s:bg_visual_bg              = ' ctermbg = ' . visual_bg[0] . ' guibg = ' . visual_bg[1] . ' '
 " Folded:
-let s:fg_folded_fg = ' ctermfg=' . folded_fg . ' '
-let s:bg_folded_fg = ' ctermbg=' . folded_fg . ' '
-let s:fg_folded_bg = ' ctermfg=' . folded_bg . ' '
-let s:bg_folded_bg = ' ctermbg=' . folded_bg . ' '
+let s:fg_folded_fg              = ' ctermfg = ' . folded_fg[0] . ' guifg = ' . folded_fg[1] . ' '
+let s:bg_folded_fg              = ' ctermbg = ' . folded_bg[0] . ' guibg = ' . folded_bg[1] . ' '
+let s:fg_folded_bg              = ' ctermfg = ' . folded_fg[0] . ' guifg = ' . folded_fg[1] . ' '
+let s:bg_folded_bg              = ' ctermbg = ' . folded_bg[0] . ' guibg = ' . folded_bg[1] . ' '
 " WildMenu:
-let s:fg_wildmenu_fg = ' ctermfg=' . wildmenu_fg . ' '
-let s:bg_wildmenu_fg = ' ctermbg=' . wildmenu_fg . ' '
-let s:fg_wildmenu_bg = ' ctermfg=' . wildmenu_bg . ' '
-let s:bg_wildmenu_bg = ' ctermbg=' . wildmenu_bg . ' '
+let s:fg_wildmenu_fg            = ' ctermfg = ' . wildmenu_fg[0] . ' guifg = ' . wildmenu_fg[1] . ' '
+let s:bg_wildmenu_fg            = ' ctermbg = ' . wildmenu_bg[0] . ' guibg = ' . wildmenu_bg[1] . ' '
+let s:fg_wildmenu_bg            = ' ctermfg = ' . wildmenu_fg[0] . ' guifg = ' . wildmenu_fg[1] . ' '
+let s:bg_wildmenu_bg            = ' ctermbg = ' . wildmenu_bg[0] . ' guibg = ' . wildmenu_bg[1] . ' '
 " Spelling:
-let s:fg_spellbad = ' ctermfg=' . spellbad . ' '
-let s:bg_spellbad = ' ctermbg=' . spellbad . ' '
-let s:fg_spellcap = ' ctermfg=' . spellcap . ' '
-let s:bg_spellcap = ' ctermbg=' . spellcap . ' '
-let s:fg_spellrare = ' ctermfg=' . spellrare . ' '
-let s:bg_spellrare = ' ctermbg=' . spellrare . ' '
-let s:fg_spelllocal = ' ctermfg=' . spelllocal . ' '
-let s:bg_spelllocal = ' ctermbg=' . spelllocal . ' '
+let s:fg_spellbad               = ' ctermfg = ' . spellbad[0] . ' guifg = ' . spellbad[1] . ' gui=NONE '
+let s:bg_spellbad               = ' ctermbg = ' . spellbad[0] . ' guibg = ' . spellbad[1] . ' gui=NONE '
+let s:fg_spellcap               = ' ctermfg = ' . spellcap[0] . ' guifg = ' . spellcap[1] . ' gui=NONE '
+let s:bg_spellcap               = ' ctermbg = ' . spellcap[0] . ' guibg = ' . spellcap[1] . ' gui=NONE '
+let s:fg_spellrare              = ' ctermfg = ' . spellrare[0] . ' guifg = ' . spellrare[1] . ' gui=NONE '
+let s:bg_spellrare              = ' ctermbg = ' . spellrare[0] . ' guibg = ' . spellrare[1] . ' gui=NONE '
+let s:fg_spelllocal             = ' ctermfg = ' . spelllocal[0] . ' guifg = ' . spelllocal[1] . ' gui=NONE '
+let s:bg_spelllocal             = ' ctermbg = ' . spelllocal[0] . ' guibg = ' . spelllocal[1] . ' gui=NONE '
 " Diff:
-let s:fg_diffadd_fg = ' ctermfg=' . diffadd_fg . ' '
-let s:bg_diffadd_fg = ' ctermbg=' . diffadd_fg . ' '
-let s:fg_diffadd_bg = ' ctermfg=' . diffadd_bg . ' '
-let s:bg_diffadd_bg = ' ctermbg=' . diffadd_bg . ' '
-let s:fg_diffdelete_fg = ' ctermfg=' . diffdelete_fg . ' '
-let s:bg_diffdelete_fg = ' ctermbg=' . diffdelete_fg . ' '
-let s:fg_diffdelete_bg = ' ctermfg=' . diffdelete_bg . ' '
-let s:bg_diffdelete_bg = ' ctermbg=' . diffdelete_bg . ' '
-let s:fg_difftext_fg = ' ctermfg=' . difftext_fg . ' '
-let s:bg_difftext_fg = ' ctermbg=' . difftext_fg . ' '
-let s:fg_difftext_bg = ' ctermfg=' . difftext_bg . ' '
-let s:bg_difftext_bg = ' ctermbg=' . difftext_bg . ' '
-let s:fg_diffchange_fg = ' ctermfg=' . diffchange_fg . ' '
-let s:bg_diffchange_fg = ' ctermbg=' . diffchange_fg . ' '
-let s:fg_diffchange_bg = ' ctermfg=' . diffchange_bg . ' '
-let s:bg_diffchange_bg = ' ctermbg=' . diffchange_bg . ' '
+let s:fg_diffadd_fg             = ' ctermfg = ' . diffadd_fg[0] . ' guifg = ' . diffadd_fg[1] . ' '
+let s:bg_diffadd_fg             = ' ctermbg = ' . diffadd_bg[0] . ' guibg = ' . diffadd_bg[1] . ' '
+let s:fg_diffadd_bg             = ' ctermfg = ' . diffadd_fg[0] . ' guifg = ' . diffadd_fg[1] . ' '
+let s:bg_diffadd_bg             = ' ctermbg = ' . diffadd_bg[0] . ' guibg = ' . diffadd_bg[1] . ' '
+let s:fg_diffdelete_fg          = ' ctermfg = ' . diffdelete_fg[0] . ' guifg = ' . diffdelete_fg[1] . ' '
+let s:bg_diffdelete_fg          = ' ctermbg = ' . diffdelete_bg[0] . ' guibg = ' . diffdelete_bg[1] . ' '
+let s:fg_diffdelete_bg          = ' ctermfg = ' . diffdelete_fg[0] . ' guifg = ' . diffdelete_fg[1] . ' '
+let s:bg_diffdelete_bg          = ' ctermbg = ' . diffdelete_bg[0] . ' guibg = ' . diffdelete_bg[1] . ' '
+let s:fg_difftext_fg            = ' ctermfg = ' . difftext_fg[0] . ' guifg = ' . difftext_fg[1] . ' '
+let s:bg_difftext_fg            = ' ctermbg = ' . difftext_bg[0] . ' guibg = ' . difftext_bg[1] . ' '
+let s:fg_difftext_bg            = ' ctermfg = ' . difftext_fg[0] . ' guifg = ' . difftext_fg[1] . ' '
+let s:bg_difftext_bg            = ' ctermbg = ' . difftext_bg[0] . ' guibg = ' . difftext_bg[1] . ' '
+let s:fg_diffchange_fg          = ' ctermfg = ' . diffchange_fg[0] . ' guifg = ' . diffchange_fg[1] . ' '
+let s:bg_diffchange_fg          = ' ctermbg = ' . diffchange_bg[0] . ' guibg = ' . diffchange_bg[1] . ' '
+let s:fg_diffchange_bg          = ' ctermfg = ' . diffchange_fg[0] . ' guifg = ' . diffchange_fg[1] . ' '
+let s:bg_diffchange_bg          = ' ctermbg = ' . diffchange_bg[0] . ' guibg = ' . diffchange_bg[1] . ' '
 " Tabline:
-let s:fg_tabline_bg = ' ctermfg=' . tabline_bg . ' '
-let s:bg_tabline_bg = ' ctermbg=' . tabline_bg . ' '
-let s:fg_tabline_active_fg = ' ctermfg=' . tabline_active_fg . ' '
-let s:bg_tabline_active_fg = ' ctermbg=' . tabline_active_fg . ' '
-let s:fg_tabline_active_bg = ' ctermfg=' . tabline_active_bg . ' '
-let s:bg_tabline_active_bg = ' ctermbg=' . tabline_active_bg . ' '
-let s:fg_tabline_inactive_fg = ' ctermfg=' . tabline_inactive_fg . ' '
-let s:bg_tabline_inactive_fg = ' ctermbg=' . tabline_inactive_fg . ' '
-let s:fg_tabline_inactive_bg = ' ctermfg=' . tabline_inactive_bg . ' '
-let s:bg_tabline_inactive_bg = ' ctermbg=' . tabline_inactive_bg . ' '
+let s:fg_tabline_bg             = ' ctermfg = ' . tabline_bg[0] . ' guifg = ' . tabline_bg[1] . ' '
+let s:bg_tabline_bg             = ' ctermbg = ' . tabline_bg[0] . ' guibg = ' . tabline_bg[1] . ' '
+let s:fg_tabline_active_fg      = ' ctermfg = ' . tabline_active_fg[0] . ' guifg = ' . tabline_active_fg[1] . ' '
+let s:bg_tabline_active_fg      = ' ctermbg = ' . tabline_active_bg[0] . ' guibg = ' . tabline_active_bg[1] . ' '
+let s:fg_tabline_active_bg      = ' ctermfg = ' . tabline_active_fg[0] . ' guifg = ' . tabline_active_fg[1] . ' '
+let s:bg_tabline_active_bg      = ' ctermbg = ' . tabline_active_bg[0] . ' guibg = ' . tabline_active_bg[1] . ' '
+let s:fg_tabline_inactive_fg    = ' ctermfg = ' . tabline_inactive_fg[0] . ' guifg = ' . tabline_inactive_fg[1] . ' '
+let s:bg_tabline_inactive_fg    = ' ctermbg = ' . tabline_inactive_bg[0] . ' guibg = ' . tabline_inactive_bg[1] . ' '
+let s:fg_tabline_inactive_bg    = ' ctermfg = ' . tabline_inactive_fg[0] . ' guifg = ' . tabline_inactive_fg[1] . ' '
+let s:bg_tabline_inactive_bg    = ' ctermbg = ' . tabline_inactive_bg[0] . ' guibg = ' . tabline_inactive_bg[1] . ' '
 " Plugin: BufTabLine
-let s:fg_buftabline_bg = ' ctermfg=' . buftabline_bg . ' '
-let s:bg_buftabline_bg = ' ctermbg=' . buftabline_bg . ' '
-let s:fg_buftabline_current_fg = ' ctermfg=' . buftabline_current_fg . ' '
-let s:bg_buftabline_current_fg = ' ctermbg=' . buftabline_current_fg . ' '
-let s:fg_buftabline_current_bg = ' ctermfg=' . buftabline_current_bg . ' '
-let s:bg_buftabline_current_bg = ' ctermbg=' . buftabline_current_bg . ' '
-let s:fg_buftabline_active_fg = ' ctermfg=' . buftabline_active_fg . ' '
-let s:bg_buftabline_active_fg = ' ctermbg=' . buftabline_active_fg . ' '
-let s:fg_buftabline_active_bg = ' ctermfg=' . buftabline_active_bg . ' '
-let s:bg_buftabline_active_bg = ' ctermbg=' . buftabline_active_bg . ' '
-let s:fg_buftabline_inactive_fg = ' ctermfg=' . buftabline_inactive_fg . ' '
-let s:bg_buftabline_inactive_fg = ' ctermbg=' . buftabline_inactive_fg . ' '
-let s:fg_buftabline_inactive_bg = ' ctermfg=' . buftabline_inactive_bg . ' '
-let s:bg_buftabline_inactive_bg = ' ctermbg=' . buftabline_inactive_bg . ' '
+let s:fg_buftabline_bg          = ' ctermfg = ' . buftabline_bg[0] . ' guifg = ' . buftabline_bg[1] . ' '
+let s:bg_buftabline_bg          = ' ctermbg = ' . buftabline_bg[0] . ' guibg = ' . buftabline_bg[1] . ' '
+let s:fg_buftabline_current_fg  = ' ctermfg = ' . buftabline_current_fg[0] . ' guifg = ' . buftabline_current_fg[1] . ' '
+let s:bg_buftabline_current_fg  = ' ctermbg = ' . buftabline_current_bg[0] . ' guibg = ' . buftabline_current_bg[1] . ' '
+let s:fg_buftabline_current_bg  = ' ctermfg = ' . buftabline_current_fg[0] . ' guifg = ' . buftabline_current_fg[1] . ' '
+let s:bg_buftabline_current_bg  = ' ctermbg = ' . buftabline_current_bg[0] . ' guibg = ' . buftabline_current_bg[1] . ' '
+let s:fg_buftabline_active_fg   = ' ctermfg = ' . buftabline_active_fg[0] . ' guifg = ' . buftabline_active_fg[1] . ' '
+let s:bg_buftabline_active_fg   = ' ctermbg = ' . buftabline_active_bg[0] . ' guibg = ' . buftabline_active_bg[1] . ' '
+let s:fg_buftabline_active_bg   = ' ctermfg = ' . buftabline_active_fg[0] . ' guifg = ' . buftabline_active_fg[1] . ' '
+let s:bg_buftabline_active_bg   = ' ctermbg = ' . buftabline_active_bg[0] . ' guibg = ' . buftabline_active_bg[1] . ' '
+let s:fg_buftabline_inactive_fg = ' ctermfg = ' . buftabline_inactive_fg[0] . ' guifg = ' . buftabline_inactive_fg[1] . ' '
+let s:bg_buftabline_inactive_fg = ' ctermbg = ' . buftabline_inactive_bg[0] . ' guibg = ' . buftabline_inactive_bg[1] . ' '
+let s:fg_buftabline_inactive_bg = ' ctermfg = ' . buftabline_inactive_fg[0] . ' guifg = ' . buftabline_inactive_fg[1] . ' '
+let s:bg_buftabline_inactive_bg = ' ctermbg = ' . buftabline_inactive_bg[0] . ' guibg = ' . buftabline_inactive_bg[1] . ' '
 
 " Syntax Highlighting
 exec 'hi Normal' . s:fg_foreground

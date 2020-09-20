@@ -5,19 +5,19 @@ function! mrossinek#statusline#StatuslineInitHighlighting()
     " clear old StatusLine highlighting
     highlight clear StatusLine
     highlight clear StatusLineNC
-    highlight StatusLineNC ctermbg=235
+    highlight StatusLineNC ctermbg=235 guibg='#262626'
     highlight! link StatusLineTerm StatusLine
     highlight! link StatusLineTermNC StatusLineNC
     " fix TabLine while we are at it
-    highlight! TabLineFill ctermbg=236
+    highlight! TabLineFill ctermbg=236 guibg='#303030'
 
     " User 1: Mode highlighting
-    highlight StatuslineUnmodified cterm=bold ctermfg=white ctermbg=darkgreen
-    highlight StatuslineModified cterm=bold ctermfg=white ctermbg=red
+    highlight StatuslineUnmodified cterm=bold ctermfg=white ctermbg=darkgreen gui=bold guifg=White guibg=DarkGreen
+    highlight StatuslineModified cterm=bold ctermfg=white ctermbg=red gui=bold guifg=White guibg=Red
     highlight! link User1 StatuslineUnmodified
 
     " User 2: basic statusline info
-    highlight User2 ctermbg=236 ctermfg=220
+    highlight User2 ctermbg=236 guibg='#303030' ctermfg=220 guifg='#ffd700'
     highlight link StatusLine User2
 
     " User 3: info field: match CursorColumn

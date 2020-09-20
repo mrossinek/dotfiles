@@ -33,6 +33,7 @@ set signcolumn=yes
 set smartcase
 set spelllang=en_us
 set switchbuf=usetab
+set termguicolors
 set textwidth=80
 set undofile
 set updatetime=100
