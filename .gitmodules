@@ -1,9 +1,12 @@
+[submodule "tmux-copycat"]
+	path = tmux/.tmux/plugins/tmux-copycat
+	url = https://github.com/tmux-plugins/tmux-copycat
+[submodule "tmux-open"]
+	path = tmux/.tmux/plugins/tmux-open
+	url = https://github.com/tmux-plugins/tmux-open
 [submodule "jblock"]
 	path = qutebrowser/.config/qutebrowser/jblock
 	url = https://gitlab.com/jgkamat/jblock
-[submodule "tpm"]
-	path = tmux/.tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
 [submodule "zinit"]
 	path = zsh/.zinit/bin
 	url = https://github.com/zdharma/zinit.git
