@@ -61,9 +61,6 @@
 [submodule "vim-abolish"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-abolish
 	url = https://github.com/tpope/vim-abolish
-[submodule "vim-vinegar"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-vinegar
-	url = https://github.com/tpope/vim-vinegar
 [submodule "replay"]
 	path = nvim/.config/nvim/pack/minpac/start/replay
 	url = https://github.com/wincent/replay
@@ -166,9 +163,6 @@
 [submodule "vim-sneak"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-sneak
 	url = https://github.com/justinmk/vim-sneak
-[submodule "vim-eunuch"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-eunuch
-	url = https://github.com/tpope/vim-eunuch
 [submodule "vim-dirvish"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-dirvish
 	url = https://github.com/justinmk/vim-dirvish
