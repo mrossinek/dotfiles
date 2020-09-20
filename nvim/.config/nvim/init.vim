@@ -51,8 +51,8 @@ augroup vimwiki_custom
     autocmd BufEnter *md call mrossinek#plugins#vimwiki_assert_filetype()
 augroup end
 
-" localvimrc plugin: configure and load before any other plugin
-let g:localvimrc_sandbox = 0
-let g:localvimrc_ask = 0
-let g:localvimrc_event = ['BufWinEnter', 'BufRead']
-runtime START plugin/localvimrc.vim
+if exists('$EXTRA_VIM')
+  for path in split($EXTRA_VIM, ':')
+    exec 'source '.path
+  endfor
+endif

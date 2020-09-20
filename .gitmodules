@@ -49,9 +49,6 @@
 [submodule "vim-verdict"]
 	path = nvim/.config/nvim/pack/minpac/opt/vim-verdict
 	url = https://gitlab.com/mrossinek/vim-verdict
-[submodule "vim-localvimrc"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-localvimrc
-	url = https://github.com/embear/vim-localvimrc
 [submodule "vim-unimpaired"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired

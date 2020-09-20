@@ -1,0 +1,7 @@
+add_extra_vimrc() {
+  local extravim="$(find_up .lvimrc)"
+  if [ -n "$extravim" ]; then
+    echo "Adding extra .lvimrc: ${extravim}"
+    path_add EXTRA_VIM $extravim
+  fi
+}
