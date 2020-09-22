@@ -7,3 +7,5 @@ tags
 .envrc
 # python cache files should generally be ignored
 __pycache__/
+# fortran language server config
+.fortls

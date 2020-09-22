@@ -6,28 +6,42 @@ lsp_status.config {
 }
 lsp_status.register_progress()
 
+local nvim_command = vim.api.nvim_command
 local on_attach_vim = function(client)
   require'diagnostic'.on_attach(client)
+  nvim_command('autocmd CursorHold <buffer> lua vim.lsp.util.show_line_diagnostics()')
   lsp_status.on_attach(client)
 end
 
-require'nvim_lsp'.clangd.setup{
+local nvim_lsp = require('nvim_lsp')
+nvim_lsp.clangd.setup{
     callbacks = lsp_status.extensions.clangd.setup(),
     on_attach=on_attach_vim,
     capabilities=lsp_status.capabilities
 }
 
-require'nvim_lsp'.fortls.setup{
+nvim_lsp.fortls.setup{
     on_attach=on_attach_vim,
     capabilities=lsp_status.capabilities
 }
 
-require'nvim_lsp'.pyls.setup{
+-- overwrite the pylint executable to ensure it is run from the virtualenv
+nvim_lsp.pyls.setup{
+    settings = {
+        pyls = {
+            plugins = {
+                pylint = {
+                    enabled = true,
+                    executable = 'pylint',
+                }
+            }
+        }
+    },
     on_attach=on_attach_vim,
     capabilities=lsp_status.capabilities
 }
 
-require'nvim_lsp'.vimls.setup{
+nvim_lsp.vimls.setup{
     on_attach=on_attach_vim,
     capabilities=lsp_status.capabilities
 }
