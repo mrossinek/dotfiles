@@ -19,6 +19,9 @@
 [submodule "fast-syntax-highlighting"]
 	path = zsh/.zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma/fast-syntax-highlighting
+[submodule "forgit"]
+	path = zsh/.zsh/plugins/forgit
+	url = https://github.com/wfxr/forgit
 [submodule "vim-ledger"]
 	path = nvim/.config/nvim/pack/minpac/opt/vim-ledger
 	url = https://github.com/ledger/vim-ledger

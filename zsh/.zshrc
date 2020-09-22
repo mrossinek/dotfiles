@@ -43,6 +43,8 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '!'
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:git*' formats "%{${fg[magenta]}%}[%{${fg[green]}%}%b%{${fg[yellow]}%}%m%u%c%{${fg[magenta]}%}]%{$reset_color%} "
+# forgit plugin
+source ~/.zsh/plugins/forgit/forgit.plugin.zsh
 
 # grml options
 # change the cursor when in vicmd mode
