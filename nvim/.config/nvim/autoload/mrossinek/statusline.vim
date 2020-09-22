@@ -12,20 +12,20 @@ function! mrossinek#statusline#StatuslineInitHighlighting()
     highlight! TabLineFill ctermbg=236 guibg='#303030'
 
     " User 1: Mode highlighting
-    highlight StatuslineUnmodified cterm=bold ctermfg=white ctermbg=darkgreen gui=bold guifg=White guibg=DarkGreen
-    highlight StatuslineModified cterm=bold ctermfg=white ctermbg=red gui=bold guifg=White guibg=Red
+    highlight StatuslineUnmodified cterm=bold ctermfg=White ctermbg=DarkGreen gui=bold guifg=White guibg=DarkGreen
+    highlight StatuslineModified cterm=bold ctermfg=White ctermbg=Red gui=bold guifg=White guibg=Red
     highlight! link User1 StatuslineUnmodified
 
     " User 2: basic statusline info
     highlight User2 ctermbg=236 guibg='#303030' ctermfg=220 guifg='#ffd700'
-    highlight link StatusLine User2
+    highlight! link StatusLine User2
 
     " User 3: info field: match CursorColumn
     highlight! link User3 CursorColumn
 
     " User 4: LSP info
-    highlight! link StatuslineLSPInfo SignColumn
-    highlight! link User4 StatuslineLSPInfo
+    highlight User4 ctermbg=236 guibg='#303030' ctermfg=45 guifg='#00d7ff'
+    highlight! link StatuslineLSPInfo User4
 endfunction
 
 " update highlighting when buffer becomes modified
