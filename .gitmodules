@@ -211,3 +211,6 @@
 [submodule "telescope.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/telescope.nvim
 	url = https://github.com/nvim-lua/telescope.nvim
+[submodule "nvim-treesitter"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
