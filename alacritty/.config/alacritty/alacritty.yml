@@ -2,7 +2,7 @@
 # environment variables. Some entries may override variables
 # set by alacritty itself.
 env:
-  TERM: xterm-256color
+  TERM: alacritty
   WINIT_X11_SCALE_FACTOR: "1"
 
 window:
