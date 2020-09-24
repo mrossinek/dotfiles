@@ -214,3 +214,6 @@
 [submodule "nvim-treesitter"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "snippets.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/snippets.nvim
+	url = https://github.com/norcalli/snippets.nvim
