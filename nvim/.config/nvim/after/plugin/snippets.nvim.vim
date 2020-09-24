@@ -10,5 +10,11 @@ snippets.snippets = {
         todo = [[TODO(${1=io.popen("id -un"):read"*l"}): ]];
         fixme = [[FIXME(${1=io.popen("id -un"):read"*l"}): ]];
     };
+    pandoc = {
+        ["eq"] = "\\begin{equation}\n    $0\n\\end{equation}";
+    };
+    plaintex = {
+        ["env"] = "\\begin{${1}}\n    $0\n\\end{${1}}";
+    };
 }
 EOF
