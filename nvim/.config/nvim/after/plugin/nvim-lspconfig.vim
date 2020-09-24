@@ -2,7 +2,8 @@ lua << EOF
 local lsp_status = require('lsp-status')
 lsp_status.config {
     status_symbol = ' ',
-    indicator_info = ''
+    indicator_hint = '',
+    indicator_info = '',
 }
 lsp_status.register_progress()
 
