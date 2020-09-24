@@ -153,7 +153,7 @@ function conky_cpu(cr)
                                      cpu_origin_y - cpu_height
     cpu_corner_4_x, cpu_corner_4_y = cpu_origin_x + cpu_edge, cpu_origin_y
 
-    cpu_temp = tonumber(conky_parse("${hwmon 2 temp 1 0.001}"))
+    cpu_temp = tonumber(conky_parse("${hwmon coretemp temp 1 0.001}"))
     fill_hexagon(cr, 6, cpu_origin_x - cpu_edge / 2, cpu_origin_y - cpu_height,
                  30, 2, cpu_temp, "°C", "MesloLGS Nerd Font Mono", "normal",
                  20, 0.35, 0.35, 0.35, 1)
