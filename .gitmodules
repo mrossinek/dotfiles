@@ -217,3 +217,6 @@
 [submodule "snippets.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/snippets.nvim
 	url = https://github.com/norcalli/snippets.nvim
+[submodule "nvim-web-devicons"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-web-devicons
+	url = https://github.com/kyazdani42/nvim-web-devicons
