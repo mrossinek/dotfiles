@@ -146,7 +146,7 @@ call <sid>hi("Visual",        "", s:gui02, "", s:cterm02, "", "")
 call <sid>hi("VisualNOS",     s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("WarningMsg",    s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("WildMenu",      s:gui08, s:gui0A, s:cterm08, "", "", "")
-call <sid>hi("Title",         s:gui0D, "", s:cterm0D, "", "none", "")
+call <sid>hi("Title",         s:gui0D, "", s:cterm0D, "", "bold", "")
 call <sid>hi("Conceal",       s:gui0D, "none", s:cterm0D, "none", "", "")
 call <sid>hi("Cursor",        s:gui00, s:gui05, s:cterm00, s:cterm05, "", "")
 call <sid>hi("NonText",       s:gui03, "", s:cterm03, "", "", "")
@@ -252,7 +252,7 @@ call <sid>hi("GitGutterDeleteLineNr",        s:gui08, s:gui01, s:cterm08, s:cter
 call <sid>hi("GitGutterChangeDeleteLineNr",  s:gui0E, s:gui01, s:cterm0E, s:cterm01, "", "")
 
 " HTML highlighting
-call <sid>hi("htmlBold",    s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("htmlBold",    s:gui0A, "", s:cterm0A, "", "bold", "")
 call <sid>hi("htmlItalic",  s:gui0E, "", s:cterm0E, "", "italic", "")
 call <sid>hi("htmlEndTag",  s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("htmlTag",     s:gui05, "", s:cterm05, "", "", "")
