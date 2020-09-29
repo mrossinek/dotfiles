@@ -1,4 +1,5 @@
 let g:completion_enable_auto_popup = 0
+let g:completion_enable_snippet = 'snippets.nvim'
 
 function! s:check_back_space() abort
     let col = col('.') - 1
