@@ -351,6 +351,16 @@ call <sid>hi("StartifySpecial",  s:gui03, "", s:cterm03, "", "", "")
 " Java highlighting
 call <sid>hi("javaOperator",     s:gui0D, "", s:cterm0D, "", "", "")
 
+" Lsp Diagnostics
+call <sid>hi("LspDiagnosticsError", s:gui08, "none", s:cterm08, "none", "", "")
+call <sid>hi("LspDiagnosticsWarning", s:gui0A, "none", s:cterm0A, "none", "", "")
+call <sid>hi("LspDiagnosticsInformation", s:gui0C, "none", s:cterm0C, "none", "", "")
+call <sid>hi("LspDiagnosticsHint", s:gui06, "none", s:cterm06, "none", "", "")
+call <sid>hi("LspDiagnosticsErrorSign", s:gui08, s:gui01, s:cterm08, s:cterm01, "", "")
+call <sid>hi("LspDiagnosticsWarningSign", s:gui0A, s:gui01, s:cterm0A, s:cterm01, "", "")
+call <sid>hi("LspDiagnosticsInformationSign", s:gui0C, s:gui01, s:cterm0C, s:cterm01, "", "")
+call <sid>hi("LspDiagnosticsHintSign", s:gui06, s:gui01, s:cterm06, s:cterm01, "", "")
+
 " Remove functions
 delf <sid>hi
 
