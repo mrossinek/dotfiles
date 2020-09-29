@@ -3,7 +3,15 @@
 
 [core]
     editor = nvim
-    pager = delta --theme=TwoDark --color-only
+    pager = delta
+
+[delta]
+    features = line-numbers decorations
+    syntax-theme = TwoDark
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow ul
+    file-style = bold yellow
 
 [diff]
     tool = nvim -d
