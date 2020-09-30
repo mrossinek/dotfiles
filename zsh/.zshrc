@@ -103,7 +103,6 @@ alias -s tex=nvim
 alias -s org=w3m
 alias -s com=w3m
 alias cat=bat
-alias fd='fd -I'  # since the .gitignore in ~ ignores all files
 alias sudo='sudo '
 if [[ "$(uname)" == 'Linux' ]]; then
     alias open=xdg-open
