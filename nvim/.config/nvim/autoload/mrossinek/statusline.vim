@@ -92,7 +92,7 @@ endfunction
 
 " GitGutter wrapper
 function! mrossinek#statusline#StatuslineGitInfo()
-    if !get(g:, 'gitgutter_enabled', 0) || empty(FugitiveHead())
+    if !get(g:, 'gitgutter_enabled', 0)
         return ''
     endif
     let l:added_symbol = '+'

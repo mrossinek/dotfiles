@@ -106,15 +106,6 @@
 [submodule "vim-gitgutter"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule "vim-fugitive"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "fugitive-gitlab.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/fugitive-gitlab.vim
-	url = https://github.com/shumphrey/fugitive-gitlab.vim
-[submodule "gv.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/gv.vim
-	url = https://github.com/junegunn/gv.vim
 [submodule "vim-tmux-focus-events"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events
@@ -220,3 +211,12 @@
 [submodule "nvim-web-devicons"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-web-devicons
 	url = https://github.com/kyazdani42/nvim-web-devicons
+[submodule "gina.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/gina.vim
+	url = https://github.com/lambdalisue/gina.vim
+[submodule "git-messenger.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/git-messenger.vim
+	url = https://github.com/rhysd/git-messenger.vim
+[submodule "committia.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/committia.vim
+	url = https://github.com/rhysd/committia.vim

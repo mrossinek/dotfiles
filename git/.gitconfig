@@ -39,8 +39,8 @@
 [alias]
     a = add
     br = branch
-    c = commit -v
-    cs = commit -S -v
+    c = commit
+    cs = commit -S
     ch = checkout
     d = diff
     dc = diff --cached
