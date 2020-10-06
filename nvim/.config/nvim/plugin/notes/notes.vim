@@ -1,7 +1,7 @@
 command! Note call notes#notes#index()
 command! -nargs=1 NoteNew call notes#notes#new_note(<f-args>)
 
-" TODO extract zettelkasten location as variable
+let g:zettelkasten = '~/Files/Notes'
 
 " TODO use telescope.nvim for link completion
 
