@@ -34,7 +34,6 @@ augroup writing
     autocmd FileType text,markdown,pandoc packadd vim-grammarous
     autocmd FileType text,markdown,pandoc packadd vim-criticmarkup
     autocmd FileType text,markdown,pandoc packadd vim-verdict
-    autocmd FileType markdown,pandoc inoremap <buffer> ;` ```<CR><CR>```<Up>
 augroup end
 
 if exists('$EXTRA_VIM')

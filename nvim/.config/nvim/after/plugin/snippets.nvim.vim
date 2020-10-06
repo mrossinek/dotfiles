@@ -10,8 +10,12 @@ snippets.snippets = {
         todo = [[TODO(${1=io.popen("id -un"):read"*l"}): ]];
         fixme = [[FIXME(${1=io.popen("id -un"):read"*l"}): ]];
     };
+    markdown = {
+        ["code"] = "```\n$0\n```";
+    };
     pandoc = {
         ["eq"] = "\\begin{equation}\n    $0\n\\end{equation}";
+        ["code"] = "```\n$0\n```";
     };
     plaintex = {
         ["env"] = "\\begin{${1}}\n    $0\n\\end{${1}}";
