@@ -85,9 +85,6 @@
 [submodule "supertab"]
 	path = nvim/.config/nvim/pack/minpac/start/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "tagbar"]
-	path = nvim/.config/nvim/pack/minpac/start/tagbar
-	url = https://github.com/majutsushi/tagbar
 [submodule "vim-cmake"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-cmake
 	url = https://github.com/vhdirk/vim-cmake
@@ -208,3 +205,6 @@
 [submodule "committia.vim"]
 	path = nvim/.config/nvim/pack/minpac/start/committia.vim
 	url = https://github.com/rhysd/committia.vim
+[submodule "vista.vim"]
+	path = nvim/.config/nvim/pack/minpac/start/vista.vim
+	url = https://github.com/liuchengxu/vista.vim
