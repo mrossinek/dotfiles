@@ -105,6 +105,7 @@ alias -s tex=nvim
 alias -s org=w3m
 alias -s com=w3m
 alias cat=bat
+alias icat='kitty +kitten icat'
 alias sudo='sudo '
 if [[ "$(uname)" == 'Linux' ]]; then
     alias open=xdg-open
