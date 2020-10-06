@@ -5,7 +5,7 @@ endfunction
 function! notes#notes#new_note(title)
     let l:folder = g:zettelkasten
     let l:fname = strftime('%Y%m%d') . '-' . substitute(a:title, '\v\s+', '_', 'g') . '.md'
-    execute 'e' . l:folder . '/' . l:fname
+    execute 'lcd ' . expand(l:folder) . ' | e' . l:folder . '/' . l:fname
 endfunction
 
 function! notes#notes#list_filter()
@@ -16,7 +16,7 @@ function! notes#notes#list_filter()
 endfunction
 
 function! notes#notes#git_save()
-    execute ':silent ! ' .
+    execute 'silent !' .
                 \ 'git add ' . expand('%:t') . ' ; '
                 \ 'git commit -m "Auto-commit: saved "' . expand('%:t')
 endfunction

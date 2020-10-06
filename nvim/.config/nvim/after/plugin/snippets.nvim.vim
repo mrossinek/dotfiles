@@ -16,6 +16,9 @@ snippets.snippets = {
     pandoc = {
         ["eq"] = "\\begin{equation}\n    $0\n\\end{equation}";
         ["code"] = "```\n$0\n```";
+        -- TODO figure out if we can get the below to work somehow
+        -- ["link"] = [[[${=require('notes.telescope')['link_note']()}]($0)]];
+        -- TODO once the above works, copy it to markdown
     };
     plaintex = {
         ["env"] = "\\begin{${1}}\n    $0\n\\end{${1}}";

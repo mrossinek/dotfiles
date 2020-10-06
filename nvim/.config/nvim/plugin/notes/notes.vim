@@ -3,8 +3,6 @@ command! -nargs=1 NoteNew call notes#notes#new_note(<f-args>)
 
 let g:zettelkasten = '~/Files/Notes'
 
-" TODO use telescope.nvim for link completion
-
 " mnemonic: Zettelkasten
 " Note: I don't like the normal ZZ mapping (:wq)
 map ZZ <Plug>Note
@@ -15,6 +13,10 @@ nnoremap <leader>nn :NoteNew
 vnoremap <leader>ne c<C-R>=system('gpg -ac -o- <<< "' . getreg('"') . '"')<CR>
 " decryption function
 vnoremap <leader>nd c<C-R>=system('gpg -d -o- <<< "' . getreg('"') . '"')<CR>
+
+" telescope integration
+nnoremap <leader>nl :lua require('notes.telescope')['link_note']()<CR>
+inoremap <leader>nl :lua require('notes.telescope')['link_note']()<CR>
 
 augroup MyNotes
     autocmd FileType dirvish call notes#notes#list_filter()
