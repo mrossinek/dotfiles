@@ -17,7 +17,6 @@ vnoremap <leader>ne c<C-R>=system('gpg -ac -o- <<< "' . getreg('"') . '"')<CR>
 vnoremap <leader>nd c<C-R>=system('gpg -d -o- <<< "' . getreg('"') . '"')<CR>
 
 augroup MyNotes
-    " TODO why doesn't this work?
-    " autocmd FileType dirvish if expand('%:h') == expand('~/Files/Notes') | global/\.git/d | endif
+    autocmd FileType dirvish call notes#notes#list_filter()
     autocmd BufWritePost ~/Files/Notes/*.md execute ':silent ! git add ' . expand('%:t') . ' ; git commit -m "Auto-commit: saved "' . expand('%:t')
 augroup end
