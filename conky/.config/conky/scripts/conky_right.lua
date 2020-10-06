@@ -181,7 +181,7 @@ function conky_main()
         local lock = io.open("/home/max/.sync_lock")
         if online and lock == nil then
             -- gracefully unlock password store
-            os.execute("alacritty --title 'pass' -e pass unlock")
+            os.execute("kitty -T 'pass' pass unlock")
             -- fetch all new mail
             os.execute("mbsync -a")
             os.execute("bash $HOME/.config/conky/scripts/mail-counter.sh")

@@ -20,7 +20,7 @@ import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run(spawnPipe)
 import qualified XMonad.StackSet as W
 
-myTerminal              = "alacritty"
+myTerminal              = "kitty"
 myModMask               = mod4Mask
 myNormalBorderColor     = "#969694"
 myFocusedBorderColor    = "#77b2f6"

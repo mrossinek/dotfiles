@@ -62,7 +62,7 @@ xbindkeys
 unclutter -b
 picom -b  # fixes tearing issues when using the modesetting driver
 hsetroot -solid "#303030"  # https://wiki.archlinux.org/index.php/Picom#Unable_to_change_the_background_color_with_xsetroot
-alacritty -e zsh -ic 'tmux' &
+kitty zsh -ic 'tmux' &
 qutebrowser &
 snixembed --fork
 stalonetray &
