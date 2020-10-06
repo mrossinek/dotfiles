@@ -21,5 +21,5 @@ inoremap ;nl :lua require('notes.telescope')['link_note']()<CR>
 
 augroup MyNotes
     autocmd FileType dirvish call notes#notes#list_filter()
-    autocmd BufWritePost ~/Files/Notes/*.md call notes#notes#git_save()
+    autocmd BufWritePost *.md call notes#notes#git_save()
 augroup end

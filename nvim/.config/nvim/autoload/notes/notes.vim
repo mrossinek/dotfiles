@@ -16,7 +16,9 @@ function! notes#notes#list_filter()
 endfunction
 
 function! notes#notes#git_save()
-    execute 'silent !' .
-                \ 'git add ' . expand('%:t') . ' ; '
-                \ 'git commit -m "Auto-commit: saved "' . expand('%:t')
+    if expand('%:h') == expand(g:zettelkasten)
+        execute 'silent !' .
+                    \ 'git add ' . expand('%:t') . ' ; '
+                    \ 'git commit -m "Auto-commit: saved "' . expand('%:t')
+    endif
 endfunction
