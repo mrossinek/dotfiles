@@ -18,5 +18,5 @@ vnoremap <leader>nd c<C-R>=system('gpg -d -o- <<< "' . getreg('"') . '"')<CR>
 
 augroup MyNotes
     autocmd FileType dirvish call notes#notes#list_filter()
-    autocmd BufWritePost ~/Files/Notes/*.md execute ':silent ! git add ' . expand('%:t') . ' ; git commit -m "Auto-commit: saved "' . expand('%:t')
+    autocmd BufWritePost ~/Files/Notes/*.md call notes#notes#git_save()
 augroup end

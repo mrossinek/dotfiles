@@ -14,3 +14,9 @@ function! notes#notes#list_filter()
         global/\.git/d
     endif
 endfunction
+
+function! notes#notes#git_save()
+    execute ':silent ! ' .
+                \ 'git add ' . expand('%:t') . ' ; '
+                \ 'git commit -m "Auto-commit: saved "' . expand('%:t')
+endfunction
