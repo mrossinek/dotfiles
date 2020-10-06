@@ -28,12 +28,6 @@
 [submodule "vimtex"]
 	path = nvim/.config/nvim/pack/minpac/opt/vimtex
 	url = https://github.com/lervag/vimtex
-[submodule "vimwiki"]
-	path = nvim/.config/nvim/pack/minpac/start/vimwiki
-	url = https://github.com/vimwiki/vimwiki
-[submodule "taskwiki"]
-	path = nvim/.config/nvim/pack/minpac/start/taskwiki
-	url = https://github.com/tbabej/taskwiki
 [submodule "vim-grammarous"]
 	path = nvim/.config/nvim/pack/minpac/opt/vim-grammarous
 	url = https://github.com/rhysd/vim-grammarous

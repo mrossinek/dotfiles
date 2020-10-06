@@ -30,17 +30,11 @@ augroup end
 
 augroup writing
     autocmd!
-    autocmd FileType text,vimwiki,markdown,pandoc doautocmd User MyGrammarous
-    autocmd FileType text,vimwiki,markdown,pandoc packadd vim-grammarous
-    autocmd FileType text,vimwiki,markdown,pandoc packadd vim-criticmarkup
-    autocmd FileType text,vimwiki,markdown,pandoc packadd vim-verdict
-    autocmd FileType vimwiki,markdown,pandoc inoremap <buffer> ;` ```<CR><CR>```<Up>
-augroup end
-
-augroup vimwiki_custom
-    autocmd!
-    autocmd FileType vimwiki call mrossinek#plugins#vimwiki_assert_filetype()
-    autocmd BufEnter *md call mrossinek#plugins#vimwiki_assert_filetype()
+    autocmd FileType text,markdown,pandoc doautocmd User MyGrammarous
+    autocmd FileType text,markdown,pandoc packadd vim-grammarous
+    autocmd FileType text,markdown,pandoc packadd vim-criticmarkup
+    autocmd FileType text,markdown,pandoc packadd vim-verdict
+    autocmd FileType markdown,pandoc inoremap <buffer> ;` ```<CR><CR>```<Up>
 augroup end
 
 if exists('$EXTRA_VIM')
