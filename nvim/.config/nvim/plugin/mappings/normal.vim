@@ -54,3 +54,8 @@ nnoremap <C-S> :e #<CR>
 
 " web search
 nnoremap <silent> gs :set opfunc=mrossinek#functions#WebSearch<CR>g@
+
+" move lines
+nnoremap <c-j> :m .+1<CR>==
+nnoremap <c-k> :m .-2<CR>==
+" Source: https://vimtricks.substack.com/p/vimtrick-moving-lines
