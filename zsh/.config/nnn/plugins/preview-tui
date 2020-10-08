@@ -66,14 +66,6 @@ USE_PISTOL="${USE_PISTOL:-0}"
 PAGER="${PAGER:-less -R}"
 [ "$PAGER" = "most" ] && PAGER="less -R"
 
-if [ -e "${TMUX%%,*}" ] && tmux -V | grep -q '[ -][3456789]\.'; then
-    TERMINAL=tmux
-elif [ -n "$KITTY_WINDOW_ID" ] && kitty @ ls >/dev/null 2>&1; then
-    TERMINAL=kitty
-else
-    TERMINAL="${TERMINAL:-xterm}"
-fi
-
 if [ -z "$SPLIT" ] && [ $(($(tput lines) * 2)) -gt "$(tput cols)" ]; then
     SPLIT='h'
 elif [ "$SPLIT" != 'h' ]; then
@@ -220,7 +212,8 @@ elif [ "$TERMINAL" = "kitty" ]; then
     # Trying to use kitty's integrated window management as the split window.
     # All environmental variables that will be used in the new window must
     # be explicitly passed.
-    kitty @ launch --no-response --title "nnn preview" --keep-focus \
+    kitty @ --to=unix:/tmp/mykitty-$(pgrep kitty) \
+          launch --no-response --title "nnn preview" --keep-focus \
           --cwd "$PWD" --env "PATH=$PATH" --env "NNN_FIFO=$NNN_FIFO" \
           --env "PREVIEW_MODE=1" --env "PAGER=$PAGER" \
           --env "USE_SCOPE=$USE_SCOPE" --env "SPLIT=$SPLIT" \
