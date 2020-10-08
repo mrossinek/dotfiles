@@ -16,6 +16,9 @@ zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
 
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
+
 # key bindings
 setopt vi
 export KEYTIMEOUT=1
