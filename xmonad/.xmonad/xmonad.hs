@@ -14,6 +14,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.Minimize
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
+import XMonad.Layout.ThreeColumns
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Loggers
 import XMonad.Util.NamedScratchpad
@@ -56,9 +57,10 @@ main = do
         , ((myModMask .|. shiftMask, xK_m), withLastMinimized maximizeWindowAndFocus)
         ]
 
-myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full) ||| Full
+myLayout = avoidStruts (tiled ||| Mirror tiled ||| threeCol) ||| Full
     where
         tiled = Tall nmaster delta ratio
+        threeCol = ThreeColMid nmaster delta ratio
         nmaster = 1
         delta = 1/100
         ratio = 1/2
