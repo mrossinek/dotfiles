@@ -57,6 +57,7 @@ config.bind(';m', 'hint links spawn umpv {hint-url}')
 config.bind(';M', 'hint --rapid links spawn umpv {hint-url}')
 config.bind('t', 'set-cmd-text -s :open -t')
 config.bind('xt', 'config-cycle tabs.show always never')
+config.bind('xT', 'config-cycle tabs.position left top')
 config.bind('<Tab>', 'nop')
 
 # search engines
