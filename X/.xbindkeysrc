@@ -27,7 +27,7 @@
         Mod4 + Print
 
 "physlock -ms"
-        Mod4 + 0
+        Mod4 + x
 
 "~/easy_trackpoint.sh"
         Mod4 + g
