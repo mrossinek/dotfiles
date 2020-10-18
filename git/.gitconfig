@@ -38,6 +38,7 @@
 
 [alias]
     a = add
+    amend = commit --amend --no-edit
     br = branch
     c = commit
     cs = commit -S
