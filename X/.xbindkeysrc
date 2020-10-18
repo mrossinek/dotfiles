@@ -27,22 +27,28 @@
         Mod4 + Print
 
 "physlock -ms"
-        Mod4 + x
+        Mod4 + z
+        # zero
 
 "~/easy_trackpoint.sh"
         Mod4 + g
+        # next to the trackpoint
 
 "rofi-pass"
-        XF86Tools
+        Mod4 + s
+        # safe
 
 "rofimoji"
-        XF86Launch1
+        Mod4 + e
+        # emoji
 
 "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
-        XF86Launch2
+        Mod4 + i
+        # insert
 
-"~/xrandr_duplicate.sh"
-        Shift + XF86Display
+"displayctl"
+        Mod4 + x
+        # xrandr
 
 "playerctl play"
         m:0x0 + c:208
@@ -70,15 +76,19 @@
 
 "rofi-mpc"
         Mod4 + a
+        # audio
 
 "rofi -modi calc -show calc -no-show-match -no-sort"
         Mod4 + c
+        # calculator
 
 "rofi -modi file-browser -show file-browser"
         Mod4 + f
+        # file-browser
 
 "rofi -modi json-dict -show json-dict -json-dict-path ${HOME}/.local/share/dicts/json -json-dict-mode 2"
         Mod4 + d
+        # dictionary
 
 # dunst controls
 
