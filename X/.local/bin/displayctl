@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+
+main () {
+    CMDBASE="xrandr -d $DISPLAY"
+
+    # cache xrandr output since it's the slowest call
+    XRANDRV="$(${CMDBASE} --verbose)"
+
+    # parse cached xrandr output to identify outputs
+    INTERNAL_OUTPUT="eDP-1"
+    ALL_OUTPUTS="$(echo $(echo "$XRANDRV" | awk '/.*connected/ {print $1}'))"
+    CONNECTED_OUTPUTS="$(echo $(echo "$XRANDRV" | awk '/ connected/ {print $1}') | sed 's/ \+/|/g')"
+    DISCONNECTED_OUTPUTS="$(echo $(echo "$XRANDRV" | awk '/disconnected/ {print $1}') | sed 's/ \+/|/g')"
+    CONNECTED_ACTIVE_OUTPUTS="$(echo $(echo "$XRANDRV" | awk '/ connected.*[[:digit:]]/ {print $1}') | sed 's/ \+/|/g')"
+    DISCONNECTED_ACTIVE_OUTPUTS="$(echo $(echo "$XRANDRV" | awk '/disconnected.*[[:digit:]]/ {print $1}') | sed 's/ \+/|/g')"
+
+    choice $1
+}
+
+choice () {
+    # execute function based on choice
+    case $1 in
+        menu)   menu ;;
+        rofi)   rofi_menu ;;
+        in*)    internal ;;
+        ex*)    external ;;
+        mirror) mirror ;;
+        left)   position "left-of" ;;
+        right)   position "right-of" ;;
+        above)   position "above" ;;
+        below)   position "below" ;;
+    esac
+}
+
+menu () {
+    for key in 'internal' 'external' 'mirror' 'left' 'right' 'above' 'below'
+    do
+        echo "${key}"
+    done
+}
+
+rofi_menu () {
+    CMD="$(menu | rofi -dmenu -i -p 'xrandr')"
+    choice $CMD
+}
+
+internal () {
+    # disables all external outputs and sets the internal one to auto
+    CMD="$CMDBASE"
+    for OUTPUT in $ALL_OUTPUTS
+    do
+        # Note: the eval is necessary in order to expand the list of connected
+        # active outputs
+        eval '
+        case $OUTPUT in
+            $INTERNAL_OUTPUT) CMD="$CMD --output $OUTPUT --auto --primary" ;;
+            '$CONNECTED_ACTIVE_OUTPUTS') CMD="$CMD --output $OUTPUT --off" ;;
+        esac'
+    done
+    eval $CMD
+}
+
+external () {
+    # disables the internal output and sets all external ones to auto
+    CMD="$CMDBASE"
+    for OUTPUT in $ALL_OUTPUTS
+    do
+        eval '
+        case $OUTPUT in
+            $INTERNAL_OUTPUT) CMD="$CMD --output $OUTPUT --off" ;;
+            '$CONNECTED_OUTPUTS') CMD="$CMD --output $OUTPUT --auto" ;;
+        esac'
+    done
+    eval $CMD
+}
+
+mirror () {
+    # mirrors the internal output to all external ones
+    CMD="$CMDBASE"
+    for OUTPUT in $ALL_OUTPUTS
+    do
+        eval '
+        case $OUTPUT in
+            $INTERNAL_OUTPUT) CMD="$CMD --output $OUTPUT --auto" ;;
+            '$CONNECTED_OUTPUTS') CMD="$CMD --output $OUTPUT --same-as '$INTERNAL_OUTPUT'" ;;
+        esac'
+    done
+    eval $CMD
+}
+
+position () {
+    # places the *single* external monitor to the specified position relative to the internal one
+    CMD="$CMDBASE"
+    for OUTPUT in $ALL_OUTPUTS
+    do
+        eval '
+        case $OUTPUT in
+            $INTERNAL_OUTPUT) CMD="$CMD --output $OUTPUT --auto" ;;
+            '$CONNECTED_OUTPUTS') CMD="$CMD --output $OUTPUT --auto --'$1 ' '$INTERNAL_OUTPUT'" ;;
+        esac'
+    done
+    eval $CMD
+}
+
+main $*
