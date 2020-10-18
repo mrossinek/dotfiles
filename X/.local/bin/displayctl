@@ -26,9 +26,10 @@ choice () {
         ex*)    external ;;
         mirror) mirror ;;
         left)   position "left-of" ;;
-        right)   position "right-of" ;;
-        above)   position "above" ;;
-        below)   position "below" ;;
+        right)  position "right-of" ;;
+        above)  position "above" ;;
+        below)  position "below" ;;
+        *)      rofi_menu ;;
     esac
 }
 
@@ -41,6 +42,10 @@ menu () {
 
 rofi_menu () {
     CMD="$(menu | rofi -dmenu -i -p 'xrandr')"
+    if test -z $CMD
+    then
+        exit
+    fi
     choice $CMD
 }
 
