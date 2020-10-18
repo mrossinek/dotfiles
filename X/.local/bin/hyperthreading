@@ -1,0 +1,14 @@
+#!/bin/sh
+path="/sys/devices/system/cpu/cpu"
+file="/online"
+
+for i in {4..7}; do
+        current=$(cat ${path}$i${file})
+        if [ "${current}" == "1" ]; then
+                echo "0" | sudo tee ${path}$i${file}
+                notify-send -u critical "CPU${i}" "disabled"
+        else
+                echo "1" | sudo tee ${path}$i${file}
+                notify-send -u critical "CPU${i}" "enabled"
+        fi
+done

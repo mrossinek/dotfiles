@@ -1,0 +1,19 @@
+#!/bin/sh
+file="/sys/devices/system/cpu/intel_pstate/no_turbo"
+current=$(cat ${file})
+
+if [ "${current}" == "1" ]; then
+        # sudo wrmsr -p0 0x1a0 0x850089
+        # sudo wrmsr -p1 0x1a0 0x850089
+        # sudo wrmsr -p2 0x1a0 0x850089
+        # sudo wrmsr -p3 0x1a0 0x850089
+        echo "0" | sudo tee ${file}
+        notify-send -u critical "ITB" "enabled"
+else
+        # sudo wrmsr -p0 0x1a0 0x4000850089
+        # sudo wrmsr -p1 0x1a0 0x4000850089
+        # sudo wrmsr -p2 0x1a0 0x4000850089
+        # sudo wrmsr -p3 0x1a0 0x4000850089
+        echo "1" | sudo tee ${file}
+        notify-send -u critical "ITB" "disabled"
+fi

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo mount -t vfat -o gid=$USER,fmask=113,dmask=002 $1 /mnt/card
+notify-send -i media-removable -u low 'SD' "A new SD card was mounted on $1"

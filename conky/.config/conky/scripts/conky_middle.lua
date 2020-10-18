@@ -195,9 +195,9 @@ function conky_main()
         online = os.execute("wget -q --spider http://duckduckgo.com")
         if online then
             -- fetch weather forecast
-            os.execute("bash $HOME/.weather/weather-watcher.sh")
+            os.execute("weather")
             -- fetch stock data
-            os.execute("python $HOME/.stocks/stock-watcher.py")
+            os.execute("stocks")
         end
     end
 

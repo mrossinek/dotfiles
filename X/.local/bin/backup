@@ -1,0 +1,34 @@
+#!/bin/bash
+# Simple backup script using rsync
+#
+# 1. iteration: rsync complete folder
+# 2. iteration OPTIONAL: iterates once more over the folder excluding listed directories but also deletes files in backup folder
+
+large () {
+    # syncs the users home folder to a mounted backup drive
+    rsync --log-file=/home/${USER}/.log_large_backup.txt --progress -av ~ /mnt/backup
+    notify-send -i media-flash -u low 'Backup' 'Please make a choice...'
+    read -p "Perform deletion step? (y/n)" choice
+    case "$choice" in
+        y|Y ) echo "Starting..."; rsync --log-file=/home/${USER}/.log_del_large_backup.txt --progress -av --exclude=Backups --exclude=Music --exclude=Pictures --exclude=Videos --existing --ignore-existing --delete ~ /mnt/backup;;
+        n|N ) echo "Skipping deletion step!"; echo "Done.";;
+    esac
+}
+
+small () {
+    # syncs the users file folder to a mounted FAT drive
+    rsync --log-file=/home/${USER}/.log_small_backup.txt --progress -av --modify-window=1 ~/Files /mnt/stick
+    notify-send -i media-flash -u low 'Backup' 'Please make a choice...'
+    read -p "Perform deletion step? (y/n)" choice
+    case "$choice" in
+        y|Y ) echo "Starting..."; rsync --log-file=/home/${USER}/.log_del_small_backup.txt --progress -av --modify-window=1 --existing --ignore-existing --delete ~/Files /mnt/stick;;
+        n|N ) echo "Skipping deletion step!"; echo "Done.";;
+    esac
+    }
+
+# execute function based on choice
+case $1 in
+    large) large ;;
+    small) small ;;
+    *) echo "Usage: backup (large|small)" ;;
+esac

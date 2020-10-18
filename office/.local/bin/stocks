@@ -1,0 +1,59 @@
+#!/usr/bin/python
+"""Stock watcher based on yfinance
+
+Config:
+    library.txt: holds one Yahoo Finance symbol per line
+"""
+from datetime import datetime, timedelta
+import os
+import pandas as pd
+import yfinance as yf
+
+# read library
+SYMBOLS = []
+LABELS = []
+with open(os.path.expanduser("~/.stocks/library.txt"), "r") as LIBRARY:
+    for line in LIBRARY.readlines():
+        sym, lab = line.strip().split(' ')
+        SYMBOLS.append(sym)
+        LABELS.append(lab)
+
+# get today
+TODAY = datetime.today()
+# get latest weekday
+LATEST_WEEKDAY = TODAY - timedelta(days=1)
+while LATEST_WEEKDAY.weekday() > 4:
+    LATEST_WEEKDAY -= timedelta(days=1)
+# get weekday previous to that one
+PREV_WEEKDAY = LATEST_WEEKDAY - timedelta(days=1)
+while PREV_WEEKDAY.weekday() > 4:
+    PREV_WEEKDAY -= timedelta(days=1)
+# get tomorrow
+TOMORROW = TODAY + timedelta(days=1)
+
+# download data between previous weekday and tomorrow
+DATA = yf.download(SYMBOLS, start=f"{PREV_WEEKDAY:%F}", end=f"{TOMORROW:%F}")
+# extract closing data
+PREV_CLOSE = DATA["Close"].loc[f"{PREV_WEEKDAY:%F}"]
+try:
+    LATEST_CLOSE = DATA["Close"].loc[f"{LATEST_WEEKDAY:%F}"]
+except KeyError:
+    LATEST_CLOSE = DATA["Close"].loc[f"{TODAY:%F}"]
+
+# create results dataframe
+RESULT = pd.DataFrame()
+RESULT.insert(0, "Current", LATEST_CLOSE)
+RESULT.insert(1, "Change", LATEST_CLOSE - PREV_CLOSE)
+RESULT.insert(2, "Percent", (LATEST_CLOSE - PREV_CLOSE) / LATEST_CLOSE * 100.)
+RESULT.index = LABELS
+
+# write results
+with open(os.path.expanduser("~/.stocks/prices.txt"), "w") as PRICES:
+    PRICES.write(RESULT.sort_values(by="Percent", ascending=False).to_string(header=False))
+    PRICES.write(f"\n{datetime.now():%d %b %r}")
+
+# write ledger journal file with current prices
+RESULT.drop(columns=['Change', 'Percent'], inplace=True)
+with open(os.path.expanduser("~/.stocks/current.prices"), "w") as JOURNAL:
+    for line in RESULT.to_string(header=False).split('\n'):
+        JOURNAL.write(f"P {PREV_WEEKDAY:%F} {line}\n")
