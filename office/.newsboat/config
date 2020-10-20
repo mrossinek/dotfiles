@@ -4,7 +4,7 @@ reload-time 60
 
 max-items 500
 
-scrolloff 5
+scrolloff 10
 
 browser "qutebrowser %u"
 
