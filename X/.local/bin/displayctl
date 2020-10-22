@@ -108,3 +108,4 @@ position () {
 }
 
 main $*
+xmodmap ~/.Xmodmap
