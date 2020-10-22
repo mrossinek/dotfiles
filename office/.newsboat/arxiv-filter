@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+
+import fileinput
+from bs4 import BeautifulSoup as BS
+
+soup = BS(''.join(fileinput.input()), 'xml')
+
+for author in soup.find_all('dc:creator'):
+    new_author = []
+    for link in author.stripped_strings:
+        new_link = []
+        for tag in link.split(','):
+            new_link.append(BS(tag, features='lxml').a.string)
+        new_author.extend(new_link)
+    author.string = ', '.join(new_author)
+
+print(soup)

@@ -6,6 +6,8 @@ max-items 500
 
 scrolloff 10
 
+articlelist-format "%4i  %-32a  %t"
+
 browser "qutebrowser %u"
 
 # rebind keys
