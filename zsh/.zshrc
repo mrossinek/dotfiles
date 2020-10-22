@@ -19,6 +19,9 @@ setopt COMPLETE_ALIASES
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
 
+# Completion for the GitHub and GitLab CLIs
+eval "$(gh completion -s zsh)"
+
 # key bindings
 setopt vi
 export KEYTIMEOUT=1
