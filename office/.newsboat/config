@@ -6,7 +6,7 @@ max-items 500
 
 scrolloff 10
 
-articlelist-format "%4i  %-32a  %t"
+articlelist-format "%4i  %D  %-32a  %t"
 
 browser "qutebrowser %u"
 
