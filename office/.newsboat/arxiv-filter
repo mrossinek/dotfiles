@@ -10,7 +10,12 @@ for author in soup.find_all('dc:creator'):
     for link in author.stripped_strings:
         new_link = []
         for tag in link.split(','):
-            new_link.append(BS(tag, features='lxml').a.string)
+            try:
+                tag = BS(tag, features='lxml').a.string
+            except AttributeError:
+                # tag is not a link and, thus, has no string attribute; interpreting it as a string
+                pass
+            new_link.append(tag)
         new_author.extend(new_link)
     author.string = ', '.join(new_author)
 
