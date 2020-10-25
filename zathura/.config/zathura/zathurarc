@@ -1,1 +1,10 @@
 set font "monospace 14"
+
+set default-bg '#303030'
+set inputbar-bg '#303030'
+set statusbar-bg '#1c1c1c'
+
+set completion-bg '#404040'
+set completion-group-bg '#1c1c1c'
+
+set recolor-lightcolor '#303030'
