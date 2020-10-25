@@ -1,20 +1,5 @@
 local M = {}
 
---[[
-Usage:
-mappings.apply_keymap(42, <function>, {
-  n = {
-    ["<leader>x"] = "just do this string",
-    ["<CR>"] = function(picker, prompt_bufnr)
-      actions.close_prompt()
->     local filename = ...
-      vim.cmd(string.format(":e %s", filename))
-    end,
-  },
-  i = {
-  }
-})
---]]
 function M.link_note()
     require('telescope.builtin').find_files {
         shorten_path = false,
