@@ -10,13 +10,13 @@ endfunction
 
 function! notes#notes#list_filter()
     " TODO check whether it is possible to one-line this inside of the autocmd
-    if expand('%:h') == expand(g:zettelkasten)
+    if expand('%:p:h') == expand(g:zettelkasten)
         global/\.git/d
     endif
 endfunction
 
 function! notes#notes#git_save()
-    if expand('%:h') == expand(g:zettelkasten)
+    if expand('%:p:h') == expand(g:zettelkasten)
         execute 'silent !' .
                     \ 'git add ' . expand('%:t') . ' ; '
                     \ 'git commit -m "Auto-commit: saved "' . expand('%:t')
