@@ -48,8 +48,6 @@ nnoremap <silent> <leader>l :call mrossinek#functions#ToggleList("Location List"
 nnoremap <silent> <leader>q :call mrossinek#functions#ToggleList("Quickfix List", 'c')<CR>
 
 " buffer navigation
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
 nnoremap <C-S> :e #<CR>
 
 " web search

@@ -341,6 +341,20 @@ call <sid>hi("LspDiagnosticsWarningSign", s:gui0A, s:gui01, s:cterm0A, s:cterm01
 call <sid>hi("LspDiagnosticsInformationSign", s:gui0C, s:gui01, s:cterm0C, s:cterm01, "", "")
 call <sid>hi("LspDiagnosticsHintSign", s:gui06, s:gui01, s:cterm06, s:cterm01, "", "")
 
+" barbar.nvim highlighting
+call <sid>hi("BufferCurrent",        s:gui07, "", s:cterm07, "", "", "")
+call <sid>hi("BufferCurrentMod",     s:gui08, "", s:cterm08, "", "", "")
+call <sid>hi("BufferCurrentSign",    s:gui0C, "", s:cterm0C, "", "", "")
+call <sid>hi("BufferCurrentTarget",  s:gui08, "", s:cterm08, "", "", "")
+call <sid>hi("BufferVisible",        s:gui03, "", s:cterm03, "", "", "")
+call <sid>hi("BufferVisibleMod",     s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("BufferVisibleSign",    s:gui03, "", s:cterm03, "", "", "")
+call <sid>hi("BufferVisibleTarget",  s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("BufferInactive",       s:gui02, "", s:cterm02, "", "", "")
+call <sid>hi("BufferInactiveMod",    s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("BufferInactiveSign",   s:gui02, "", s:cterm02, "", "", "")
+call <sid>hi("BufferInactiveTarget", s:gui09, "", s:cterm09, "", "", "")
+
 " Remove functions
 delf <sid>hi
 

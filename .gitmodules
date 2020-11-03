@@ -109,9 +109,6 @@
 [submodule "vim-plugin-AnsiEsc"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
-[submodule "vim-buftabline"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-buftabline
-	url = https://github.com/ap/vim-buftabline
 [submodule "vim-doge"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-doge
 	url = https://github.com/kkoomen/vim-doge
@@ -208,3 +205,6 @@
 [submodule "vista.vim"]
 	path = nvim/.config/nvim/pack/minpac/start/vista.vim
 	url = https://github.com/liuchengxu/vista.vim
+[submodule "barbar.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/barbar.nvim
+	url = https://github.com/romgrk/barbar.nvim
