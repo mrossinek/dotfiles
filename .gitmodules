@@ -208,3 +208,6 @@
 [submodule "barbar.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/barbar.nvim
 	url = https://github.com/romgrk/barbar.nvim
+[submodule "neoformat"]
+	path = nvim/.config/nvim/pack/minpac/start/neoformat
+	url = https://github.com/sbdchd/neoformat
