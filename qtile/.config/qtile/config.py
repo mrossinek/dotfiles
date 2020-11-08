@@ -1,6 +1,8 @@
-from libqtile import bar, hook, layout, widget
-from libqtile.command import lazy
+from datetime import datetime
+from os.path import expanduser
+from libqtile import bar, hook, layout, qtile, widget
 from libqtile.config import DropDown, Group, Key, Match, ScratchPad, Screen
+from libqtile.lazy import lazy
 
 
 # Variables
@@ -26,38 +28,84 @@ keys = [
     Key([mod, "control"], "h", lazy.layout.grow_left()),
     Key([mod, "control"], "l", lazy.layout.grow_right()),
 
+    # layout operations
     Key([mod], "n", lazy.layout.normalize()),
     Key([mod], "Return", lazy.layout.toggle_split()),
     Key([mod], "o", lazy.screen.toggle_group()),
 
-    # Switch window focus to other pane(s) of stack
-    Key([mod], "Tab", lazy.layout.next(),
-        desc="Switch window focus to other pane(s) of stack"),
-    # Swap panes of split stack
-    Key([mod, "shift"], "Tab", lazy.layout.rotate(),
-        desc="Swap panes of split stack"),
-
-    # Switch between layouts
-    Key([mod], "space", lazy.next_layout(),
-        desc="Switch to next layout"),
-    Key([mod, "shift"], "space", lazy.prev_layout(),
-        desc="Switch to previous layout"),
-
-    # qtile controls
-    Key([mod, "shift"], "r", lazy.restart(), desc="Restart qtile"),
-    Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown qtile"),
-
     # window operations
     Key([mod], "t", lazy.window.disable_floating()),
     Key([mod], "m", lazy.window.toggle_minimize()),
-    Key([mod, "shift"], "m", lazy.window.toggle_maximize()),
+    Key([mod], "f", lazy.window.toggle_maximize()),
     Key([mod, "shift"], "c", lazy.window.kill(), desc="Kill focused window"),
+
+    # Switch window focus to other pane(s) of stack
+    Key([mod], "Tab", lazy.layout.next(), desc="Switch window focus to other pane(s) of stack"),
+    # Swap panes of split stack
+    Key([mod, "shift"], "Tab", lazy.layout.rotate(), desc="Swap panes of split stack"),
+
+    # Switch between layouts
+    Key([mod], "space", lazy.next_layout(), desc="Switch to next layout"),
+    Key([mod, "shift"], "space", lazy.prev_layout(), desc="Switch to previous layout"),
+
+    # Switch between screens
+    Key([mod], "w", lazy.prev_screen(), desc="Switch to previous screeen"),
+    Key([mod], "e", lazy.next_screen(), desc="Switch to next screeen"),
+
+    # qtile controls
+    Key([mod], "b", lazy.hide_show_bar(), desc="Toggle bar"),
+    Key([mod, "shift"], "r", lazy.restart(), desc="Restart qtile"),
+    Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown qtile"),
 
     # Spawn commands
     Key([mod, "shift"], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "semicolon", lazy.group["scratchpad"].dropdown_toggle("term")),
-    Key([mod], "p", lazy.spawn("rofi -show combi"),
-        desc="Spawn a command using a prompt widget"),
+    Key([mod], "q", lazy.group["scratchpad"].dropdown_toggle("qshell")),
+    Key([mod], "p", lazy.spawn("rofi -show combi"), desc="Spawn a command using a prompt widget"),
+
+    # custom user keys
+    Key([mod], "z", lazy.spawn("physlock -ms"), desc="lock screen"),
+    Key([mod], "x", lazy.spawn("displayctl"), desc="open xrandr display controller"),
+    Key([mod], "g", lazy.spawn("trackpoint"), desc="toggle trackpoint-enforcing mode"),
+    # rofi utilies
+    Key([mod], "a", lazy.spawn("rofi-mpc"), desc="MPC controller"),
+    Key([mod], "c", lazy.spawn("rofi -modi calc -show calc -no-show-match -no-sort"),
+        desc="calculator"),
+    Key([mod], "d", lazy.spawn("rofi -modi json-dict -show json-dict -json-dict-path " +
+                               expanduser("~/.local/share/dicts/json") + " -json-dict-mode 2"),
+        desc="dictionary"),
+    Key([mod], "e", lazy.spawn("rofimoji"), desc="emoji picker"),
+    Key([mod], "i", lazy.spawn(
+        "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"),
+        desc="clipboard picker"),
+    Key([mod], "s", lazy.spawn("rofi-pass"), desc="password picker"),
+
+    # advanced actions
+    Key([], "Print", lazy.spawn("maim -uks " + expanduser("~/Pictures/Screenshots/screenshot_") +
+                                datetime.now().strftime("%s") + ".png"),
+        desc="Screenshot snippet tool"),
+    # brightness control
+    Key([], "XF86MonBrightnessUp",   lazy.spawn("xbacklight -inc 5")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
+    # volume control
+    Key([], "XF86AudioMicMute",     lazy.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle")),
+    Key([], "XF86AudioMute",        lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +2%")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -2%")),
+    # playerctl
+    Key([], "XF86AudioPlay",  lazy.spawn("playerctl play")),
+    Key([], "XF86AudioPause", lazy.spawn("playerctl pause")),
+    Key([], "XF86AudioPlay",  lazy.spawn("playerctl play-pause")),
+    Key([], "XF86AudioStop",  lazy.spawn("playerctl stop")),
+    Key([], "XF86AudioNext",  lazy.spawn("playerctl next")),
+    Key([], "XF86AudioPrev",  lazy.spawn("playerctl previous")),
+    # dunstctl
+    Key(['mod1', 'control'], "space",          lazy.spawn("dunstctl close")),
+    Key(['mod1', 'control', 'shift'], "space", lazy.spawn("dunstctl close-all")),
+    Key(['mod1', 'control'], "period",         lazy.spawn("dunstctl history-pop")),
+    Key(['mod1', 'control'], "comma",          lazy.spawn("dunstctl context")),
+    Key(['mod1', 'control'], "semicolon",      lazy.spawn("dunstctl set-paused toggle")),
+
 ]
 
 
@@ -73,7 +121,8 @@ groups = [
     Group('8'),
     Group('9'),  # TODO figure out how to move Slack to here automatically
     ScratchPad("scratchpad", [
-            DropDown("term", "kitty"),
+            DropDown("term", terminal),
+            DropDown("qshell", terminal + " qshell"),
         ],
     ),
 ]
