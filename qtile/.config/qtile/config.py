@@ -1,7 +1,8 @@
+import subprocess
 from datetime import datetime
 from os.path import expanduser
-from libqtile import bar, hook, layout, qtile, widget
-from libqtile.config import DropDown, Group, Key, Match, ScratchPad, Screen
+from libqtile import bar, hook, layout, widget
+from libqtile.config import DropDown, Group, Key, ScratchPad, Screen
 from libqtile.lazy import lazy
 
 
@@ -119,7 +120,7 @@ groups = [
     Group('6'),
     Group('7'),
     Group('8'),
-    Group('9'),  # TODO figure out how to move Slack to here automatically
+    Group('9'),
     ScratchPad("scratchpad", [
             DropDown("term", terminal),
             DropDown("qshell", terminal + " qshell"),
@@ -164,12 +165,6 @@ screens = [
         )
     )
 ]
-
-
-# subscribe for change of screen setup, just restart if called
-@hook.subscribe.screen_change
-def restart_on_randr(qtile, ev):
-    qtile.cmd_restart()
 
 
 # Layouts
@@ -224,3 +219,9 @@ follow_mouse_focus = False
 wmname = "LG3D"
 # Taken ad verbatim from the default configuration and documentation:
 # http://docs.qtile.org/en/latest/manual/config/index.html?highlight=wmname#configuration-variables
+
+
+# autostart
+@hook.subscribe.startup_once
+def autostart():
+    subprocess.call([expanduser('~/.config/qtile/autostart.sh')])

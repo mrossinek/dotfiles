@@ -37,15 +37,4 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export WINIT_HIDPI_FACTOR=1
 
 eval $(ssh-agent)
-greenclip clear
-greenclip daemon &
-dunst &
-mpDris2 &
-unclutter -b
-picom -b  # fixes tearing issues when using the modesetting driver
-hsetroot -solid "#303030"  # https://wiki.archlinux.org/index.php/Picom#Unable_to_change_the_background_color_with_xsetroot
-# snixembed --fork  # TODO figure out if this is still needed
-conky -c ~/.config/conky/conky_left.conf
-conky -c ~/.config/conky/conky_middle.conf
-conky -c ~/.config/conky/conky_right.conf
 exec qtile
