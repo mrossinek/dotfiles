@@ -113,7 +113,14 @@ function conky_laptop(cr)
     draw_hexagon(cr, 1, 310, 60, 40, 2, 0.7, 0.7, 0.7, 1)
 
     draw_hexagon(cr, 6, 250, 60, 60, 4, 0.7, 0.7, 0.7, 1)
-    print_icon(cr, "", "Font Awesome 5 Free", "bold", 60, 280, 10, 1, 1, 1, 1)
+
+    mute_state = conky_parse("${exec pactl list sinks | grep Mute | grep -o 'yes'}")
+    if mute_state == 'yes' then
+        vol_icon = ""
+    else
+        vol_icon = ""
+    end
+    print_icon(cr, vol_icon, "Font Awesome 5 Free", "bold", 60, 280, 10, 1, 1, 1, 1)
 
 end
 
