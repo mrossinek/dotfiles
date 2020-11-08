@@ -8,15 +8,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-
-
-
-
-
-
-
     xrdb -merge $sysresources
-
 fi
 
 if [ -f $sysmodmap ]; then
@@ -24,15 +16,7 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
     xrdb -merge "$userresources"
-
 fi
 
 if [ -f "$usermodmap" ]; then
@@ -57,16 +41,12 @@ greenclip clear
 greenclip daemon &
 dunst &
 mpDris2 &
-libinput-gestures-setup start
 xbindkeys
 unclutter -b
 picom -b  # fixes tearing issues when using the modesetting driver
 hsetroot -solid "#303030"  # https://wiki.archlinux.org/index.php/Picom#Unable_to_change_the_background_color_with_xsetroot
-kitty zsh -ic 'tmux' &
-qutebrowser &
-snixembed --fork
-stalonetray &
+# snixembed --fork  # TODO figure out if this is still needed
 conky -c ~/.config/conky/conky_left.conf
 conky -c ~/.config/conky/conky_middle.conf
 conky -c ~/.config/conky/conky_right.conf
-exec xmonad
+exec qtile
