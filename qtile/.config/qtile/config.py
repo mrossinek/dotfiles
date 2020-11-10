@@ -221,7 +221,14 @@ wmname = "LG3D"
 # http://docs.qtile.org/en/latest/manual/config/index.html?highlight=wmname#configuration-variables
 
 
-# autostart
+# Hooks
 @hook.subscribe.startup_once
 def autostart():
     subprocess.call([expanduser('~/.config/qtile/autostart.sh')])
+
+@hook.subscribe.startup_complete
+def startup_complete():
+    # ensures the conky widgets realign and the Xmodmap is propagated to an external keyboard after
+    # a restart due to a monitor switch (e.g.)
+    subprocess.call(['killall', '-SIGUSR1', 'conky'])
+    subprocess.call(['xmodmap', expanduser('~/.Xmodmap')])
