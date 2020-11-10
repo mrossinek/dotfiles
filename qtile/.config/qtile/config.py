@@ -75,11 +75,11 @@ keys = [
     Key([mod], "d", lazy.spawn("rofi -modi json-dict -show json-dict -json-dict-path " +
                                expanduser("~/.local/share/dicts/json") + " -json-dict-mode 2"),
         desc="dictionary"),
-    Key([mod], "e", lazy.spawn("rofimoji"), desc="emoji picker"),
     Key([mod], "i", lazy.spawn(
         "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"),
         desc="clipboard picker"),
     Key([mod], "s", lazy.spawn("rofi-pass"), desc="password picker"),
+    Key([mod], "backslash", lazy.spawn("rofimoji"), desc="emoji picker"),
 
     # advanced actions
     Key([], "Print", lazy.spawn("maim -uks " + expanduser("~/Pictures/Screenshots/screenshot_") +
