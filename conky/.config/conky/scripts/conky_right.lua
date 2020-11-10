@@ -112,8 +112,12 @@ function conky_laptop(cr)
                  "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 2, 340, 0, 40, 2, 0.7, 0.7, 0.7, 1)
 
-    draw_hexagon(cr, 1, 220, 0, 60, 4, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 6, 340, 0, 40, 2, 0.7, 0.7, 0.7, 1)
+    mic_state = conky_parse("${exec pactl list sources | grep Mute | grep -o 'yes'}")
+    icon = (mic_state == 'yes' and "" or "")
+    print_icon(cr, icon, "Font Awesome 5 Free", "bold", 32, 360, -35, 1, 1, 1, 1)
 
+    draw_hexagon(cr, 1, 220, 0, 60, 4, 0.7, 0.7, 0.7, 1)
     mute_state = conky_parse("${exec pactl list sinks | grep Mute | grep -o 'yes'}")
     icon = (mute_state == 'yes' and "" or "")
     print_icon(cr, icon, "Font Awesome 5 Free", "bold", 60, 280, 0, 1, 1, 1, 1)
