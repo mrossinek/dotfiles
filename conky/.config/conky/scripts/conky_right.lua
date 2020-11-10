@@ -64,32 +64,32 @@ end
 function conky_laptop(cr)
     cairo_translate(cr, 0, 325)
 
-    -- brightness
-    brightness = tonumber(conky_parse("${exec xbacklight -get}"))
-    fill_hexagon(cr, 3, 40, 0, 40, 2, brightness, "%",
+    -- battery
+    bat0_perc = tonumber(conky_parse("${battery_percent BAT0}"))
+    fill_hexagon(cr, 5, 40, 0, 40, 2, bat0_perc, "%",
+                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
+    draw_hexagon(cr, 5, 40, 0, 40, 2, 0.7, 0.7, 0.7, 1)
+
+    bat1_perc = tonumber(conky_parse("${battery_percent BAT1}"))
+    fill_hexagon(cr, 3, 40, 0, 40, 2, bat1_perc, "%",
                  "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 3, 40, 0, 40, 2, 0.7, 0.7, 0.7, 1)
 
     draw_hexagon(cr, 4, 160, 0, 60, 4, 0.7, 0.7, 0.7, 1)
-    print_icon(cr, "", "Font Awesome 5 Free", "bold", 60, 100, 0, 1, 1, 1, 1)
-
-    -- battery
-    bat0_perc = tonumber(conky_parse("${battery_percent BAT0}"))
-    fill_hexagon(cr, 4, 160, 112, 40, 2, bat0_perc, "%",
-                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
-    draw_hexagon(cr, 4, 160, 112, 40, 2, 0.7, 0.7, 0.7, 1)
-
-    bat1_perc = tonumber(conky_parse("${battery_percent BAT1}"))
-    fill_hexagon(cr, 1, 220, 112, 40, 2, bat1_perc, "%",
-                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
-    draw_hexagon(cr, 1, 220, 112, 40, 2, 0.7, 0.7, 0.7, 1)
-
-    draw_hexagon(cr, 2, 160, 0, 60, 4, 0.7, 0.7, 0.7, 1)
     local file = io.open("/sys/class/power_supply/AC/online")
     ac = file:read("*n")
     file:close()
     icon = (ac == 1 and "" or "")
-    print_icon(cr, icon, "Font Awesome 5 Free", "bold", 60, 190, 55, 1, 1, 1, 1)
+    print_icon(cr, icon, "Font Awesome 5 Free", "bold", 60, 100, 0, 1, 1, 1, 1)
+
+    -- brightness
+    brightness = tonumber(conky_parse("${exec xbacklight -get}"))
+    fill_hexagon(cr, 1, 220, 105, 40, 2, brightness, "%",
+                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
+    draw_hexagon(cr, 1, 220, 105, 40, 2, 0.7, 0.7, 0.7, 1)
+
+    draw_hexagon(cr, 2, 160, 0, 60, 4, 0.7, 0.7, 0.7, 1)
+    print_icon(cr, "", "Font Awesome 5 Free", "bold", 60, 190, 55, 1, 1, 1, 1)
 
     -- bluetooth
     bluetooth_state = tonumber(conky_parse(
