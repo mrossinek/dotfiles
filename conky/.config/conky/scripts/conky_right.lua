@@ -66,12 +66,12 @@ function conky_laptop(cr)
 
     -- brightness
     brightness = tonumber(conky_parse("${exec xbacklight -get}"))
-    fill_hexagon(cr, 4, 70, 60, 40, 2, brightness, "%",
+    fill_hexagon(cr, 3, 40, 0, 40, 2, brightness, "%",
                  "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
-    draw_hexagon(cr, 4, 70, 60, 40, 2, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 3, 40, 0, 40, 2, 0.7, 0.7, 0.7, 1)
 
-    draw_hexagon(cr, 6, 70, 60, 60, 4, 0.7, 0.7, 0.7, 1)
-    print_icon(cr, "", "Font Awesome 5 Free", "bold", 60, 100, 10, 1, 1, 1, 1)
+    draw_hexagon(cr, 4, 160, 0, 60, 4, 0.7, 0.7, 0.7, 1)
+    print_icon(cr, "", "Font Awesome 5 Free", "bold", 60, 100, 0, 1, 1, 1, 1)
 
     -- battery
     bat0_perc = tonumber(conky_parse("${battery_percent BAT0}"))
@@ -84,12 +84,12 @@ function conky_laptop(cr)
                  "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 1, 220, 112, 40, 2, 0.7, 0.7, 0.7, 1)
 
-    draw_hexagon(cr, 1, 130, 60, 60, 4, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 2, 160, 0, 60, 4, 0.7, 0.7, 0.7, 1)
     local file = io.open("/sys/class/power_supply/AC/online")
     ac = file:read("*n")
     file:close()
     icon = (ac == 1 and "" or "")
-    print_icon(cr, icon, "Font Awesome 5 Free", "bold", 60, 190, 60, 1, 1, 1, 1)
+    print_icon(cr, icon, "Font Awesome 5 Free", "bold", 60, 190, 55, 1, 1, 1, 1)
 
     -- bluetooth
     bluetooth_state = tonumber(conky_parse(
@@ -101,22 +101,22 @@ function conky_laptop(cr)
     else
         bluetooth_color = {0.35, 0.35, 0.35}
     end
-    draw_hexagon(cr, 1, 130, -44, 60, 4, 0.7, 0.7, 0.7, 1)
-    print_icon(cr, "", "Font Awesome 5 Brands", "bold", 60, 190, -44,
+    draw_hexagon(cr, 6, 160, 0, 60, 4, 0.7, 0.7, 0.7, 1)
+    print_icon(cr, "", "Font Awesome 5 Brands", "bold", 60, 190, -55,
                bluetooth_color[1], bluetooth_color[2], bluetooth_color[3], 1.0)
 
     -- volume
     volume = tonumber(conky_parse(
                           "${exec pactl list sinks | grep Volume | grep -o '[0-9]*%' | head -1 | sed 's/%//'}"))
-    fill_hexagon(cr, 1, 310, 60, 40, 2, volume, "%", "MesloLGS Nerd Font Mono",
+    fill_hexagon(cr, 2, 340, 0, 40, 2, volume, "%", "MesloLGS Nerd Font Mono",
                  "normal", 20, 0.35, 0.35, 0.35, 1)
-    draw_hexagon(cr, 1, 310, 60, 40, 2, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 2, 340, 0, 40, 2, 0.7, 0.7, 0.7, 1)
 
-    draw_hexagon(cr, 6, 250, 60, 60, 4, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 1, 220, 0, 60, 4, 0.7, 0.7, 0.7, 1)
 
     mute_state = conky_parse("${exec pactl list sinks | grep Mute | grep -o 'yes'}")
     icon = (mute_state == 'yes' and "" or "")
-    print_icon(cr, icon, "Font Awesome 5 Free", "bold", 60, 280, 10, 1, 1, 1, 1)
+    print_icon(cr, icon, "Font Awesome 5 Free", "bold", 60, 280, 0, 1, 1, 1, 1)
 
 end
 
