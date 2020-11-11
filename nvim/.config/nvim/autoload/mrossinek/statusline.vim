@@ -8,8 +8,6 @@ function! mrossinek#statusline#StatuslineInitHighlighting()
     highlight StatusLineNC ctermbg=235 guibg='#262626'
     highlight! link StatusLineTerm StatusLine
     highlight! link StatusLineTermNC StatusLineNC
-    " fix TabLine while we are at it
-    highlight! TabLineFill ctermbg=236 guibg='#303030'
 
     " User 1: Mode highlighting
     highlight StatuslineUnmodified cterm=bold ctermfg=White ctermbg=DarkGreen gui=bold guifg=White guibg=DarkGreen
