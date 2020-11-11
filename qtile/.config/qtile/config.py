@@ -158,7 +158,7 @@ screens = [
                 widget.WindowName(),
                 widget.Spacer(),
                 widget.Systray(icon_size=24),
-                widget.Clock(format="%a %d %b %I:%M")
+                widget.Clock(format=" %a %d %b %I:%M")
             ],
             size=30,
             background='#303030',
