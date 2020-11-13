@@ -169,9 +169,6 @@
 [submodule "completion-nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/completion-nvim
 	url = https://github.com/nvim-lua/completion-nvim
-[submodule "diagnostic-nvim"]
-	path = nvim/.config/nvim/pack/minpac/start/diagnostic-nvim
-	url = https://github.com/nvim-lua/diagnostic-nvim
 [submodule "lsp-status.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/lsp-status.nvim
 	url = https://github.com/nvim-lua/lsp-status.nvim

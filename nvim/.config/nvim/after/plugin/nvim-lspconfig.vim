@@ -1,4 +1,27 @@
 lua << EOF
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = function(bufnr, client_id)
+            settings = {
+                spacing = 2,
+                prefix = "",
+            }
+            local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_diagnostics')
+            if not ok or result then
+                return settings
+            end
+            return false
+        end,
+        signs = function(bufnr, client_id)
+            local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_diagnostics')
+            if not ok then
+                return true
+            end
+            return result
+        end,
+    }
+)
+
 local lsp_status = require('lsp-status')
 lsp_status.config {
     status_symbol = ' ',
@@ -9,8 +32,6 @@ lsp_status.register_progress()
 
 local nvim_command = vim.api.nvim_command
 local on_attach_vim = function(client)
-  require'diagnostic'.on_attach(client)
-  nvim_command('autocmd CursorHold <buffer> lua vim.lsp.util.show_line_diagnostics()')
   lsp_status.on_attach(client)
 end
 
@@ -57,3 +78,12 @@ nnoremap <silent> gR    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+
+" lsp-diagnostics
+sign define LspDiagnosticsSignError text=
+sign define LspDiagnosticsSignWarning text=
+sign define LspDiagnosticsSignInformation text=
+sign define LspDiagnosticsSignHint text=
+
+nnoremap <silent> ]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> [d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
