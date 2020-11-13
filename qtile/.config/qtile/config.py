@@ -226,6 +226,7 @@ wmname = "LG3D"
 def autostart():
     subprocess.call([expanduser('~/.config/qtile/autostart.sh')])
 
+
 @hook.subscribe.startup_complete
 def startup_complete():
     # ensures the conky widgets realign and the Xmodmap is propagated to an external keyboard after

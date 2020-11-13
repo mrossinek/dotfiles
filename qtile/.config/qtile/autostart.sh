@@ -10,3 +10,4 @@ hsetroot -solid '#303030'
 conky -c ~/.config/conky/conky_left.conf
 conky -c ~/.config/conky/conky_middle.conf
 conky -c ~/.config/conky/conky_right.conf
+sleep 1
