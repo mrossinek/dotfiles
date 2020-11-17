@@ -63,6 +63,11 @@ lspconfig.pyls.setup{
     capabilities=lsp_status.capabilities
 }
 
+lspconfig.sumneko_lua.setup{
+    on_attach=on_attach_vim,
+    capabilities=lsp_status.capabilities
+}
+
 lspconfig.vimls.setup{
     on_attach=on_attach_vim,
     capabilities=lsp_status.capabilities
