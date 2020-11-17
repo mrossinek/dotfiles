@@ -35,20 +35,20 @@ local on_attach_vim = function(client)
   lsp_status.on_attach(client)
 end
 
-local nvim_lsp = require('nvim_lsp')
-nvim_lsp.clangd.setup{
+local lspconfig = require('lspconfig')
+lspconfig.clangd.setup{
     callbacks = lsp_status.extensions.clangd.setup(),
     on_attach=on_attach_vim,
     capabilities=lsp_status.capabilities
 }
 
-nvim_lsp.fortls.setup{
+lspconfig.fortls.setup{
     on_attach=on_attach_vim,
     capabilities=lsp_status.capabilities
 }
 
 -- overwrite the pylint executable to ensure it is run from the virtualenv
-nvim_lsp.pyls.setup{
+lspconfig.pyls.setup{
     settings = {
         pyls = {
             plugins = {
@@ -63,7 +63,7 @@ nvim_lsp.pyls.setup{
     capabilities=lsp_status.capabilities
 }
 
-nvim_lsp.vimls.setup{
+lspconfig.vimls.setup{
     on_attach=on_attach_vim,
     capabilities=lsp_status.capabilities
 }
