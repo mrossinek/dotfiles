@@ -80,3 +80,11 @@ function! mrossinek#functions#SetPythonProvider()
         endif
     endfor
 endfunction
+
+function! mrossinek#functions#ToggleDiagnostics()
+    if !exists('b:show_diagnostics') || b:show_diagnostics == v:true
+        let b:show_diagnostics = v:false
+    else
+        let b:show_diagnostics = v:true
+    endif
+endfunction

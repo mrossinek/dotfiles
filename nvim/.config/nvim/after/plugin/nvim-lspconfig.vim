@@ -92,3 +92,4 @@ sign define LspDiagnosticsSignHint text=
 
 nnoremap <silent> ]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> [d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> \dd <cmd>call mrossinek#functions#ToggleDiagnostics()<CR>
