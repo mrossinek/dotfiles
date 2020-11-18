@@ -43,6 +43,20 @@ lspconfig.clangd.setup{
 }
 
 lspconfig.fortls.setup{
+    -- fortls currently is unable to handle settings and instead relies on them being passed via cmdline arguments:
+    -- https://github.com/neovim/nvim-lspconfig/issues/219#issuecomment-623955655
+    cmd = {
+        "fortls",
+        "--nthreads", "2",
+        "--symbol_skip_mem",
+        "--autocomplete_no_prefix",
+        "--incremental_sync",
+        "--use_signature_help",
+        "--variable_hover",
+        "--hover_signature",
+        "--enable_code_actions"
+    },
+    root_dir = lspconfig.util.root_pattern('.git', '.fortls'),
     on_attach=on_attach_vim,
     capabilities=lsp_status.capabilities
 }
