@@ -1,10 +1,18 @@
 lua <<EOF
+require "nvim-treesitter.parsers".get_parser_configs().fortran = {
+    install_info = {
+        url = "https://github.com/stadelmanma/tree-sitter-fortran",
+        files = {"src/parser.c", "src/scanner.cc"}
+    }
+}
+
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "bash",
         "c",
         "cpp",
         "css",
+        "fortran",
         "html",
         "java",
         "json",
