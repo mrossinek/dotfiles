@@ -7,5 +7,6 @@ tags
 .envrc
 # python cache files should generally be ignored
 __pycache__/
+.ipynb_checkpoints/
 # fortran language server config
 .fortls
