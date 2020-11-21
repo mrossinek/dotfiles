@@ -104,6 +104,9 @@ sign define LspDiagnosticsSignWarning text=
 sign define LspDiagnosticsSignInformation text=
 sign define LspDiagnosticsSignHint text=
 
+" TODO: incorporate b:show_diagnostics
+autocmd CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics()
+
 nnoremap <silent> ]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> [d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> \dd <cmd>call mrossinek#functions#ToggleDiagnostics()<CR>
