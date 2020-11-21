@@ -84,7 +84,9 @@ endfunction
 function! mrossinek#functions#ToggleDiagnostics()
     if !exists('b:show_diagnostics') || b:show_diagnostics == v:true
         let b:show_diagnostics = v:false
+        lua vim.lsp.diagnostic.clear(0)
     else
         let b:show_diagnostics = v:true
+        " TODO: figure out how to trigger re-addition of all diagnostics
     endif
 endfunction
