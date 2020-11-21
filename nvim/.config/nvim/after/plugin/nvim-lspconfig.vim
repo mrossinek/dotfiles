@@ -37,7 +37,7 @@ end
 
 local lspconfig = require('lspconfig')
 lspconfig.clangd.setup{
-    callbacks = lsp_status.extensions.clangd.setup(),
+    handlers = lsp_status.extensions.clangd.setup(),
     on_attach=on_attach_vim,
     capabilities=lsp_status.capabilities
 }
