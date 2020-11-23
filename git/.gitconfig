@@ -1,6 +1,9 @@
 [include]
     path = ~/.gitconfig_user.inc
 
+[commit]
+    gpgSign = true
+
 [core]
     editor = nvim
     pager = delta
