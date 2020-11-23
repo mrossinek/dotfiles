@@ -55,3 +55,4 @@
     s = status --short
     t = tree
     wc = whatchanged
+    wip = commit --all --message 'WIP'
