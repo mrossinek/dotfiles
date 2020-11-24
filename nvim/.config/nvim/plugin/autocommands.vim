@@ -4,6 +4,14 @@ augroup FileEditing
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 augroup end
 
+" rememvber folds
+augroup RememberFolds
+    autocmd!
+    autocmd BufWinLeave *.* mkview!
+    autocmd BufWinEnter *.* silent! loadview
+augroup end
+" Note: you can use `:DeleteView` to delete the view of the current file.
+
 " quit if last window is quickfix
 augroup QuickfixQuitting
     autocmd!

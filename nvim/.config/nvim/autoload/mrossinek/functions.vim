@@ -90,3 +90,21 @@ function! mrossinek#functions#ToggleDiagnostics()
         " TODO: figure out how to trigger re-addition of all diagnostics
     endif
 endfunction
+
+" Function to permanently delete the `mkview` of the current file.
+" Source: https://stackoverflow.com/a/28460676
+function! mrossinek#functions#DeleteView()
+    let path = fnamemodify(bufname('%'),':p')
+    " vim's odd =~ escaping for /
+    let path = substitute(path, '=', '==', 'g')
+    if empty($HOME)
+    else
+        let path = substitute(path, '^'.$HOME, '\~', '')
+    endif
+    let path = substitute(path, '/', '=+', 'g') . '='
+    " view directory
+    let path = &viewdir.'/'.path
+    call delete(path)
+    echomsg "Deleted: ".path
+    echomsg "Be sure to disable the `RememberFolds` autocmd group!"
+endfunction
