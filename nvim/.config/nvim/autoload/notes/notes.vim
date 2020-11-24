@@ -22,6 +22,6 @@ function! notes#notes#git_save()
         endif
         execute 'silent !' .
                     \ 'git add ' . expand('%:t') . ' ; '
-                    \ 'git commit -m "Auto-commit: saved "' . expand('%:t')
+                    \ 'git commit --no-gpg-sign -m "Auto-commit: saved "' . expand('%:t')
     endif
 endfunction
