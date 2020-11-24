@@ -17,6 +17,9 @@ endfunction
 
 function! notes#notes#git_save()
     if expand('%:p:h') == expand(g:zettelkasten)
+        if execute('pwd') != expand(g:zettelkasten)
+            execute 'lcd ' . expand(g:zettelkasten)
+        endif
         execute 'silent !' .
                     \ 'git add ' . expand('%:t') . ' ; '
                     \ 'git commit -m "Auto-commit: saved "' . expand('%:t')
