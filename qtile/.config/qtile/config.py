@@ -156,6 +156,7 @@ screens = [
         top=bar.Bar(
             [
                 widget.GroupBox(inactive='#505050', hide_unused=True),
+                widget.CurrentLayoutIcon(scale=0.75),
                 widget.WindowName(),
                 widget.Spacer(),
                 widget.Systray(icon_size=24),
