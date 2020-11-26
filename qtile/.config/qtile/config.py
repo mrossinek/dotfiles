@@ -82,8 +82,9 @@ keys = [
     Key([mod], "backslash", lazy.spawn("rofimoji"), desc="emoji picker"),
 
     # advanced actions
-    Key([], "Print", lazy.spawn("maim -uks " + expanduser("~/Pictures/Screenshots/screenshot_") +
-                                datetime.now().strftime("%s") + ".png"),
+    Key([], "Print", lazy.spawn('bash -c "maim -uks ' +
+                                expanduser("~/Pictures/Screenshots/screenshot_") +
+                                '$(date +%s).png"'),
         desc="Screenshot snippet tool"),
     # brightness control
     Key([], "XF86MonBrightnessUp",   lazy.spawn("xbacklight -inc 5")),
