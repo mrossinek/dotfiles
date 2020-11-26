@@ -16,7 +16,6 @@ vnoremap ;ne c<C-R>=system('gpg -ac -o- <<< "' . getreg('"') . '"')<CR>
 vnoremap ;nd c<C-R>=system('gpg -d -o- <<< "' . getreg('"') . '"')<CR>
 
 " telescope integration
-nnoremap ;nl :lua require('notes.telescope')['link_note']()<CR>
 inoremap ;nl :lua require('notes.telescope')['link_note']()<CR>
 
 augroup MyNotes
