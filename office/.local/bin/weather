@@ -60,11 +60,11 @@ rss=$(curl -s http://rss.accuweather.com/rss/liveweather_rss.asp?metric=1\&locCo
 
 pubdate=$(echo "${rss}" | grep -oP '<pubDate>\K[^<]*(?=</pubDate>)' -m 1)
 
-descriptions=$(echo "${rss//[$'\t\r\n']}" | grep -oE '<description>[^\"]*\"http[^<]*</description>')
+descriptions=$(echo "${rss//[$'\t\r\n']}" | grep -oE '<description>[^<]*\"http[^<]*</description>')
 
 count=0
 while read -r desc; do
-    temps=$(echo "${desc}" | grep -oP '<description>\K.*(?=\&lt;img)' | grep -oP '\s\K\d+')
+    temps=$(echo "${desc}" | grep -oP '<description>\K.*(?=\&lt;img)' | grep -oP '\s\K-?\d+(?=\s)')
     icon=$(echo "${desc}" | grep -oP 'icons/\K\d+[^_]')
     echo "$(eval date -d \"+${count} days\" +\"%d %b\");${accuweather_icon_map[$icon]};${temps/[$'\t\r\n']/;}" >> "$tmp_copy"
     count=$((count+1))
