@@ -354,6 +354,8 @@ call <sid>hi("BufferInactive",       s:gui02, "", s:cterm02, "", "", "")
 call <sid>hi("BufferInactiveMod",    s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("BufferInactiveSign",   s:gui02, "", s:cterm02, "", "", "")
 call <sid>hi("BufferInactiveTarget", s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("BufferTabpages",       s:gui0C, "", s:cterm0C, "", "", "")
+call <sid>hi("BufferTabpageFill",    s:gui03, "", s:cterm03, "", "", "")
 
 " Remove functions
 delf <sid>hi
