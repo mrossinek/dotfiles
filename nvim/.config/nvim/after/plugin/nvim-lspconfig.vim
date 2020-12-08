@@ -19,6 +19,13 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
             end
             return result
         end,
+        underline = function(bufnr, client_id)
+            local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_diagnostics')
+            if not ok then
+                return true
+            end
+            return result
+        end,
     }
 )
 
