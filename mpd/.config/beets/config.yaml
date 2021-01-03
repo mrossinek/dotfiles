@@ -1,7 +1,7 @@
 directory: ~/Music
 library: ~/.local/share/beets/library.db
 
-plugins: fromfilename fetchart lyrics lastgenre duplicates mpdupdate mpdstats mbsync
+plugins: fromfilename fetchart lastgenre duplicates mpdupdate mpdstats mbsync
 
 asciify_paths: yes
 paths:
