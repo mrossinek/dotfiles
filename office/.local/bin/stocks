@@ -21,7 +21,7 @@ with open(os.path.expanduser("~/.stocks/library.txt"), "r") as LIBRARY:
 # get today
 TODAY = datetime.today()
 # get latest weekday
-LATEST_WEEKDAY = TODAY - timedelta(days=1)
+LATEST_WEEKDAY = TODAY
 while LATEST_WEEKDAY.weekday() > 4:
     LATEST_WEEKDAY -= timedelta(days=1)
 # get weekday previous to that one
