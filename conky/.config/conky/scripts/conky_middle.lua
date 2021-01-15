@@ -57,9 +57,9 @@ function conky_weather(cr)
                600, 220, 1, 1, 1, 1)
     print_text(cr, update[2] .. " " .. update[3], "MesloLGS Nerd Font Mono",
                "normal", 20, "center", 600, 260, 1, 1, 1, 1)
+    print_text(cr, update[4], "MesloLGS Nerd Font Mono",
+               "normal", 20, "center", 600, 280, 1, 1, 1, 1)
     print_text(cr, update[5], "MesloLGS Nerd Font Mono", "normal", 20, "center",
-               600, 280, 1, 1, 1, 1)
-    print_text(cr, update[6], "MesloLGS Nerd Font Mono", "normal", 20, "center",
                600, 300, 1, 1, 1, 1)
 
     file:close()
