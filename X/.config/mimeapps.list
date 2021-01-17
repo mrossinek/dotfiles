@@ -1,5 +1,6 @@
 [Default Applications]
 text/plain=nvim.desktop
+text/html=org.qutebrowser.qutebrowser.desktop
 application/pdf=zathura.desktop
 application/postscript=zathura.desktop
 image/png=feh.desktop
