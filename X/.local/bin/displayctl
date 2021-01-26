@@ -29,12 +29,13 @@ choice () {
         right)  position "right-of" ;;
         above)  position "above" ;;
         below)  position "below" ;;
+        reset)  reset ;;
         *)      rofi_menu ;;
     esac
 }
 
 menu () {
-    for key in 'internal' 'external' 'mirror' 'left' 'right' 'above' 'below'
+    for key in 'internal' 'external' 'mirror' 'left' 'right' 'above' 'below' 'reset'
     do
         echo "${key}"
     done
@@ -47,6 +48,12 @@ rofi_menu () {
         exit
     fi
     choice $CMD
+}
+
+reset () {
+    # reset is a recover utility from a borked config
+    CMD="$CMDBASE --output $INTERNAL_OUTPUT --auto"
+    eval $CMD
 }
 
 internal () {
