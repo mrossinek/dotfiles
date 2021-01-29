@@ -214,3 +214,12 @@
 [submodule "vim-vsnip-integ"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-vsnip-integ
 	url = https://github.com/hrsh7th/vim-vsnip-integ
+[submodule "telescope-bibtex"]
+	path = nvim/.config/nvim/pack/minpac/start/telescope-bibtex
+	url = https://github.com/nvim-telescope/telescope-bibtex.nvim
+[submodule "telescope-dap"]
+	path = nvim/.config/nvim/pack/minpac/start/telescope-dap
+	url = https://github.com/nvim-telescope/telescope-dap.nvim
+[submodule "telescope-symbols"]
+	path = nvim/.config/nvim/pack/minpac/start/telescope-symbols
+	url = https://github.com/nvim-telescope/telescope-symbols.nvim
