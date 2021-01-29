@@ -163,9 +163,6 @@
 [submodule "nvim-lspconfig"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
-[submodule "completion-nvim"]
-	path = nvim/.config/nvim/pack/minpac/start/completion-nvim
-	url = https://github.com/nvim-lua/completion-nvim
 [submodule "lsp-status.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/lsp-status.nvim
 	url = https://github.com/nvim-lua/lsp-status.nvim
@@ -181,9 +178,6 @@
 [submodule "nvim-treesitter"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
-[submodule "snippets.nvim"]
-	path = nvim/.config/nvim/pack/minpac/start/snippets.nvim
-	url = https://github.com/norcalli/snippets.nvim
 [submodule "nvim-web-devicons"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-web-devicons
 	url = https://github.com/kyazdani42/nvim-web-devicons
@@ -211,3 +205,12 @@
 [submodule "nvim-dap-virtual-text"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-dap-virtual-text
 	url = https://github.com/theHamsta/nvim-dap-virtual-text
+[submodule "nvim-compe"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-compe
+	url = https://github.com/hrsh7th/nvim-compe
+[submodule "vim-vsnip"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-vsnip
+	url = https://github.com/hrsh7th/vim-vsnip
+[submodule "vim-vsnip-integ"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-vsnip-integ
+	url = https://github.com/hrsh7th/vim-vsnip-integ

@@ -1,0 +1,14 @@
+{
+  "FIXME": {
+    "prefix": "fixme",
+    "body": "FIXME(${VIM:\\$USER}): "
+  },
+  "NOTE": {
+    "prefix": "note",
+    "body": "NOTE(${VIM:\\$USER}): "
+  },
+  "TODO": {
+    "prefix": "todo",
+    "body": "TODO(${VIM:\\$USER}): "
+  }
+}

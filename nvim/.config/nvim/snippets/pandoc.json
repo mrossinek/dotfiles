@@ -1,0 +1,18 @@
+{
+  "Code": {
+    "prefix": "code",
+    "body": [
+      "```",
+      "$0",
+      "```"
+    ]
+  },
+  "Equation": {
+    "prefix": "eq",
+    "body": [
+      "\\begin{equation}",
+      "    $0",
+      "\\end{equation}"
+    ]
+  }
+}

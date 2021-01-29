@@ -3,11 +3,6 @@ map <F13> <S-CR>
 map <F14> <C-CR>
 
 " window movement
-nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <M-\> :TmuxNavigatePrevious<cr>
 nnoremap <A-H> <C-w>H
 nnoremap <A-J> <C-w>J
 nnoremap <A-K> <C-w>K
@@ -52,8 +47,3 @@ nnoremap <C-S> :e #<CR>
 
 " web search
 nnoremap <silent> gs :set opfunc=mrossinek#functions#WebSearch<CR>g@
-
-" move lines
-nnoremap <c-j> :m .+1<CR>==
-nnoremap <c-k> :m .-2<CR>==
-" Source: https://vimtricks.substack.com/p/vimtrick-moving-lines
