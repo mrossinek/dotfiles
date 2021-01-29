@@ -84,6 +84,19 @@ lspconfig.pyls.setup{
     capabilities=lsp_status.capabilities
 }
 
+lspconfig.pyright.setup{
+    settings = {
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+            },
+        },
+    },
+    on_attach=on_attach_vim,
+    capabilities=lsp_status.capabilities
+}
+
 lspconfig.sumneko_lua.setup{
     cmd = {"/usr/bin/lua-language-server"};
     on_attach=on_attach_vim,
@@ -109,6 +122,11 @@ lspconfig.sumneko_lua.setup{
             },
         },
     },
+}
+
+lspconfig.texlab.setup{
+    on_attach=on_attach_vim,
+    capabilities=lsp_status.capabilities
 }
 
 lspconfig.vimls.setup{
