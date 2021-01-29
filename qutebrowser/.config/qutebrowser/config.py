@@ -7,17 +7,6 @@ config = config  # noqa: F821 pylint: disable=E0602,C0103
 # load autoconfig
 config.load_autoconfig()
 
-# jblock
-sys.path.append(os.path.join(sys.path[0], 'jblock'))
-config.source("jblock/jblock/integrations/qutebrowser.py")
-c.content.host_blocking.enabled = False
-c.content.host_blocking.lists = [
-    "https://easylist.to/easylist/easylist.txt",
-    "https://easylist.to/easylist/easyprivacy.txt",
-    "https://easylist-downloads.adblockplus.org/easylist-cookie.txt",
-    "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt",
-    ]
-
 # UI
 c.zoom.default = '150%'
 c.completion.height = '30%'

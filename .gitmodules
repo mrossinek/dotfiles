@@ -4,9 +4,6 @@
 [submodule "tmux-open"]
 	path = tmux/.tmux/plugins/tmux-open
 	url = https://github.com/tmux-plugins/tmux-open
-[submodule "jblock"]
-	path = qutebrowser/.config/qutebrowser/jblock
-	url = https://gitlab.com/jgkamat/jblock
 [submodule "zsh-completions"]
 	path = zsh/.zsh/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions
