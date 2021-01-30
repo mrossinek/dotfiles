@@ -17,7 +17,7 @@ let g:compe.source.buffer = v:true
 let g:compe.source.spell = v:true
 let g:compe.source.vsnip = v:true
 let g:compe.source.nvim_lsp = v:true
-let g:compe.source.nvim_lua = v:false
+let g:compe.source.nvim_lua = v:true
 
 inoremap <silent><expr> <Tab> compe#complete()
 inoremap <silent><expr> <CR>  compe#confirm('<CR>')
