@@ -223,3 +223,6 @@
 [submodule "telescope-symbols"]
 	path = nvim/.config/nvim/pack/minpac/start/telescope-symbols
 	url = https://github.com/nvim-telescope/telescope-symbols.nvim
+[submodule "nvim-lightbulb"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-lightbulb
+	url = https://github.com/kosayoda/nvim-lightbulb
