@@ -19,11 +19,13 @@
   "device"
   "host"
   "grid_global"
+  "pointer"
 ] @type
 
 [
   "bind"
   "call"
+  "class"
   "contains"
   "continue"
   "cycle"
@@ -40,8 +42,10 @@
   "include"
   "interface"
   "module"
+  "only"
   "parameter"
   "print"
+  "procedure"
   "program"
   "read"
   "return"
@@ -81,10 +85,15 @@
   "/="
 ] @keyword.operator
 
-; ;; Brackets
-; [
-;  "("
-;  ")"
-;  "["
-;  "]"
-; ] @punctuation.bracket
+; Brackets
+[
+ "("
+ ")"
+ "["
+ "]"
+] @punctuation.bracket
+
+; import
+; abstract (e.g. abstract interface ... end interface)
+; extends
+; keywords inside of variable names are highlighted (e.g. total hightlights TO)
