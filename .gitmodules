@@ -226,3 +226,6 @@
 [submodule "nvim-lightbulb"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-lightbulb
 	url = https://github.com/kosayoda/nvim-lightbulb
+[submodule "coveragepy.vim"]
+	path = nvim/.config/nvim/pack/minpac/opt/coveragepy.vim
+	url = https://github.com/alfredodeza/coveragepy.vim

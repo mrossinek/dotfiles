@@ -5,11 +5,6 @@ call mrossinek#functions#SetPythonProvider()
 colorscheme mrossinek
 
 " filetype autocommands
-augroup filetype_cs
-    autocmd!
-    autocmd FileType cs packadd Omnisharp-vim
-augroup end
-
 augroup filetype_ledger
     autocmd!
     autocmd FileType ledger doautocmd User MyLedger
@@ -18,8 +13,12 @@ augroup end
 
 augroup filetype_mail
     autocmd!
-    autocmd FileType mail packadd deoplete-khard
     autocmd FileType mail nnoremap <leader>m :setlocal filetype=markdown.mail<CR>
+augroup end
+
+augroup filetype_python
+    autocmd!
+    autocmd FileType python packadd coveragepy.vim
 augroup end
 
 augroup filetype_tex
