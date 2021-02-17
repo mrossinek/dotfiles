@@ -34,9 +34,6 @@
 [submodule "vim-unimpaired"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
-[submodule "vim-commentary"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-commentary
-	url = https://github.com/tpope/vim-commentary
 [submodule "vim-repeat"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat
@@ -229,3 +226,6 @@
 [submodule "coveragepy.vim"]
 	path = nvim/.config/nvim/pack/minpac/opt/coveragepy.vim
 	url = https://github.com/alfredodeza/coveragepy.vim
+[submodule "tcomment_vim"]
+	path = nvim/.config/nvim/pack/minpac/start/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim
