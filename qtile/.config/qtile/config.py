@@ -197,7 +197,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'makebranch'},  # gitk
     {'wmclass': 'maketag'},  # gitk
     {'wname': 'branchdialog'},  # gitk
-    {'wname': 'pinentry'},  # GPG key password entry
+    {'wmclass': 'pinentry-qt'},  # GPG key password entry
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
     # custom additions
     {'wmclass': 'matplotlib'},
