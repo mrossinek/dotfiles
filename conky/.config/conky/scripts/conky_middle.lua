@@ -65,6 +65,62 @@ function conky_weather(cr)
     file:close()
 end
 
+function conky_background_icons(cr)
+    cairo_translate(cr, 100, 500)
+
+    local image = cairo_image_surface_create_from_png(
+        "/home/max/.config/conky/images/fall.png")
+    w = cairo_image_surface_get_width(image)
+    h = cairo_image_surface_get_height(image)
+
+    pattern = cairo_pattern_create_for_surface(image)
+
+    local matrix = cairo_matrix_t:create()
+    tolua.takeownership(matrix)
+
+    cairo_matrix_init_scale(matrix, 1, 1)
+    cairo_pattern_set_matrix(pattern, matrix)
+    cairo_set_source(cr, pattern)
+
+    origin_x, origin_y = 0, 0
+    cairo_move_to(cr, origin_x, origin_y)
+    cairo_line_to(cr, origin_x + w, origin_y)
+    cairo_line_to(cr, origin_x + w, origin_y + h)
+    cairo_line_to(cr, origin_x, origin_y + h)
+    cairo_fill(cr)
+
+    cairo_pattern_destroy(pattern)
+    cairo_surface_destroy(image)
+
+    cairo_translate(cr, 600, 0)
+
+    local image = cairo_image_surface_create_from_png(
+        "/home/max/.config/conky/images/rise.png")
+    w = cairo_image_surface_get_width(image)
+    h = cairo_image_surface_get_height(image)
+
+    pattern = cairo_pattern_create_for_surface(image)
+
+    local matrix = cairo_matrix_t:create()
+    tolua.takeownership(matrix)
+
+    cairo_matrix_init_scale(matrix, 1, 1)
+    cairo_pattern_set_matrix(pattern, matrix)
+    cairo_set_source(cr, pattern)
+
+    origin_x, origin_y = 0, 0
+    cairo_move_to(cr, origin_x, origin_y)
+    cairo_line_to(cr, origin_x + w, origin_y)
+    cairo_line_to(cr, origin_x + w, origin_y + h)
+    cairo_line_to(cr, origin_x, origin_y + h)
+    cairo_fill(cr)
+
+    cairo_pattern_destroy(pattern)
+    cairo_surface_destroy(image)
+
+    cairo_translate(cr, -700, 0)
+end
+
 function parse_stock(file)
     line = file:read("*l")
     stock = {}
@@ -89,7 +145,7 @@ function parse_stock(file)
 end
 
 function conky_stocks(cr)
-    cairo_translate(cr, 0, 1200)
+    cairo_translate(cr, 0, 700)
     local file = io.open('/home/max/.stocks/prices.txt')
 
     draw_hexagon(cr, 0, 50, 10, 40, 4, 0.7, 0.7, 0.7, 1)
@@ -205,6 +261,8 @@ function conky_main()
         cairo_set_line_cap(cr, CAIRO_LINE_CAP_ROUND);
 
         conky_weather(cr)
+
+        conky_background_icons(cr)
 
         conky_stocks(cr)
     end
