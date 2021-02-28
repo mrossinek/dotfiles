@@ -7,6 +7,11 @@ function conky_time(cr)
     print_text(cr, conky_parse("${time %I:%M}"), "MesloLGS Nerd Font Mono",
                "bold", 50, "center", 350, 125, 1, 1, 1, 1)
 
+    draw_hexagon(cr, 0, 415, 47, 20, 2, 0.7, 0.7, 0.7, 1)
+    bell_state = conky_parse("${exec dunstctl is-paused}")
+    icon = (bell_state == 'true' and "" or "")
+    print_icon(cr, icon, "Font Awesome 5 Free", "bold", 18, 415, 47, 1, 1, 1, 1)
+
     annotate_hexagon(cr, 1, 350, 125, 90, 4, 15, 0.7, 0.7, 0.7, 1)
     print_text(cr, conky_parse("${kernel}"), "MesloLGS Nerd Font Mono",
                "normal", 20, "left", 20, 25, 1, 1, 1, 1)
