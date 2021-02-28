@@ -66,7 +66,7 @@ function conky_weather(cr)
 end
 
 function conky_background_icons(cr)
-    cairo_translate(cr, 100, 500)
+    cairo_translate(cr, 150, 500)
 
     local image = cairo_image_surface_create_from_png(
         "/home/max/.config/conky/images/fall.png")
@@ -92,7 +92,7 @@ function conky_background_icons(cr)
     cairo_pattern_destroy(pattern)
     cairo_surface_destroy(image)
 
-    cairo_translate(cr, 600, 0)
+    cairo_translate(cr, 550, 0)
 
     local image = cairo_image_surface_create_from_png(
         "/home/max/.config/conky/images/rise.png")
