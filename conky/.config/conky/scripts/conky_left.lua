@@ -55,7 +55,7 @@ function conky_storage(cr)
     -- home usage
     home_perc = tonumber(conky_parse("${fs_used_perc /home/}"))
     fill_hexagon(cr, 1, 120, -15, 40, 2, home_perc, "%",
-                 "MesloLGS Nerd Font Mono", "normal", 20, 0.7, 0.7, 0.7, 1)
+                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 1, 120, -15, 40, 2, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 5, 120, 90, 60, 4, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 40, 90, 35, 1, 1, 1, 1)
@@ -63,11 +63,11 @@ function conky_storage(cr)
     -- ram
     mem_perc = tonumber(conky_parse("${memperc}"))
     fill_hexagon(cr, 6, 240, 90, 40, 2, mem_perc, "%",
-                 "MesloLGS Nerd Font Mono", "normal", 20, 0.7, 0.7, 0.7, 1)
+                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 6, 240, 90, 40, 2, 0.7, 0.7, 0.7, 1)
     swap_perc = tonumber(conky_parse("${swapperc}"))
     fill_hexagon(cr, 2, 240, 90, 40, 2, swap_perc, "%",
-                 "MesloLGS Nerd Font Mono", "normal", 20, 0.7, 0.7, 0.7, 1)
+                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 2, 240, 90, 40, 2, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 1, 120, 90, 60, 4, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 40, 180, 90, 1, 1, 1, 1)
@@ -75,7 +75,7 @@ function conky_storage(cr)
     -- root usage
     root_perc = tonumber(conky_parse("${fs_used_perc /}"))
     fill_hexagon(cr, 1, 120, 195, 40, 2, root_perc, "%",
-                 "MesloLGS Nerd Font Mono", "normal", 20, 0.7, 0.7, 0.7, 1)
+                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 1, 120, 195, 40, 2, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 3, 120, 90, 60, 4, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 40, 90, 140, 1, 1, 1, 1)
@@ -86,7 +86,7 @@ function conky_gpu(cr)
 
     gpu_util = tonumber(conky_parse("${nvidia gpuutil 1}"))
     fill_hexagon(cr, 6, 190, 0, 40, 2, gpu_util, "%", "MesloLGS Nerd Font Mono",
-                 "normal", 20, 0.7, 0.7, 0.7, 1)
+                 "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 6, 190, 0, 40, 2, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 1, 230, -70, 20, 1, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 18, 250, -70, 0.7, 0.7,
@@ -94,7 +94,7 @@ function conky_gpu(cr)
 
     gpu_memutil = tonumber(conky_parse("${nvidia memutil 1}"))
     fill_hexagon(cr, 2, 190, 0, 40, 2, gpu_memutil, "%",
-                 "MesloLGS Nerd Font Mono", "normal", 20, 0.7, 0.7, 0.7, 1)
+                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 2, 190, 0, 40, 2, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 1, 230, 70, 20, 1, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 18, 250, 70, 0.7, 0.7,
@@ -102,7 +102,7 @@ function conky_gpu(cr)
 
     gpu_temp = tonumber(conky_parse("${nvidia temp 1}"))
     fill_hexagon(cr, 5, 150, -70, 40, 2, gpu_temp, "°C",
-                 "MesloLGS Nerd Font Mono", "normal", 20, 0.7, 0.7, 0.7, 1)
+                 "MesloLGS Nerd Font Mono", "normal", 20, 0.35, 0.35, 0.35, 1)
     draw_hexagon(cr, 5, 150, -70, 40, 2, 0.7, 0.7, 0.7, 1)
     draw_hexagon(cr, 4, 110, -140, 20, 1, 0.7, 0.7, 0.7, 1)
     print_icon(cr, "", "Font Awesome 5 Free", "bold", 18, 90, -140, 0.7, 0.7,
