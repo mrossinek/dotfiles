@@ -15,22 +15,22 @@ Path ~/.mail/work/
 Inbox ~/.mail/work/INBOX
 
 Channel work-main
-Master :work-remote:
-Slave :work-local:
+Far :work-remote:
+Near :work-local:
 Patterns INBOX INBOX/* Drafts/*
-Create Slave
+Create Near
 SyncState *
 
 Channel work-sent
-Master :work-remote:"Sent Items"/
-Slave :work-local:Sent
-Create Slave
+Far :work-remote:"Sent Items"/
+Near :work-local:Sent
+Create Near
 SyncState *
 
 Channel work-trash
-Master :work-remote:"Deleted Items"/
-Slave :work-local:Trash
-Create Slave
+Far :work-remote:"Deleted Items"/
+Near :work-local:Trash
+Create Near
 SyncState *
 
 Group work
