@@ -8,7 +8,7 @@ config = config  # noqa: F821 pylint: disable=E0602,C0103
 config.load_autoconfig()
 
 # UI
-c.zoom.default = '150%'
+c.zoom.default = '125%'
 c.completion.height = '30%'
 c.downloads.position = 'bottom'
 c.url.start_pages = ['https://github.com/', 'https://gitlab.com/', 'https://start.duckduckgo.com']
@@ -86,7 +86,7 @@ with config.pattern('*://github.com/') as p:
 
 # fonts
 c.fonts.default_family = 'monospace'
-c.fonts.default_size = '12pt'
+c.fonts.default_size = '10pt'
 
 # editor
 c.editor.command = ["kitty", "-T", "qutebrowser external editor", "nvim", "-f", "{file}",
