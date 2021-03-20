@@ -229,3 +229,6 @@
 [submodule "tcomment_vim"]
 	path = nvim/.config/nvim/pack/minpac/start/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim
+[submodule "nvim-nonicons"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-nonicons
+	url = https://github.com/yamatsum/nvim-nonicons
