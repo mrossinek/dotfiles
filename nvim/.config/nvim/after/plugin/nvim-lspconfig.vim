@@ -77,9 +77,12 @@ lspconfig.pyls.setup{
                 pylint = {
                     enabled = true,
                     executable = 'pylint',
-                }
-            }
-        }
+                },
+                pycodestyle = {
+                    enabled = false,
+                },
+            },
+        },
     },
     on_attach=on_attach_vim,
     capabilities=lsp_status.capabilities
