@@ -26,6 +26,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
             end
             return result
         end,
+        update_in_insert = false,
     }
 )
 
