@@ -1,7 +1,3 @@
-" Python support is installed into a virtualenv to allow seemless usage across
-" system and other virtualenvs
-call mrossinek#functions#SetPythonProvider()
-
 colorscheme mrossinek
 
 " filetype autocommands

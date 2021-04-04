@@ -72,15 +72,6 @@ function! mrossinek#functions#WebSearch(type, ...)
     let @@ = reg_save
 endfunction
 
-function! mrossinek#functions#SetPythonProvider()
-    for l:file in split(globpath(expand('~/Installations/pynvim3/.direnv'), 'python-3.*'), '\n')
-        if !exists('l:time') || getftime(l:file) > l:time
-            let l:time = getftime(l:file)
-            let g:python3_host_prog = l:file . '/bin/python'
-        endif
-    endfor
-endfunction
-
 function! mrossinek#functions#ToggleDiagnostics()
     if !exists('b:show_diagnostics') || b:show_diagnostics == v:true
         let b:show_diagnostics = v:false
