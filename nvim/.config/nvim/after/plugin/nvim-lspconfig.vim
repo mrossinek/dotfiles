@@ -82,6 +82,13 @@ lspconfig.pyls.setup{
                 pycodestyle = {
                     enabled = false,
                 },
+                pydocstyle = {
+                    enabled = true,
+                },
+                pyls_mypy = {
+                    enabled = true,
+                    live_mode = false,
+                },
             },
         },
     },
