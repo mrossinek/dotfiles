@@ -32,9 +32,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
 local lsp_status = require('lsp-status')
 lsp_status.config {
-    status_symbol = ' ',
-    indicator_hint = '',
-    indicator_info = '',
+    status_symbol = ' ',
+    indicator_hint = '',
+    indicator_info = '',
 }
 lsp_status.register_progress()
 lsp_status.capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -147,8 +147,8 @@ nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 " lsp-diagnostics
 sign define LspDiagnosticsSignError text=
 sign define LspDiagnosticsSignWarning text=
-sign define LspDiagnosticsSignInformation text=
-sign define LspDiagnosticsSignHint text=
+sign define LspDiagnosticsSignInformation text=
+sign define LspDiagnosticsSignHint text=
 
 " TODO: incorporate b:show_diagnostics
 autocmd CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics()
