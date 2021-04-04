@@ -1,33 +1,35 @@
 lua << EOF
+vim.lsp.diagnostic.settings = {
+    virtual_text = function(bufnr, client_id)
+        settings = {
+            spacing = 2,
+            prefix = "",
+        }
+        local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_diagnostics')
+        if not ok or result then
+            return settings
+        end
+        return false
+    end,
+    signs = function(bufnr, client_id)
+        local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_diagnostics')
+        if not ok then
+            return true
+        end
+        return result
+    end,
+    underline = function(bufnr, client_id)
+        local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_diagnostics')
+        if not ok then
+            return true
+        end
+        return result
+    end,
+    update_in_insert = false,
+}
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = function(bufnr, client_id)
-            settings = {
-                spacing = 2,
-                prefix = "",
-            }
-            local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_diagnostics')
-            if not ok or result then
-                return settings
-            end
-            return false
-        end,
-        signs = function(bufnr, client_id)
-            local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_diagnostics')
-            if not ok then
-                return true
-            end
-            return result
-        end,
-        underline = function(bufnr, client_id)
-            local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_diagnostics')
-            if not ok then
-                return true
-            end
-            return result
-        end,
-        update_in_insert = false,
-    }
+    vim.lsp.diagnostic.on_publish_diagnostics, vim.lsp.diagnostic.settings
 )
 
 local lsp_status = require('lsp-status')
@@ -150,8 +152,12 @@ sign define LspDiagnosticsSignWarning text=
 sign define LspDiagnosticsSignInformation text=
 sign define LspDiagnosticsSignHint text=
 
-" TODO: incorporate b:show_diagnostics
-autocmd CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics()
+autocmd CursorHold <buffer> lua
+            \ local ok, result = pcall(vim.api.nvim_buf_get_var, 0, 'show_diagnostics')
+            \ if not ok or result then
+            \     vim.lsp.diagnostic.show_line_diagnostics()
+            \ end
+
 
 nnoremap <silent> ]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> [d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>

@@ -78,7 +78,7 @@ function! mrossinek#functions#ToggleDiagnostics()
         lua vim.lsp.diagnostic.clear(0)
     else
         let b:show_diagnostics = v:true
-        " TODO: figure out how to trigger re-addition of all diagnostics
+        lua vim.lsp.diagnostic.display(vim.lsp.diagnostic.get(0, 1), 0, 1, vim.lsp.diagnostic.settings)
     endif
 endfunction
 
