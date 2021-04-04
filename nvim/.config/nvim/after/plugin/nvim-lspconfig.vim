@@ -87,6 +87,12 @@ lspconfig.pyls.setup{
                 pydocstyle = {
                     enabled = true,
                 },
+                pyls_black = {
+                    enabled = true,
+                },
+                pyls_isort = {
+                    enabled = true,
+                },
                 pyls_mypy = {
                     enabled = true,
                     live_mode = false,
@@ -145,6 +151,9 @@ nnoremap <silent> gR    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+
+" formatting
+nnoremap <silent> \f <cmd>lua vim.lsp.buf.formatting()<CR>
 
 " lsp-diagnostics
 sign define LspDiagnosticsSignError text=
