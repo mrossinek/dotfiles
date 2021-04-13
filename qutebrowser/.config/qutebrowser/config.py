@@ -26,8 +26,10 @@ c.tabs.width = '15%'
 c.tabs.padding = {'bottom': 0, 'left': 2, 'right': 0, 'top': 0}
 c.tabs.select_on_remove = 'last-used'
 c.tabs.mode_on_change = 'restore'
+c.tabs.title.format_pinned = c.tabs.title.format
 c.colors.tabs.bar.bg = '#303030'
 c.colors.tabs.even.fg = 'black'
+c.colors.tabs.pinned.even.fg = 'black'
 
 # aliases / custom command chains
 c.aliases['close'] = "close ;; set tabs.show always"
