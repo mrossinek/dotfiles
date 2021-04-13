@@ -10,3 +10,5 @@ __pycache__/
 .ipynb_checkpoints/
 # fortran language server config
 .fortls
+# common temporary data
+tmp*
