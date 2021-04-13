@@ -77,7 +77,7 @@ with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'user_agent.t
 
 # patterns
 with config.pattern('*://web.whatsapp.com/') as p:
-    p.content.notifications = True
+    p.content.notifications.enabled = True
 
 with config.pattern('*://github.com/') as p:
     p.content.javascript.can_access_clipboard = True
