@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# This post-checkout hook takes care of deriving a python virtualenv for the new
+# worktree.
+
+PREV_HEAD=$1
+NEXT_HEAD=$2
+BRANCH_CHECKOUT=$3
+
+if [ $PREV_HEAD != '0000000000000000000000000000000000000000' ]; then
+    # This is the case, if we did *not* run worktree add
+    exit
+fi
+
+if [ -z "$VIRTUAL_ENV" ]; then
+    # not in a python virtualenv
+    exit
+fi
+
+matching_worktrees=()
+current_worktree=''
+state=''
+
+# Find the newly added worktree path by determining the newest created directory
+# from the worktree list.
+for word in `git worktree list --porcelain`; do
+    case $state in
+    'HEAD')
+        if [ "$word" = "$NEXT_HEAD" ]; then
+            matching_worktrees=( $matching_worktrees "$current_worktree" )
+        fi
+        state='' ;;
+    'worktree')
+        current_worktree="$word"
+        state='' ;;
+    *)
+        state="$word" ;;
+    esac
+done
+
+latest_worktree=$(ls -d --sort=time --time=birth ${matching_worktrees[@]} | head -1)
+cd $latest_worktree
+
+PYTHON=$(which python)
+PYTHON_BASE_DIR=$(dirname $(dirname $PYTHON))
+PYTHON_VERSION=$(python --version | awk -F"[ .]" '{print "python"$2"."$3}')
+
+BASE_PTH=.direnv/venv/lib/$PYTHON_VERSION/site-packages/base_venv.pth
+
+# Generate a derived virtualenv
+mkdir -p .direnv
+python -m venv .direnv/venv
+find $PYTHON_BASE_DIR/lib/$PYTHON_VERSION/site-packages/ -name '*.egg-link' -exec head -q -n1 {} + > $BASE_PTH
+realpath $PYTHON_BASE_DIR/lib/$PYTHON_VERSION/site-packages/ >> $BASE_PTH
+
+# Configure direnv to include the super-virtualenv's binaries in the PATH and
+# source the new virtualenv.
+echo "export PATH=$PYTHON_BASE_DIR/bin:$PATH" > .envrc
+echo "source .direnv/venv/bin/activate" >> .envrc
+direnv allow
+
+# Overwrite our project installation from the current worktree location.
+pip install -e .

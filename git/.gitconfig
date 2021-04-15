@@ -19,6 +19,9 @@
 [diff]
     tool = nvim -d
 
+[init]
+    templateDir = ~/.config/git/templates
+
 [merge]
     tool = vimdiff
     prompt = false
