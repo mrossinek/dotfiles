@@ -93,10 +93,14 @@ function! mrossinek#statusline#StatuslineGitInfo()
     if !get(g:, 'gitgutter_enabled', 0)
         return ''
     endif
+    let l:branch_symbol = ''
     let l:added_symbol = '+'
     let l:modified_symbol = '~'
     let l:removed_symbol = '-'
     let [l:added, l:modified, l:removed] = GitGutterGetHunkSummary()
-    return printf('[%d%s %d%s %d%s]', l:added, l:added_symbol, l:modified,
+    let l:branch_name = gina#component#repo#branch()
+    return printf('{%s %s} [%d%s %d%s %d%s]',
+                \ l:branch_symbol, l:branch_name,
+                \ l:added, l:added_symbol, l:modified,
                 \ l:modified_symbol, l:removed, l:removed_symbol)
 endfunction
