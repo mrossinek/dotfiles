@@ -90,7 +90,7 @@ endfunction
 
 " GitGutter wrapper
 function! mrossinek#statusline#StatuslineGitInfo()
-    if !get(g:, 'gitgutter_enabled', 0)
+    if gina#component#repo#branch() == ''
         return ''
     endif
     let l:branch_symbol = ''
