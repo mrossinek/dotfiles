@@ -201,6 +201,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
     # custom additions
     {'wmclass': 'matplotlib'},
+    {'wmclass': 'zoom'},
 ],
 **layout_defaults)
 
