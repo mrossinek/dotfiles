@@ -85,9 +85,6 @@
 [submodule "vim-gitgutter"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule "vim-tmux-focus-events"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-focus-events
-	url = https://github.com/tmux-plugins/vim-tmux-focus-events
 [submodule "vim-tmux-navigator"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
