@@ -235,3 +235,6 @@
 [submodule "telescope-fzy-native"]
 	path = nvim/.config/nvim/pack/minpac/start/telescope-fzy-native
 	url = https://github.com/nvim-telescope/telescope-fzy-native.nvim
+[submodule "nvim-dap-python"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-dap-python
+	url = https://github.com/mfussenegger/nvim-dap-python
