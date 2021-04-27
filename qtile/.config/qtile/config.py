@@ -9,6 +9,7 @@ from libqtile.lazy import lazy
 # Variables
 mod = 'mod4'
 terminal = 'kitty'
+browser = 'qutebrowser'
 
 
 # Keys
@@ -113,8 +114,8 @@ keys = [
 
 # Groups
 groups = [
-    Group('1', spawn=terminal + " zsh -ic 'tmux'"),
-    Group('2', spawn="qutebrowser"),
+    Group('1', spawn=terminal),
+    Group('2', spawn=browser),
     Group('3'),
     Group('4'),
     Group('5'),
