@@ -4,8 +4,14 @@ function conky_time(cr)
     cairo_translate(cr, 150, 0)
 
     draw_hexagon(cr, 0, 350, 125, 90, 6, 0.7, 0.7, 0.7, 1)
+    tracking = conky_parse("${exec timew > /dev/null; echo $?}")
+    if tracking == "0" then
+        timew_line = conky_parse("${exec timew | head -1}")
+    else
+        timew_line = "No active tracking"
+    end
     print_text(cr, conky_parse("${time %I:%M}"), "MesloLGS Nerd Font Mono",
-               "bold", 50, "center", 350, 125, 1, 1, 1, 1)
+               "bold", 50, "center", 350, 125, tracking == "0" and 1, tracking ~= "0" and 1, 0, 1)
 
     draw_hexagon(cr, 0, 415, 47, 20, 2, 0.7, 0.7, 0.7, 1)
     bell_state = conky_parse("${exec dunstctl is-paused}")
@@ -16,7 +22,7 @@ function conky_time(cr)
     print_text(cr, conky_parse("${kernel}"), "MesloLGS Nerd Font Mono",
                "normal", 20, "left", 20, 25, 1, 1, 1, 1)
     annotate_hexagon(cr, 2, 350, 125, 90, 4, 15, 0.7, 0.7, 0.7, 1)
-    print_text(cr, conky_parse("${uptime_short}"), "MesloLGS Nerd Font Mono",
+    print_text(cr, timew_line, "MesloLGS Nerd Font Mono",
                "normal", 20, "left", 20, 115, 1, 1, 1, 1)
     annotate_hexagon(cr, 6, 350, 125, 90, 4, 15, 0.7, 0.7, 0.7, 1)
     print_text(cr, conky_parse("${time %a %b %d}"), "MesloLGS Nerd Font Mono",
