@@ -1,9 +1,4 @@
 " window movement
-inoremap <silent> <M-h> <C-\><C-n>:TmuxNavigateLeft<cr>
-inoremap <silent> <M-j> <C-\><C-n>:TmuxNavigateDown<cr>
-inoremap <silent> <M-k> <C-\><C-n>:TmuxNavigateUp<cr>
-inoremap <silent> <M-l> <C-\><C-n>:TmuxNavigateRight<cr>
-inoremap <silent> <M-\> <C-\><C-n>:TmuxNavigatePrevious<cr>
 inoremap <A-H> <C-\><C-n><C-w>H
 inoremap <A-J> <C-\><C-n><C-w>J
 inoremap <A-K> <C-\><C-n><C-w>K
