@@ -7,7 +7,7 @@ require('telescope').load_extension('fzy_native')
 EOF
 
 " File Pickers
-nnoremap <silent> <CR>ff <cmd>lua require'telescope.builtin'.find_files( { find_command = { "rg", "--ignore", "--hidden", "--files", "-g", "!.git" } } )<CR>
+nnoremap <silent> <CR>ff <cmd>lua require'telescope.builtin'.find_files( { find_command = { "rg", "--ignore", "--hidden", "--files", "--no-ignore-vcs", "--glob", "!.git" } } )<CR>
 nnoremap <silent> <CR>gg <cmd>lua require'telescope.builtin'.git_files()<CR>
 nnoremap <silent> <CR>gr <cmd>lua require'telescope.builtin'.live_grep( { shorten_path = true, vimgrep_arguments = { "rg", "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case", "--hidden" } } )<CR>
 
