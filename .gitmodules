@@ -232,3 +232,7 @@
 [submodule "markdown-preview.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim
+[submodule "qmk_firmware"]
+	path = qmk/qmk_firmware
+	url = git@github.com:mrossinek/qmk_firmware.git
+	branch = mrossinek
