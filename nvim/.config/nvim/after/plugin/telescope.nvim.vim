@@ -45,3 +45,6 @@ nnoremap <silent> <CR>dm <cmd>lua require'telescope'.extensions.dap.commands()<C
 nnoremap <silent> <CR>dc <cmd>lua require'telescope'.extensions.dap.configurations()<CR>
 nnoremap <silent> <CR>db <cmd>lua require'telescope'.extensions.dap.list_breakpoints()<CR>
 nnoremap <silent> <CR>dv <cmd>lua require'telescope'.extensions.dap.variables()<CR>
+
+" Custom
+nnoremap <silent> <CR>df <cmd>lua require'telescope.builtin'.find_files( { prompt_title = "~ dotfiles ~", cwd = "~/dotfiles", find_command = { "rg", "--ignore", "--hidden", "--files", "--no-ignore-vcs", "--glob", "!.git" } } )<CR>
