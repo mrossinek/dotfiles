@@ -229,3 +229,6 @@
 [submodule "harpoon"]
 	path = nvim/.config/nvim/pack/minpac/start/harpoon
 	url = https://github.com/ThePrimeagen/harpoon
+[submodule "markdown-preview.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/markdown-preview.nvim
+	url = https://github.com/iamcco/markdown-preview.nvim
