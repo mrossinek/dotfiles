@@ -114,7 +114,7 @@ keys = [
 
 # Groups
 groups = [
-    Group('1', spawn=terminal),
+    Group('1', spawn=terminal + " zsh -ic 'tmux'"),
     Group('2', spawn=browser),
     Group('3'),
     Group('4'),

@@ -236,3 +236,6 @@
 	path = qmk/qmk_firmware
 	url = git@github.com:mrossinek/qmk_firmware.git
 	branch = mrossinek
+[submodule "vim-tmux-navigator"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
