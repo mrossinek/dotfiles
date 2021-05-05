@@ -239,3 +239,6 @@
 [submodule "vim-tmux-navigator"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "vim-bbye"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-bbye
+	url = https://github.com/moll/vim-bbye
