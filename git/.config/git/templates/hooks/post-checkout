@@ -58,6 +58,3 @@ realpath $PYTHON_BASE_DIR/lib/$PYTHON_VERSION/site-packages/ >> $BASE_PTH
 echo "export PATH=$PYTHON_BASE_DIR/bin:\$PATH" > .envrc
 echo "source .direnv/venv/bin/activate" >> .envrc
 direnv allow
-
-# Overwrite our project installation from the current worktree location.
-pip install -e .
