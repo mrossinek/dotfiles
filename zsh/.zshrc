@@ -92,12 +92,6 @@ export BROWSER="xdg-open:qutebrowser"
 # less options
 export LESS="-iFMRX"
 
-# nnn options
-export NNN_OPTS="aerx"
-export NNN_TRASH=1
-export NNN_FIFO="/tmp/nnn.fifo"
-export NNN_PLUG='v:preview-tui'
-
 # ddgr: disable history expansion and set bang alias
 set +H
 alias bang="ddgr --gb --np"
