@@ -145,92 +145,140 @@ function parse_stock(file)
 end
 
 function conky_stocks(cr)
-    cairo_translate(cr, 0, 700)
+    cairo_translate(cr, 0, 600)
     local file = io.open('/home/max/.stocks/prices.txt')
 
-    draw_hexagon(cr, 0, 50, 10, 40, 4, 0.7, 0.7, 0.7, 1)
-    annotate_hexagon(cr, 4, 50, 10, 40, 2, 580, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 0, 200, 10, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 4, 200, 10, 40, 2, 580, 0.7, 0.7, 0.7, 1)
     stock, text = parse_stock(file)
     print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
-               "normal", 20, "center", 50, 10, 1, 1, 1, 1)
+               "normal", 20, "center", 200, 10, 1, 1, 1, 1)
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
                0, 1, 1, 1, 1)
     --
-    draw_hexagon(cr, 0, 1150, 10, 40, 4, 0.7, 0.7, 0.7, 1)
-    annotate_hexagon(cr, 1, 1150, 10, 40, 2, 620, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 0, 1000, 10, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 1, 1000, 10, 40, 2, 620, 0.7, 0.7, 0.7, 1)
     stock, text = parse_stock(file)
     print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
-               "normal", 20, "center", 1150, 10, 1, 1, 1, 1)
+               "normal", 20, "center", 1000, 10, 1, 1, 1, 1)
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
                0, 1, 1, 1, 1)
     --
-    draw_hexagon(cr, 0, 110, 45, 40, 4, 0.7, 0.7, 0.7, 1)
-    annotate_hexagon(cr, 4, 110, 45, 40, 2, 580, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 0, 260, 45, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 4, 260, 45, 40, 2, 580, 0.7, 0.7, 0.7, 1)
     stock, text = parse_stock(file)
     print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
-               "normal", 20, "center", 110, 45, 1, 1, 1, 1)
+               "normal", 20, "center", 260, 45, 1, 1, 1, 1)
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
                35, 1, 1, 1, 1)
     --
-    draw_hexagon(cr, 0, 1090, 45, 40, 4, 0.7, 0.7, 0.7, 1)
-    annotate_hexagon(cr, 1, 1090, 45, 40, 2, 620, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 0, 940, 45, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 1, 940, 45, 40, 2, 620, 0.7, 0.7, 0.7, 1)
     stock, text = parse_stock(file)
     print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
-               "normal", 20, "center", 1090, 45, 1, 1, 1, 1)
+               "normal", 20, "center", 940, 45, 1, 1, 1, 1)
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
                35, 1, 1, 1, 1)
     --
-    draw_hexagon(cr, 0, 170, 80, 40, 4, 0.7, 0.7, 0.7, 1)
-    annotate_hexagon(cr, 4, 170, 80, 40, 2, 580, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 0, 200, 80, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 4, 200, 80, 40, 2, 580, 0.7, 0.7, 0.7, 1)
     stock, text = parse_stock(file)
     print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
-               "normal", 20, "center", 170, 80, 1, 1, 1, 1)
+               "normal", 20, "center", 200, 80, 1, 1, 1, 1)
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
                70, 1, 1, 1, 1)
     --
-    draw_hexagon(cr, 0, 1030, 80, 40, 4, 0.7, 0.7, 0.7, 1)
-    annotate_hexagon(cr, 1, 1030, 80, 40, 2, 620, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 0, 1000, 80, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 1, 1000, 80, 40, 2, 620, 0.7, 0.7, 0.7, 1)
     stock, text = parse_stock(file)
     print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
-               "normal", 20, "center", 1030, 80, 1, 1, 1, 1)
+               "normal", 20, "center", 1000, 80, 1, 1, 1, 1)
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
                70, 1, 1, 1, 1)
     --
-    draw_hexagon(cr, 0, 230, 115, 40, 4, 0.7, 0.7, 0.7, 1)
-    annotate_hexagon(cr, 4, 230, 115, 40, 2, 580, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 0, 260, 115, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 4, 260, 115, 40, 2, 580, 0.7, 0.7, 0.7, 1)
     stock, text = parse_stock(file)
     print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
-               "normal", 20, "center", 230, 115, 1, 1, 1, 1)
+               "normal", 20, "center", 260, 115, 1, 1, 1, 1)
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
                105, 1, 1, 1, 1)
     --
-    draw_hexagon(cr, 0, 970, 115, 40, 4, 0.7, 0.7, 0.7, 1)
-    annotate_hexagon(cr, 1, 970, 115, 40, 2, 620, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 0, 940, 115, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 1, 940, 115, 40, 2, 620, 0.7, 0.7, 0.7, 1)
     stock, text = parse_stock(file)
     print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
-               "normal", 20, "center", 970, 115, 1, 1, 1, 1)
+               "normal", 20, "center", 940, 115, 1, 1, 1, 1)
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
                105, 1, 1, 1, 1)
     --
-    draw_hexagon(cr, 0, 290, 150, 40, 4, 0.7, 0.7, 0.7, 1)
-    annotate_hexagon(cr, 4, 290, 150, 40, 2, 580, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 0, 200, 150, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 4, 200, 150, 40, 2, 580, 0.7, 0.7, 0.7, 1)
     stock, text = parse_stock(file)
     print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
-               "normal", 20, "center", 290, 150, 1, 1, 1, 1)
+               "normal", 20, "center", 200, 150, 1, 1, 1, 1)
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
                140, 1, 1, 1, 1)
     --
-    draw_hexagon(cr, 0, 910, 150, 40, 4, 0.7, 0.7, 0.7, 1)
-    annotate_hexagon(cr, 1, 910, 150, 40, 2, 620, 0.7, 0.7, 0.7, 1)
+    draw_hexagon(cr, 0, 1000, 150, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 1, 1000, 150, 40, 2, 620, 0.7, 0.7, 0.7, 1)
     stock, text = parse_stock(file)
     print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
-               "normal", 20, "center", 910, 150, 1, 1, 1, 1)
+               "normal", 20, "center", 1000, 150, 1, 1, 1, 1)
     print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
                140, 1, 1, 1, 1)
+    --
+    draw_hexagon(cr, 0, 260, 185, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 4, 260, 185, 40, 2, 580, 0.7, 0.7, 0.7, 1)
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+               "normal", 20, "center", 260, 185, 1, 1, 1, 1)
+    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
+               175, 1, 1, 1, 1)
+    --
+    draw_hexagon(cr, 0, 940, 185, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 1, 940, 185, 40, 2, 620, 0.7, 0.7, 0.7, 1)
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+               "normal", 20, "center", 940, 185, 1, 1, 1, 1)
+    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
+               175, 1, 1, 1, 1)
+    --
+    draw_hexagon(cr, 0, 200, 220, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 4, 200, 220, 40, 2, 580, 0.7, 0.7, 0.7, 1)
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+               "normal", 20, "center", 200, 220, 1, 1, 1, 1)
+    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
+               210, 1, 1, 1, 1)
+    --
+    draw_hexagon(cr, 0, 1000, 220, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 1, 1000, 220, 40, 2, 620, 0.7, 0.7, 0.7, 1)
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+               "normal", 20, "center", 1000, 220, 1, 1, 1, 1)
+    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
+               210, 1, 1, 1, 1)
+    --
+    draw_hexagon(cr, 0, 260, 255, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 4, 260, 255, 40, 2, 580, 0.7, 0.7, 0.7, 1)
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+               "normal", 20, "center", 260, 255, 1, 1, 1, 1)
+    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "right", 580,
+               245, 1, 1, 1, 1)
+    --
+    draw_hexagon(cr, 0, 940, 255, 40, 4, 0.7, 0.7, 0.7, 1)
+    annotate_hexagon(cr, 1, 940, 255, 40, 2, 620, 0.7, 0.7, 0.7, 1)
+    stock, text = parse_stock(file)
+    print_text(cr, stock:gsub("[^%w].*", ""), "MesloLGS Nerd Font Mono",
+               "normal", 20, "center", 940, 255, 1, 1, 1, 1)
+    print_text(cr, text, "MesloLGS Nerd Font Mono", "normal", 20, "left", 620,
+               245, 1, 1, 1, 1)
 
     line = file:read("*l")
     print_text(cr, "Update: " .. line, "MesloLGS Nerd Font Mono", "normal", 20,
-               "center", 600, 175, 1, 1, 1, 1)
+               "center", 600, 300, 1, 1, 1, 1)
 
     file:close()
 end
