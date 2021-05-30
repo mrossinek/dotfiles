@@ -5,3 +5,5 @@ add_extra_vimrc() {
     path_add EXTRA_VIM $extravim
   fi
 }
+
+# vim: ft=sh
