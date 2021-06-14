@@ -234,7 +234,7 @@
 	url = https://github.com/iamcco/markdown-preview.nvim
 [submodule "qmk_firmware"]
 	path = qmk/qmk_firmware
-	url = git@github.com:mrossinek/qmk_firmware.git
+	url = https://github.com/mrossinek/qmk_firmware
 	branch = mrossinek
 [submodule "vim-tmux-navigator"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-navigator
