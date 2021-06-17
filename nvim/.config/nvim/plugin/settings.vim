@@ -8,7 +8,6 @@ set cursorline
 set expandtab
 set foldcolumn=1
 set foldlevel=99
-set foldlevelstart=1
 set foldmethod=indent
 set formatoptions+=2,n
 set hidden
@@ -24,7 +23,6 @@ set mouse=a
 set number
 set path+=**                           " fuzzy finding
 set pumblend=10
-hi PMenuSel blend=0
 set relativenumber
 set scrolloff=2
 set shiftwidth=4

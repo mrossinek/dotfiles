@@ -162,6 +162,7 @@ call <sid>hi("CursorLineNr",  s:gui0A, s:gui01, s:cterm0A, s:cterm01, "", "")
 call <sid>hi("QuickFixLine",  "", s:gui01, "", s:cterm01, "none", "")
 call <sid>hi("PMenu",         s:gui05, s:gui01, s:cterm05, s:cterm01, "none", "")
 call <sid>hi("PMenuSel",      s:gui01, s:gui05, s:cterm01, s:cterm05, "", "")
+hi PMenuSel blend=0
 call <sid>hi("NormalFloat",   s:gui05, s:gui02, s:cterm05, s:cterm02, "none", "")
 call <sid>hi("TabLine",       s:gui03, "", s:cterm03, "", "none", "")
 call <sid>hi("TabLineFill",   s:gui03, "", s:cterm03, "", "none", "")
