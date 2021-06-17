@@ -161,7 +161,7 @@ sign define LspDiagnosticsSignWarning text=
 sign define LspDiagnosticsSignInformation text=
 sign define LspDiagnosticsSignHint text=
 
-autocmd CursorHold <buffer> lua
+autocmd CursorHold * lua
             \ local ok, result = pcall(vim.api.nvim_buf_get_var, 0, 'show_diagnostics')
             \ if not ok or result then
             \     vim.lsp.diagnostic.show_line_diagnostics()
