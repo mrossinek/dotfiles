@@ -37,6 +37,7 @@ set termguicolors
 set textwidth=80
 set undofile
 set updatetime=100
+set viewoptions-=curdir
 set viewoptions-=options
 set virtualedit=block
 set wildmenu                           " fuzzy finding
