@@ -1,36 +1,13 @@
 lua << EOF
-vim.lsp.diagnostic.settings = {
-    virtual_text = function(bufnr, client_id)
-        settings = {
-            spacing = 2,
-            prefix = "",
-        }
-        local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_diagnostics')
-        if not ok or result then
-            return settings
-        end
-        return false
-    end,
-    signs = function(bufnr, client_id)
-        local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_diagnostics')
-        if not ok then
-            return true
-        end
-        return result
-    end,
-    underline = function(bufnr, client_id)
-        local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_diagnostics')
-        if not ok then
-            return true
-        end
-        return result
-    end,
-    update_in_insert = false,
+local saga = require 'lspsaga'
+saga.init_lsp_saga {
+    error_sign = '',
+    warn_sign = '',
+    hint_sign = '',
+    infor_sign = '',
+    dianostic_header_icon = '   ',
 }
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, vim.lsp.diagnostic.settings
-)
 
 local lsp_status = require('lsp-status')
 lsp_status.config {
@@ -142,32 +119,32 @@ lspconfig.vimls.setup{
 }
 EOF
 
-nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <c-l> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gR    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
-
-" formatting
-nnoremap <silent> \f <cmd>lua vim.lsp.buf.formatting()<CR>
-
 " lsp-diagnostics
 sign define LspDiagnosticsSignError text=
 sign define LspDiagnosticsSignWarning text=
 sign define LspDiagnosticsSignInformation text=
 sign define LspDiagnosticsSignHint text=
 
+nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gd    <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+nnoremap <silent> K     <cmd>lua require'lspsaga.hover'.render_hover_doc()<CR>
+nnoremap <silent> <c-l> <cmd>lua require'lspsaga.signaturehelp'.signature_help()<CR>
+nnoremap <silent> gh    <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+nnoremap <silent> gr    <cmd>lua require'lspsaga.rename'.rename()<CR>
+
+nnoremap <silent><leader>ca <cmd>lua require'lspsaga.codeaction'.code_action()<CR>
+vnoremap <silent><leader>ca :<C-U>lua require'lspsaga.codeaction'.range_code_action()<CR>
+
+" formatting
+nnoremap <silent> <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
+
+" LSP Saga
 autocmd CursorHold * lua
             \ local ok, result = pcall(vim.api.nvim_buf_get_var, 0, 'show_diagnostics')
             \ if not ok or result then
-            \     vim.lsp.diagnostic.show_line_diagnostics({focusable=false})
+            \     require("lspsaga.diagnostic").show_line_diagnostics()
             \ end
 
-
-nnoremap <silent> ]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <silent> [d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> \dd <cmd>call mrossinek#functions#ToggleDiagnostics()<CR>
+nnoremap <silent> ]d <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
+nnoremap <silent> [d <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
+nnoremap <silent> <leader>dd <cmd>call mrossinek#functions#ToggleDiagnostics()<CR>

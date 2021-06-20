@@ -202,9 +202,6 @@
 [submodule "telescope-symbols"]
 	path = nvim/.config/nvim/pack/minpac/start/telescope-symbols
 	url = https://github.com/nvim-telescope/telescope-symbols.nvim
-[submodule "nvim-lightbulb"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-lightbulb
-	url = https://github.com/kosayoda/nvim-lightbulb
 [submodule "coveragepy.vim"]
 	path = nvim/.config/nvim/pack/minpac/opt/coveragepy.vim
 	url = https://github.com/alfredodeza/coveragepy.vim
@@ -242,3 +239,6 @@
 [submodule "vim-bbye"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-bbye
 	url = https://github.com/moll/vim-bbye
+[submodule "lspsaga.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/lspsaga.nvim
+	url = https://github.com/glepnir/lspsaga.nvim
