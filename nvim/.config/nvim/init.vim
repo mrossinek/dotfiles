@@ -1,5 +1,8 @@
 colorscheme mrossinek
 
+nnoremap <space> <Nop>
+let mapleader=" "
+
 " filetype autocommands
 augroup filetype_ledger
     autocmd!

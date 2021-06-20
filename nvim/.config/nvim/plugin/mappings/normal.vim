@@ -25,7 +25,7 @@ nnoremap <C-E> 2<C-E>
 nnoremap <C-Y> 2<C-Y>
 
 " folding
-nnoremap <space> za
+nnoremap \ za
 
 " sourcing
 nnoremap <leader>so :source %<cr>
