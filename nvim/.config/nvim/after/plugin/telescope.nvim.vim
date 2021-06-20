@@ -1,5 +1,18 @@
 lua << EOF
-require('telescope').setup()
+require('telescope').setup {
+    defaults = {
+        vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--hidden'
+        },
+    },
+}
 
 require('telescope').load_extension('bibtex')
 require('telescope').load_extension('dap')
@@ -7,9 +20,10 @@ require('telescope').load_extension('fzy_native')
 EOF
 
 " File Pickers
-nnoremap <silent> <CR>ff <cmd>lua require'telescope.builtin'.find_files( { find_command = { "rg", "--ignore", "--hidden", "--files", "--no-ignore-vcs", "--glob", "!.git" } } )<CR>
-nnoremap <silent> <CR>gg <cmd>lua require'telescope.builtin'.git_files()<CR>
-nnoremap <silent> <CR>gr <cmd>lua require'telescope.builtin'.live_grep( { shorten_path = true, vimgrep_arguments = { "rg", "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case", "--hidden" } } )<CR>
+nnoremap <silent> <CR>ff <cmd>lua require'telescope.builtin'.find_files(require'telescope.themes'.get_dropdown( { previewer = false, find_command = { "rg", "--ignore", "--hidden", "--files", "--no-ignore-vcs", "--glob", "!.git" } } ) )<CR>
+nnoremap <silent> <CR>gg <cmd>lua require'telescope.builtin'.git_files(require'telescope.themes'.get_dropdown( { previewer = false } ) )<CR>
+nnoremap <silent> <CR>gl <cmd>lua require'telescope.builtin'.live_grep( { shorten_path = true } )<CR>
+nnoremap <silent> <CR>gr <cmd>lua require'telescope.builtin'.grep_string( { shorten_path = true } )<CR>
 
 " Vim Pickers
 nnoremap <silent> <CR>cc <cmd>lua require'telescope.builtin'.command_history()<CR>
@@ -47,4 +61,4 @@ nnoremap <silent> <CR>db <cmd>lua require'telescope'.extensions.dap.list_breakpo
 nnoremap <silent> <CR>dv <cmd>lua require'telescope'.extensions.dap.variables()<CR>
 
 " Custom
-nnoremap <silent> <CR>df <cmd>lua require'telescope.builtin'.find_files( { prompt_title = "~ dotfiles ~", cwd = "~/dotfiles", find_command = { "rg", "--ignore", "--hidden", "--files", "--no-ignore-vcs", "--glob", "!.git" } } )<CR>
+nnoremap <silent> <CR>df <cmd>lua require'telescope.builtin'.find_files(require'telescope.themes'.get_dropdown( { previewer = false, prompt_title = "~ dotfiles ~", cwd = "~/dotfiles", find_command = { "rg", "--ignore", "--hidden", "--files", "--no-ignore-vcs", "--glob", "!.git" } } ) )<CR>
