@@ -11,7 +11,7 @@ saga.init_lsp_saga {
 
 local lsp_status = require('lsp-status')
 lsp_status.config {
-    status_symbol = ' ',
+    status_symbol = '  ',
     indicator_hint = '',
     indicator_info = '',
 }
@@ -50,9 +50,9 @@ lspconfig.fortls.setup{
 }
 
 -- overwrite the pylint executable to ensure it is run from the virtualenv
-lspconfig.pyls.setup{
+lspconfig.pylsp.setup{
     settings = {
-        pyls = {
+        pylsp = {
             plugins = {
                 pylint = {
                     enabled = true,
