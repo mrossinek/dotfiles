@@ -42,3 +42,11 @@ set viewoptions-=options
 set virtualedit=block
 set wildmenu                           " fuzzy finding
 set nowrap
+
+" don't make backups before writing
+set nobackup
+" don't keep backups after writing
+set nowritebackup
+" But in case backups ever get turned on...
+set backupdir=~/.config/nvim/backup//
+set backupdir+=.
