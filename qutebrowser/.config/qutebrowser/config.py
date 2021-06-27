@@ -11,7 +11,7 @@ config.load_autoconfig()
 c.zoom.default = '125%'
 c.completion.height = '30%'
 c.downloads.position = 'bottom'
-c.url.start_pages = ['https://github.com/', 'https://gitlab.com/', 'https://start.duckduckgo.com']
+c.url.start_pages = ['https://github.com/', 'https://gitlab.com/']
 
 # languages
 c.spellcheck.languages = ['en-US', 'de-DE']
@@ -59,7 +59,7 @@ config.bind('<Tab>', 'nop')
 
 # search engines
 c.url.searchengines = {
-        'DEFAULT': 'https://duckduckgo.com/?q={}',
+        'DEFAULT': 'https://search.brave.com/search?q={}',
         'ap': 'https://www.archlinux.org/packages/?q={}',
         'aur': 'https://aur.archlinux.org/packages/?K={}',
         'aw': 'https://wiki.archlinux.org/?search={}',
