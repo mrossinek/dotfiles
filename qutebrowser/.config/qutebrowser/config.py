@@ -12,6 +12,7 @@ c.zoom.default = '125%'
 c.completion.height = '30%'
 c.downloads.position = 'bottom'
 c.url.start_pages = ['https://github.com/', 'https://gitlab.com/']
+c.url.default_page = 'https://search.brave.com'
 
 # languages
 c.spellcheck.languages = ['en-US', 'de-DE']
