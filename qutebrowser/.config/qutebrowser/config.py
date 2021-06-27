@@ -67,6 +67,7 @@ c.url.searchengines = {
         'd': 'https://www.dict.cc/?s={}',
         'g': 'https://www.github.com/search?&q={}',
         'h': 'https://hoogle.haskell.org/?hoogle={}',
+        'man': 'https://man.archlinux.org/search?q={}&go=Go',
         'p': 'https://docs.python.org/3/search.html?q={}',
         'w': 'https://en.wikipedia.org/w/index.php?search={}&title=Special:Search',
         'x': 'https://xkcd.com/{}/',
