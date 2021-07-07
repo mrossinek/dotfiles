@@ -24,6 +24,7 @@ eval "$(gh completion -s zsh)"
 
 # key bindings
 setopt vi
+bindkey '^x^x' edit-command-line
 export KEYTIMEOUT=1
 
 # history search
@@ -109,6 +110,7 @@ alias icat='kitty +kitten icat'
 if [[ "$(uname)" == 'Linux' ]]; then
     alias open=xdg-open
 fi
+alias wttr='curl wttr.in'
 
 # Make CTRL-Z background things and unbackground them.
 function fg-bg() {
