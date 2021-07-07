@@ -62,7 +62,7 @@ keys = [
     # Spawn commands
     Key([mod, "shift"], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "semicolon", lazy.group["scratchpad"].dropdown_toggle("term")),
-    Key([mod], "q", lazy.group["scratchpad"].dropdown_toggle("qshell")),
+    Key([mod], "q", lazy.group["scratchpad"].dropdown_toggle("qtile shell")),
     Key([mod], "p", lazy.spawn("rofi -show combi"), desc="Spawn a command using a prompt widget"),
 
     # custom user keys
@@ -124,9 +124,9 @@ groups = [
     Group('8'),
     Group('9'),
     ScratchPad("scratchpad", [
-            DropDown("term", terminal),
-            DropDown("qshell", terminal + " qshell"),
-        ],
+        DropDown("term", terminal),
+        DropDown("qshell", terminal + " qshell"),
+    ],
     ),
 ]
 
@@ -160,8 +160,34 @@ screens = [
                 widget.CurrentLayoutIcon(scale=0.75),
                 widget.WindowName(),
                 widget.Spacer(),
+                widget.WidgetBox(
+                    close_button_location="right",
+                    text_open="",
+                    text_closed="",
+                    widgets=[
+                        widget.Wlan(interface="wlp3s0", format="📶 {percent:2.0%}"),
+                        widget.Net(),
+                        widget.NetGraph(samples=30, type="line",
+                                        border_color="303030", graph_color="F8C82A"),
+                        widget.CPU(format="💻 {load_percent}%"),
+                        widget.ThermalSensor(tag_sensor="Package id 0"),
+                        widget.CPUGraph(samples=30, type="line",
+                                        border_color="303030", graph_color="18BAEB"),
+                        widget.Memory(measure_mem="G", measure_swap="G"),
+                        widget.MemoryGraph(samples=30, type="line",
+                                           border_color="303030", graph_color="F14831"),
+                    ]),
+                widget.BatteryIcon(battery=0),
+                widget.Battery(battery=0, format="{percent:2.0%}", notify_below=0.1),
+                widget.BatteryIcon(battery=1),
+                widget.Battery(battery=1, format="{percent:2.0%}", notify_below=0.1),
+                widget.Volume(emoji=True),
+                widget.Volume(emoji=False),
+                widget.Clock(format="🕘 %a %d %b %H:%M"),
                 widget.Systray(icon_size=24),
-                widget.Clock(format=" %a %d %b %H:%M")
+                # widgets becoming available with 0.18.0
+                # widget.Bluetooth(),
+                # widget.Wttr(),
             ],
             size=30,
             background='#303030',
@@ -204,7 +230,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'matplotlib'},
     {'wmclass': 'zoom'},
 ],
-**layout_defaults)
+    **layout_defaults)
 
 dgroups_app_rules = []  # type: List
 
