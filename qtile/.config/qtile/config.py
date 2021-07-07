@@ -203,7 +203,7 @@ layout_defaults = dict(
 )
 
 layouts = [
-    layout.MonadTall(single_border_width=0, margin=2, **layout_defaults),
+    layout.MonadTall(single_border_width=0, **layout_defaults),
     layout.Columns(num_columns=3, **layout_defaults),
     layout.Max(),
 ]
