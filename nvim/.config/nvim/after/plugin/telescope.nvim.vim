@@ -26,6 +26,7 @@ nnoremap <silent> <CR>gl <cmd>lua require'telescope.builtin'.live_grep( { shorte
 nnoremap <silent> <CR>gr <cmd>lua require'telescope.builtin'.grep_string( { shorten_path = true } )<CR>
 
 " Vim Pickers
+nnoremap <silent> <CR>bb <cmd>lua require'telescope.builtin'.buffers()<CR>
 nnoremap <silent> <CR>cc <cmd>lua require'telescope.builtin'.command_history()<CR>
 nnoremap <silent> <CR>hl <cmd>lua require'telescope.builtin'.help_tags()<CR>
 nnoremap <silent> <CR>mn <cmd>lua require'telescope.builtin'.man_pages()<CR>

@@ -161,12 +161,18 @@ call <sid>hi("CursorLine",    "", s:gui00, "", s:cterm00, "none", "")
 call <sid>hi("CursorLineNr",  s:gui0A, s:gui01, s:cterm0A, s:cterm01, "", "")
 call <sid>hi("QuickFixLine",  "", s:gui01, "", s:cterm01, "none", "")
 call <sid>hi("PMenu",         s:gui05, s:gui01, s:cterm05, s:cterm01, "none", "")
-call <sid>hi("PMenuSel",      s:gui01, s:gui05, s:cterm01, s:cterm05, "", "")
+call <sid>hi("PMenuSel",      s:gui0C, s:gui05, s:cterm0C, s:cterm05, "bold", "")
 hi PMenuSel blend=0
 call <sid>hi("NormalFloat",   s:gui05, s:gui02, s:cterm05, s:cterm02, "none", "")
-call <sid>hi("TabLine",       s:gui03, "", s:cterm03, "", "none", "")
-call <sid>hi("TabLineFill",   s:gui03, "", s:cterm03, "", "none", "")
-call <sid>hi("TabLineSel",    s:gui0B, "", s:cterm0B, "", "none", "")
+
+" TabLine
+" We must clear first to get rid of some conflicting defaults...
+hi clear TabLine
+hi clear TabLineFill
+hi clear TabLineSel
+call <sid>hi("TabLine",       s:gui04, "", s:cterm04, "", "none", "")
+call <sid>hi("TabLineFill",   s:gui01, "", s:cterm01, "", "none", "")
+call <sid>hi("TabLineSel",    s:gui0C, "", s:cterm0C, "", "bold", "")
 
 " Standard syntax highlighting
 call <sid>hi("Boolean",      s:gui09, "", s:cterm09, "", "", "")
@@ -341,22 +347,6 @@ call <sid>hi("LspDiagnosticsSignError", s:gui08, s:gui01, s:cterm08, s:cterm01, 
 call <sid>hi("LspDiagnosticsSignWarning", s:gui0A, s:gui01, s:cterm0A, s:cterm01, "", "")
 call <sid>hi("LspDiagnosticsSignInformation", s:gui0C, s:gui01, s:cterm0C, s:cterm01, "", "")
 call <sid>hi("LspDiagnosticsSignHint", s:gui06, s:gui01, s:cterm06, s:cterm01, "", "")
-
-" barbar.nvim highlighting
-call <sid>hi("BufferCurrent",        s:gui07, "", s:cterm07, "", "", "")
-call <sid>hi("BufferCurrentMod",     s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("BufferCurrentSign",    s:gui0C, "", s:cterm0C, "", "", "")
-call <sid>hi("BufferCurrentTarget",  s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("BufferVisible",        s:gui03, "", s:cterm03, "", "", "")
-call <sid>hi("BufferVisibleMod",     s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("BufferVisibleSign",    s:gui03, "", s:cterm03, "", "", "")
-call <sid>hi("BufferVisibleTarget",  s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("BufferInactive",       s:gui02, "", s:cterm02, "", "", "")
-call <sid>hi("BufferInactiveMod",    s:gui09, "", s:cterm09, "", "", "")
-call <sid>hi("BufferInactiveSign",   s:gui02, "", s:cterm02, "", "", "")
-call <sid>hi("BufferInactiveTarget", s:gui09, "", s:cterm09, "", "", "")
-call <sid>hi("BufferTabpages",       s:gui0C, "", s:cterm0C, "", "", "")
-call <sid>hi("BufferTabpageFill",    s:gui03, "", s:cterm03, "", "", "")
 
 " coveragepy.vim
 call <sid>hi("NoCoverage", s:gui08, s:gui01, s:cterm08, s:cterm01, "bold", "")

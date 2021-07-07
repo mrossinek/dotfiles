@@ -48,6 +48,8 @@ nnoremap <C-K> :cprevious<CR>
 
 " buffer navigation
 nnoremap <C-S> :e #<CR>
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprevious<CR>
 
 " web search
 nnoremap <silent> gs :set opfunc=mrossinek#functions#WebSearch<CR>g@
