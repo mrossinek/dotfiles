@@ -17,12 +17,11 @@ large () {
 
 massive () {
     # syncs a mounted backup driver to another massive one
-    rsync --log-file=/home/${USER}/.log_massive_backup.txt --progress -av /mnt/backup/ /mnt/massive
+    rsync --log-file=/home/${USER}/.log_massive_backup.txt --exclude="lost+found" --progress -av /mnt/backup/ /mnt/massive
     notify-send -i media-flash -u low 'Backup' 'Please make a choice...'
     read -p "Perform deletion step? (y/n)" choice
     case "$choice" in
-        y|Y ) echo "Starting..."; rsync
-            --log-file=/home/${USER}/.log_del_massive_backup.txt --progress -av --existing --ignore-existing --delete /mnt/backup/ /mnt/massive;;
+        y|Y ) echo "Starting..."; rsync --log-file=/home/${USER}/.log_del_massive_backup.txt --exclude="lost+found" --progress -av --existing --ignore-existing --delete /mnt/backup/ /mnt/massive;;
         n|N ) echo "Skipping deletion step!"; echo "Done.";;
     esac
 }
