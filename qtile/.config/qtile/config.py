@@ -165,6 +165,7 @@ screens = [
                     text_open="",
                     text_closed="",
                     widgets=[
+                        widget.Wttr(location={'': ''}, json=False),
                         widget.Wlan(interface="wlp3s0", format="📶 {percent:2.0%}"),
                         widget.Net(),
                         widget.NetGraph(samples=30, type="line",
@@ -183,11 +184,9 @@ screens = [
                 widget.Battery(battery=1, format="{percent:2.0%}", notify_below=0.1),
                 widget.Volume(emoji=True),
                 widget.Volume(emoji=False),
+                # widget.Bluetooth(hci=""),
                 widget.Clock(format="🕘 %a %d %b %H:%M"),
                 widget.Systray(icon_size=24),
-                # widgets becoming available with 0.18.0
-                # widget.Bluetooth(),
-                # widget.Wttr(),
             ],
             size=30,
             background='#303030',
