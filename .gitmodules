@@ -219,7 +219,7 @@
 	url = https://github.com/knubie/vim-kitty-navigator
 [submodule "git-worktree.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/git-worktree.nvim
-	url = https://github.com/ThePrimeagen/git-worktree.nvim
+	url = https://github.com/mrossinek/git-worktree.nvim
 [submodule "harpoon"]
 	path = nvim/.config/nvim/pack/minpac/start/harpoon
 	url = https://github.com/ThePrimeagen/harpoon
