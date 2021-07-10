@@ -206,7 +206,7 @@ screens = [
                 widget.Systray(icon_size=24),
             ],
             size=30,
-            background='#303030',
+            background='#303030F8',
         )
     )
 ]
