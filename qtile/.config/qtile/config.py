@@ -79,6 +79,9 @@ keys = [
         desc="clipboard picker"),
     Key([mod], "s", lazy.spawn("rofi-pass"), desc="password picker"),
     Key([mod], "backslash", lazy.spawn("rofimoji"), desc="emoji picker"),
+    Key([mod], "y", lazy.spawn(
+        'bash -c "feh --bg-fill --randomize ' + expanduser('~/Pictures/Wallpapers/*') + '"'
+    ), desc="background"),
 
     # advanced actions
     Key([], "Print", lazy.spawn('bash -c "maim -uks ' +
