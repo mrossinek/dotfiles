@@ -1,10 +1,8 @@
 import subprocess
-from datetime import datetime
 from os.path import expanduser
 from libqtile import bar, hook, layout, widget
 from libqtile.config import DropDown, Group, Key, ScratchPad, Screen
 from libqtile.lazy import lazy
-
 
 # Variables
 mod = 'mod4'
@@ -152,6 +150,24 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+
+def my_bluetooth():
+    return subprocess.run("""
+if bluetoothctl info; then
+    echo "<span foreground='#005aaf'></span>";
+else
+    if bluetoothctl list | grep default; then
+        echo "<span foreground='#ffffff'></span>";
+    else
+        echo "<span foreground='#505050'></span>";
+    fi;
+fi | tail -1
+        """,
+        shell=True,
+        capture_output=True,
+    ).stdout.decode().strip()
+
+
 screens = [
     Screen(
         top=bar.Bar(
@@ -164,6 +180,7 @@ screens = [
                     close_button_location="right",
                     text_open="",
                     text_closed="",
+                    fontsize=20,
                     widgets=[
                         widget.Wttr(location={'': ''}, json=False),
                         widget.Wlan(interface="wlp3s0", format="📶 {percent:2.0%}"),
@@ -178,13 +195,13 @@ screens = [
                         widget.MemoryGraph(samples=30, type="line",
                                            border_color="303030", graph_color="F14831"),
                     ]),
+                widget.GenPollText(func=my_bluetooth, fontsize=28, update_interval=15),
                 widget.BatteryIcon(battery=0),
                 widget.Battery(battery=0, format="{percent:2.0%}", notify_below=0.1),
                 widget.BatteryIcon(battery=1),
                 widget.Battery(battery=1, format="{percent:2.0%}", notify_below=0.1),
                 widget.Volume(emoji=True),
                 widget.Volume(emoji=False),
-                # widget.Bluetooth(hci=""),
                 widget.Clock(format="🕘 %a %d %b %H:%M"),
                 widget.Systray(icon_size=24),
             ],
