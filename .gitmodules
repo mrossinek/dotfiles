@@ -239,3 +239,6 @@
 [submodule "lspsaga.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/lspsaga.nvim
 	url = https://github.com/glepnir/lspsaga.nvim
+[submodule "neorg"]
+	path = nvim/.config/nvim/pack/minpac/start/neorg
+	url = https://github.com/vhyrro/neorg

@@ -120,6 +120,17 @@ fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
   call g:Base16hi(a:group, a:guifg, a:guibg, a:ctermfg, a:ctermbg, a:attr, a:guisp)
 endfun
 
+" Color names
+call <sid>hi("Grey",   s:gui04, "", s:cterm04, "", "", "")
+call <sid>hi("Red",    s:gui08, "", s:cterm08, "", "", "")
+call <sid>hi("Orange", s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("Yellow", s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("Green",  s:gui0B, "", s:cterm0B, "", "", "")
+call <sid>hi("Aqua",   s:gui0C, "", s:cterm0C, "", "", "")
+call <sid>hi("Blue",   s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("Purple", s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("Brown",  s:gui0F, "", s:cterm0F, "", "", "")
+
 " Vim editor colors
 call <sid>hi("Normal",        s:gui06, "", s:cterm05, "", "", "")  " removed background colors for transparency
 call <sid>hi("Bold",          "", "", "", "", "bold", "")

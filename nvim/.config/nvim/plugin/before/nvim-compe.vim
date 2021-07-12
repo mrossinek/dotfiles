@@ -19,6 +19,7 @@ let g:compe.source.vsnip = v:true
 let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
 let g:compe.source.nvim_treesitter = v:false
+let g:compe.source.neorg = v:true
 
 inoremap <silent><expr> <Tab> compe#complete()
 inoremap <silent><expr> <CR>  compe#confirm('<CR>')
