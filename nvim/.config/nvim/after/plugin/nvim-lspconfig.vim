@@ -142,7 +142,7 @@ nnoremap <silent> <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
 autocmd CursorHold * lua
             \ local ok, result = pcall(vim.api.nvim_buf_get_var, 0, 'show_diagnostics')
             \ if not ok or result then
-            \     require("lspsaga.diagnostic").show_line_diagnostics()
+            \     require("lspsaga.diagnostic").show_line_diagnostics({focusable = false})
             \ end
 
 nnoremap <silent> ]d <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
