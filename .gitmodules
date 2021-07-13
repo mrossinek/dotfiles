@@ -58,9 +58,6 @@
 [submodule "undotree"]
 	path = nvim/.config/nvim/pack/minpac/start/undotree
 	url = https://github.com/mbbill/undotree
-[submodule "goyo.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/goyo.vim
-	url = https://github.com/junegunn/goyo.vim
 [submodule "NrrwRgn"]
 	path = nvim/.config/nvim/pack/minpac/start/NrrwRgn
 	url = https://github.com/chrisbra/NrrwRgn
@@ -242,3 +239,9 @@
 [submodule "neorg"]
 	path = nvim/.config/nvim/pack/minpac/start/neorg
 	url = https://github.com/vhyrro/neorg
+[submodule "zen-mode.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/zen-mode.nvim
+	url = https://github.com/folke/zen-mode.nvim
+[submodule "twilight.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/twilight.nvim
+	url = https://github.com/folke/twilight.nvim
