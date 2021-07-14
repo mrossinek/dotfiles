@@ -274,12 +274,10 @@ wmname = "LG3D"
 # Hooks
 @hook.subscribe.startup_once
 def autostart():
-    subprocess.call([expanduser('~/.config/qtile/autostart.sh')])
+    subprocess.run('~/.config/qtile/autostart.sh', shell=True)
 
 
 @hook.subscribe.startup_complete
-def startup_complete():
-    # ensures the conky widgets realign and the Xmodmap is propagated to an external keyboard after
-    # a restart due to a monitor switch (e.g.)
-    subprocess.call(['killall', '-SIGUSR1', 'conky'])
-    subprocess.call(['xmodmap', expanduser('~/.Xmodmap')])
+def after_restart():
+    subprocess.run('xmodmap ~/.Xmodmap', shell=True)
+    subprocess.run('feh --bg-fill --randomize ~/Pictures/Wallpapers/*', shell=True)
