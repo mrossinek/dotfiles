@@ -10,7 +10,7 @@ local tabIcon = function(bufnr)
     elseif buftype == 'terminal' then
         dev, _ = require'nvim-web-devicons'.get_icon('zsh')
     else
-        dev, _ = require'nvim-web-devicons'.get_icon(file, vim.fn.getbufvar(bufnr, '&filetype'))
+        dev, _ = require'nvim-web-devicons'.get_icon(vim.fn.fnamemodify(file, ":e"))
     end
     if dev then
         return dev .. " "
