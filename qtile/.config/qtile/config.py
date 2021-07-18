@@ -38,6 +38,7 @@ keys = [
     Key([mod], "m", lazy.window.toggle_minimize()),
     Key([mod], "f", lazy.window.toggle_maximize()),
     Key([mod, "shift"], "c", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "u", lazy.spawn("picom-trans -s 100"), desc="Make window opaque"),
 
     # Switch window focus to other pane(s) of stack
     Key([mod], "Tab", lazy.layout.next(), desc="Switch window focus to other pane(s) of stack"),
