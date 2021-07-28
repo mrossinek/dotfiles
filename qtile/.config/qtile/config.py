@@ -186,7 +186,7 @@ screens = [
                     text_closed="",
                     fontsize=20,
                     widgets=[
-                        widget.Wttr(location={'': ''}, json=False),
+                        widget.Wttr(location={'': ''}),
                         widget.Wlan(interface="wlp3s0", format="📶 {percent:2.0%}"),
                         widget.Net(),
                         widget.NetGraph(samples=30, type="line",
