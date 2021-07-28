@@ -239,6 +239,7 @@
 [submodule "neorg"]
 	path = nvim/.config/nvim/pack/minpac/start/neorg
 	url = https://github.com/vhyrro/neorg
+	branch = unstable
 [submodule "zen-mode.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/zen-mode.nvim
 	url = https://github.com/folke/zen-mode.nvim
