@@ -28,6 +28,7 @@ require'nvim-treesitter.configs'.setup {
         "java",
         "json",
         "lua",
+        "norg",
         "python",
         "yaml",
     },
