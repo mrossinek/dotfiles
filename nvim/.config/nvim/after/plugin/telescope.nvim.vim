@@ -22,8 +22,8 @@ EOF
 " File Pickers
 nnoremap <silent> <CR>ff <cmd>lua require'telescope.builtin'.find_files(require'telescope.themes'.get_dropdown( { previewer = false, find_command = { "rg", "--ignore", "--hidden", "--files", "--no-ignore-vcs", "--glob", "!.git" } } ) )<CR>
 nnoremap <silent> <CR>gg <cmd>lua require'telescope.builtin'.git_files(require'telescope.themes'.get_dropdown( { previewer = false } ) )<CR>
-nnoremap <silent> <CR>gl <cmd>lua require'telescope.builtin'.live_grep( { shorten_path = true } )<CR>
-nnoremap <silent> <CR>gr <cmd>lua require'telescope.builtin'.grep_string( { shorten_path = true } )<CR>
+nnoremap <silent> <CR>gl <cmd>lua require'telescope.builtin'.live_grep( { path_display = { "shorten" } } )<CR>
+nnoremap <silent> <CR>gr <cmd>lua require'telescope.builtin'.grep_string( { path_display = { "shorten" } } )<CR>
 
 " Vim Pickers
 nnoremap <silent> <CR>bb <cmd>lua require'telescope.builtin'.buffers()<CR>
