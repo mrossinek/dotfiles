@@ -13,6 +13,10 @@ tnoremap <C-S> <C-\><C-n>:e #<CR>
 tnoremap <C-N> <C-\><C-n>:bnext<CR>
 tnoremap <C-P> <C-\><C-n>:bprevious<CR>
 
+" output naviation as done in tmux
+tnoremap <C-K> <C-\><C-n>?% <CR>
+tnoremap <C-J> <C-\><C-n>/% <CR>
+
 " pasting
 tnoremap <expr> <A-r> '<C-\><C-n>"'.nr2char(getchar()).'pi'
 tnoremap <A-R> <C-\><C-n>0pi
