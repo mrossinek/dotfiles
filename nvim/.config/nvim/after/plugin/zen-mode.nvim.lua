@@ -1,4 +1,3 @@
-lua << EOF
 require("zen-mode").setup {
     window = {
         options = {
@@ -15,4 +14,3 @@ require("zen-mode").setup {
         },
     },
 }
-EOF

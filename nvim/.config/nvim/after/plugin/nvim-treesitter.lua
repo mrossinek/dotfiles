@@ -1,4 +1,3 @@
-lua <<EOF
 local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
 
 parser_configs.fortran = {
@@ -20,7 +19,7 @@ require'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "bash",
         "c",
-        -- "comment",
+        "comment",
         "cpp",
         "css",
         "fortran",
@@ -75,4 +74,3 @@ require'nvim-treesitter.configs'.setup {
         },
     },
 }
-EOF

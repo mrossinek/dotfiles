@@ -1,4 +1,3 @@
-lua << EOF
 require('neorg').setup {
     load = {
         ["core.defaults"] = {},
@@ -63,4 +62,3 @@ keybinds.map_event_to_mode("norg", {
     }, { silent = true, noremap = true })
 
 end)
-EOF
