@@ -255,3 +255,6 @@
 [submodule "nvim-treesitter-refactor"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-treesitter-refactor
 	url = https://github.com/nvim-treesitter/nvim-treesitter-refactor
+[submodule "neorg-telescope"]
+	path = nvim/.config/nvim/pack/minpac/start/neorg-telescope
+	url = https://github.com/vhyrro/neorg-telescope
