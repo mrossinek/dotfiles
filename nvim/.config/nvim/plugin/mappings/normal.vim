@@ -53,3 +53,10 @@ nnoremap <C-P> :bprevious<CR>
 
 " web search
 nnoremap <silent> gs :set opfunc=mrossinek#functions#WebSearch<CR>g@
+
+" improve line joining
+nnoremap J mzJ`z
+
+" improve jumplist mutations
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'

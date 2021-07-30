@@ -7,3 +7,9 @@ inoremap <A-L> <C-\><C-n><C-w>L
 " simpler splitting
 inoremap <A--> <C-\><C-n>:new<cr>:startinsert<cr>
 inoremap <A-\|> <C-\><C-n>:vnew<cr>:startinsert<cr>
+
+" undo break points
+inoremap . .<C-G>u
+inoremap , ,<C-G>u
+inoremap ! !<C-G>u
+inoremap ? ?<C-G>u
