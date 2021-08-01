@@ -258,3 +258,6 @@
 [submodule "neorg-telescope"]
 	path = nvim/.config/nvim/pack/minpac/start/neorg-telescope
 	url = https://github.com/vhyrro/neorg-telescope
+[submodule "todo-comments.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/todo-comments.nvim
+	url = https://github.com/folke/todo-comments.nvim
