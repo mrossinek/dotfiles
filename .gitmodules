@@ -261,3 +261,6 @@
 [submodule "todo-comments.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/todo-comments.nvim
 	url = https://github.com/folke/todo-comments.nvim
+[submodule "nvim-lightbulb"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-lightbulb
+	url = https://github.com/kosayoda/nvim-lightbulb

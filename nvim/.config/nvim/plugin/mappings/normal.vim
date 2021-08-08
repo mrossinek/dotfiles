@@ -60,3 +60,7 @@ nnoremap J mzJ`z
 " improve jumplist mutations
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+" prefer virtual replace mode of replace mode
+nnoremap gR R
+nnoremap R gR

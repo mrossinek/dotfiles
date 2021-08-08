@@ -174,7 +174,10 @@ call <sid>hi("QuickFixLine",  "", s:gui01, "", s:cterm01, "none", "")
 call <sid>hi("PMenu",         s:gui05, s:gui01, s:cterm05, s:cterm01, "none", "")
 call <sid>hi("PMenuSel",      s:gui0C, s:gui05, s:cterm0C, s:cterm05, "bold", "")
 hi PMenuSel blend=0
-call <sid>hi("NormalFloat",   s:gui05, s:gui02, s:cterm05, s:cterm02, "none", "")
+call <sid>hi("Normal",        s:gui06, "", s:cterm06, "", "", "")  " removed background colors for transparency
+call <sid>hi("NormalFloat",   s:gui06, "", s:cterm06, "", "none", "")
+call <sid>hi("FloatBorder",   s:gui0E, "", s:cterm0E, "", "", "")
+
 
 " TabLine
 " We must clear first to get rid of some conflicting defaults...
@@ -350,22 +353,20 @@ call <sid>hi("SpellRare",    s:gui0E, "none", s:cterm0E, "none", "undercurl", s:
 call <sid>hi("javaOperator",     s:gui0D, "", s:cterm0D, "", "", "")
 
 " Lsp Diagnostics
+" We must clear first to get rid of some conflicting defaults...
 call <sid>hi("LspDiagnosticsError", s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("LspDiagnosticsWarning", s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("LspDiagnosticsInformation", s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("LspDiagnosticsHint", s:gui06, "", s:cterm06, "", "", "")
-call <sid>hi("LspDiagnosticsSignError", s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("LspDiagnosticsSignWarning", s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("LspDiagnosticsSignInformation", s:gui0C, "", s:cterm0C, "", "", "")
-call <sid>hi("LspDiagnosticsSignHint", s:gui06, "", s:cterm06, "", "", "")
-
-" Lsp Saga
-call <sid>hi("LspSagaLightBulb", "none", "none", "none", "none", "", "")
-call <sid>hi("LspSagaLightBulbSign", "none", s:gui01, "none", s:cterm01, "", "")
+call <sid>hi("LspDiagnosticsSignError", s:gui08, s:gui01, s:cterm08, s:cterm01, "", "")
+call <sid>hi("LspDiagnosticsSignWarning", s:gui0A, s:gui01, s:cterm0A, s:cterm01, "", "")
+call <sid>hi("LspDiagnosticsSignInformation", s:gui0C, s:gui01, s:cterm0C, s:cterm01, "", "")
+call <sid>hi("LspDiagnosticsSignHint", s:gui06, s:gui01, s:cterm06, s:cterm01, "", "")
+call <sid>hi("LspSignatureActiveParameter", "", s:gui0C, "", s:cterm0C, "italic", "")
 
 " coveragepy.vim
-call <sid>hi("NoCoverage", s:gui08, "", s:cterm08, "", "bold", "")
-call <sid>hi("NoBranchCoverage", s:gui0A, "", s:cterm0A, "", "bold", "")
+call <sid>hi("NoCoverage", s:gui08, s:gui01, s:cterm08, s:cterm01, "bold", "")
+call <sid>hi("NoBranchCoverage", s:gui0A, s:gui01, s:cterm0A, s:cterm01, "bold", "")
 
 " Remove functions
 delf <sid>hi
