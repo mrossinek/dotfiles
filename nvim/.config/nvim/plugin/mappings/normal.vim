@@ -54,6 +54,9 @@ nnoremap <C-P> :bprevious<CR>
 " web search
 nnoremap <silent> gs :set opfunc=mrossinek#functions#WebSearch<CR>g@
 
+" vim sanity
+nnoremap Y y$
+
 " improve line joining
 nnoremap J mzJ`z
 
