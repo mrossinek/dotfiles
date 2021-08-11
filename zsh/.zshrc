@@ -132,3 +132,27 @@ eval "$(direnv hook zsh)"
 setopt ALWAYS_TO_END
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
+
+# taskwarrior GTD
+alias t=task
+
+alias in='task add +in'
+
+tickle_ () {
+    deadline=$1
+    shift
+    in +tickle wait:$deadline $@
+}
+alias tick=tickle_
+alias tickle=tickle_
+
+note_ () {
+  local id="${1:s/\./\/}"
+  local dir="$HOME/Tasks/$id"
+  local file="$dir/index.norg"
+
+  mkdir -p $dir:A
+  vi "$file"
+}
+alias n=note_
+alias note=note_

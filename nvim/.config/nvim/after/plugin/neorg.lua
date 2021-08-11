@@ -8,10 +8,10 @@ require('neorg').setup {
                 highlights = {
                     heading = {
                         ["1"] = "+TSTitle",
-                        },
                     },
                 },
             },
+        },
         ["core.keybinds"] = {},
         ["core.norg.concealer"] = {
             config = {
@@ -19,22 +19,31 @@ require('neorg').setup {
                     heading = {
                         level_1 = {
                             icon = "◉",
-                            },
+                        },
                         level_2 = {
                             icon = "◎",
-                            },
+                        },
                         level_3 = {
                             icon = "○",
-                            },
+                        },
                         level_4 = {
                             icon = "∙",
-                            },
                         },
                     },
                 },
             },
-        }
-    }
+        },
+        ["core.norg.dirman"] = {
+            config = {
+                workspaces = {
+                    tasks = "~/Tasks",
+                },
+                autodetect = true,
+                autochdir = true,
+            },
+        },
+    },
+}
 
 local neorg_callbacks = require('neorg.callbacks')
 
