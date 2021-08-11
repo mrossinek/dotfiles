@@ -91,9 +91,6 @@
 [submodule "vim-sneak"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-sneak
 	url = https://github.com/justinmk/vim-sneak
-[submodule "vim-dirvish"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-dirvish
-	url = https://github.com/justinmk/vim-dirvish
 [submodule "BufOnly.vim"]
 	path = nvim/.config/nvim/pack/minpac/start/BufOnly.vim
 	url = https://github.com/vim-scripts/BufOnly.vim
@@ -115,9 +112,6 @@
 [submodule "vim-markdown"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
-[submodule "vim-dirgutter"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-dirgutter
-	url = https://gitlab.com/mrossinek/vim-dirgutter
 [submodule "vim-criticmarkup"]
 	path = nvim/.config/nvim/pack/minpac/opt/vim-criticmarkup
 	url = https://github.com/vim-pandoc/vim-criticmarkup
@@ -264,3 +258,9 @@
 [submodule "nvim-lightbulb"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-lightbulb
 	url = https://github.com/kosayoda/nvim-lightbulb
+[submodule "lir.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/lir.nvim
+	url = https://github.com/tamago324/lir.nvim
+[submodule "lir-git-status.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/lir-git-status.nvim
+	url = https://github.com/tamago324/lir-git-status.nvim
