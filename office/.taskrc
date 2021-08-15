@@ -11,7 +11,11 @@ color.alternate=
 include ~/.task_local
 
 # reports
-report.in.columns           = id,description
-report.in.description       = Inbox
-report.in.filter            = status:pending limit:page (+in)
-report.in.labels            = ID,Description
+report.in.columns     = id,project,description
+report.in.description = Inbox
+report.in.filter      = status.not:done limit:page (+in)
+report.in.labels      = ID,Project,Description
+
+# contexts
+context.home=+@home
+context.work=+@work
