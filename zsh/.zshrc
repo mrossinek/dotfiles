@@ -133,7 +133,11 @@ setopt ALWAYS_TO_END
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 
-# taskwarrior GTD
+# Org
+export TIMEWARRIORDB=~/Org/.time
+
+alias org='git -C ~/Org'
+
 alias t=task
 
 alias in='task add +in'

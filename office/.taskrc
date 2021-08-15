@@ -1,4 +1,4 @@
-data.location=~/.task
+data.location=~/Org/.task
 
 taskd.certificate=~/.task/user.cert.pem
 taskd.key=~/.task/user.key.pem

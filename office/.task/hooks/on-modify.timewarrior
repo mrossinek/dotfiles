@@ -32,13 +32,6 @@ import json
 import subprocess
 import sys
 
-# Hook should extract all of the following for use as Timewarrior tags:
-#   UUID
-#   Project
-#   Tags
-#   Description
-#   UDAs
-
 try:
     input_stream = sys.stdin.buffer
 except AttributeError:
@@ -52,7 +45,7 @@ print(json.dumps(new))
 
 def extract_tags_from(json_obj):
     # Extract attributes for use as tags.
-    tags = [json_obj['description']]
+    tags = []
 
     if 'project' in json_obj:
         tags.extend(json_obj['project'].split('.'))

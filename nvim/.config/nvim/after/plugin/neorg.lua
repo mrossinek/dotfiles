@@ -36,7 +36,7 @@ require('neorg').setup {
         ["core.norg.dirman"] = {
             config = {
                 workspaces = {
-                    tasks = "~/Tasks",
+                    tasks = "~/Org",
                 },
                 autodetect = true,
                 autochdir = true,
