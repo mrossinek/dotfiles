@@ -150,13 +150,28 @@ tickle_ () {
 alias tick=tickle_
 alias tickle=tickle_
 
-note_ () {
-  local id="${1:s/\./\/}"
-  local dir="$HOME/Tasks/$id"
-  local file="$dir/index.norg"
+org_path_ () {
+    local id="${1:s/\./\/}"
+    local dir="~/Org/$id"
+    local file="$dir/index.norg"
+    echo $file
+}
 
-  mkdir -p $dir:A
-  vi "$file"
+note_ () {
+    file=$(org_path_ $1)
+    file="${file/x#~/$HOME}"
+    dir=$(dirname $file)
+    mkdir -p $dir:A
+    vi "$file"
 }
 alias n=note_
 alias note=note_
+
+backlog_ () {
+    note_ $2
+    file=$(org_path_ $2)
+    task annotate $1 "Moved to backlog: $file"
+    task rc.confirmation:0 delete $1
+}
+
+alias backlog=backlog_

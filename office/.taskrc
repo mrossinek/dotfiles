@@ -1,21 +1,25 @@
+# data
 data.location=~/Org/.task
 
+# server
 taskd.certificate=~/.task/user.cert.pem
 taskd.key=~/.task/user.key.pem
 taskd.ca=~/.task/ca.cert.pem
 include ~/.task/private_credentials # holds server address and login creds
 
-# disable alternating line background coloring
+# colors
+include ~/.task/dark-16.theme
 color.alternate=
-
-include ~/.task_local
 
 # reports
 report.in.columns     = id,project,description
 report.in.description = Inbox
-report.in.filter      = status.not:done limit:page (+in)
+report.in.filter      = limit:page (+in) (-COMPLETED) (-DELETED)
 report.in.labels      = ID,Project,Description
 
 # contexts
 context.home=+@home
 context.work=+@work
+
+# do this last so that we can override stuff if we want to
+include ~/.task_local
