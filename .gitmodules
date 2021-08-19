@@ -151,9 +151,6 @@
 [submodule "nvim-web-devicons"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-web-devicons
 	url = https://github.com/kyazdani42/nvim-web-devicons
-[submodule "gina.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/gina.vim
-	url = https://github.com/lambdalisue/gina.vim
 [submodule "git-messenger.vim"]
 	path = nvim/.config/nvim/pack/minpac/start/git-messenger.vim
 	url = https://github.com/rhysd/git-messenger.vim
@@ -261,3 +258,9 @@
 [submodule "lir-git-status.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/lir-git-status.nvim
 	url = https://github.com/tamago324/lir-git-status.nvim
+[submodule "neogit"]
+	path = nvim/.config/nvim/pack/minpac/start/neogit
+	url = https://github.com/TimUntersberger/neogit
+[submodule "octo.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/octo.nvim
+	url = https://github.com/pwntester/octo.nvim

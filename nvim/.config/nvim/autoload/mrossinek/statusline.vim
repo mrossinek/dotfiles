@@ -90,17 +90,14 @@ endfunction
 
 " GitGutter wrapper
 function! mrossinek#statusline#StatuslineGitInfo()
-    if gina#component#repo#branch() == ''
-        return ''
-    endif
-    let l:branch_symbol = ''
     let l:added_symbol = '+'
     let l:modified_symbol = '~'
     let l:removed_symbol = '-'
     let [l:added, l:modified, l:removed] = GitGutterGetHunkSummary()
-    let l:branch_name = gina#component#repo#branch()
-    return printf('{%s %s} [%d%s %d%s %d%s]',
-                \ l:branch_symbol, l:branch_name,
+    if l:added == 0 && l:modified == 0 && l:removed == 0
+        return ''
+    endif
+    return printf('[%d%s %d%s %d%s]',
                 \ l:added, l:added_symbol, l:modified,
                 \ l:modified_symbol, l:removed, l:removed_symbol)
 endfunction
