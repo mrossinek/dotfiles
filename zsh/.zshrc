@@ -139,6 +139,7 @@ export TIMEWARRIORDB=~/Org/.time
 alias org='git -C ~/Org'
 
 alias t=task
+alias ti=timew
 
 alias in='task add +in'
 

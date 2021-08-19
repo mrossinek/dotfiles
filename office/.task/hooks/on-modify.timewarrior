@@ -53,6 +53,8 @@ def extract_tags_from(json_obj):
     if 'tags' in json_obj:
         tags.extend(json_obj['tags'])
 
+    tags = [f"#{tag}" if tag.isnumeric() else tag for tag in tags]
+
     return tags
 
 
