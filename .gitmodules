@@ -64,9 +64,6 @@
 [submodule "linediff.vim"]
 	path = nvim/.config/nvim/pack/minpac/start/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim
-[submodule "asyncrun.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/asyncrun.vim
-	url = https://github.com/skywind3000/asyncrun.vim
 [submodule "supertab"]
 	path = nvim/.config/nvim/pack/minpac/start/supertab
 	url = https://github.com/ervandew/supertab
@@ -76,15 +73,9 @@
 [submodule "vim-gitgutter"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule "displayp.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/displayp.vim
-	url = https://gitlab.com/mrossinek/displayp.vim
 [submodule "vim-plugin-AnsiEsc"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
-[submodule "vim-doge"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-doge
-	url = https://github.com/kkoomen/vim-doge
 [submodule "quicktex"]
 	path = nvim/.config/nvim/pack/minpac/opt/quicktex
 	url = https://github.com/brennier/quicktex
@@ -157,12 +148,6 @@
 [submodule "committia.vim"]
 	path = nvim/.config/nvim/pack/minpac/start/committia.vim
 	url = https://github.com/rhysd/committia.vim
-[submodule "vista.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/vista.vim
-	url = https://github.com/liuchengxu/vista.vim
-[submodule "neoformat"]
-	path = nvim/.config/nvim/pack/minpac/start/neoformat
-	url = https://github.com/sbdchd/neoformat
 [submodule "nvim-dap"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-dap
 	url = https://github.com/mfussenegger/nvim-dap
@@ -202,9 +187,6 @@
 [submodule "nvim-dap-python"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-dap-python
 	url = https://github.com/mfussenegger/nvim-dap-python
-[submodule "vim-kitty-navigator"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-kitty-navigator
-	url = https://github.com/knubie/vim-kitty-navigator
 [submodule "git-worktree.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/git-worktree.nvim
 	url = https://github.com/ThePrimeagen/git-worktree.nvim
