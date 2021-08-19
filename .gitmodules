@@ -246,3 +246,6 @@
 [submodule "octo.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/octo.nvim
 	url = https://github.com/pwntester/octo.nvim
+[submodule "neogen"]
+	path = nvim/.config/nvim/pack/minpac/start/neogen
+	url = https://github.com/danymat/neogen
