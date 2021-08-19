@@ -21,5 +21,10 @@ report.in.labels      = ID,Project,Description
 context.home=+@home
 context.work=+@work
 
+# urgency
+urgency.inherit = 1
+urgency.blocking.coefficient = 0.0
+urgency.blocked.coefficient = 0.0
+
 # do this last so that we can override stuff if we want to
 include ~/.task_local
