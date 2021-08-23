@@ -40,9 +40,6 @@
 [submodule "loupe"]
 	path = nvim/.config/nvim/pack/minpac/start/loupe
 	url = https://github.com/wincent/loupe
-[submodule "vcs-jump"]
-	path = nvim/.config/nvim/pack/minpac/start/vcs-jump
-	url = https://github.com/wincent/vcs-jump
 [submodule "vim-exchange"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-exchange
 	url = https://github.com/tommcdo/vim-exchange
@@ -70,9 +67,6 @@
 [submodule "vim-cmake"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-cmake
 	url = https://github.com/vhdirk/vim-cmake
-[submodule "vim-gitgutter"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
 [submodule "vim-plugin-AnsiEsc"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
@@ -142,9 +136,6 @@
 [submodule "nvim-web-devicons"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-web-devicons
 	url = https://github.com/kyazdani42/nvim-web-devicons
-[submodule "git-messenger.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/git-messenger.vim
-	url = https://github.com/rhysd/git-messenger.vim
 [submodule "committia.vim"]
 	path = nvim/.config/nvim/pack/minpac/start/committia.vim
 	url = https://github.com/rhysd/committia.vim
@@ -249,3 +240,6 @@
 [submodule "neogen"]
 	path = nvim/.config/nvim/pack/minpac/start/neogen
 	url = https://github.com/danymat/neogen
+[submodule "gitsigns.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/gitsigns.nvim
+	url = https://github.com/lewis6991/gitsigns.nvim

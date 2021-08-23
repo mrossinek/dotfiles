@@ -90,14 +90,10 @@ endfunction
 
 " GitGutter wrapper
 function! mrossinek#statusline#StatuslineGitInfo()
-    let l:added_symbol = '+'
-    let l:modified_symbol = '~'
-    let l:removed_symbol = '-'
-    let [l:added, l:modified, l:removed] = GitGutterGetHunkSummary()
-    if l:added == 0 && l:modified == 0 && l:removed == 0
+    let l:head = get(b:, 'gitsigns_head', '')
+    let l:status = get(b:, 'gitsigns_status', '')
+    if l:head == '' || l:status == ''
         return ''
     endif
-    return printf('[%d%s %d%s %d%s]',
-                \ l:added, l:added_symbol, l:modified,
-                \ l:modified_symbol, l:removed, l:removed_symbol)
+    return printf('{ %s} [%s]', l:head, l:status)
 endfunction
