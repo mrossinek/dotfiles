@@ -16,6 +16,7 @@ report.in.columns     = id,project,description
 report.in.description = Inbox
 report.in.filter      = limit:page (+in) (-COMPLETED) (-DELETED)
 report.in.labels      = ID,Project,Description
+report.in.context     = 0
 
 # contexts
 context.home=+@home
