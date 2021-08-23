@@ -45,6 +45,7 @@
 [alias]
     a = add
     amend = commit --amend --no-edit
+    ap = add --patch
     au = add --update
     br = branch
     c = commit
