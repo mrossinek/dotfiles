@@ -18,6 +18,8 @@ report.in.filter      = limit:page (+in) (-COMPLETED) (-DELETED)
 report.in.labels      = ID,Project,Description
 report.in.context     = 0
 
+report.next.filter    = +PENDING -BLOCKED type:task limit:page
+
 # contexts
 context.home=+@home
 context.work=+@work
