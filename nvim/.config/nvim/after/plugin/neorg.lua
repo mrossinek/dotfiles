@@ -35,7 +35,7 @@ require('neorg').setup {
         },
         ["core.norg.completion"] = {
             config = {
-                engine = "cmp",
+                engine = "nvim-cmp",
             },
         },
         ["core.norg.dirman"] = {

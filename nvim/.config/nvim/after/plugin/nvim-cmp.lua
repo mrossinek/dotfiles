@@ -14,7 +14,7 @@ end
 
 cmp.setup {
     completion = {
-        keyword_length = 3,
+        keyword_length = 1,
     },
 
     sources = {
@@ -25,7 +25,7 @@ cmp.setup {
         { name = 'nvim_lua' },
         { name = 'vsnip' },
         { name = 'emoji' },
-        { name = 'neorg' },
+        { name = 'norg' },
     },
 
     mapping = {
