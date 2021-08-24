@@ -6,7 +6,23 @@ lsp_status.config {
     indicator_info = '',
 }
 lsp_status.register_progress()
-lsp_status.capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+-- nvim-cmp capab
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.preselectSupport = true
+capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
 
 local nvim_command = vim.api.nvim_command
 local on_attach_vim = function(client)
@@ -50,7 +66,7 @@ vim.api.nvim_set_keymap("n", "gd", "<cmd>lua preview_definition()<CR>", {noremap
 lspconfig.clangd.setup{
     handlers = lsp_status.extensions.clangd.setup(),
     on_attach=on_attach_vim,
-    capabilities=lsp_status.capabilities
+    capabilities=capabilities
 }
 
 lspconfig.fortls.setup{
@@ -69,7 +85,7 @@ lspconfig.fortls.setup{
     },
     root_dir = lspconfig.util.root_pattern('.git', '.fortls'),
     on_attach=on_attach_vim,
-    capabilities=lsp_status.capabilities
+    capabilities=capabilities
 }
 
 -- overwrite the pylint executable to ensure it is run from the virtualenv
@@ -101,13 +117,13 @@ lspconfig.pylsp.setup{
         },
     },
     on_attach=on_attach_vim,
-    capabilities=lsp_status.capabilities
+    capabilities=capabilities
 }
 
 lspconfig.sumneko_lua.setup{
     cmd = {"/usr/bin/lua-language-server"};
     on_attach=on_attach_vim,
-    capabilities=lsp_status.capabilities,
+    capabilities=capabilities,
     settings = {
         Lua = {
             runtime = {
@@ -133,12 +149,12 @@ lspconfig.sumneko_lua.setup{
 
 lspconfig.texlab.setup{
     on_attach=on_attach_vim,
-    capabilities=lsp_status.capabilities
+    capabilities=capabilities
 }
 
 lspconfig.vimls.setup{
     on_attach=on_attach_vim,
-    capabilities=lsp_status.capabilities
+    capabilities=capabilities
 }
 EOF
 

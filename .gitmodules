@@ -61,9 +61,6 @@
 [submodule "linediff.vim"]
 	path = nvim/.config/nvim/pack/minpac/start/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim
-[submodule "supertab"]
-	path = nvim/.config/nvim/pack/minpac/start/supertab
-	url = https://github.com/ervandew/supertab
 [submodule "vim-cmake"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-cmake
 	url = https://github.com/vhdirk/vim-cmake
@@ -145,9 +142,6 @@
 [submodule "nvim-dap-virtual-text"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-dap-virtual-text
 	url = https://github.com/theHamsta/nvim-dap-virtual-text
-[submodule "nvim-compe"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-compe
-	url = https://github.com/hrsh7th/nvim-compe
 [submodule "vim-vsnip"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-vsnip
 	url = https://github.com/hrsh7th/vim-vsnip
@@ -243,3 +237,30 @@
 [submodule "gitsigns.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/gitsigns.nvim
 	url = https://github.com/lewis6991/gitsigns.nvim
+[submodule "nvim-cmp"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "nvim-cmp-lsp"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "nvim-cmp-path"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-path
+	url = https://github.com/hrsh7th/cmp-path
+[submodule "nvim-cmp-nvim-lua"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-nvim-lua
+	url = https://github.com/hrsh7th/cmp-nvim-lua
+[submodule "nvim-cmp-vsnip"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-vsnip
+	url = https://github.com/hrsh7th/cmp-vsnip
+[submodule "nvim-cmp-emoji"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-emoji
+	url = https://github.com/hrsh7th/cmp-emoji
+[submodule "nvim-cmp-calc"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-calc
+	url = https://github.com/hrsh7th/cmp-calc
+[submodule "lspkind-nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/lspkind-nvim
+	url = https://github.com/onsails/lspkind-nvim
+[submodule "nvim-cmp-buffer"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer
