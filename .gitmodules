@@ -264,3 +264,6 @@
 	path = nvim/.config/nvim/pack/minpac/start/neorg
 	url = https://github.com/mrossinek/neorg
 	branch = mrossinek
+[submodule "diffview.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/diffview.nvim
+	url = https://github.com/sindrets/diffview.nvim
