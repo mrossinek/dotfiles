@@ -25,6 +25,7 @@ cmp.setup {
         { name = 'nvim_lua' },
         { name = 'vsnip' },
         { name = 'emoji' },
+        { name = 'neorg' },
     },
 
     mapping = {

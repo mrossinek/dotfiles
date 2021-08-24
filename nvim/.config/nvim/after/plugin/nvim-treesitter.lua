@@ -10,8 +10,8 @@ parser_configs.fortran = {
 parser_configs.norg = {
     install_info = {
         url = "https://github.com/vhyrro/tree-sitter-norg",
-        files = { "src/parser.c" },
-        branch = "main"
+        files = { "src/parser.c", "src/scanner.cc" },
+        branch = "rewrite"
     },
 }
 

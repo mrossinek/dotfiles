@@ -33,6 +33,11 @@ require('neorg').setup {
                 },
             },
         },
+        ["core.norg.completion"] = {
+            config = {
+                engine = "cmp",
+            },
+        },
         ["core.norg.dirman"] = {
             config = {
                 workspaces = {
