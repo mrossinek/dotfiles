@@ -25,7 +25,7 @@ nnoremap <C-E> 2<C-E>
 nnoremap <C-Y> 2<C-Y>
 
 " folding
-nnoremap \ za
+nnoremap \\ za
 
 " sourcing
 nnoremap <leader>so :source %<cr>
@@ -56,9 +56,6 @@ nnoremap <silent> gs :set opfunc=mrossinek#functions#WebSearch<CR>g@
 
 " vim sanity
 nnoremap Y y$
-
-" improve line joining
-nnoremap J mzJ`z
 
 " improve jumplist mutations
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
