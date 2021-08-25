@@ -47,7 +47,6 @@ nnoremap <C-J> :cnext<CR>
 nnoremap <C-K> :cprevious<CR>
 
 " buffer navigation
-nnoremap <C-S> :e #<CR>
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprevious<CR>
 

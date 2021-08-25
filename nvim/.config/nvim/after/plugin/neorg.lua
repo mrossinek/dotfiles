@@ -47,6 +47,7 @@ require('neorg').setup {
                 autochdir = true,
             },
         },
+        ["core.norg.esupports"] = {},
     },
 }
 
@@ -57,13 +58,17 @@ neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, key
 keybinds.map_event_to_mode("norg", {
     n = {
 
-        -- Keys for managing TODO items and setting their states
+        -- TODOs
         { "gtd", "core.norg.qol.todo_items.todo.task_done" },
         { "gtu", "core.norg.qol.todo_items.todo.task_undone" },
         { "gtp", "core.norg.qol.todo_items.todo.task_pending" },
         { "<C-Space>", "core.norg.qol.todo_items.todo.task_cycle" },
 
-        -- Telescope integration
+        -- Links
+        { "ZZ", "core.norg.dirman.new.note" },
+
+        { "<CR><CR>", "core.norg.esupports.goto_link" },
+
         { "<C-s>", "core.integrations.telescope.find_linkable" },
 
         },
