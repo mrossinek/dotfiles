@@ -11,7 +11,7 @@ parser_configs.norg = {
     install_info = {
         url = "https://github.com/vhyrro/tree-sitter-norg",
         files = { "src/parser.c", "src/scanner.cc" },
-        branch = "rewrite"
+        branch = "main"
     },
 }
 

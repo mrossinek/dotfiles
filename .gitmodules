@@ -262,8 +262,8 @@
 	url = https://github.com/hrsh7th/cmp-buffer
 [submodule "neorg"]
 	path = nvim/.config/nvim/pack/minpac/start/neorg
-	url = https://github.com/mrossinek/neorg
-	branch = mrossinek
+	url = https://github.com/vhyrro/neorg
+	branch = unstable
 [submodule "diffview.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/diffview.nvim
 	url = https://github.com/sindrets/diffview.nvim
