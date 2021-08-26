@@ -6,8 +6,11 @@ require('neorg').setup {
         ["core.integrations.treesitter"] = {
             config = {
                 highlights = {
-                    heading = {
-                        ["1"] = "+TSTitle",
+                    Heading = {
+                        ["1"] = {
+                            Title = "+TSTitle",
+                            Prefix = "+TSTitle",
+                        },
                     },
                 },
             },
@@ -27,7 +30,7 @@ require('neorg').setup {
                             icon = "○",
                         },
                         level_4 = {
-                            icon = "∙",
+                            icon = "✺",
                         },
                     },
                 },
