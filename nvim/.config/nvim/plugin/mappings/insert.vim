@@ -13,3 +13,6 @@ inoremap . .<C-G>u
 inoremap , ,<C-G>u
 inoremap ! !<C-G>u
 inoremap ? ?<C-G>u
+
+" delete sentence backwards
+inoremap <C-s> <C-o>d(
