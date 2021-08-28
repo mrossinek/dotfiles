@@ -178,7 +178,7 @@ screens = [
             [
                 widget.GroupBox(inactive='#505050', hide_unused=True),
                 widget.CurrentLayoutIcon(scale=0.75),
-                widget.WindowName(),
+                widget.WindowName(for_current_screen=True),
                 widget.Spacer(),
                 widget.WidgetBox(
                     close_button_location="right",
