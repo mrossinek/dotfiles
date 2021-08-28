@@ -33,6 +33,9 @@ require('neorg').setup {
                             icon = "✺",
                         },
                     },
+                    quote = {
+                        icon = "│",
+                    },
                 },
             },
         },
