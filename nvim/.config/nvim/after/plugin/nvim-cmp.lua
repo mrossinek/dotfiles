@@ -2,6 +2,11 @@ require('lspkind').init({})
 
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+local neogen = require('neogen')
+
+local replace_termcodes = function(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
 
 local check_back_space = function()
     local col = vim.fn.col('.') - 1
@@ -39,11 +44,13 @@ cmp.setup {
         }),
         ['<Tab>'] = function(fallback)
             if vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
+                vim.fn.feedkeys(replace_termcodes('<C-n>'), 'n')
+            elseif neogen.jumpable() then
+                vim.fn.feedkeys(replace_termcodes("<cmd>lua require('neogen').jump_next()<CR>"), "")
             elseif vim.fn['vsnip#available']() == 1 then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-expand-or-jump)', true, true, true), '')
+                vim.fn.feedkeys(replace_termcodes('<Plug>(vsnip-expand-or-jump)'), '')
             elseif check_back_space() then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Tab>', true, true, true), 'n')
+                vim.fn.feedkeys(replace_termcodes('<Tab>'), 'n')
             else
                 fallback()
             end
