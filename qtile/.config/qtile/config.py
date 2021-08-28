@@ -1,7 +1,7 @@
 import subprocess
 from os.path import expanduser
 from libqtile import bar, hook, layout, widget
-from libqtile.config import DropDown, Group, Key, ScratchPad, Screen
+from libqtile.config import DropDown, Group, Key, ScratchPad, Screen, Match
 from libqtile.lazy import lazy
 
 # Variables
@@ -124,7 +124,7 @@ groups = [
     Group('6'),
     Group('7'),
     Group('8'),
-    Group('9'),
+    Group('9', spawn="discord"),
     ScratchPad("scratchpad", [
         DropDown("term", terminal),
         DropDown("qshell", terminal + " qshell"),
@@ -167,9 +167,9 @@ else
     fi;
 fi | tail -1
         """,
-        shell=True,
-        capture_output=True,
-    ).stdout.decode().strip()
+                          shell=True,
+                          capture_output=True,
+                          ).stdout.decode().strip()
 
 
 screens = [
@@ -232,24 +232,16 @@ layouts = [
 # TODO make these a list of Match objects rather than dictionaries
 # Kept from the default configuration because these appear like reasonable defaults to keep around.
 floating_layout = layout.Floating(float_rules=[
+    *layout.Floating.default_float_rules,
     # Run the utility of `xprop` to see the wm class and name of an X client.
-    {'wmclass': 'confirm'},
-    {'wmclass': 'dialog'},
-    {'wmclass': 'download'},
-    {'wmclass': 'error'},
-    {'wmclass': 'file_progress'},
-    {'wmclass': 'notification'},
-    {'wmclass': 'splash'},
-    {'wmclass': 'toolbar'},
-    {'wmclass': 'confirmreset'},  # gitk
-    {'wmclass': 'makebranch'},  # gitk
-    {'wmclass': 'maketag'},  # gitk
-    {'wname': 'branchdialog'},  # gitk
-    {'wmclass': 'pinentry-qt'},  # GPG key password entry
-    {'wmclass': 'ssh-askpass'},  # ssh-askpass
-    # custom additions
-    {'wmclass': 'matplotlib'},
-    {'wmclass': 'zoom'},
+    Match(title='branchdialog'),  # gitk
+    Match(wm_class='confirmreset'),  # gitk
+    Match(wm_class='makebranch'),  # gitk
+    Match(wm_class='maketag'),  # gitk
+    Match(wm_class='pinentry-qt'),  # GPG key password entry
+    Match(wm_class='ssh-askpass'),  # ssh-askpass
+    Match(wm_class='matplotlib'),
+    Match(wm_class='zoom'),
 ],
     **layout_defaults)
 
