@@ -2,6 +2,7 @@ require('lspkind').init({})
 
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+local luasnip = require('luasnip')
 local neogen = require('neogen')
 
 local replace_termcodes = function(str)
@@ -28,7 +29,7 @@ cmp.setup {
         { name = 'calc' },
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
-        { name = 'vsnip' },
+        { name = 'luasnip' },
         { name = 'emoji' },
         { name = 'neorg' },
     },
@@ -42,19 +43,30 @@ cmp.setup {
             behavior = cmp.ConfirmBehavior.Insert,
             select = true,
         }),
-        ['<Tab>'] = function(fallback)
+        ['<Tab>'] = cmp.mapping(
+        function(fallback)
             if vim.fn.pumvisible() == 1 then
                 vim.fn.feedkeys(replace_termcodes('<C-n>'), 'n')
             elseif neogen.jumpable() then
                 vim.fn.feedkeys(replace_termcodes("<cmd>lua require('neogen').jump_next()<CR>"), "")
-            elseif vim.fn['vsnip#available']() == 1 then
-                vim.fn.feedkeys(replace_termcodes('<Plug>(vsnip-expand-or-jump)'), '')
+            elseif luasnip.expand_or_jumpable() then
+                vim.fn.feedkeys(replace_termcodes("<Plug>luasnip-expand-or-jump"), "")
             elseif check_back_space() then
                 vim.fn.feedkeys(replace_termcodes('<Tab>'), 'n')
             else
                 fallback()
             end
-        end,
+        end, {"i", "s"}),
+        ['<S-Tab>'] = cmp.mapping(
+        function(fallback)
+            if vim.fn.pumvisible() == 1 then
+                vim.fn.feedkeys(replace_termcodes('<C-p>'), 'n')
+            elseif luasnip.jumpable() then
+                vim.fn.feedkeys(replace_termcodes("<Plug>luasnip-jump-prev"), "")
+            else
+                fallback()
+            end
+        end, {"i", "s"}),
     },
 
     formatting = {

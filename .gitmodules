@@ -142,12 +142,6 @@
 [submodule "nvim-dap-virtual-text"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-dap-virtual-text
 	url = https://github.com/theHamsta/nvim-dap-virtual-text
-[submodule "vim-vsnip"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-vsnip
-	url = https://github.com/hrsh7th/vim-vsnip
-[submodule "vim-vsnip-integ"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-vsnip-integ
-	url = https://github.com/hrsh7th/vim-vsnip-integ
 [submodule "telescope-bibtex"]
 	path = nvim/.config/nvim/pack/minpac/start/telescope-bibtex
 	url = https://github.com/nvim-telescope/telescope-bibtex.nvim
@@ -245,9 +239,6 @@
 [submodule "nvim-cmp-nvim-lua"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-nvim-lua
 	url = https://github.com/hrsh7th/cmp-nvim-lua
-[submodule "nvim-cmp-vsnip"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-vsnip
-	url = https://github.com/hrsh7th/cmp-vsnip
 [submodule "nvim-cmp-emoji"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-emoji
 	url = https://github.com/hrsh7th/cmp-emoji
@@ -267,3 +258,9 @@
 [submodule "diffview.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/diffview.nvim
 	url = https://github.com/sindrets/diffview.nvim
+[submodule "luasnip"]
+	path = nvim/.config/nvim/pack/minpac/start/luasnip
+	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "nvim-cmp-luasnip"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-luasnip
+	url = https://github.com/saadparwaiz1/cmp_luasnip
