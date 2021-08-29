@@ -187,17 +187,16 @@ screens = [
                     fontsize=20,
                     widgets=[
                         widget.Wttr(location={'': ''}),
-                        widget.Wlan(interface="wlp3s0", format="📶 {percent:2.0%}"),
-                        widget.Net(),
-                        widget.NetGraph(samples=30, type="line",
+                        widget.Wlan(interface="wlp3s0", format="📶 {percent:2.0%}", update_interval=5),
+                        widget.NetGraph(samples=30, type="line", frequency=5,
                                         border_color="303030", graph_color="F8C82A"),
-                        widget.CPU(format="💻 {load_percent}%"),
-                        widget.ThermalSensor(tag_sensor="Package id 0"),
-                        widget.CPUGraph(samples=30, type="line",
+                        widget.CPU(format="💻 {load_percent}%", update_interval=5),
+                        widget.ThermalSensor(tag_sensor="Package id 0", update_interval=5),
+                        widget.CPUGraph(samples=30, type="line", frequency=5,
                                         border_color="303030", graph_color="18BAEB"),
                         widget.Memory(format="{MemUsed: .1f}{mm}/{MemTotal: .1f}{mm}",
-                                      measure_mem="G", measure_swap="G"),
-                        widget.MemoryGraph(samples=30, type="line",
+                                      measure_mem="G", measure_swap="G", update_interval=5),
+                        widget.MemoryGraph(samples=30, type="line", frequency=5,
                                            border_color="303030", graph_color="F14831"),
                     ]),
                 widget.GenPollText(func=my_bluetooth, fontsize=28, update_interval=15),
@@ -205,9 +204,9 @@ screens = [
                 widget.Battery(battery=0, format="{percent:2.0%}", notify_below=15),
                 widget.BatteryIcon(battery=1),
                 widget.Battery(battery=1, format="{percent:2.0%}", notify_below=15),
-                widget.Volume(emoji=True),
-                widget.Volume(emoji=False),
-                widget.Clock(format="🕘 %a %d %b %H:%M"),
+                widget.Volume(emoji=True, update_interval=2),
+                widget.Volume(emoji=False, update_interval=2),
+                widget.Clock(format="🕘 %a %d %b %H:%M", update_interval=2),
                 widget.Systray(icon_size=24),
             ],
             size=30,
@@ -219,11 +218,11 @@ screens = [
 
 # Layouts
 layout_defaults = dict(
-    border_focus='#77b2f6',
-    border_normal='#969694',
+    border_focus = '#77b2f6',
+    border_normal = '#969694',
 )
 
-layouts = [
+layouts=[
     layout.MonadTall(single_border_width=0, **layout_defaults),
     layout.Columns(num_columns=3, **layout_defaults),
     layout.Max(),
@@ -245,11 +244,11 @@ floating_layout = layout.Floating(float_rules=[
 ],
     **layout_defaults)
 
-dgroups_app_rules = []  # type: List
+dgroups_app_rules=[]  # type: List
 
 
 # General settings
-follow_mouse_focus = False
+follow_mouse_focus=False
 
 # Note: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
@@ -259,18 +258,19 @@ follow_mouse_focus = False
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname="LG3D"
 # Taken ad verbatim from the default configuration and documentation:
 # http://docs.qtile.org/en/latest/manual/config/index.html?highlight=wmname#configuration-variables
 
 
 # Hooks
-@hook.subscribe.startup_once
+@ hook.subscribe.startup_once
 def autostart():
-    subprocess.run('~/.config/qtile/autostart.sh', shell=True)
+    subprocess.run('~/.config/qtile/autostart.sh', shell = True)
 
 
-@hook.subscribe.startup_complete
+@ hook.subscribe.startup_complete
 def after_restart():
-    subprocess.run('xmodmap ~/.Xmodmap', shell=True)
+    subprocess.run('xmodmap ~/.Xmodmap', shell = True)
+    subprocess.run('feh --bg-fill --randomize ~/Pictures/Wallpapers/*', shell = True)
     subprocess.run('feh --bg-fill --randomize ~/Pictures/Wallpapers/*', shell=True)
