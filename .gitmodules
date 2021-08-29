@@ -10,9 +10,6 @@
 [submodule "fast-syntax-highlighting"]
 	path = zsh/.zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma/fast-syntax-highlighting
-[submodule "forgit"]
-	path = zsh/.zsh/plugins/forgit
-	url = https://github.com/wfxr/forgit
 [submodule "vim-ledger"]
 	path = nvim/.config/nvim/pack/minpac/opt/vim-ledger
 	url = https://github.com/ledger/vim-ledger
@@ -215,12 +212,6 @@
 [submodule "lir-git-status.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/lir-git-status.nvim
 	url = https://github.com/tamago324/lir-git-status.nvim
-[submodule "neogit"]
-	path = nvim/.config/nvim/pack/minpac/start/neogit
-	url = https://github.com/TimUntersberger/neogit
-[submodule "octo.nvim"]
-	path = nvim/.config/nvim/pack/minpac/start/octo.nvim
-	url = https://github.com/pwntester/octo.nvim
 [submodule "neogen"]
 	path = nvim/.config/nvim/pack/minpac/start/neogen
 	url = https://github.com/danymat/neogen
