@@ -1,3 +1,7 @@
+lua << EOF
+require('impatient')
+EOF
+
 colorscheme mrossinek
 
 nnoremap <space> <Nop>

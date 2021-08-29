@@ -255,3 +255,6 @@
 [submodule "nvim-cmp-luasnip"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-luasnip
 	url = https://github.com/saadparwaiz1/cmp_luasnip
+[submodule "impatient.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/impatient.nvim
+	url = https://github.com/lewis6991/impatient.nvim

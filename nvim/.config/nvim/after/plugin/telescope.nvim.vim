@@ -1,5 +1,7 @@
 lua << EOF
-require('telescope').setup {
+local telescope = require('telescope')
+
+telescope.setup {
     defaults = {
         vimgrep_arguments = {
             'rg',
@@ -14,9 +16,10 @@ require('telescope').setup {
     },
 }
 
-require('telescope').load_extension('bibtex')
-require('telescope').load_extension('dap')
-require('telescope').load_extension('fzy_native')
+telescope.load_extension('bibtex')
+telescope.load_extension('dap')
+telescope.load_extension('fzy_native')
+telescope.load_extension("git_worktree")
 EOF
 
 " File Pickers
@@ -49,10 +52,6 @@ nnoremap <silent> <CR>tr <cmd>lua require'telescope.builtin'.treesitter()<CR>
 nnoremap <silent> <CR>pp <cmd>lua require'telescope.builtin'.builtin()<CR>
 nnoremap <silent> <CR>ss <cmd>lua require'telescope.builtin'.symbols()<CR>
 
-
-hi link TelescopeSelection CursorLine
-hi TelescopeMatching guifg=Cyan ctermfg=Cyan
-
 " Plugins
 nnoremap <silent> <CR>bt <cmd>lua require'telescope'.extensions.bibtex.bibtex()<CR>
 
@@ -60,6 +59,8 @@ nnoremap <silent> <CR>dm <cmd>lua require'telescope'.extensions.dap.commands()<C
 nnoremap <silent> <CR>dc <cmd>lua require'telescope'.extensions.dap.configurations()<CR>
 nnoremap <silent> <CR>db <cmd>lua require'telescope'.extensions.dap.list_breakpoints()<CR>
 nnoremap <silent> <CR>dv <cmd>lua require'telescope'.extensions.dap.variables()<CR>
+
+nnoremap <silent> <CR>wt <cmd>lua require'telescope'.extensions.git_worktree.git_worktrees()<CR>
 
 " Custom
 nnoremap <silent> <CR>df <cmd>lua require'telescope.builtin'.find_files(require'telescope.themes'.get_dropdown( { previewer = false, prompt_title = "~ dotfiles ~", cwd = "~/dotfiles", find_command = { "rg", "--ignore", "--hidden", "--files", "--no-ignore-vcs", "--glob", "!.git" } } ) )<CR>

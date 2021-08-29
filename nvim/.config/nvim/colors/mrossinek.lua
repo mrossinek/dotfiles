@@ -260,3 +260,9 @@ plugins.gitsigns = {
 }
 apply_highlight(plugins.gitsigns)
 high_link("GitSignsCurrentLineBlame", "NonText")
+
+plugins.telescope = {
+    TelescopeMatching = {foreground = "Cyan"},
+}
+apply_highlight(plugins.telescope)
+high_link("TelescopeSelection", "CursorLine")
