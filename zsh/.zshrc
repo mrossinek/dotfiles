@@ -132,6 +132,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 
 # Org
+export TASKDDATA=~/Backups/taskd
 export TIMEWARRIORDB=~/Org/.time
 
 alias org='git -C ~/Org'
