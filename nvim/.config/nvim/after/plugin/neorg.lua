@@ -15,7 +15,12 @@ require('neorg').setup {
                 },
             },
         },
-        ["core.keybinds"] = {},
+        ["core.keybinds"] = {
+            config = {
+                default_keybinds = true,
+                neorg_leader = "<leader>o",
+            }
+        },
         ["core.norg.concealer"] = {
             config = {
                 icons = {
@@ -33,9 +38,6 @@ require('neorg').setup {
                             icon = "✺",
                         },
                     },
-                    quote = {
-                        icon = "│",
-                    },
                 },
             },
         },
@@ -48,12 +50,18 @@ require('neorg').setup {
             config = {
                 workspaces = {
                     org = "~/Org",
+                    gtd = "~/gtd",
                 },
                 autodetect = true,
                 autochdir = true,
             },
         },
         ["core.norg.esupports"] = {},
+        -- ["core.norg.qol.toc"] = {},
+        -- ["core.gtd.base"] = {
+        --     config = { workspace = "gtd" }
+        -- },
+        -- ["core.ui"] = {},
     },
 }
 
