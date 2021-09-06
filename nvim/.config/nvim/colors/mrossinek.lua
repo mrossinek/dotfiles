@@ -111,7 +111,7 @@ local named_colors = {
     Green  = {foreground = gui0B},
     Aqua   = {foreground = gui0C},
     Blue   = {foreground = gui0D},
-    Purpl  = {foreground = gui0E},
+    Purple = {foreground = gui0E},
     Brown  = {foreground = gui0F},
 }
 apply_highlight(named_colors)
