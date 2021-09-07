@@ -12,6 +12,12 @@ require('neorg').setup {
                             Prefix = "+TSTitle",
                         },
                     },
+                    Quote = {
+                        ["1"] = {
+                            [""] = "+Grey",
+                            Content = "+Grey",
+                        },
+                    },
                 },
             },
         },
