@@ -199,7 +199,7 @@
 	url = https://github.com/nvim-treesitter/nvim-treesitter-refactor
 [submodule "neorg-telescope"]
 	path = nvim/.config/nvim/pack/minpac/start/neorg-telescope
-	url = https://github.com/vhyrro/neorg-telescope
+	url = https://github.com/nvim-neorg/neorg-telescope
 [submodule "todo-comments.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/todo-comments.nvim
 	url = https://github.com/folke/todo-comments.nvim
@@ -244,7 +244,7 @@
 	url = https://github.com/hrsh7th/cmp-buffer
 [submodule "neorg"]
 	path = nvim/.config/nvim/pack/minpac/start/neorg
-	url = https://github.com/vhyrro/neorg
+	url = https://github.com/nvim-neorg/neorg
 	branch = unstable
 [submodule "diffview.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/diffview.nvim
