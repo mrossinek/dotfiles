@@ -23,7 +23,7 @@ require('neorg').setup {
         },
         ["core.keybinds"] = {
             config = {
-                default_keybinds = true,
+                default_keybinds = false,
                 neorg_leader = "<leader>o",
             }
         },
@@ -63,6 +63,7 @@ require('neorg').setup {
             },
         },
         ["core.norg.esupports"] = {},
+        ["core.norg.manoeuvre"] = {},
         -- ["core.norg.qol.toc"] = {},
         -- ["core.gtd.base"] = {
         --     config = { workspace = "gtd" }
@@ -90,6 +91,9 @@ keybinds.map_event_to_mode("norg", {
         { "<CR><CR>", "core.norg.esupports.goto_link" },
 
         { "<C-s>", "core.integrations.telescope.find_linkable" },
+
+        { "<C-M-k>", "core.norg.manoeuvre.item_up" },
+        { "<C-M-j>", "core.norg.manoeuvre.item_down" },
 
         },
     i = {
