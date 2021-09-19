@@ -35,13 +35,13 @@ require('neorg').setup {
                             icon = "◉",
                         },
                         level_2 = {
-                            icon = "◎",
+                            icon = " ◎",
                         },
                         level_3 = {
-                            icon = "○",
+                            icon = "  ○",
                         },
                         level_4 = {
-                            icon = "✺",
+                            icon = "   ✺",
                         },
                     },
                 },
@@ -62,8 +62,11 @@ require('neorg').setup {
                 autochdir = true,
             },
         },
-        ["core.norg.esupports"] = {},
-        ["core.norg.manoeuvre"] = {},
+        ["core.norg.esupports.metagen"] = {
+            config = {
+                type = "<leader>om",
+            },
+        },
         -- ["core.norg.qol.toc"] = {},
         -- ["core.gtd.base"] = {
         --     config = { workspace = "gtd" }
