@@ -24,7 +24,7 @@ augroup writing
     autocmd!
     autocmd FileType text,markdown,pandoc doautocmd User MyGrammarous
     autocmd FileType text,markdown,pandoc packadd vim-grammarous
-    autocmd FileType text,markdown,pandoc packadd vim-criticmarkup
+    " autocmd FileType text,markdown,pandoc packadd vim-criticmarkup
     autocmd FileType text,markdown,pandoc packadd vim-verdict
 augroup end
 
