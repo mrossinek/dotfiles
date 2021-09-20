@@ -179,12 +179,12 @@ sign define LspDiagnosticsSignWarning text=
 sign define LspDiagnosticsSignInformation text=
 sign define LspDiagnosticsSignHint text=
 
-nnoremap <silent> ]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <silent> [d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> ]d <cmd>lua vim.diagnostic.goto_next()<CR>
+nnoremap <silent> [d <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap <silent> <leader>dd <cmd>call mrossinek#functions#ToggleDiagnostics()<CR>
 
 autocmd CursorHold * lua
             \ local ok, result = pcall(vim.api.nvim_buf_get_var, 0, 'show_diagnostics')
             \ if not ok or result then
-            \     vim.lsp.diagnostic.show_line_diagnostics({focusable = false, border = "single"})
+            \     vim.diagnostic.show_position_diagnostics({focusable = false, border = "single"})
             \ end
