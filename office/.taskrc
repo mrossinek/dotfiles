@@ -10,6 +10,9 @@ include ~/.task/private_credentials # holds server address and login creds
 # colors
 include ~/.task/dark-16.theme
 color.alternate=
+color.tagged=
+color.uda.priority.M=blue
+color.uda.priority.H=bold red
 
 # reports
 report.in.columns     = id,project,description
