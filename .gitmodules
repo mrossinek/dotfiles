@@ -261,3 +261,6 @@
 [submodule "venn.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/venn.nvim
 	url = https://github.com/jbyuki/venn.nvim
+[submodule "null-ls.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/null-ls.nvim
+	url = https://github.com/jose-elias-alvarez/null-ls.nvim
