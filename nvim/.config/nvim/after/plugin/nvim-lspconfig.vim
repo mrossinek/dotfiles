@@ -89,30 +89,11 @@ lspconfig.fortls.setup{
 }
 
 -- overwrite the pylint executable to ensure it is run from the virtualenv
-lspconfig.pylsp.setup{
+lspconfig.pyright.setup{
     settings = {
-        pylsp = {
-            plugins = {
-                pylint = {
-                    enabled = true,
-                    executable = 'pylint',
-                },
-                pycodestyle = {
-                    enabled = false,
-                },
-                pydocstyle = {
-                    enabled = true,
-                },
-                pyls_black = {
-                    enabled = true,
-                },
-                pyls_isort = {
-                    enabled = true,
-                },
-                pyls_mypy = {
-                    enabled = true,
-                    live_mode = false,
-                },
+        python = {
+            analysis = {
+                diagnosticMode = "openFilesOnly",
             },
         },
     },
@@ -156,6 +137,23 @@ lspconfig.vimls.setup{
     on_attach=on_attach_vim,
     capabilities=capabilities
 }
+
+local null_ls = require("null-ls")
+
+-- register any number of sources simultaneously
+local sources = {
+    null_ls.builtins.code_actions.gitsigns,
+
+    null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.isort,
+    null_ls.builtins.formatting.stylua,
+}
+
+null_ls.config({ sources = sources })
+
+lspconfig["null-ls"].setup({
+    on_attach=on_attach_vim,
+})
 EOF
 
 " LSP
