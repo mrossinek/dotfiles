@@ -88,16 +88,32 @@ lspconfig.fortls.setup{
     capabilities=capabilities
 }
 
--- overwrite the pylint executable to ensure it is run from the virtualenv
-lspconfig.pyright.setup{
+lspconfig.pylsp.setup{
     settings = {
-        python = {
-            analysis = {
-                diagnosticMode = "openFilesOnly",
+        pylsp = {
+            plugins = {
+                pylint = {
+                    enabled = true,
+                    executable = 'pylint',
+                },
+                pycodestyle = {
+                    enabled = false,
+                },
+                pydocstyle = {
+                    enabled = true,
+                },
+                pyls_mypy = {
+                    enabled = true,
+                    live_mode = false,
+                },
             },
         },
     },
-    on_attach=on_attach_vim,
+    on_attach=function(client)
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
+        on_attach_vim(client)
+    end,
     capabilities=capabilities
 }
 
