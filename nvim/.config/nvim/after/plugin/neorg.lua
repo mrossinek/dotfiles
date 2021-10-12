@@ -67,11 +67,12 @@ require('neorg').setup {
                 type = "<leader>om",
             },
         },
+        ["core.gtd.base"] = {
+            config = {
+                workspace = "gtd",
+            }
+        },
         -- ["core.norg.qol.toc"] = {},
-        -- ["core.gtd.base"] = {
-        --     config = { workspace = "gtd" }
-        -- },
-        -- ["core.ui"] = {},
     },
 }
 
