@@ -42,8 +42,8 @@ cmp.setup {
         ['<CR>'] = cmp.mapping.confirm(),
         ['<Tab>'] = cmp.mapping(
         function(fallback)
-            if vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(replace_termcodes('<C-n>'), 'n')
+            if cmp.visible() then
+                cmp.select_next_item()
             elseif neogen.jumpable() then
                 vim.fn.feedkeys(replace_termcodes("<cmd>lua require('neogen').jump_next()<CR>"), "")
             elseif luasnip.expand_or_jumpable() then
@@ -56,8 +56,8 @@ cmp.setup {
         end, {"i", "s"}),
         ['<S-Tab>'] = cmp.mapping(
         function(fallback)
-            if vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(replace_termcodes('<C-p>'), 'n')
+            if cmp.visible() then
+                cmp.select_prev_item()
             elseif luasnip.jumpable() then
                 vim.fn.feedkeys(replace_termcodes("<Plug>luasnip-jump-prev"), "")
             else
