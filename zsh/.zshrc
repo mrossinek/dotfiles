@@ -140,7 +140,7 @@ alias org='git -C ~/Org'
 alias t=task
 alias ti=timew
 
-alias in='task add +in'
+alias in='task rc.context:none add +in'
 
 tickle_ () {
     deadline=$1
