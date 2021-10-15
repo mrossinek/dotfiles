@@ -1,6 +1,5 @@
 " Esc key
-tnoremap <Esc> <C-\><C-n>
-tnoremap <A-e> <Esc>
+tnoremap <Esc><Esc> <C-\><C-n>
 
 " seemless window switching
 tnoremap <A-H> <C-\><C-n><C-w>H
