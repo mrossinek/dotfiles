@@ -29,22 +29,7 @@ require('neorg').setup {
         },
         ["core.norg.concealer"] = {
             config = {
-                icons = {
-                    heading = {
-                        level_1 = {
-                            icon = "◉",
-                        },
-                        level_2 = {
-                            icon = " ◎",
-                        },
-                        level_3 = {
-                            icon = "  ○",
-                        },
-                        level_4 = {
-                            icon = "   ✺",
-                        },
-                    },
-                },
+                icon_preset = "diamond",
             },
         },
         ["core.norg.completion"] = {
