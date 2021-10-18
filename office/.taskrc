@@ -24,8 +24,8 @@ report.in.context     = 0
 report.next.filter    = +PENDING -BLOCKED -WAITING type:task limit:page
 
 # contexts
-context.home=+@home
-context.work=+@work
+context.home.read=+@home
+context.work.read=+@work
 
 # urgency
 urgency.inherit = 1
@@ -34,3 +34,6 @@ urgency.blocked.coefficient = 0.0
 
 # do this last so that we can override stuff if we want to
 include ~/.task_local
+
+# news
+news.version=2.6.0
