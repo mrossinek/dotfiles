@@ -41,7 +41,6 @@ require('neorg').setup {
             config = {
                 workspaces = {
                     org = "~/Org",
-                    gtd = "~/gtd",
                 },
                 autodetect = true,
                 autochdir = true,
@@ -54,7 +53,7 @@ require('neorg').setup {
         },
         ["core.gtd.base"] = {
             config = {
-                workspace = "gtd",
+                workspace = "org",
             }
         },
         -- ["core.norg.qol.toc"] = {},
