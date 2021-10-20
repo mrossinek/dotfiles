@@ -97,6 +97,8 @@ alias bang="ddgr --gb --np"
 
 # aliases
 alias la='ls -lA -v'
+alias g=git
+alias v=nvim
 alias vi=nvim
 alias vim=nvim
 alias vimdiff='nvim -d'
