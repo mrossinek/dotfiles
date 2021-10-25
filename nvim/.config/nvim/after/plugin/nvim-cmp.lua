@@ -24,14 +24,19 @@ cmp.setup {
     },
 
     sources = {
-        { name = 'buffer' },
+        { name = 'buffer', keyword_length = 5 },
         { name = 'path' },
-        { name = 'calc' },
-        { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
-        { name = 'luasnip' },
-        { name = 'emoji' },
+        { name = 'nvim_lsp' },
         { name = 'neorg' },
+        { name = 'luasnip', keyword_length = 2},
+        { name = 'calc' },
+        { name = 'emoji' },
+    },
+
+    experimental = {
+        ghost_text = true,
+        native_menu = true,
     },
 
     mapping = {
