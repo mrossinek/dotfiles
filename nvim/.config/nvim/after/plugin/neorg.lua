@@ -30,6 +30,7 @@ require('neorg').setup {
         ["core.norg.concealer"] = {
             config = {
                 icon_preset = "diamond",
+                dim_code_blocks = false,
             },
         },
         ["core.norg.completion"] = {
