@@ -200,5 +200,5 @@ nnoremap <silent> <leader>dd <cmd>call mrossinek#functions#ToggleDiagnostics()<C
 autocmd CursorHold * lua
             \ local ok, result = pcall(vim.api.nvim_buf_get_var, 0, 'show_diagnostics')
             \ if not ok or result then
-            \     vim.diagnostic.show_position_diagnostics({focusable = false, border = "single"})
+            \     vim.diagnostic.open_float(nil, {scope = "cursor", focusable = false, border = "single"})
             \ end
