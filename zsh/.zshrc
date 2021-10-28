@@ -96,7 +96,9 @@ set +H
 alias bang="ddgr --gb --np"
 
 # aliases
-alias la='ls -lA -v'
+alias ls='exa -l'
+alias ll='exa -l'
+alias la='exa -la'
 alias g=git
 alias v=nvim
 alias vi=nvim
