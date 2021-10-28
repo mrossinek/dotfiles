@@ -75,10 +75,10 @@ endfunction
 function! mrossinek#functions#ToggleDiagnostics()
     if !exists('b:show_diagnostics') || b:show_diagnostics == v:true
         let b:show_diagnostics = v:false
-        lua vim.lsp.diagnostic.clear(0)
+        lua vim.diagnostic.disable()
     else
         let b:show_diagnostics = v:true
-        lua vim.lsp.diagnostic.display(vim.lsp.diagnostic.get(0, 1), 0, 1, vim.lsp.diagnostic.settings)
+        lua vim.diagnostic.enable()
     endif
 endfunction
 
