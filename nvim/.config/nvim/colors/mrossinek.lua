@@ -212,17 +212,25 @@ apply_highlight(treesitter)
 
 -- LSP
 local lsp = {
-    LspDiagnosticsError           = {foreground = gui08},
-    LspDiagnosticsHint            = {foreground = gui06},
-    LspDiagnosticsInformation     = {foreground = gui0C},
-    LspDiagnosticsSignError       = {foreground = gui08, background = gui01},
-    LspDiagnosticsSignHint        = {foreground = gui06, background = gui01},
-    LspDiagnosticsSignInformation = {foreground = gui0C, background = gui01},
-    LspDiagnosticsSignWarning     = {foreground = gui0A, background = gui01},
-    LspDiagnosticsWarning         = {foreground = gui0A},
+    DiagnosticError           = {foreground = gui08},
+    DiagnosticHint            = {foreground = gui06},
+    DiagnosticInformation     = {foreground = gui0C},
+    DiagnosticSignError       = {foreground = gui08, background = gui01},
+    DiagnosticSignHint        = {foreground = gui06, background = gui01},
+    DiagnosticSignInformation = {foreground = gui0C, background = gui01},
+    DiagnosticSignWarning     = {foreground = gui0A, background = gui01},
+    DiagnosticWarning         = {foreground = gui0A},
     LspSignatureActiveParameter   = {foreground = gui0C, italic     = true},
 }
 apply_highlight(lsp)
+high_link("LspDiagnosticsError"       , "DiagnosticError")
+high_link("LspDiagnosticsHint"        , "DiagnosticHint")
+high_link("LspDiagnosticsInformation" , "DiagnosticInformation")
+high_link("LspDiagnosticsWarning"     , "DiagnosticWarning")
+high_link("LspDiagnosticsSignError"       , "DiagnosticSignError")
+high_link("LspDiagnosticsSignHint"        , "DiagnosticSignHint")
+high_link("LspDiagnosticsSignInformation" , "DiagnosticSignInformation")
+high_link("LspDiagnosticsSignWarning"     , "DiagnosticSignWarning")
 
 -- diff
 local diff_add = "#2a4517"

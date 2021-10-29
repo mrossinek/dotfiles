@@ -188,10 +188,10 @@ call sign_define("LightBulbSign", {"text": "💡", "texthl": "SignColumn", "line
 
 
 " lsp-diagnostics
-sign define LspDiagnosticsSignError text=
-sign define LspDiagnosticsSignWarning text=
-sign define LspDiagnosticsSignInformation text=
-sign define LspDiagnosticsSignHint text=
+sign define DiagnosticSignError text= texthl=DiagnosticSignError
+sign define DiagnosticSignWarning text= texthl=DiagnosticSignWarning
+sign define DiagnosticSignInformation text= texthl=DiagnosticSignInformation
+sign define DiagnosticSignHint text= texthl=DiagnosticSignHint
 
 nnoremap <silent> ]d <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <silent> [d <cmd>lua vim.diagnostic.goto_prev()<CR>
