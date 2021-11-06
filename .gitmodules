@@ -264,3 +264,6 @@
 [submodule "null-ls.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/null-ls.nvim
 	url = https://github.com/jose-elias-alvarez/null-ls.nvim
+[submodule "vim-mergetool"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-mergetool
+	url = https://github.com/samoshkin/vim-mergetool

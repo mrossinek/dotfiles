@@ -23,14 +23,16 @@
     templateDir = ~/.config/git/templates
 
 [merge]
-    tool = vimdiff
+    conflictStyle = diff3
+    tool = vim_mergetool
     prompt = false
 
 [mergetool]
     prompt = yes
 
-[mergetool "vimdiff"]
-    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[mergetool "vim_mergetool"]
+    cmd = nvim -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
+    trustExitCode = true
 
 [pull]
     rebase = true
