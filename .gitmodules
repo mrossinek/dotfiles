@@ -267,3 +267,6 @@
 [submodule "vim-mergetool"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-mergetool
 	url = https://github.com/samoshkin/vim-mergetool
+[submodule "tmux-open"]
+	path = tmux/.tmux/tmux-open
+	url = https://github.com/tmux-plugins/tmux-open
