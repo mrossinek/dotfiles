@@ -57,6 +57,11 @@ require('neorg').setup {
                 workspace = "org",
             }
         },
+        ["core.presenter"] = {
+            config = {
+                zen_mode = "zen-mode",
+            }
+        },
         -- ["core.norg.qol.toc"] = {},
     },
 }
@@ -92,5 +97,18 @@ keybinds.map_event_to_mode("norg", {
         },
 
     }, { silent = true, noremap = true })
+
+-- Map the below keys on presenter mode
+keybinds.map_event_to_mode("presenter", {
+    n = {
+        { "<M-l>", "core.presenter.next_page" },
+        { "<M-h>", "core.presenter.previous_page" },
+        { "<Esc>", "core.presenter.close" },
+    },
+}, {
+    silent = true,
+    noremap = true,
+    nowait = true,
+})
 
 end)
