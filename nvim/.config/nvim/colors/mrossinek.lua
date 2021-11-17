@@ -281,3 +281,8 @@ plugins.telescope = {
 }
 apply_highlight(plugins.telescope)
 high_link("TelescopeSelection", "CursorLine")
+
+plugins.folke = {
+    Twilight = {foreground = gui03},
+}
+apply_highlight(plugins.folke)
