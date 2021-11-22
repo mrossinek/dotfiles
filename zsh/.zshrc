@@ -96,6 +96,7 @@ set +H
 alias bang="ddgr --gb --np"
 
 # aliases
+alias l='exa -l'
 alias ls='exa -l'
 alias ll='exa -l'
 alias la='exa -la'
