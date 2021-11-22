@@ -1,5 +1,6 @@
 import os
 import sys
+
 # pylint: disable=C0111
 c = c  # noqa: F821 pylint: disable=E0602,C0103
 config = config  # noqa: F821 pylint: disable=E0602,C0103
@@ -99,5 +100,6 @@ c.fonts.default_family = 'monospace'
 c.fonts.default_size = '10pt'
 
 # editor
-c.editor.command = ["kitty", "-T", "qutebrowser external editor", "nvim", "-f", "{file}",
+c.editor.command = ["kitty", "-T", "qutebrowser external editor",
+                    os.path.expanduser("~/.local/bin/nvim"), "-f", "{file}",
                     "-c", "normal {line}G{column0}l"]
