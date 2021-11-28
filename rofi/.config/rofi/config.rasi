@@ -3,5 +3,5 @@ configuration {
 	font: "Hasklug Nerd Font 14";
 	show-icons: true;
 	combi-modi: "window,drun,run";
-	theme: "/usr/share/rofi/themes/glue_pro_blue.rasi";
 }
+@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
