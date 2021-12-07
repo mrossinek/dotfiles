@@ -151,9 +151,6 @@
 [submodule "coveragepy.vim"]
 	path = nvim/.config/nvim/pack/minpac/opt/coveragepy.vim
 	url = https://github.com/alfredodeza/coveragepy.vim
-[submodule "tcomment_vim"]
-	path = nvim/.config/nvim/pack/minpac/start/tcomment_vim
-	url = https://github.com/tomtom/tcomment_vim
 [submodule "nvim-nonicons"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-nonicons
 	url = https://github.com/yamatsum/nvim-nonicons
@@ -270,3 +267,6 @@
 [submodule "tmux-open"]
 	path = tmux/.tmux/tmux-open
 	url = https://github.com/tmux-plugins/tmux-open
+[submodule "comment.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/comment.nvim
+	url = https://github.com/numToStr/Comment.nvim
