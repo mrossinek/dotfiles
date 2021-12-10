@@ -12,7 +12,7 @@ set foldmethod=indent
 set formatoptions+=2,n
 set hidden
 set ignorecase
-set inccommand=split
+set inccommand=nosplit
 set list
 set listchars=nbsp:⦸
 set listchars+=tab:▷┅
