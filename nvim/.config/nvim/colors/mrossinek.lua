@@ -209,6 +209,7 @@ local treesitter = {
     TSURI = {foreground = gui08},
 }
 apply_highlight(treesitter)
+high_link("TSError", "Error")
 
 -- LSP
 local lsp = {
