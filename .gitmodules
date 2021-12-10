@@ -116,7 +116,7 @@
 	path = nvim/.config/nvim/pack/minpac/start/lsp-status.nvim
 	url = https://github.com/nvim-lua/lsp-status.nvim
 [submodule "plenary.nvim"]
-	path = nvim/.config/nvim/pack/minpac/start/plenary.vim
+	path = nvim/.config/nvim/pack/minpac/start/plenary.nvim
 	url = https://github.com/nvim-lua/plenary.nvim
 [submodule "popup.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/popup.nvim
