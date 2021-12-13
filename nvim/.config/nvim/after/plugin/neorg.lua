@@ -82,7 +82,7 @@ keybinds.map_event_to_mode("norg", {
         -- Links
         { "ZZ", "core.norg.dirman.new.note" },
 
-        { "<CR><CR>", "core.norg.esupports.goto_link" },
+        { "<CR><CR>", "core.norg.esupports.hop.hop-link" },
 
         { "<C-s>", "core.integrations.telescope.find_linkable" },
 
