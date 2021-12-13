@@ -154,20 +154,14 @@ lspconfig.vimls.setup{
     capabilities=capabilities
 }
 
-local null_ls = require("null-ls")
-
--- register any number of sources simultaneously
-local sources = {
-    null_ls.builtins.code_actions.gitsigns,
-
-    null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.isort,
-    null_ls.builtins.formatting.stylua,
-}
-
-null_ls.config({ sources = sources })
-
-lspconfig["null-ls"].setup({
+require("null-ls").setup({
+    -- register any number of sources simultaneously
+    sources = {
+        require("null-ls").builtins.code_actions.gitsigns,
+        require("null-ls").builtins.formatting.black,
+        require("null-ls").builtins.formatting.isort,
+        require("null-ls").builtins.formatting.stylua,
+    },
     on_attach=on_attach_vim,
 })
 EOF
