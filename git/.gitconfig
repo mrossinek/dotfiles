@@ -26,6 +26,7 @@
     conflictStyle = diff3
     tool = vim_mergetool
     prompt = false
+    autostash = true
 
 [mergetool]
     prompt = yes
@@ -37,6 +38,9 @@
 [pull]
     rebase = true
     ff = only
+
+[rebase]
+    autostash = true
 
 [color]
     ui = true
