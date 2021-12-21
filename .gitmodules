@@ -272,3 +272,6 @@
 [submodule "telescope-file-browser"]
 	path = nvim/.config/nvim/pack/minpac/start/telescope-file-browser
 	url = https://github.com/nvim-telescope/telescope-file-browser.nvim
+[submodule "marks.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/marks.nvim
+	url = https://github.com/chentau/marks.nvim

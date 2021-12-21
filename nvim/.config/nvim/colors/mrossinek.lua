@@ -265,15 +265,16 @@ plugins.coveragepy = {
 }
 apply_highlight(plugins.coveragepy)
 
-plugins.gitsigns = {
+plugins.signs = {
     GitSignsAdd = {foreground = gui0B, background = gui01},
     GitSignsAddNr = {foreground = gui0B, background = gui01},
     GitSignsChange = {foreground = gui0A, background = gui01},
     GitSignsChangeNr = {foreground = gui0A, background = gui01},
     GitSignsDelete = {foreground = gui08, background = gui01},
     GitSignsDeleteNr = {foreground = gui08, background = gui01},
+    MarkSignHL = {foreground = gui08, background = gui01},
 }
-apply_highlight(plugins.gitsigns)
+apply_highlight(plugins.signs)
 high_link("GitSignsCurrentLineBlame", "NonText")
 
 plugins.telescope = {
