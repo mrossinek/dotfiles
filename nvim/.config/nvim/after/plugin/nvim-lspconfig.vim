@@ -7,7 +7,13 @@ lsp_status.config {
 }
 lsp_status.register_progress()
 
--- nvim-cmp capab
+vim.diagnostic.config({
+    virtual_text = {
+        source = "always",
+    },
+})
+
+-- nvim-cmp capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.preselectSupport = true
@@ -88,24 +94,13 @@ lspconfig.fortls.setup{
     capabilities=capabilities
 }
 
-lspconfig.pylsp.setup{
+lspconfig.pyright.setup{
     settings = {
-        pylsp = {
-            plugins = {
-                pylint = {
-                    enabled = true,
-                    executable = 'pylint',
-                },
-                pycodestyle = {
-                    enabled = false,
-                },
-                pydocstyle = {
-                    enabled = true,
-                },
-                pyls_mypy = {
-                    enabled = true,
-                    live_mode = false,
-                },
+        python = {
+            analysis = {
+                diagnosticMode = "workspace",
+                typeCheckingMode = "off",
+                useLibraryCodeForTypes = true,
             },
         },
     },
@@ -158,6 +153,8 @@ require("null-ls").setup({
     -- register any number of sources simultaneously
     sources = {
         require("null-ls").builtins.code_actions.gitsigns,
+        require("null-ls").builtins.diagnostics.mypy,
+        require("null-ls").builtins.diagnostics.pylint,
         require("null-ls").builtins.formatting.black,
         require("null-ls").builtins.formatting.isort,
         require("null-ls").builtins.formatting.stylua,
