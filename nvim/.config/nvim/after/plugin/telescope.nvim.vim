@@ -19,7 +19,8 @@ telescope.setup {
 telescope.load_extension('bibtex')
 telescope.load_extension('dap')
 telescope.load_extension('fzy_native')
-telescope.load_extension("git_worktree")
+telescope.load_extension('git_worktree')
+telescope.load_extension('file_browser')
 EOF
 
 " File Pickers
@@ -61,6 +62,8 @@ nnoremap <silent> <CR>db <cmd>lua require'telescope'.extensions.dap.list_breakpo
 nnoremap <silent> <CR>dv <cmd>lua require'telescope'.extensions.dap.variables()<CR>
 
 nnoremap <silent> <CR>wt <cmd>lua require'telescope'.extensions.git_worktree.git_worktrees()<CR>
+
+nnoremap <silent> <CR>fb <cmd>lua require'telescope'.extensions.file_browser.file_browser({ hidden = true })<CR>
 
 " Custom
 nnoremap <silent> <CR>df <cmd>lua require'telescope.builtin'.find_files(require'telescope.themes'.get_dropdown( { previewer = false, prompt_title = "~ dotfiles ~", cwd = "~/dotfiles", find_command = { "rg", "--ignore", "--hidden", "--files", "--no-ignore-vcs", "--glob", "!.git" } } ) )<CR>

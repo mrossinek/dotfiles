@@ -269,3 +269,6 @@
 [submodule "comment.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/comment.nvim
 	url = https://github.com/numToStr/Comment.nvim
+[submodule "telescope-file-browser"]
+	path = nvim/.config/nvim/pack/minpac/start/telescope-file-browser
+	url = https://github.com/nvim-telescope/telescope-file-browser.nvim
