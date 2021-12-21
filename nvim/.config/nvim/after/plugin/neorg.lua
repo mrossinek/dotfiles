@@ -6,6 +6,7 @@ require('neorg').setup {
         ["core.integrations.treesitter"] = {
             config = {
                 highlights = {
+                    Error = "+Error",
                     Heading = {
                         ["1"] = {
                             Title = "+TSTitle",
@@ -30,6 +31,7 @@ require('neorg').setup {
         ["core.norg.concealer"] = {
             config = {
                 icon_preset = "diamond",
+                markup_preset = "brave",
                 dim_code_blocks = false,
             },
         },
@@ -88,6 +90,8 @@ keybinds.map_event_to_mode("norg", {
 
         { "<C-M-k>", "core.norg.manoeuvre.item_up" },
         { "<C-M-j>", "core.norg.manoeuvre.item_down" },
+
+        { "<leader>omt", "core.norg.concealer.toggle-markup" },
 
         },
     i = {
