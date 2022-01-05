@@ -31,7 +31,7 @@ require('neorg').setup {
         ["core.norg.concealer"] = {
             config = {
                 icon_preset = "diamond",
-                markup_preset = "brave",
+                markup_preset = "dimmed",
                 dim_code_blocks = false,
             },
         },
