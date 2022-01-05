@@ -49,6 +49,22 @@ require('neorg').setup {
                 autochdir = true,
             },
         },
+        ["core.norg.esupports"] = {
+            config = {
+                indent = false,
+                indent_config = {
+                    current = {
+                        enabled = false,
+                    },
+                    previous = {
+                        enabled = false,
+                    },
+                    realtime = {
+                        enabled = false,
+                    },
+                },
+            },
+        },
         ["core.norg.esupports.metagen"] = {
             config = {
                 type = "<leader>om",
