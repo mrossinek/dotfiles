@@ -63,6 +63,8 @@ cmp.setup {
         function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
+            elseif neogen.jumpable(-1) then
+                vim.fn.feedkeys(replace_termcodes("<cmd>lua require('neogen').jump_prev()<CR>"), "")
             elseif luasnip.jumpable() then
                 vim.fn.feedkeys(replace_termcodes("<Plug>luasnip-jump-prev"), "")
             else
