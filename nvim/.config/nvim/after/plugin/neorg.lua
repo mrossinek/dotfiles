@@ -80,7 +80,7 @@ require('neorg').setup {
                 zen_mode = "zen-mode",
             }
         },
-        -- ["core.norg.qol.toc"] = {},
+        ["core.norg.qol.toc"] = {},
     },
 }
 
