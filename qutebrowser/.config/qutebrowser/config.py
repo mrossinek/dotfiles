@@ -58,6 +58,16 @@ config.bind('t', 'set-cmd-text -s :open -t')
 config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xT', 'config-cycle tabs.position left top')
 config.bind('<Tab>', 'nop')
+# disable bookmark and quickmark related default keybindings
+config.bind('M', 'nop')
+config.bind('b', 'nop')
+config.bind('B', 'nop')
+config.bind('Sb', 'nop')
+config.bind('Sq', 'nop')
+config.bind('gb', 'nop')
+config.bind('gB', 'nop')
+config.bind('wb', 'nop')
+config.bind('wB', 'nop')
 
 # search engines
 c.url.searchengines = {
