@@ -25,8 +25,8 @@ keys = [
     # re-sizing
     Key([mod, "control"], "j", lazy.layout.grow_down()),
     Key([mod, "control"], "k", lazy.layout.grow_up()),
-    Key([mod, "control"], "h", lazy.layout.grow_left()),
-    Key([mod, "control"], "l", lazy.layout.grow_right()),
+    Key([mod, "control"], "h", lazy.layout.shrink_main().when(layout = 'monadtall'), lazy.layout.grow_left().when(layout = 'columns')),
+    Key([mod, "control"], "l", lazy.layout.grow_main().when(layout = 'monadtall'), lazy.layout.grow_right().when(layout = 'columns')),
 
     # layout operations
     Key([mod], "n", lazy.layout.normalize()),
@@ -223,7 +223,7 @@ layout_defaults = dict(
 )
 
 layouts=[
-    layout.MonadTall(single_border_width=0, **layout_defaults),
+    layout.MonadTall(single_border_width=0, ratio=0.6, **layout_defaults),
     layout.Columns(num_columns=3, **layout_defaults),
     layout.Max(),
 ]
