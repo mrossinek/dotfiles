@@ -54,6 +54,7 @@ require'nvim-treesitter.configs'.setup {
         "cpp",
         "css",
         "fortran",
+        "go",
         "html",
         "java",
         "json",

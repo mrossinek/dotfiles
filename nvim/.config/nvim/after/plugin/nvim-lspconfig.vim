@@ -149,6 +149,11 @@ lspconfig.vimls.setup{
     capabilities=capabilities
 }
 
+lspconfig.gopls.setup{
+    on_attach=on_attach_vim,
+    capabilities=capabilities
+}
+
 require("null-ls").setup({
     -- register any number of sources simultaneously
     sources = {
