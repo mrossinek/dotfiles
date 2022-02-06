@@ -1,9 +1,8 @@
 require('neorg').setup {
     load = {
         ["core.defaults"] = {},
-        ["core.highlights"] = {},
         ["core.integrations.telescope"] = {},
-        ["core.integrations.treesitter"] = {
+        ["core.highlights"] = {
             config = {
                 highlights = {
                     Error = "+Error",
