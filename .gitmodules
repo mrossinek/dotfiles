@@ -263,9 +263,6 @@
 [submodule "vim-mergetool"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-mergetool
 	url = https://github.com/samoshkin/vim-mergetool
-[submodule "tmux-open"]
-	path = tmux/.tmux/tmux-open
-	url = https://github.com/tmux-plugins/tmux-open
 [submodule "comment.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/comment.nvim
 	url = https://github.com/numToStr/Comment.nvim
@@ -275,3 +272,6 @@
 [submodule "marks.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/marks.nvim
 	url = https://github.com/chentau/marks.nvim
+[submodule "wezterm.nvim"]
+	path = wezterm/.config/wezterm/wezterm.nvim
+	url = https://github.com/aca/wezterm.nvim

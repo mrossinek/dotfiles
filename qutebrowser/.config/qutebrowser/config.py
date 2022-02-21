@@ -110,6 +110,6 @@ c.fonts.default_family = 'monospace'
 c.fonts.default_size = '10pt'
 
 # editor
-c.editor.command = ["kitty", "-T", "qutebrowser external editor",
+c.editor.command = ["wezterm", "start", "--",
                     os.path.expanduser("~/.local/bin/nvim"), "-f", "{file}",
                     "-c", "normal {line}G{column0}l"]

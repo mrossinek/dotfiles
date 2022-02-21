@@ -16,9 +16,6 @@ zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
 
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
-
 # Completion for the GitHub and GitLab CLIs
 eval "$(gh completion -s zsh)"
 
@@ -109,7 +106,6 @@ alias -s tex=nvim
 alias -s org=w3m
 alias -s com=w3m
 alias cat=bat
-alias icat='kitty +kitten icat'
 if [[ "$(uname)" == 'Linux' ]]; then
     alias open=xdg-open
 fi
@@ -180,3 +176,5 @@ backlog_ () {
 }
 
 alias backlog=backlog_
+
+[ -n "$WEZTERM_PANE" ] && export NVIM_LISTEN_ADDRESS="/tmp/nvim$WEZTERM_PANE"

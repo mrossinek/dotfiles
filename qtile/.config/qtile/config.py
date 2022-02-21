@@ -6,7 +6,7 @@ from libqtile.lazy import lazy
 
 # Variables
 mod = 'mod4'
-terminal = 'kitty'
+terminal = 'wezterm'
 browser = 'qutebrowser'
 
 
@@ -61,7 +61,7 @@ keys = [
     # Spawn commands
     Key([mod, "shift"], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "semicolon", lazy.group["scratchpad"].dropdown_toggle("term")),
-    Key([mod], "q", lazy.group["scratchpad"].dropdown_toggle("qtile shell")),
+    Key([mod], "q", lazy.group["scratchpad"].dropdown_toggle("qshell")),
     Key([mod], "p", lazy.spawn("rofi -show combi"), desc="Spawn a command using a prompt widget"),
 
     # custom user keys
@@ -116,7 +116,7 @@ keys = [
 
 # Groups
 groups = [
-    Group('1', spawn=terminal + " zsh -ic 'tmux'"),
+    Group('1', spawn=terminal),
     Group('2', spawn=browser),
     Group('3'),
     Group('4'),
@@ -127,7 +127,7 @@ groups = [
     Group('9', spawn="discord"),
     ScratchPad("scratchpad", [
         DropDown("term", terminal),
-        DropDown("qshell", terminal + " qshell"),
+        DropDown("qshell", terminal + " start -- qtile shell"),
     ],
     ),
 ]
