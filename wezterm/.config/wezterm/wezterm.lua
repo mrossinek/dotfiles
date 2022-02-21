@@ -4,7 +4,7 @@ local os = require'os'
 local move_around = function(window, pane, direction_wez, direction_nvim)
     local result = os.execute("env NVIM_LISTEN_ADDRESS=/tmp/nvim" .. pane:pane_id() ..  " ~/go/bin/wezterm.nvim.navigator " .. direction_nvim)
     if result then
-        window:perform_action(wezterm.action({ SendString = "\x17" .. direction_nvim }), pane)
+        window:perform_action(wezterm.action({ SendKey = {key=direction_nvim, mods="ALT"} }), pane)
     else
         window:perform_action(wezterm.action({ ActivatePaneDirection = direction_wez }), pane)
     end
