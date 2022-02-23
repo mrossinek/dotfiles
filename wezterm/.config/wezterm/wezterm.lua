@@ -108,6 +108,7 @@ return {
         {key="Backspace", mods="CTRL|SHIFT", action="ResetFontSize"},
 
         -- pane management
+        {key="x", mods="CTRL|SHIFT", action=wezterm.action{CloseCurrentPane={confirm=true}}},
         {key="-", mods="LEADER", action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
         {key="|", mods="LEADER", action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
         {key="h", mods="LEADER", action=wezterm.action{ActivatePaneDirection="Left"}},
