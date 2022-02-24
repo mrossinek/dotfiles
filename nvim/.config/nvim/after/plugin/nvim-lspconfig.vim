@@ -154,15 +154,18 @@ lspconfig.gopls.setup{
     capabilities=capabilities
 }
 
-require("null-ls").setup({
+local null_ls = require('null-ls')
+null_ls.setup({
     -- register any number of sources simultaneously
     sources = {
-        require("null-ls").builtins.code_actions.gitsigns,
-        require("null-ls").builtins.diagnostics.mypy,
-        require("null-ls").builtins.diagnostics.pylint,
-        require("null-ls").builtins.formatting.black,
-        require("null-ls").builtins.formatting.isort,
-        require("null-ls").builtins.formatting.stylua,
+        null_ls.builtins.code_actions.gitsigns,
+        null_ls.builtins.diagnostics.mypy,
+        null_ls.builtins.diagnostics.pylint.with({
+            method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+        }),
+        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.isort,
+        null_ls.builtins.formatting.stylua,
     },
     on_attach=on_attach_vim,
 })
