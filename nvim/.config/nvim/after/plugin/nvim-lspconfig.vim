@@ -98,7 +98,7 @@ lspconfig.pyright.setup{
     settings = {
         python = {
             analysis = {
-                diagnosticMode = "workspace",
+                diagnosticMode = "openFilesOnly",
                 typeCheckingMode = "off",
                 useLibraryCodeForTypes = true,
             },
