@@ -27,6 +27,8 @@ wezterm.on("move-down", function(window, pane)
 end)
 
 return {
+    check_for_updates = false,
+
     scrollback_lines = 10000,
 
     use_fancy_tab_bar = false,
