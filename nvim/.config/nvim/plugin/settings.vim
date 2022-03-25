@@ -13,6 +13,7 @@ set formatoptions+=2,n
 set hidden
 set ignorecase
 set inccommand=nosplit
+set laststatus=3
 set list
 set listchars=nbsp:⦸
 set listchars+=tab:▷┅

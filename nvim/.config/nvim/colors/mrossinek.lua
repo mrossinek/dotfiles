@@ -169,6 +169,7 @@ local basic_ui = {
     VisualNOS     = {foreground = gui08},
     WarningMsg    = {foreground = gui08},
     WildMenu      = {foreground = gui08, background = gui0A},
+    WinSeparator  = {foreground = gui03},
 }
 apply_highlight(basic_ui)
 
