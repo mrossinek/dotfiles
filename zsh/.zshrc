@@ -74,9 +74,13 @@ function virtual_env_prompt () {
     REPLY=${VIRTUAL_ENV+(${VIRTUAL_ENV:t}) }
 }
 grml_theme_add_token virtual-env -f virtual_env_prompt "%F${fg[cyan]}" '%f'
+function conda_env_prompt () {
+    REPLY=${CONDA_PROMPT_MODIFIER+(${CONDA_PROMPT_MODIFIER:t}) }
+}
+grml_theme_add_token conda-env -f conda_env_prompt "%F${fg[cyan]}" '%f'
 grml_theme_add_token percent_nbsp "%# "
 # PROMPT
-zstyle ':prompt:grml:left:setup' items rc change-root user at host path virtual-env vcs newline percent_nbsp
+zstyle ':prompt:grml:left:setup' items rc change-root user at host path virtual-env conda-env vcs newline percent_nbsp
 zstyle ':prompt:grml:right:setup' items time sad-smiley
 
 # enable gpg signing
