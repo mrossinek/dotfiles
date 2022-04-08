@@ -19,6 +19,7 @@ config.utils.file_downloader.url_map = {
     r"(.+)://journals.aps.org/prxquantum/abstract/(.+)": r"\1://journals.aps.org/prxquantum/pdf/\2",
     r"(.+)://journals.aps.org/prb/abstract/(.+)": r"\1://journals.aps.org/prb/pdf/\2",
     r"(.+)://quantum-journal.org/papers/([^/]+)": r"\1://quantum-journal.org/papers/\2/pdf/",
+    r"(.+)://aip.scitation.org/doi/(.+)": r"\1://aip.scitation.org/doi/pdf/\2",
 }
 
 config.utils.journal_abbreviations = [
