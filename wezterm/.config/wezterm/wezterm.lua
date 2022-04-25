@@ -105,8 +105,8 @@ return {
         {key="DownArrow", mods="SHIFT", action=wezterm.action{ScrollToPrompt=1}},
 
         -- font size
-        {key="_", mods="CTRL", action="DecreaseFontSize"},
-        {key="+", mods="CTRL", action="IncreaseFontSize"},
+        {key="_", mods="CTRL|SHIFT", action="DecreaseFontSize"},
+        {key="+", mods="CTRL|SHIFT", action="IncreaseFontSize"},
         {key="Backspace", mods="CTRL|SHIFT", action="ResetFontSize"},
 
         -- pane management
