@@ -249,6 +249,7 @@ dgroups_app_rules=[]  # type: List
 
 # General settings
 follow_mouse_focus=False
+cursor_wrap=True
 
 # Note: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
