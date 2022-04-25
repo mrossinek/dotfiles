@@ -98,7 +98,7 @@ return {
 
         -- search
         {key="/", mods="CTRL", action=wezterm.action{Search={CaseInSensitiveString=""}}},
-        {key="?", mods="CTRL", action=wezterm.action{Search={CaseSensitiveString=""}}},
+        {key="?", mods="CTRL|SHIFT", action=wezterm.action{Search={CaseSensitiveString=""}}},
 
         -- scrolling
         {key="UpArrow", mods="SHIFT", action=wezterm.action{ScrollToPrompt=-1}},
@@ -112,15 +112,15 @@ return {
         -- pane management
         {key="x", mods="CTRL|SHIFT", action=wezterm.action{CloseCurrentPane={confirm=true}}},
         {key="-", mods="LEADER", action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
-        {key="|", mods="LEADER", action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
+        {key="|", mods="LEADER|SHIFT", action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
         {key="h", mods="LEADER", action=wezterm.action{ActivatePaneDirection="Left"}},
         {key="j", mods="LEADER", action=wezterm.action{ActivatePaneDirection="Down"}},
         {key="k", mods="LEADER", action=wezterm.action{ActivatePaneDirection="Up"}},
         {key="l", mods="LEADER", action=wezterm.action{ActivatePaneDirection="Right"}},
-        {key="H", mods="LEADER", action=wezterm.action{AdjustPaneSize={"Left", 5}}},
-        {key="J", mods="LEADER", action=wezterm.action{AdjustPaneSize={"Down", 5}}},
-        {key="K", mods="LEADER", action=wezterm.action{AdjustPaneSize={"Up", 5}}},
-        {key="L", mods="LEADER", action=wezterm.action{AdjustPaneSize={"Right", 5}}},
+        {key="H", mods="LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Left", 5}}},
+        {key="J", mods="LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Down", 5}}},
+        {key="K", mods="LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Up", 5}}},
+        {key="L", mods="LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Right", 5}}},
         {key="z", mods="LEADER", action="TogglePaneZoomState"},
         -- wezterm.nvim integration
         {key="h", mods="ALT", action=wezterm.action{EmitEvent="move-left"}},
