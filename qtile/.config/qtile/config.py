@@ -126,8 +126,8 @@ groups = [
     Group('8'),
     Group('9', spawn="discord"),
     ScratchPad("scratchpad", [
-        DropDown("term", terminal),
-        DropDown("qshell", terminal + " start -- qtile shell"),
+        DropDown("term", terminal, match=Match(wm_class="org.wezfurlong.wezterm")),
+        DropDown("qshell", terminal + " start -- qtile shell", match=Match(wm_class="org.wezfurlong.wezterm")),
     ],
     ),
 ]
