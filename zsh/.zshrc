@@ -75,7 +75,7 @@ function virtual_env_prompt () {
 }
 grml_theme_add_token virtual-env -f virtual_env_prompt "%F${fg[cyan]}" '%f'
 function conda_env_prompt () {
-    REPLY=${CONDA_PROMPT_MODIFIER+(${CONDA_PROMPT_MODIFIER:t}) }
+    REPLY=${CONDA_PROMPT_MODIFIER+${CONDA_PROMPT_MODIFIER:t} }
 }
 grml_theme_add_token conda-env -f conda_env_prompt "%F${fg[cyan]}" '%f'
 grml_theme_add_token percent_nbsp "%# "
