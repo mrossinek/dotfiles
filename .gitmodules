@@ -266,3 +266,6 @@
 [submodule "wezterm.nvim"]
 	path = wezterm/.config/wezterm/wezterm.nvim
 	url = https://github.com/aca/wezterm.nvim
+[submodule "octo.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/octo.nvim
+	url = https://github.com/pwntester/octo.nvim

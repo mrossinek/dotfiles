@@ -47,6 +47,10 @@ else
     }
 end
 
+parser_configs.markdown = {
+    filetype_to_parsername = "octo",
+}
+
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "bash",

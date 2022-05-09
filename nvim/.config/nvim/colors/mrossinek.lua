@@ -288,3 +288,15 @@ plugins.folke = {
     Twilight = {foreground = gui03},
 }
 apply_highlight(plugins.folke)
+
+plugins.octo = {
+    OctoBubble = {background = gui02},
+    OctoEditable = {background = "#363636"},
+    OctoGreyFloat =   {foreground = "#2A354C", background = gui02},
+    OctoBlueFloat =   {foreground = "#58A6FF", background = gui02},
+    OctoYellowFloat = {foreground = "#d3c846", background = gui02},
+    OctoPurpleFloat = {foreground = "#6f42c1", background = gui02},
+    OctoRedFloat =    {foreground = "#da3633", background = gui02},
+    OctoGreenFloat =  {foreground = "#238636", background = gui02},
+}
+apply_highlight(plugins.octo)
