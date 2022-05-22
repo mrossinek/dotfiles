@@ -80,5 +80,11 @@ require('neorg').setup {
             }
         },
         ["core.norg.qol.toc"] = {},
+        ["core.export"] = {},
+        ["core.export.markdown"] = {
+            config = {
+                extensions = "all",
+            },
+        },
     },
 }
