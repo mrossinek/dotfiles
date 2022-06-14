@@ -23,6 +23,11 @@ cmp.setup {
         keyword_length = 1,
     },
 
+    enabled = function ()
+        return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+            or require("cmp_dap").is_dap_buffer()
+    end,
+
     sources = {
         { name = 'buffer', keyword_length = 5 },
         { name = 'path' },
@@ -32,6 +37,7 @@ cmp.setup {
         { name = 'luasnip', keyword_length = 2},
         { name = 'calc' },
         { name = 'emoji' },
+        { name = 'dap' },
     },
 
     experimental = {
