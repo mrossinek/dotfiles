@@ -218,6 +218,7 @@ screens = [
 
 # Layouts
 layout_defaults = dict(
+    border_width = 1,
     border_focus = '#77b2f6',
     border_normal = '#969694',
 )
@@ -225,7 +226,8 @@ layout_defaults = dict(
 layouts=[
     layout.MonadTall(single_border_width=0, ratio=0.6, **layout_defaults),
     layout.Columns(num_columns=3, **layout_defaults),
-    layout.Max(),
+    layout.Max(**layout_defaults),
+    layout.Matrix(**layout_defaults),
 ]
 
 # TODO make these a list of Match objects rather than dictionaries
