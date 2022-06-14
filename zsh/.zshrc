@@ -114,6 +114,7 @@ if [[ "$(uname)" == 'Linux' ]]; then
     alias open=xdg-open
 fi
 alias wttr='curl wttr.in'
+alias free_mem="echo 3 | sudo tee /proc/sys/vm/drop_caches && sudo swapoff -a && sudo swapon -a"
 
 # Make CTRL-Z background things and unbackground them.
 function fg-bg() {
