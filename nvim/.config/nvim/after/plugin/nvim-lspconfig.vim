@@ -182,8 +182,6 @@ nnoremap <silent> <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
 " code actions
 nnoremap <silent><leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 vnoremap <silent><leader>ca :<C-U>lua vim.lsp.buf.range_code_action()<CR>
-autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
-call sign_define("LightBulbSign", {"text": "💡", "texthl": "SignColumn", "linehl": "", "numhl": ""})
 
 
 " lsp-diagnostics

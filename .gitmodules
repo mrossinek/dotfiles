@@ -16,9 +16,6 @@
 [submodule "vimtex"]
 	path = nvim/.config/nvim/pack/minpac/opt/vimtex
 	url = https://github.com/lervag/vimtex
-[submodule "vim-grammarous"]
-	path = nvim/.config/nvim/pack/minpac/opt/vim-grammarous
-	url = https://github.com/rhysd/vim-grammarous
 [submodule "vim-verdict"]
 	path = nvim/.config/nvim/pack/minpac/opt/vim-verdict
 	url = https://gitlab.com/mrossinek/vim-verdict
@@ -37,12 +34,6 @@
 [submodule "loupe"]
 	path = nvim/.config/nvim/pack/minpac/start/loupe
 	url = https://github.com/wincent/loupe
-[submodule "vim-exchange"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-exchange
-	url = https://github.com/tommcdo/vim-exchange
-[submodule "ReplaceWithRegister"]
-	path = nvim/.config/nvim/pack/minpac/start/ReplaceWithRegister
-	url = https://github.com/vim-scripts/ReplaceWithRegister
 [submodule "vim-trailing-whitespace"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-trailing-whitespace
 	url = https://github.com/bronson/vim-trailing-whitespace
@@ -52,27 +43,15 @@
 [submodule "undotree"]
 	path = nvim/.config/nvim/pack/minpac/start/undotree
 	url = https://github.com/mbbill/undotree
-[submodule "NrrwRgn"]
-	path = nvim/.config/nvim/pack/minpac/start/NrrwRgn
-	url = https://github.com/chrisbra/NrrwRgn
 [submodule "linediff.vim"]
 	path = nvim/.config/nvim/pack/minpac/start/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim
-[submodule "vim-cmake"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-cmake
-	url = https://github.com/vhdirk/vim-cmake
-[submodule "vim-plugin-AnsiEsc"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-plugin-AnsiEsc
-	url = https://github.com/powerman/vim-plugin-AnsiEsc
 [submodule "quicktex"]
 	path = nvim/.config/nvim/pack/minpac/opt/quicktex
 	url = https://github.com/brennier/quicktex
 [submodule "vim-sneak"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-sneak
 	url = https://github.com/justinmk/vim-sneak
-[submodule "BufOnly.vim"]
-	path = nvim/.config/nvim/pack/minpac/start/BufOnly.vim
-	url = https://github.com/vim-scripts/BufOnly.vim
 [submodule "tabular"]
 	path = nvim/.config/nvim/pack/minpac/start/tabular
 	url = https://github.com/godlygeek/tabular
@@ -82,12 +61,6 @@
 [submodule "deuterium"]
 	path = nvim/.config/nvim/pack/minpac/opt/deuterium
 	url = https://gitlab.com/mrossinek/deuterium.git
-[submodule "vim-markdown"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown
-[submodule "jupytext.vim"]
-	path = nvim/.config/nvim/pack/minpac/opt/jupytext.vim
-	url = https://github.com/goerz/jupytext.vim
 [submodule "quick-scope"]
 	path = nvim/.config/nvim/pack/minpac/start/quick-scope
 	url = https://github.com/unblevable/quick-scope
@@ -191,9 +164,6 @@
 [submodule "todo-comments.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/todo-comments.nvim
 	url = https://github.com/folke/todo-comments.nvim
-[submodule "nvim-lightbulb"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-lightbulb
-	url = https://github.com/kosayoda/nvim-lightbulb
 [submodule "lir.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/lir.nvim
 	url = https://github.com/tamago324/lir.nvim
@@ -245,9 +215,6 @@
 [submodule "impatient.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/impatient.nvim
 	url = https://github.com/lewis6991/impatient.nvim
-[submodule "venn.nvim"]
-	path = nvim/.config/nvim/pack/minpac/start/venn.nvim
-	url = https://github.com/jbyuki/venn.nvim
 [submodule "null-ls.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/null-ls.nvim
 	url = https://github.com/jose-elias-alvarez/null-ls.nvim
@@ -275,3 +242,6 @@
 [submodule "nvim-cmp-dap"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-dap
 	url = https://github.com/rcarriga/cmp-dap
+[submodule "vim-speeddating"]
+	path = nvim/.config/nvim/pack/minpac/start/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating
