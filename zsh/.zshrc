@@ -1,3 +1,4 @@
+export COMMAND_NOT_FOUND=0
 if [[ ! -v GRML_OSTYPE ]]; then
     # if grml was not loaded from system-wide, use a local copy
     source ~/.grml.zshrc
