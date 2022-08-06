@@ -63,9 +63,9 @@ function! mrossinek#functions#WebSearch(type, ...)
     endif
     let search = filetype . substitute(trim(@@), ' \+', '+', 'g')
 
-    silent execute "!xdg-open 'https://duckduckgo.com/?q=" . search . "'"
+    silent execute "!xdg-open 'https://search.brave.com/search?q=" . search . "'"
     if v:shell_error > 0
-        silent execute "!open 'https://duckduckgo.com/?q=" . search . "'"
+        silent execute "!open 'https://search.brave.com/search?q=" . search . "'"
     endif
 
     let &selection = sel_save
