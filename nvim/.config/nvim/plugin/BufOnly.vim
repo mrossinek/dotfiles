@@ -51,9 +51,11 @@ function! BufOnly(buffer, bang)
                             \ n '(add ! to override)'
                 echohl None
             else
-                silent exe 'bdel' . a:bang . ' ' . n
-                if ! buflisted(n)
-                    let delete_count = delete_count+1
+                if getbufvar(n, "&buftype") != "terminal"
+                    silent exe 'bdel' . a:bang . ' ' . n
+                    if ! buflisted(n)
+                        let delete_count = delete_count+1
+                    endif
                 endif
             endif
         endif
