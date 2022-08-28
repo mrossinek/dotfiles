@@ -48,10 +48,26 @@ cmp.setup {
     },
 
     mapping = {
-        ['<C-p>'] = cmp.mapping.select_prev_item(),
-        ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.close(),
+        ['<C-p>'] = cmp.mapping(
+        function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.choice_active() then
+                vim.fn.feedkeys(replace_termcodes("<Plug>luasnip-prev-choice"), "")
+            else
+                fallback()
+            end
+        end, {"i", "s"}),
+        ['<C-n>'] = cmp.mapping(
+        function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.choice_active() then
+                vim.fn.feedkeys(replace_termcodes("<Plug>luasnip-next-choice"), "")
+            else
+                fallback()
+            end
+        end, {"i", "s"}),
         ['<CR>'] = cmp.mapping.confirm(),
         ['<Tab>'] = cmp.mapping(
         function(fallback)
