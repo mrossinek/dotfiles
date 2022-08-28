@@ -16,7 +16,7 @@ if not luasnip.snippets then
     luasnip.snippets = {}
 end
 
-luasnip.snippets.all = {
+luasnip.add_snippets("all", {
     snip("FIXME", {
         t("FIXME("),
         p(os.getenv, "USER"),
@@ -32,9 +32,9 @@ luasnip.snippets.all = {
         p(os.getenv, "USER"),
         t("): "),
     }),
-}
+})
 
-luasnip.snippets.python = {
+luasnip.add_snippets("python", {
     snip("PROPERTY", {
         t({"@property", "def "}),
         i(1),
@@ -60,9 +60,9 @@ luasnip.snippets.python = {
         r(1),
         t({"", ""}),
     }),
-}
+})
 
-luasnip.snippets.tex = {
+luasnip.add_snippets("tex", {
     snip("ENVIRONMENT", {
         t("\\begin{"),
         i(1),
@@ -72,6 +72,5 @@ luasnip.snippets.tex = {
         r(1),
         t("}"),
     }),
-}
+})
 
-luasnip.snippets.plaintex = luasnip.snippets.tex
