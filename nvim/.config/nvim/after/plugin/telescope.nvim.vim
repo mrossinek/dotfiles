@@ -14,6 +14,11 @@ telescope.setup {
             '--hidden'
         },
     },
+    extensions = {
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown({})
+        }
+    },
 }
 
 telescope.load_extension('bibtex')
@@ -21,6 +26,7 @@ telescope.load_extension('dap')
 telescope.load_extension('fzy_native')
 telescope.load_extension('git_worktree')
 telescope.load_extension('file_browser')
+telescope.load_extension('ui-select')
 EOF
 
 " File Pickers

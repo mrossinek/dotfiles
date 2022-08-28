@@ -191,9 +191,6 @@
 [submodule "nvim-cmp-emoji"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-emoji
 	url = https://github.com/hrsh7th/cmp-emoji
-[submodule "nvim-cmp-calc"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-calc
-	url = https://github.com/hrsh7th/cmp-calc
 [submodule "lspkind-nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/lspkind-nvim
 	url = https://github.com/onsails/lspkind-nvim
@@ -245,3 +242,6 @@
 [submodule "vim-speeddating"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating
+[submodule "telescope-ui-select"]
+	path = nvim/.config/nvim/pack/minpac/start/telescope-ui-select
+	url = https://github.com/nvim-telescope/telescope-ui-select.nvim
