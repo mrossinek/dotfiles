@@ -245,3 +245,6 @@
 [submodule "telescope-ui-select"]
 	path = nvim/.config/nvim/pack/minpac/start/telescope-ui-select
 	url = https://github.com/nvim-telescope/telescope-ui-select.nvim
+[submodule "nvim-treesitter-context"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-treesitter-context
+	url = https://github.com/nvim-treesitter/nvim-treesitter-context.git

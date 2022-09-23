@@ -115,3 +115,16 @@ require'nvim-treesitter.configs'.setup {
         },
     },
 }
+require'treesitter-context'.setup{
+    separator = '─',
+    patterns = {
+        norg = {
+            'heading1',
+            'heading2',
+            'heading3',
+            'heading4',
+            'heading5',
+            'heading6',
+        },
+    },
+}
