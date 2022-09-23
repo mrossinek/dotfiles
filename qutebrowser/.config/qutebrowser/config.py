@@ -59,6 +59,7 @@ config.bind('t', 'set-cmd-text -s :open -t')
 config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xT', 'config-cycle tabs.position left top')
 config.bind('<Tab>', 'nop')
+config.bind('<Ctrl+=>', 'config-cycle zoom.default 100% 125% 150% 175% 200%')
 # disable bookmark and quickmark related default keybindings
 config.bind('M', 'nop')
 config.bind('b', 'nop')
