@@ -177,7 +177,7 @@ nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <c-l> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> gh    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gR    <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap <silent> <leader>f <cmd>lua vim.lsp.buf.format({async = True})<CR>
 
 " code actions
 nnoremap <silent><leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
