@@ -75,55 +75,59 @@ luasnip.add_snippets("tex", {
     }),
 })
 
-local function account_choices()
-    local choices = {t("ACCOUNT")}
-    local handle = io.popen("hledger accounts")
-    for line in handle:lines() do
-        table.insert(choices, t(line))
-    end
-    handle:close()
-    return choices
-end
-
-local function negate(args, _, _)
-    return string.format("%.2f", -1 * tonumber(args[1][1]))
-end
-
-luasnip.add_snippets("ledger", {
-    snip("TRANSACTION", {
-        i(1),
-        t("/"),
-        i(2),
-        t(" "),
-        i(3),
-        t({"", "\t"}),
-        c(4, account_choices()),
-        t("  CHF "),
-        i(5, "0.00"),
-        t({"", "\t"}),
-        c(6, account_choices()),
-        t("  CHF "),
-        f(negate, 5, {}),
-        t({"", ""}),
-        i(0),
-    }, {
-        callbacks = {
-            [0] = {
-                [events.enter] = function (node, _)
-                    local from_pos, _ = node.mark:pos_begin_end_raw()
-                    local buf_line = from_pos[1]
-                    vim.api.nvim_cmd(
-                        {
-                            cmd="call",
-                            args={"ledger#align_commodity()"},
-                            range={buf_line-1, buf_line},
-                        },
-                        {}
-                    )
-                end
-            },
-        },
-    }),
-})
-
-vim.keymap.set("i", "<C-Space>", "<cmd>lua require('luasnip.extras.select_choice')()<cr>", { remap = false })
+-- TODO: figure out how to make this usable!
+-- PERF: currently startup performance is horrible, because account_choices gets
+-- evaluated at startup rather than once its needed
+--
+-- local function account_choices()
+--     local choices = {t("ACCOUNT")}
+--     local handle = io.popen("hledger accounts")
+--     for line in handle:lines() do
+--         table.insert(choices, t(line))
+--     end
+--     handle:close()
+--     return choices
+-- end
+--
+-- local function negate(args, _, _)
+--     return string.format("%.2f", -1 * tonumber(args[1][1]))
+-- end
+--
+-- luasnip.add_snippets("ledger", {
+--     snip("TRANSACTION", {
+--         i(1),
+--         t("/"),
+--         i(2),
+--         t(" "),
+--         i(3),
+--         t({"", "\t"}),
+--         c(4, account_choices()),
+--         t("  CHF "),
+--         i(5, "0.00"),
+--         t({"", "\t"}),
+--         c(6, account_choices()),
+--         t("  CHF "),
+--         f(negate, 5, {}),
+--         t({"", ""}),
+--         i(0),
+--     }, {
+--         callbacks = {
+--             [0] = {
+--                 [events.enter] = function (node, _)
+--                     local from_pos, _ = node.mark:pos_begin_end_raw()
+--                     local buf_line = from_pos[1]
+--                     vim.api.nvim_cmd(
+--                         {
+--                             cmd="call",
+--                             args={"ledger#align_commodity()"},
+--                             range={buf_line-1, buf_line},
+--                         },
+--                         {}
+--                     )
+--                 end
+--             },
+--         },
+--     }),
+-- })
+--
+-- vim.keymap.set("i", "<C-Space>", "<cmd>lua require('luasnip.extras.select_choice')()<cr>", { remap = false })
