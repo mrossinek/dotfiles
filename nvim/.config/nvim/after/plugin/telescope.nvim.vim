@@ -67,7 +67,7 @@ nnoremap <silent> <CR>dc <cmd>lua require'telescope'.extensions.dap.configuratio
 nnoremap <silent> <CR>db <cmd>lua require'telescope'.extensions.dap.list_breakpoints()<CR>
 nnoremap <silent> <CR>dv <cmd>lua require'telescope'.extensions.dap.variables()<CR>
 
-nnoremap <silent> <CR>wt <cmd>lua require'telescope'.extensions.git_worktree.git_worktrees()<CR>
+nnoremap <silent> <CR>wt <cmd>tabnew \| lua require'telescope'.extensions.git_worktree.git_worktrees()<CR>
 
 nnoremap <silent> <CR>fb <cmd>lua require'telescope'.extensions.file_browser.file_browser({ hidden = true })<CR>
 
