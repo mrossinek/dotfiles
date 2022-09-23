@@ -5,17 +5,16 @@ require('neorg').setup {
         ["core.highlights"] = {
             config = {
                 highlights = {
-                    Error = "+Error",
-                    Heading = {
+                    headings = {
                         ["1"] = {
-                            Title = "+TSTitle",
-                            Prefix = "+TSTitle",
+                            title = "+TSTitle",
+                            prefix = "+TSTitle",
                         },
                     },
-                    Quote = {
+                    quotes = {
                         ["1"] = {
-                            [""] = "+Grey",
-                            Content = "+Grey",
+                            prefix = "+Grey",
+                            content = "+Grey",
                         },
                     },
                 },
@@ -47,7 +46,9 @@ require('neorg').setup {
             config = {
                 icon_preset = "diamond",
                 markup_preset = "dimmed",
-                dim_code_blocks = false,
+                dim_code_blocks = {
+                    enabled = false,
+                },
             },
         },
         ["core.norg.completion"] = {
