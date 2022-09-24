@@ -53,13 +53,13 @@ vim.keymap.set("n", "<C-W>m", ":winc _ <bar> winc <bar> <cr>", {})
 vim.keymap.set("n", "<C-W>a", ":winc =<cr>", {})
 
 -- scrolling
-vim.keymap.set("n", "<leader>sc", ":call mrossinek#functions#ToggleScrollingMode()", {})
-vim.keymap.set("n", "<leader>scb", ":setlocal scb!", {})
+vim.keymap.set("n", "<leader>sc", ":call mrossinek#functions#ToggleScrollingMode()<CR>", {})
+vim.keymap.set("n", "<leader>scb", ":setlocal scb!<CR>", {})
 vim.keymap.set("n", "<C-E>", "2<C-E>", {})
 vim.keymap.set("n", "<C-Y>", "2<C-Y>", {})
 
 -- spelling
-vim.keymap.set("n", "<leader>sp", ":call mrossinek#functions#FixLastSpellingError()", {})
+vim.keymap.set("n", "<leader>sp", ":call mrossinek#functions#FixLastSpellingError()<CR>", {})
 vim.keymap.set("n", "<leader>sl", ":setlocal spelllang=", {})
 
 -- web search
