@@ -9,7 +9,8 @@ BASE_PTH=.direnv/venv/lib/$PYTHON_VERSION/site-packages/base_venv.pth
 # Generate a derived virtualenv
 mkdir -p .direnv
 python -m venv .direnv/venv
-find $PYTHON_BASE_DIR/lib/$PYTHON_VERSION/site-packages/ -name '*.egg-link' -exec head -q -n1 {} + > $BASE_PTH
+pwd > $BASE_PTH
+find $PYTHON_BASE_DIR/lib/$PYTHON_VERSION/site-packages/ -name '*.egg-link' -exec head -q -n1 {} + >> $BASE_PTH
 realpath $PYTHON_BASE_DIR/lib/$PYTHON_VERSION/site-packages/ >> $BASE_PTH
 
 # Configure direnv to include the super-virtualenv's binaries in the PATH and

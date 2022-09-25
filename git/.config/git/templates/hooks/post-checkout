@@ -56,6 +56,5 @@ realpath $PYTHON_BASE_DIR/lib/$PYTHON_VERSION/site-packages/ >> $BASE_PTH
 
 # Configure direnv to include the super-virtualenv's binaries in the PATH and
 # source the new virtualenv.
-echo "export PATH=$PYTHON_BASE_DIR/bin:$PATH" > .envrc
+echo "export PATH=$PYTHON_BASE_DIR/bin:\$PATH" > .envrc
 echo "source .direnv/venv/bin/activate" >> .envrc
-direnv allow
