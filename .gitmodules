@@ -58,9 +58,6 @@
 [submodule "vim-sandwich"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-sandwich
 	url = https://github.com/machakann/vim-sandwich
-[submodule "deuterium"]
-	path = nvim/.config/nvim/pack/minpac/opt/deuterium
-	url = https://gitlab.com/mrossinek/deuterium.git
 [submodule "quick-scope"]
 	path = nvim/.config/nvim/pack/minpac/start/quick-scope
 	url = https://github.com/unblevable/quick-scope
@@ -248,3 +245,6 @@
 [submodule "nvim-treesitter-context"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-treesitter-context
 	url = https://github.com/nvim-treesitter/nvim-treesitter-context.git
+[submodule "magma-nvim"]
+	path = nvim/.config/nvim/pack/minpac/opt/magma-nvim
+	url = https://github.com/dccsillag/magma-nvim
