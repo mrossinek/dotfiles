@@ -12,7 +12,7 @@ require("zen-mode").setup {
         tmux = {
             enabled = true,
         },
-        kitty = {
+        wezterm = {
             enabled = true,
         },
     },

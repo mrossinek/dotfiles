@@ -144,7 +144,8 @@
 	url = https://github.com/moll/vim-bbye
 [submodule "zen-mode.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/zen-mode.nvim
-	url = https://github.com/folke/zen-mode.nvim
+	url = https://github.com/mrossinek/zen-mode.nvim
+	branch = wezterm-plugin
 [submodule "twilight.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/twilight.nvim
 	url = https://github.com/folke/twilight.nvim
