@@ -6,4 +6,5 @@ mpDris2 &
 # snixembed --fork  # TODO figure out if this is still needed
 unclutter -b
 picom -b
+synology-drive
 sleep 1
