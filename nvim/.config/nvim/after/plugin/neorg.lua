@@ -70,11 +70,6 @@ require('neorg').setup {
                 type = "<leader>om",
             },
         },
-        ["core.gtd.base"] = {
-            config = {
-                workspace = "org",
-            }
-        },
         ["core.presenter"] = {
             config = {
                 zen_mode = "zen-mode",

@@ -14,13 +14,6 @@ if (os.getenv("NEORG_DEV") ~= nil) then
             files = { "src/parser.c" },
         },
     }
-
-    parser_configs.norg_table = {
-        install_info = {
-            url = "~/Git/tree-sitter-norg-table",
-            files = { "src/parser.c" },
-        },
-    }
 else
     parser_configs.norg = {
         install_info = {
@@ -33,14 +26,6 @@ else
     parser_configs.norg_meta = {
         install_info = {
             url = "https://github.com/nvim-neorg/tree-sitter-norg-meta",
-            files = { "src/parser.c" },
-            branch = "main",
-        },
-    }
-
-    parser_configs.norg_table = {
-        install_info = {
-            url = "https://github.com/nvim-neorg/tree-sitter-norg-table",
             files = { "src/parser.c" },
             branch = "main",
         },
@@ -65,7 +50,6 @@ require'nvim-treesitter.configs'.setup {
         "lua",
         "norg",
         "norg_meta",
-        "norg_table",
         "python",
         "yaml",
     },
