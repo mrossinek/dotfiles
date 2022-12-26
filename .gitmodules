@@ -27,7 +27,8 @@
 	url = https://github.com/tpope/vim-repeat
 [submodule "vim-abolish"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-abolish
-	url = https://github.com/tpope/vim-abolish
+	url = https://github.com/mrossinek/vim-abolish
+	branch = path-coercion
 [submodule "replay"]
 	path = nvim/.config/nvim/pack/minpac/start/replay
 	url = https://github.com/wincent/replay
