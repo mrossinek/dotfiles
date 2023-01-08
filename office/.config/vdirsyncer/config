@@ -16,7 +16,6 @@ fileext = ".vcf"
 type = "carddav"
 url.fetch = ["command", "~/.config/vdirsyncer/get_url.sh", "contacts"]
 verify_fingerprint.fetch = ["command", "~/.config/vdirsyncer/get_fingerprint.sh"]
-verify = false
 username.fetch = ["command", "~/.config/vdirsyncer/get_username.sh"]
 password.fetch = ["command", "~/.config/vdirsyncer/get_password.sh"]
 
@@ -36,7 +35,6 @@ fileext = ".ics"
 type = "caldav"
 url.fetch = ["command", "~/.config/vdirsyncer/get_url.sh", "important"]
 verify_fingerprint.fetch = ["command", "~/.config/vdirsyncer/get_fingerprint.sh"]
-verify = false
 username.fetch = ["command", "~/.config/vdirsyncer/get_username.sh"]
 password.fetch = ["command", "~/.config/vdirsyncer/get_password.sh"]
 
@@ -56,7 +54,6 @@ fileext = ".ics"
 type = "caldav"
 url.fetch = ["command", "~/.config/vdirsyncer/get_url.sh", "personal"]
 verify_fingerprint.fetch = ["command", "~/.config/vdirsyncer/get_fingerprint.sh"]
-verify = false
 username.fetch = ["command", "~/.config/vdirsyncer/get_username.sh"]
 password.fetch = ["command", "~/.config/vdirsyncer/get_password.sh"]
 
@@ -76,7 +73,6 @@ fileext = ".ics"
 type = "caldav"
 url.fetch = ["command", "~/.config/vdirsyncer/get_url.sh", "sport"]
 verify_fingerprint.fetch = ["command", "~/.config/vdirsyncer/get_fingerprint.sh"]
-verify = false
 username.fetch = ["command", "~/.config/vdirsyncer/get_username.sh"]
 password.fetch = ["command", "~/.config/vdirsyncer/get_password.sh"]
 
@@ -96,6 +92,5 @@ fileext = ".ics"
 type = "caldav"
 url.fetch = ["command", "~/.config/vdirsyncer/get_url.sh", "work"]
 verify_fingerprint.fetch = ["command", "~/.config/vdirsyncer/get_fingerprint.sh"]
-verify = false
 username.fetch = ["command", "~/.config/vdirsyncer/get_username.sh"]
 password.fetch = ["command", "~/.config/vdirsyncer/get_password.sh"]

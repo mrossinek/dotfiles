@@ -6,19 +6,19 @@ color = light red
 
 [[Personal]]
 path = ~/.calendars/personal/
-color = light blue
+color = light green
 
 [[Sport]]
 path = ~/.calendars/sport/
-color = light magenta
-
-[[Uni]]
-path = ~/.calendars/uni/
 color = yellow
+
+[[Work]]
+path = ~/.calendars/work/
+color = light blue
 
 [[Birthdays]]
 path = ~/.contacts/
-color = light green
+color = light magenta
 type = birthdays
 
 [sqlite]
