@@ -3,7 +3,7 @@ from cobib.config import LabelSuffix, config
 config.commands.search.grep = "rga"
 
 config.database.git = True
-config.database.format.label_default = "{author.split()[1] if len(author.split()) > 1 else author}{year}"
+config.database.format.label_default = "{author.split(' and ')[0].split()[-1]}{year}"
 config.database.format.label_suffix = ("", LabelSuffix.ALPHA)
 
 config.parsers.yaml.use_c_lib_yaml = True
