@@ -3,6 +3,7 @@ tags
 # project-specific vim configuration
 .lvimrc
 .luarc.json
+.null-ls_*
 # direnv configuration
 .direnv/
 .envrc
