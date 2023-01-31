@@ -130,7 +130,7 @@ local basic_ui = {
     Exception     = {foreground = gui08},
     FloatBorder   = {foreground = gui05},
     FoldColumn    = {foreground = gui0C, background = gui01},
-    Folded        = {foreground = gui03, background = gui01},
+    Folded        = {foreground = gui01, background = gui03},
     IncSearch     = {foreground = gui01, background = gui09},
     Italic        = {italic     = true},
     LineNr        = {foreground = gui03, background = gui01},
@@ -419,7 +419,7 @@ local user = {
     User7 = {foreground = gui08, background = gui02},
     User8 = {foreground = gui00, background = gui02},
     User9 = {foreground = gui00, background = gui02},
-    TreesitterContext = {background = gui01, italic = true},
+    TreesitterContext = {italic = true},
 }
 apply_highlight(user)
 
