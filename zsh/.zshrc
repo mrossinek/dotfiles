@@ -135,8 +135,11 @@ eval "$(direnv hook zsh)"
 
 # basic options
 setopt ALWAYS_TO_END
+setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
+[ "$HISTSIZE" -lt 50000 ] && HISTSIZE=50000
+[ "$SAVEHIST" -lt 10000 ] && SAVEHIST=10000
 
 # Org
 export TASKDDATA=~/Backups/taskd
