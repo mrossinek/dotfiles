@@ -94,17 +94,17 @@ config.set("content.javascript.enabled", True, "chrome://*/*")
 config.set("content.javascript.enabled", True, "qute://*/*")
 
 # set user agent
-with open(
-    os.path.join(os.path.abspath(os.path.dirname(__file__)), "user_agent.txt"), "r"
-) as user_agent:
-    c.content.headers.user_agent = user_agent.read().replace("\n", "")
+user_agent_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "user_agent.txt")
+if os.path.exists(user_agent_path):
+    with open(user_agent_path, "r", encoding="utf-8") as user_agent:
+        c.content.headers.user_agent = user_agent.read().replace("\n", "")
 
 # patterns
 with config.pattern("*://web.whatsapp.com/") as p:
     p.content.notifications.enabled = True
 
-with config.pattern("*://github.com/") as p:
-    p.content.javascript.clipboard = "access"
+# with config.pattern("*://github.com/") as p:
+#     p.content.javascript.clipboard = "access"
 
 # fonts
 c.fonts.default_family = "monospace"
