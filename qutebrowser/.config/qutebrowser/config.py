@@ -60,6 +60,7 @@ config.bind("xt", "config-cycle tabs.show always never")
 config.bind("xT", "config-cycle tabs.position left top")
 config.bind("<Tab>", "nop")
 config.bind("<Ctrl+=>", "config-cycle zoom.default 100% 125% 150% 175% 200%")
+config.bind("<Ctrl+->", "config-cycle zoom.default 200% 175% 150% 125% 100%")
 # disable bookmark and quickmark related default keybindings
 config.bind("M", "nop")
 config.bind("b", "nop")
