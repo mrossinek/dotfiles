@@ -156,7 +156,9 @@ null_ls.setup({
     -- register any number of sources simultaneously
     sources = {
         null_ls.builtins.code_actions.gitsigns,
-        null_ls.builtins.diagnostics.mypy,
+        null_ls.builtins.diagnostics.mypy.with({
+            method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+        }),
         null_ls.builtins.diagnostics.pylint.with({
             method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
         }),
