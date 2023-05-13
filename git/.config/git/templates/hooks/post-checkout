@@ -27,7 +27,7 @@ for word in `git worktree list --porcelain`; do
     case $state in
     'HEAD')
         if [ "$word" = "$NEXT_HEAD" ]; then
-            matching_worktrees=( $matching_worktrees "$current_worktree" )
+            matching_worktrees=( ${matching_worktrees[@]} "$current_worktree" )
         fi
         state='' ;;
     'worktree')
