@@ -66,7 +66,12 @@
     m = merge
     pl = pull
     ps = push
+    ra = rebase --abort
+    rc = rebase --continue
+    ri = rebase --interactive
     s = status --short
+    st = stash
+    stp = stash pop
     t = tree
     wc = whatchanged
     wip = commit --all --message 'WIP'
