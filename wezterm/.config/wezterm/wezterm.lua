@@ -150,6 +150,10 @@ return {
         {key="j", mods="ALT", action=wezterm.action{EmitEvent="move-down"}},
         {key="k", mods="ALT", action=wezterm.action{EmitEvent="move-up"}},
         {key="l", mods="ALT", action=wezterm.action{EmitEvent="move-right"}},
+        {key="H", mods="ALT|SHIFT", action=wezterm.action{AdjustPaneSize={"Left", 5}}},
+        {key="J", mods="ALT|SHIFT", action=wezterm.action{AdjustPaneSize={"Down", 5}}},
+        {key="K", mods="ALT|SHIFT", action=wezterm.action{AdjustPaneSize={"Up", 5}}},
+        {key="L", mods="ALT|SHIFT", action=wezterm.action{AdjustPaneSize={"Right", 5}}},
 
         -- tab management
         {key="DownArrow", mods="CTRL", action=wezterm.action{SpawnTab="CurrentPaneDomain"}},
