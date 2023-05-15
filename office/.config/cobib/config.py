@@ -8,8 +8,6 @@ config.database.format.label_suffix = ("", LabelSuffix.ALPHA)
 
 config.parsers.yaml.use_c_lib_yaml = True
 
-config.tui.prompt_before_quit = False
-
 config.utils.file_downloader.default_location = '~/Downloads'
 
 config.utils.file_downloader.url_map = {
