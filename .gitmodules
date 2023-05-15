@@ -14,7 +14,7 @@
 	path = nvim/.config/nvim/pack/minpac/opt/vim-ledger
 	url = https://github.com/ledger/vim-ledger
 [submodule "vimtex"]
-	path = nvim/.config/nvim/pack/minpac/opt/vimtex
+	path = nvim/.config/nvim/pack/minpac/start/vimtex
 	url = https://github.com/lervag/vimtex
 [submodule "vim-verdict"]
 	path = nvim/.config/nvim/pack/minpac/opt/vim-verdict
