@@ -42,7 +42,7 @@ require('neorg').setup {
                 end,
             }
         },
-        ["core.norg.concealer"] = {
+        ["core.concealer"] = {
             config = {
                 icon_preset = "diamond",
                 markup_preset = "dimmed",
@@ -51,12 +51,12 @@ require('neorg').setup {
                 },
             },
         },
-        ["core.norg.completion"] = {
+        ["core.completion"] = {
             config = {
                 engine = "nvim-cmp",
             },
         },
-        ["core.norg.dirman"] = {
+        ["core.dirman"] = {
             config = {
                 workspaces = {
                     org = "~/Org",
@@ -65,7 +65,7 @@ require('neorg').setup {
                 autochdir = true,
             },
         },
-        ["core.norg.esupports.metagen"] = {
+        ["core.esupports.metagen"] = {
             config = {
                 type = "<leader>om",
             },
@@ -75,7 +75,7 @@ require('neorg').setup {
                 zen_mode = "zen-mode",
             }
         },
-        ["core.norg.qol.toc"] = {},
+        ["core.qol.toc"] = {},
         ["core.export"] = {},
         ["core.export.markdown"] = {
             config = {
