@@ -1,14 +1,17 @@
-from cobib.config import LabelSuffix, config
+from pathlib import Path
+from os import system
+from cobib.config import Event, LabelSuffix, config
+from cobib.commands import AddCommand
 
 config.commands.search.grep = "rga"
 
 config.database.git = True
-config.database.format.label_default = "{author.split(' and ')[0].split()[-1]}{year}"
+config.database.format.label_default = "{unidecode(author.split(' and ')[0].split()[-1])}{year}"
 config.database.format.label_suffix = ("", LabelSuffix.ALPHA)
 
 config.parsers.yaml.use_c_lib_yaml = True
 
-config.utils.file_downloader.default_location = '~/Downloads'
+config.utils.file_downloader.default_location = "~/Files/Literature"
 
 config.utils.file_downloader.url_map = {
     r"(.+)://www.nature.com/articles/(.+)": r"\1://www.nature.com/articles/\2.pdf",
@@ -88,3 +91,20 @@ config.utils.journal_abbreviations = [
     (r"Zeitschrift f{\"u}r Physik", "Z. Phys."),
     ("Endiconti: Accademia Nazionale dei Lincei", "Rend. Accad. Naz. Lincei"),
 ]
+
+config.tui.preset_filters = [
+    "++tags new",
+    "++tags high",
+    "++tags medium",
+    "++tags low",
+]
+
+@Event.PostAddCommand.subscribe
+def add_new_tag(cmd: AddCommand) -> None:
+   for entry in cmd.new_entries.values():
+       if "new" not in entry.tags:
+           entry.tags = entry.tags + ["new"]
+
+@Event.PostGitCommit.subscribe
+def push_to_remote(root: Path, file: Path) -> None:
+    system(f"git -C {root} push origin master")
