@@ -17,7 +17,7 @@
     file-style = bold yellow
 
 [diff]
-    tool = nvim -d
+    tool = vimdiff
 
 [init]
     templateDir = ~/.config/git/templates
@@ -30,6 +30,10 @@
 
 [mergetool]
     prompt = yes
+
+[mergetool "vimdiff"]
+    cmd = nvim -d "$BASE" "$LOCAL"
+    trustExitCode = true
 
 [mergetool "vim_mergetool"]
     cmd = nvim -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
