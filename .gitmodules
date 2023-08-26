@@ -147,9 +147,6 @@
 [submodule "twilight.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/twilight.nvim
 	url = https://github.com/folke/twilight.nvim
-[submodule "nvim-treesitter-playground"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-treesitter-playground
-	url = https://github.com/nvim-treesitter/playground
 [submodule "nvim-treesitter-textobjects"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-treesitter-textobjects
 	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects
