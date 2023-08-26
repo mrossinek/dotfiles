@@ -152,23 +152,57 @@ lspconfig.gopls.setup{
     capabilities=capabilities
 }
 
-local null_ls = require('null-ls')
-null_ls.setup({
-    -- register any number of sources simultaneously
-    sources = {
-        null_ls.builtins.code_actions.gitsigns,
-        null_ls.builtins.diagnostics.mypy.with({
-            method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-        }),
-        null_ls.builtins.diagnostics.pylint.with({
-            method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-        }),
-        null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.isort,
-        null_ls.builtins.formatting.stylua,
+lspconfig.efm.setup{
+    init_options = {
+        documentFormatting = true,
+        documentRangeFormatting = true,
+        hover = true,
+        documentSymbol = true,
+        codeAction = true,
+        completion = true
     },
+    settings = {
+        rootMarkers = {".git/"},
+        languages = {
+            lua = {
+                {
+                    formatCommand = "stylua --color Never ${--range-start:charStart} ${--range-end:charEnd} -",
+                    formatStdin = true,
+                    formatCanRange = true,
+                },
+            },
+            python = {
+                {
+                    formatCommand = "black --no-color --quiet -",
+                    formatStdin = true,
+                },
+                {
+                    formatCommand = "isort --quiet -",
+                    formatStdin = true,
+                },
+                {
+                    lintCommand = "mypy --show-column-numbers",
+                    lintStdin = false,
+                    lintFormats = {
+                        '%f:%l:%c: %trror: %m',
+                        '%f:%l:%c: %tarning: %m',
+                        '%f:%l:%c: %tote: %m',
+                    },
+                },
+                {
+                    lintCommand = "pylint --output-format text --score no --msg-template {path}:{line}:{column}:{C}:{msg} ${INPUT}",
+                    lintStdin = false,
+                    lintFormats = { '%.%#:%l:%c: %t%.%#: %m' },
+                },
+            },
+        },
+        lintDebounce = "1s",
+        formatDebounce = "1s",
+    },
+    filetypes = {"lua", "python"},
     on_attach=on_attach_vim,
-})
+}
+
 EOF
 
 " LSP
