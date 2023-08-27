@@ -189,5 +189,3 @@ alias backlog=backlog_
 # coBib git aliases
 alias cobib_pull='git -C ~/.local/share/cobib pull origin master'
 alias cobib_push='git -C ~/.local/share/cobib push origin master'
-
-[ -n "$WEZTERM_PANE" ] && export NVIM_LISTEN_ADDRESS="/tmp/nvim$WEZTERM_PANE"

@@ -135,9 +135,6 @@
 	path = qmk/qmk_firmware
 	url = https://github.com/mrossinek/qmk_firmware
 	branch = mrossinek
-[submodule "vim-tmux-navigator"]
-	path = nvim/.config/nvim/pack/minpac/start/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator
 [submodule "vim-bbye"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-bbye
 	url = https://github.com/moll/vim-bbye
@@ -219,9 +216,6 @@
 [submodule "marks.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/marks.nvim
 	url = https://github.com/chentoast/marks.nvim
-[submodule "wezterm.nvim"]
-	path = wezterm/.config/wezterm/wezterm.nvim
-	url = https://github.com/aca/wezterm.nvim
 [submodule "octo.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/octo.nvim
 	url = https://github.com/pwntester/octo.nvim
@@ -243,3 +237,6 @@
 [submodule "magma-nvim"]
 	path = nvim/.config/nvim/pack/minpac/opt/magma-nvim
 	url = https://github.com/dccsillag/magma-nvim
+[submodule "navigator.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/navigator.nvim
+	url = https://github.com/numToStr/Navigator.nvim
