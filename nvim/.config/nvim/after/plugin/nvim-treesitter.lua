@@ -57,7 +57,8 @@ require'nvim-treesitter.configs'.setup {
         enable = true
     },
     indent = {
-        enable = true
+        enable = true,
+        disable = { "markdown" },
     },
     incremental_selection = {
         enable = true,
