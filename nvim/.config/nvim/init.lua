@@ -1,5 +1,7 @@
 require("impatient")
 
+vim.loader.enable()
+
 vim.cmd.colorscheme("mrossinek")
 
 vim.keymap.set("n", "<space>", "<Nop>")
