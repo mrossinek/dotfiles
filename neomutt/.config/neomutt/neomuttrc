@@ -41,6 +41,10 @@ auto_view text/html
 # key bindings
 bind pager G bottom
 bind index,pager @ compose-to-sender
+unbind index P
+bind index P purge-message
+unbind index <Esc>P
+bind index <Esc>P parent-message
 
 # macros
 macro index 'c' "<change-folder>?<change-dir><home>^K=<enter>" "change the folder"
