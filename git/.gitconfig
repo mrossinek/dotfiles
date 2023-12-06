@@ -79,3 +79,4 @@
     t = tree
     wc = whatchanged
     wip = commit --all --message 'WIP'
+    wt = worktree
