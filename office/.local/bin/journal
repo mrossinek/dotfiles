@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# Opens the $EDITOR for the given (current by default) date to write a journal.
+
+function usage () {
+    echo "./journal [date]"
+    echo ""
+    echo "Arguments:"
+    echo "     date: a string understood by \`date -d\`"
+}
+
+case $# in
+    0)
+        DATE=`date -I`
+        ;;
+    1)
+        DATE=`date -I -d "$1"`
+        ;;
+    *)
+        echo "Too many arguments!"
+        usage
+        exit 1
+        ;;
+esac
+
+ROOT="$HOME/Org/journal"
+mkdir -p $ROOT
+
+$EDITOR "$ROOT/$DATE.norg"
