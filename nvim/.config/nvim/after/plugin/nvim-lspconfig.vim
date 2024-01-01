@@ -113,6 +113,11 @@ lspconfig.pyright.setup{
     capabilities=capabilities
 }
 
+lspconfig.ruff_lsp.setup{
+    on_attach=on_attach_vim,
+    capabilities=capabilities,
+}
+
 lspconfig.lua_ls.setup{
     on_attach=on_attach_vim,
     capabilities=capabilities,
@@ -172,14 +177,14 @@ lspconfig.efm.setup{
                 },
             },
             python = {
-                {
-                    formatCommand = "black --no-color --quiet -",
-                    formatStdin = true,
-                },
-                {
-                    formatCommand = "isort --quiet -",
-                    formatStdin = true,
-                },
+                -- {
+                --     formatCommand = "black --no-color --quiet -",
+                --     formatStdin = true,
+                -- },
+                -- {
+                --     formatCommand = "isort --quiet -",
+                --     formatStdin = true,
+                -- },
                 {
                     lintCommand = "mypy --show-column-numbers",
                     lintStdin = false,
@@ -189,11 +194,11 @@ lspconfig.efm.setup{
                         '%f:%l:%c: %tote: %m',
                     },
                 },
-                {
-                    lintCommand = "pylint --output-format text --score no --msg-template {path}:{line}:{column}:{C}:{msg} ${INPUT}",
-                    lintStdin = false,
-                    lintFormats = { '%.%#:%l:%c: %t%.%#: %m' },
-                },
+                -- {
+                --     lintCommand = "pylint --output-format text --score no --msg-template {path}:{line}:{column}:{C}:{msg} ${INPUT}",
+                --     lintStdin = false,
+                --     lintFormats = { '%.%#:%l:%c: %t%.%#: %m' },
+                -- },
             },
         },
         lintDebounce = "1s",
