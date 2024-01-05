@@ -118,6 +118,11 @@ lspconfig.ruff_lsp.setup{
     capabilities=capabilities,
 }
 
+lspconfig.rust_analyzer.setup{
+    on_attach=on_attach_vim,
+    capabilities=capabilities,
+}
+
 lspconfig.lua_ls.setup{
     on_attach=on_attach_vim,
     capabilities=capabilities,
