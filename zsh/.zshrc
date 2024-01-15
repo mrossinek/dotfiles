@@ -114,6 +114,7 @@ alias cat=bat
 if [[ "$(uname)" == 'Linux' ]]; then
     alias open=xdg-open
 fi
+alias ip='ip -c=always'
 alias wttr='curl wttr.in'
 alias free_mem="echo 3 | sudo tee /proc/sys/vm/drop_caches && sudo swapoff -a && sudo swapon -a"
 
