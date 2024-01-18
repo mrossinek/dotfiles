@@ -23,7 +23,7 @@ case $# in
         ;;
 esac
 
-ROOT="$HOME/Org/journal"
+ROOT="$HOME/Org/0-journal"
 mkdir -p $ROOT
 
 $EDITOR "$ROOT/$DATE.norg"
