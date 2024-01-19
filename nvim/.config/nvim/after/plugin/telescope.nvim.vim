@@ -73,5 +73,5 @@ nnoremap <silent> <CR>fb <cmd>lua require'telescope'.extensions.file_browser.fil
 
 " Custom
 nnoremap <silent> <CR>df <cmd>lua require'telescope.builtin'.find_files(require'telescope.themes'.get_dropdown( { previewer = false, prompt_title = "~ dotfiles ~", cwd = "~/dotfiles", find_command = { "rg", "--ignore", "--hidden", "--files", "--no-ignore-vcs", "--glob", "!.git" } } ) )<CR>
-nnoremap <silent> <CR>of <cmd>lua require'telescope.builtin'.find_files(require'telescope.themes'.get_dropdown( { previewer = false, prompt_title = "~ Org ~", cwd = "~/Org", find_command = { "rg", "--ignore", "--hidden", "--files", "--no-ignore-vcs", "--glob", "!.git" } } ) )<CR>
+nnoremap <silent> <CR>of <cmd>lua require'telescope.builtin'.git_files( { prompt_title = "~ Org ~", cwd = "~/Org" } )<CR>
 nnoremap <silent> <CR>og <cmd>lua require'telescope.builtin'.live_grep( { prompt_title = "~ Org ~", cwd = "~/Org", path_display = { "shorten" } } )<CR>
