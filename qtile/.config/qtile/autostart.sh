@@ -7,4 +7,5 @@ mpDris2 &
 unclutter -b
 picom -b
 synology-drive
+bitwarden-desktop &
 sleep 1

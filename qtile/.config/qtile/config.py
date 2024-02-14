@@ -107,7 +107,7 @@ keys = [
         ),
         desc="clipboard picker",
     ),
-    Key([mod], "s", lazy.spawn("rofi-pass"), desc="password picker"),
+    Key([mod], "s", lazy.spawn("rofi-rbw"), desc="password picker"),
     Key([mod], "backslash", lazy.spawn("rofimoji"), desc="emoji picker"),
     Key(
         [mod],
