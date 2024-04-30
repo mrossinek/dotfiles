@@ -11,10 +11,11 @@ config.database.format.label_suffix = ("", LabelSuffix.ALPHA)
 
 config.parsers.yaml.use_c_lib_yaml = True
 
-config.utils.file_downloader.default_location = "~/Files/Literature"
+config.utils.file_downloader.default_location = "~/Files/3-resources/papers"
 
 config.utils.file_downloader.url_map = {
     r"(.+)://www.nature.com/articles/(.+)": r"\1://www.nature.com/articles/\2.pdf",
+    r"(.+)://pubs.acs.org/doi/full/(.+)\?.+": r"\1://pubs.acs.org/doi/epdf/\2",
     r"(.+)://pubs.acs.org/doi/abs/(.+)\?.+": r"\1://pubs.acs.org/doi/pdf/\2",
     r"(.+)://pubs.acs.org/doi/(.+)": r"\1://pubs.acs.org/doi/pdf/\2",
     r"(.+)://journals.aps.org/([^/]+)/abstract/(.+)": r"\1://journals.aps.org/\2/pdf/\3",
