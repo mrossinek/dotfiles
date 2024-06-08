@@ -81,7 +81,7 @@ endfunction
 
 " ALE wrapper: error and warning counter
 function! mrossinek#statusline#StatuslineLSPInfo()
-  if luaeval('#vim.lsp.buf_get_clients() > 0')
+  if luaeval('#vim.lsp.get_clients({buffer=0}) > 0')
     return luaeval("require('lsp-status').status()")
   endif
 
