@@ -239,3 +239,15 @@
 [submodule "navigator.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/navigator.nvim
 	url = https://github.com/numToStr/Navigator.nvim
+[submodule "lua-utils.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/lua-utils.nvim
+	url = https://github.com/nvim-neorg/lua-utils.nvim
+[submodule "nvim-nio"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-nio
+	url = https://github.com/nvim-neotest/nvim-nio
+[submodule "nui.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/nui.nvim
+	url = https://github.com/MunifTanjim/nui.nvim
+[submodule "pathlib.nvim"]
+	path = nvim/.config/nvim/pack/minpac/start/pathlib.nvim
+	url = https://github.com/pysan3/pathlib.nvim
