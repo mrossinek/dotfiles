@@ -1,37 +1,5 @@
 local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
 
-if (os.getenv("NEORG_DEV") ~= nil) then
-    parser_configs.norg = {
-        install_info = {
-            url = "~/Git/tree-sitter-norg",
-            files = { "src/parser.c", "src/scanner.cc" },
-        },
-    }
-
-    parser_configs.norg_meta = {
-        install_info = {
-            url = "~/Git/tree-sitter-norg-meta",
-            files = { "src/parser.c" },
-        },
-    }
-else
-    parser_configs.norg = {
-        install_info = {
-            url = "https://github.com/nvim-neorg/tree-sitter-norg",
-            files = { "src/parser.c", "src/scanner.cc" },
-            branch = "main",
-        },
-    }
-
-    parser_configs.norg_meta = {
-        install_info = {
-            url = "https://github.com/nvim-neorg/tree-sitter-norg-meta",
-            files = { "src/parser.c" },
-            branch = "main",
-        },
-    }
-end
-
 parser_configs.markdown.filetype_to_parsername = "octo"
 
 require'nvim-treesitter.configs'.setup {
@@ -48,8 +16,6 @@ require'nvim-treesitter.configs'.setup {
         "latex",
         "lua",
         "markdown",
-        "norg",
-        "norg_meta",
         "python",
         "rust",
         "yaml",
