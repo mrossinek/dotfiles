@@ -161,6 +161,9 @@
 [submodule "lir-git-status.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/lir-git-status.nvim
 	url = https://github.com/tamago324/lir-git-status.nvim
+[submodule "neogen"]
+	path = nvim/.config/nvim/pack/minpac/start/neogen
+	url = https://github.com/danymat/neogen
 [submodule "gitsigns.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/gitsigns.nvim
 	url = https://github.com/lewis6991/gitsigns.nvim
@@ -191,6 +194,12 @@
 [submodule "diffview.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/diffview.nvim
 	url = https://github.com/sindrets/diffview.nvim
+[submodule "luasnip"]
+	path = nvim/.config/nvim/pack/minpac/start/luasnip
+	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "nvim-cmp-luasnip"]
+	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-luasnip
+	url = https://github.com/saadparwaiz1/cmp_luasnip
 [submodule "impatient.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/impatient.nvim
 	url = https://github.com/lewis6991/impatient.nvim

@@ -2,6 +2,8 @@ require('lspkind').init({})
 
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+local luasnip = require('luasnip')
+local neogen = require('neogen')
 
 local replace_termcodes = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -32,6 +34,7 @@ cmp.setup {
         { name = 'nvim_lua' },
         { name = 'nvim_lsp' },
         { name = 'neorg' },
+        { name = 'luasnip' },
         { name = 'emoji' },
         { name = 'dap' },
     },
@@ -49,6 +52,8 @@ cmp.setup {
         function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
+            elseif luasnip.choice_active() then
+                vim.fn.feedkeys(replace_termcodes("<Plug>luasnip-prev-choice"), "")
             else
                 fallback()
             end
@@ -57,6 +62,8 @@ cmp.setup {
         function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
+            elseif luasnip.choice_active() then
+                vim.fn.feedkeys(replace_termcodes("<Plug>luasnip-next-choice"), "")
             else
                 fallback()
             end
@@ -66,6 +73,10 @@ cmp.setup {
         function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
+            elseif neogen.jumpable() then
+                vim.fn.feedkeys(replace_termcodes("<cmd>lua require('neogen').jump_next()<CR>"), "")
+            elseif luasnip.expand_or_jumpable() then
+                vim.fn.feedkeys(replace_termcodes("<Plug>luasnip-expand-or-jump"), "")
             elseif check_back_space() then
                 vim.fn.feedkeys(replace_termcodes('<Tab>'), 'n')
             else
@@ -76,6 +87,10 @@ cmp.setup {
         function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
+            elseif neogen.jumpable(-1) then
+                vim.fn.feedkeys(replace_termcodes("<cmd>lua require('neogen').jump_prev()<CR>"), "")
+            elseif luasnip.jumpable() then
+                vim.fn.feedkeys(replace_termcodes("<Plug>luasnip-jump-prev"), "")
             else
                 fallback()
             end
@@ -91,7 +106,7 @@ cmp.setup {
 
     snippet = {
         expand = function(args)
-            vim.snippet.expand(args.body)
+            require('luasnip').lsp_expand(args.body)
         end
     },
 }
