@@ -5,6 +5,7 @@ from cobib.commands import AddCommand
 
 config.commands.search.grep = "rga"
 
+config.database.file = "~/Org/3-resources/papers/literature.yaml"
 config.database.git = True
 config.database.format.label_default = "{unidecode(author[0].last).replace('-', '').replace(' ', '')}{year}"
 config.database.format.label_suffix = ("", LabelSuffix.ALPHA)
