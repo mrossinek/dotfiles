@@ -254,8 +254,8 @@ screens = [
                 widget.Spacer(),
                 widget.WidgetBox(
                     close_button_location="right",
-                    text_open="",
-                    text_closed="",
+                    text_open="",
+                    text_closed="",
                     fontsize=20,
                     widgets=[
                         widget.Wttr(location={"": ""}),
