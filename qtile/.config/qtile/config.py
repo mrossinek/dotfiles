@@ -243,6 +243,23 @@ fi | tail -1
         .strip()
     )
 
+def my_notifications():
+    return (
+        subprocess.run(
+            """
+if [[ "$(dunstctl is-paused)" == "true" ]]; then
+    echo "<span foreground='#ff0000'></span>";
+else
+    echo "<span foreground='#ffffff'></span>";
+fi | tail -1
+        """,
+            shell=True,
+            capture_output=True,
+        )
+        .stdout.decode()
+        .strip()
+    )
+
 
 screens = [
     Screen(
@@ -304,6 +321,7 @@ screens = [
                 widget.Battery(battery=1, format="{percent:2.0%}", notify_below=15),
                 widget.Volume(emoji=True, update_interval=2),
                 widget.Volume(emoji=False, update_interval=2),
+                widget.GenPollText(func=my_notifications, fontsize=28, update_interval=15),
                 widget.Clock(format="🕘 %a %d %b %H:%M", update_interval=2),
                 widget.Systray(icon_size=24),
             ],
