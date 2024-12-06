@@ -3,6 +3,7 @@ from os import system
 from cobib.config import Event, LabelSuffix, config
 from cobib.commands import AddCommand
 
+config.commands.note.default_filetype = "norg"
 config.commands.search.grep = "rga"
 
 config.database.file = "~/Org/3-resources/papers/literature.yaml"
