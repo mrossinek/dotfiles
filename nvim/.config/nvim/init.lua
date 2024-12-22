@@ -1,5 +1,3 @@
-require("impatient")
-
 vim.loader.enable()
 
 vim.cmd.colorscheme("mrossinek")
