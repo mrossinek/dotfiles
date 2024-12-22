@@ -51,11 +51,6 @@ require('neorg').setup {
                 },
             },
         },
-        ["core.completion"] = {
-            config = {
-                engine = "nvim-cmp",
-            },
-        },
         ["core.dirman"] = {
             config = {
                 workspaces = {

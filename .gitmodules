@@ -167,39 +167,15 @@
 [submodule "gitsigns.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/gitsigns.nvim
 	url = https://github.com/lewis6991/gitsigns.nvim
-[submodule "nvim-cmp"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp
-	url = https://github.com/hrsh7th/nvim-cmp
-[submodule "nvim-cmp-lsp"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-lsp
-	url = https://github.com/hrsh7th/cmp-nvim-lsp
-[submodule "nvim-cmp-path"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-path
-	url = https://github.com/hrsh7th/cmp-path
-[submodule "nvim-cmp-nvim-lua"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-nvim-lua
-	url = https://github.com/hrsh7th/cmp-nvim-lua
-[submodule "nvim-cmp-emoji"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-emoji
-	url = https://github.com/hrsh7th/cmp-emoji
 [submodule "lspkind-nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/lspkind-nvim
 	url = https://github.com/onsails/lspkind-nvim
-[submodule "nvim-cmp-buffer"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-buffer
-	url = https://github.com/hrsh7th/cmp-buffer
 [submodule "neorg"]
 	path = nvim/.config/nvim/pack/minpac/start/neorg
 	url = https://github.com/nvim-neorg/neorg
 [submodule "diffview.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/diffview.nvim
 	url = https://github.com/sindrets/diffview.nvim
-[submodule "luasnip"]
-	path = nvim/.config/nvim/pack/minpac/start/luasnip
-	url = https://github.com/L3MON4D3/LuaSnip
-[submodule "nvim-cmp-luasnip"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-luasnip
-	url = https://github.com/saadparwaiz1/cmp_luasnip
 [submodule "vim-mergetool"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-mergetool
 	url = https://github.com/samoshkin/vim-mergetool
@@ -218,9 +194,6 @@
 [submodule "nvim-dap-ui"]
 	path = nvim/.config/nvim/pack/minpac/start/nvim-dap-ui
 	url = https://github.com/rcarriga/nvim-dap-ui
-[submodule "nvim-cmp-dap"]
-	path = nvim/.config/nvim/pack/minpac/start/nvim-cmp-dap
-	url = https://github.com/rcarriga/cmp-dap
 [submodule "vim-speeddating"]
 	path = nvim/.config/nvim/pack/minpac/start/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating
@@ -248,3 +221,6 @@
 [submodule "pathlib.nvim"]
 	path = nvim/.config/nvim/pack/minpac/start/pathlib.nvim
 	url = https://github.com/pysan3/pathlib.nvim
+[submodule "blink.cmp"]
+	path = nvim/.config/nvim/pack/minpac/start/blink.cmp
+	url = https://github.com/Saghen/blink.cmp
