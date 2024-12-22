@@ -23,12 +23,6 @@ c.spellcheck.languages = ["en-US", "de-DE"]
 c.session.lazy_restore = True
 c.auto_save.session = True
 
-# tree tabs: https://github.com/qutebrowser/qutebrowser/pull/4602
-try:
-    c.tabs.tree_tabs = True
-except AttributeError:
-    pass
-
 # tabs
 c.tabs.position = "left"
 c.tabs.width = "15%"
