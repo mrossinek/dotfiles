@@ -113,7 +113,7 @@ lspconfig.pyright.setup{
     capabilities=capabilities
 }
 
-lspconfig.ruff_lsp.setup{
+lspconfig.ruff.setup{
     on_attach=on_attach_vim,
     capabilities=capabilities,
 }
