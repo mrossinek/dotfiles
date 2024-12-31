@@ -25,7 +25,16 @@
       "on-click": "activate",
       "sort-by-number": true,
       "show-special": true,
-      "special-visible-only": true
+      "special-visible-only": true,
+      "format": "{icon}",
+      "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "7": "",
+        "9": ""
+        // "9": ""
+      }
     },
     "hyprland/language": {
         "format": "{}",
