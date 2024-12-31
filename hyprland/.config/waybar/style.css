@@ -1,20 +1,21 @@
 * {
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
+    color: #ffffff;
 }
 
 window#waybar {
     background-color: rgba(43, 48, 59, 0.5);
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
 }
@@ -33,30 +34,17 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background-color: #505050;
     box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #f53c3c;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#tray,
-#mode,
-#idle_inhibitor,
-#power-profiles-daemon,
-#mpd {
+.module {
     padding: 0 10px;
-    color: #ffffff;
+    border-radius: 5;
 }
 
 #window,
@@ -69,7 +57,7 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: #505050;
 }
 
 #battery {
@@ -80,6 +68,10 @@ button:hover {
 #battery.charging, #battery.plugged {
     color: #ffffff;
     background-color: #26A65B;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f0932b;
 }
 
 @keyframes blink {
@@ -118,8 +110,13 @@ button:hover {
     color: #000000;
 }
 
-label:focus {
-    background-color: #000000;
+#temperature {
+    color: #000000;
+    background-color: #f0932b;
+}
+
+#temperature.critical {
+    background-color: #f53c3c;
 }
 
 #cpu {
@@ -131,14 +128,6 @@ label:focus {
     background-color: #9b59b6;
 }
 
-#disk {
-    background-color: #964B00;
-}
-
-#backlight {
-    background-color: #90b1b1;
-}
-
 #network {
     background-color: #2980b9;
 }
@@ -147,99 +136,37 @@ label:focus {
     background-color: #f53c3c;
 }
 
+#backlight {
+    background-color: #505050;
+}
+
 #pulseaudio {
     background-color: #f1c40f;
     color: #000000;
 }
 
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
-}
-
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#tray {
-    background-color: #2980b9;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
+#pulseaudio:not(.source-muted) {
     background-color: #f53c3c;
 }
 
-#mpd.stopped {
+#pulseaudio.muted.source-muted {
     background-color: #90b1b1;
 }
 
-#mpd.paused {
-    background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
+#bluetooth {
     color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
 }
 
-#keyboard-state > label {
-    padding: 0 5px;
+#bluetooth.connected {
+    background-color: #005aaf;
 }
 
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
+#bluetooth.on {
+    background-color: #ffffff;
+}
+
+#bluetooth.off {
+    background-color: #505050;
 }
 
 #privacy {
@@ -263,14 +190,20 @@ label:focus {
     background-color: #0069d4;
 }
 
-#bluetooth.connected {
-    color: #005aaf
+#idle_inhibitor {
+    background-color: #505050;
 }
 
-#bluetooth.on {
-    color: #ffffff
+#idle_inhibitor.activated {
+    background-color: #ffffff;
+    color: #000000;
 }
 
-#bluetooth.off {
-    color: #505050
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #f53c3c;
 }
