@@ -122,8 +122,8 @@ return {
         {key="c", mods="CTRL|SHIFT", action=wezterm.action{CopyTo="ClipboardAndPrimarySelection"}},
 
         -- search
-        {key="/", mods="LEADER", action=wezterm.action{Search={CaseInSensitiveString=""}}},
-        {key="?", mods="LEADER|SHIFT", action=wezterm.action{Search={CaseSensitiveString=""}}},
+        {key="/", mods="CTRL", action=wezterm.action{Search={CaseInSensitiveString=""}}},
+        {key="?", mods="CTRL|SHIFT", action=wezterm.action{Search={CaseSensitiveString=""}}},
 
         -- scrolling
         {key="UpArrow", mods="SHIFT", action=wezterm.action{ScrollToPrompt=-1}},
