@@ -8,6 +8,7 @@
     "modules-right": [
         "privacy",
         "idle_inhibitor",
+        "custom/notifications",
         "pulseaudio",
         "bluetooth",
         "network",
@@ -48,11 +49,17 @@
             "deactivated": ""
         }
     },
+    "custom/notifications": {
+        "exec": "~/.config/waybar/scripts/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "restart-interval": 1,
+        "return-type": "json"
+    },
     "tray": {
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {

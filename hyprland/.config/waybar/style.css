@@ -199,6 +199,14 @@ button:hover {
     color: #000000;
 }
 
+#custom-notifications.enabled {
+    background-color: #505050;
+}
+
+#custom-notifications.disabled {
+    background-color: #f53c3c;
+}
+
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
