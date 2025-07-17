@@ -2,9 +2,6 @@
 data.location=~/Org/.task
 
 # server
-taskd.certificate=~/.task/user.cert.pem
-taskd.key=~/.task/user.key.pem
-taskd.ca=~/.task/ca.cert.pem
 include ~/.task/private_credentials # holds server address and login creds
 
 # colors
@@ -36,4 +33,4 @@ urgency.blocked.coefficient = 0.0
 include ~/.task_local
 
 # news
-news.version=2.6.0
+news.version=3.4.1
