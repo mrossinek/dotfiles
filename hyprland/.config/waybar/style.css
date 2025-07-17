@@ -215,3 +215,8 @@ button:hover {
     -gtk-icon-effect: highlight;
     background-color: #f53c3c;
 }
+
+#tray menu {
+    background-color: #505050;
+    color: #ffffff;
+}
