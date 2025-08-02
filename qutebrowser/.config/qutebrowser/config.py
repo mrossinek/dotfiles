@@ -13,7 +13,7 @@ c.zoom.default = "125%"
 c.completion.height = "30%"
 c.downloads.position = "bottom"
 c.url.start_pages = ["https://github.com/", "https://gitlab.com/"]
-c.url.default_page = "https://search.brave.com"
+c.url.default_page = "https://duckduckgo.com/"
 c.colors.webpage.preferred_color_scheme = "dark"
 
 # languages
@@ -68,7 +68,7 @@ config.bind("wB", "nop")
 
 # search engines
 c.url.searchengines = {
-    "DEFAULT": "https://search.brave.com/search?q={}",
+    "DEFAULT": "https://duckduckgo.com/?q={}",
     "ap": "https://www.archlinux.org/packages/?q={}",
     "aur": "https://aur.archlinux.org/packages/?K={}",
     "aw": "https://wiki.archlinux.org/?search={}",
