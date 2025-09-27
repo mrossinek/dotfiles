@@ -1,0 +1,17 @@
+#!/bin/sh
+
+enable_monitor() {
+  notify-send -u normal "Enabling eDP"
+  hyprctl keyword monitor "eDP-1, enable"
+}
+
+disable_monitor() {
+  notify-send -u normal "Disabling eDP"
+  hyprctl keyword monitor "eDP-1, disable"
+}
+
+if hyprctl monitors | grep eDP-1; then
+  disable_monitor
+else
+  enable_monitor
+fi
