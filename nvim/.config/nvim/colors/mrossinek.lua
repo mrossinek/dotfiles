@@ -205,152 +205,89 @@ local syntax = {
     Typedef      = {foreground = gui0A},
 }
 apply_highlight(syntax)
-
--- Treesitter
-local treesitter = {
-    TSAnnotation          = {foreground = gui0F},
-    TSAttribute           = {foreground = gui0A},
-    TSBoolean             = {foreground = gui09},
-    TSCharacter           = {foreground = gui08},
-    TSComment             = {foreground = gui03, italic = true},
-    TSConditional         = {foreground = gui0E},
-    TSConstBuiltin        = {foreground = gui09, italic = true},
-    TSConstMacro          = {foreground = gui08},
-    TSConstant            = {foreground = gui09},
-    TSConstructor         = {foreground = gui0D},
-    TSCurrentScope        = {bold = true},
-    TSDefinition          = {underline = true, special = gui04 },
-    TSDefinitionUsage     = {underline = true, special = gui04 },
-    TSEmphasis            = {foreground = gui09, italic = true},
-    TSError               = {foreground = gui08},
-    TSException           = {foreground = gui08},
-    TSField               = {foreground = gui05},
-    TSFloat               = {foreground = gui09},
-    TSFuncBuiltin         = {foreground = gui0D, italic = true},
-    TSFuncMacro           = {foreground = gui08},
-    TSFunction            = {foreground = gui0D},
-    TSInclude             = {foreground = gui0D},
-    TSKeyword             = {foreground = gui0E},
-    TSKeywordFunction     = {foreground = gui0E},
-    TSKeywordOperator     = {foreground = gui0E},
-    TSLabel               = {foreground = gui0A},
-    TSLiteral             = {foreground = gui09},
-    TSMethod              = {foreground = gui0D},
-    TSNamespace           = {foreground = gui08},
-    TSNone                = {foreground = gui05},
-    TSNumber              = {foreground = gui09},
-    TSOperator            = {foreground = gui05},
-    TSParameter           = {foreground = gui05},
-    TSParameterReference  = {foreground = gui05},
-    TSProperty            = {foreground = gui05},
-    TSPunctBracket        = {foreground = gui05},
-    TSPunctDelimiter      = {foreground = gui0F},
-    TSPunctSpecial        = {foreground = gui05},
-    TSRepeat              = {foreground = gui0E},
-    TSStrike              = {foreground = gui00, strikethrough = true},
-    TSString              = {foreground = gui0B},
-    TSStringDocumentation = {foreground = gui0B, italic = true},
-    TSStringEscape        = {foreground = gui0C},
-    TSStringRegex         = {foreground = gui0C},
-    TSStrong              = {bold = true},
-    TSSymbol              = {foreground = gui0B},
-    TSTag                 = {foreground = gui0A},
-    TSTagDelimiter        = {foreground = gui0F},
-    TSText                = {foreground = gui05},
-    TSTitle               = {foreground = gui0D},
-    TSType                = {foreground = gui0A},
-    TSTypeBuiltin         = {foreground = gui0A, italic = true},
-    TSURI                 = {foreground = gui08, underline = true},
-    TSUnderline           = {foreground = gui00, underline = true},
-    TSVariable            = {foreground = gui05},
-    TSVariableBuiltin     = {foreground = gui08, italic = true},
-    TSVariableMember      = {foreground = gui08},
-    TSVariableParameter   = {foreground = gui08},
-}
-apply_highlight(treesitter)
-high_link("@attribute", "TSAttribute")
-high_link("@boolean", "TSBoolean")
-high_link("@character", "TSCharacter")
+high_link("@attribute", "PreProc")
+high_link("@boolean", "Boolean")
+high_link("@character", "Character")
 high_link("@character.special", "SpecialChar")
 high_link("@class", "Structure")
-high_link("@comment", "TSComment")
-high_link("@conditional", "TSConditional")
-high_link("@constant", "TSConstant")
-high_link("@constant.builtin", "TSConstant")
-high_link("@constant.macro", "TSConstant")
-high_link("@constructor", "TSConstructor")
+high_link("@comment", "Comment")
+high_link("@conditional", "Conditional")
+high_link("@constant", "Constant")
+high_link("@constant.builtin", "Special")
+high_link("@constant.macro", "Define")
+high_link("@constructor", "Special")
 high_link("@debug", "Debug")
 high_link("@decorator", "Identifier")
 high_link("@define", "Define")
 high_link("@enum", "Type")
 high_link("@enumMember", "Constant")
-high_link("@error", "TSError")
+high_link("@error", "Error")
 high_link("@event", "Identifier")
-high_link("@exception", "TSException")
-high_link("@field", "TSField")
-high_link("@float", "TSFloat")
-high_link("@function", "TSFunction")
-high_link("@function.builtin", "TSFuncBuiltin")
-high_link("@function.call", "TSFunction")
-high_link("@function.macro", "TSFuncMacro")
-high_link("@include", "TSInclude")
+high_link("@exception", "Exception")
+high_link("@field", "Identifier")
+high_link("@float", "Float")
+high_link("@function", "Function")
+high_link("@function.builtin", "Special")
+high_link("@function.call", "Function")
+high_link("@function.macro", "Macro")
+high_link("@include", "Include")
 high_link("@interface", "Structure")
-high_link("@keyword", "TSKeyword")
-high_link("@keyword.function", "TSKeywordFunction")
-high_link("@keyword.operator", "TSKeywordOperator")
-high_link("@keyword.return", "TSKeyword")
-high_link("@label", "TSLabel")
-high_link("@method", "TSMethod")
-high_link("@method.call", "TSMethod")
+high_link("@keyword", "Keyword")
+high_link("@keyword.function", "Keyword")
+high_link("@keyword.operator", "Keyword")
+high_link("@keyword.return", "Keyword")
+high_link("@label", "Label")
+high_link("@method", "Function")
+high_link("@method.call", "Function")
 high_link("@modifier", "Identifier")
-high_link("@namespace", "TSNamespace")
-high_link("@none", "TSNone")
-high_link("@number", "TSNumber")
-high_link("@operator", "TSOperator")
-high_link("@parameter", "TSParameter")
+high_link("@namespace", "Include")
+high_link("@none", "None")
+high_link("@number", "Number")
+high_link("@operator", "Operator")
+high_link("@parameter", "Identifier")
 high_link("@preproc", "PreProc")
-high_link("@property", "TSProperty")
-high_link("@punctuation.bracket", "TSPunctBracket")
-high_link("@punctuation.delimiter", "TSPunctDelimiter")
-high_link("@punctuation.special", "TSPunctSpecial")
-high_link("@regexp", "TSStringRegex")
-high_link("@repeat", "TSRepeat")
+high_link("@property", "Identifier")
+high_link("@punctuation.bracket", "Delimiter")
+high_link("@punctuation.delimiter", "Delimiter")
+high_link("@punctuation.special", "Delimiter")
+high_link("@regexp", "String")
+high_link("@repeat", "Repeat")
 high_link("@storageclass", "StorageClass")
-high_link("@string", "TSString")
-high_link("@string.documentation", "TSStringDocumentation")
-high_link("@string.escape", "TSStringEscape")
-high_link("@string.regex", "TSStringRegex")
+high_link("@string", "String")
+high_link("@string.documentation", "String")
+high_link("@string.escape", "SpecialChar")
+high_link("@string.regex", "String")
 high_link("@string.special", "SpecialChar")
 high_link("@struct", "Structure")
-high_link("@symbol", "TSSymbol")
-high_link("@tag", "TSTag")
-high_link("@tag.attribute", "TSAttribute")
-high_link("@tag.delimiter", "TSTagDelimiter")
-high_link("@text", "TSText")
+high_link("@symbol", "Identifier")
+high_link("@tag", "Tag")
+high_link("@tag.attribute", "Identifier")
+high_link("@tag.delimiter", "Delimiter")
+high_link("@text", "Normal")
 high_link("@text.danger", "DiagnosticError")
-high_link("@text.emphasis", "TSEmphasis")
+high_link("@text.emphasis", "Italic")
 high_link("@text.environment", "Macro")
 high_link("@text.environment.name", "Type")
-high_link("@text.literal", "TSLiteral")
-high_link("@text.math", "Number")
-high_link("@text.note", "Tag")
-high_link("@text.reference", "TSParameterReference")
-high_link("@text.strike", "TSStrike")
-high_link("@text.strong", "TSStrong")
-high_link("@text.title", "TSTitle")
+high_link("@text.literal", "String")
+high_link("@text.math", "Special")
+high_link("@text.note", "SpecialComment")
+high_link("@text.reference", "Constant")
+high_link("@text.strike", "Strikethrough")
+high_link("@text.strong", "Bold")
+high_link("@text.title", "Title")
 high_link("@text.todo", "Todo")
-high_link("@text.underline", "TSUnderline")
-high_link("@text.uri", "TSUri")
+high_link("@text.underline", "Underlined")
+high_link("@text.uri", "Underlined")
 high_link("@text.warning", "DiagnosticWarn")
-high_link("@type", "TSType")
-high_link("@type.builtin", "TSTypeBuiltin")
-high_link("@type.definition", "TSType")
-high_link("@type.qualifier", "TSType")
+high_link("@type", "Type")
+high_link("@type.builtin", "Type")
+high_link("@type.definition", "Typedef")
+high_link("@type.qualifier", "Type")
 high_link("@typeParameter", "Type")
-high_link("@variable", "TSVariable")
-high_link("@variable.builtin", "TSVariableBuiltin")
-high_link("@variable.member", "TSVariableMember")
-high_link("@variable.parameter", "TSVariableParameter")
+high_link("@variable", "Normal")
+high_link("@variable.builtin", "Special")
+high_link("@variable.member", "Constant")
+high_link("@variable.parameter", "@parameter")
 high_link("@lsp.type.namespace", "@namespace")
 high_link("@lsp.type.type", "@type")
 high_link("@lsp.type.class", "@type")
