@@ -174,36 +174,48 @@ local basic_ui = {
 }
 apply_highlight(basic_ui)
 
+local alabaster_comment = gui0A;
+local alabaster_const = gui0E;
+local alabaster_define = gui0D;
+local alabaster_delim = gui03;
+local alabaster_disabled = gui03;
+local alabaster_normal = gui05;
+local alabaster_op = gui0C;
+local alabaster_string = gui0B;
+
 -- Syntax highlighting
 local syntax = {
-    Boolean      = {foreground = gui09},
-    Character    = {foreground = gui08},
-    Comment      = {foreground = gui03, italic = true},
-    Conditional  = {foreground = gui0E},
-    Constant     = {foreground = gui09},
-    Define       = {foreground = gui0E},
-    Delimiter    = {foreground = gui0F},
-    Float        = {foreground = gui09},
-    Function     = {foreground = gui0D},
-    Identifier   = {foreground = gui08},
-    Include      = {foreground = gui0D},
-    Keyword      = {foreground = gui0E},
-    Label        = {foreground = gui0A},
-    Number       = {foreground = gui09},
-    Operator     = {foreground = gui05},
-    PreProc      = {foreground = gui0A},
-    Repeat       = {foreground = gui0A},
-    Special      = {foreground = gui0C},
-    SpecialChar  = {foreground = gui0F},
-    Statement    = {foreground = gui08},
-    StorageClass = {foreground = gui0A},
-    String       = {foreground = gui0B},
-    Structure    = {foreground = gui0E},
-    Tag          = {foreground = gui0A},
-    Todo         = {foreground = gui0A},
-    Type         = {foreground = gui0A},
-    Typedef      = {foreground = gui0A},
+    Boolean       = {foreground = alabaster_const},
+    Character     = {foreground = alabaster_normal},
+    Comment       = {foreground = alabaster_comment, italic = true},
+    Conditional   = {foreground = alabaster_normal},
+    Constant      = {foreground = alabaster_const},
+    Define        = {foreground = alabaster_define},
+    Delimiter     = {foreground = alabaster_delim},
+    Disabled      = {foreground = alabaster_disabled},
+    Documentation = {foreground = alabaster_string, italic = true},
+    Float         = {foreground = alabaster_const},
+    Function      = {foreground = alabaster_normal},
+    Identifier    = {foreground = alabaster_normal},
+    Include       = {foreground = alabaster_normal},
+    Keyword       = {foreground = alabaster_normal},
+    Label         = {foreground = alabaster_const},
+    Number        = {foreground = alabaster_const},
+    Operator      = {foreground = alabaster_op},
+    PreProc       = {foreground = alabaster_normal},
+    Repeat        = {foreground = alabaster_normal},
+    Special       = {foreground = alabaster_normal},
+    SpecialChar   = {foreground = alabaster_normal},
+    Statement     = {foreground = alabaster_normal},
+    StorageClass  = {foreground = alabaster_define},
+    String        = {foreground = alabaster_string},
+    Structure     = {foreground = alabaster_normal},
+    Tag           = {foreground = alabaster_normal},
+    Todo          = {foreground = gui08},
+    Type          = {foreground = alabaster_normal},
+    Typedef       = {foreground = alabaster_normal},
 }
+
 apply_highlight(syntax)
 high_link("@attribute", "PreProc")
 high_link("@boolean", "Boolean")
@@ -254,7 +266,7 @@ high_link("@regexp", "String")
 high_link("@repeat", "Repeat")
 high_link("@storageclass", "StorageClass")
 high_link("@string", "String")
-high_link("@string.documentation", "String")
+high_link("@string.documentation", "Documentation")
 high_link("@string.escape", "SpecialChar")
 high_link("@string.regex", "String")
 high_link("@string.special", "SpecialChar")
@@ -286,7 +298,7 @@ high_link("@type.qualifier", "Type")
 high_link("@typeParameter", "Type")
 high_link("@variable", "Normal")
 high_link("@variable.builtin", "Special")
-high_link("@variable.member", "Constant")
+high_link("@variable.member", "Normal")
 high_link("@variable.parameter", "@parameter")
 high_link("@lsp.type.namespace", "@namespace")
 high_link("@lsp.type.type", "@type")
@@ -329,6 +341,7 @@ local lsp = {
     LspReferenceWrite             = {underline = true, special = gui04},
 }
 apply_highlight(lsp)
+high_link("DiagnosticUnnecessary"     , "Disabled")
 high_link("LspDiagnosticsError"       , "DiagnosticError")
 high_link("LspDiagnosticsHint"        , "DiagnosticHint")
 high_link("LspDiagnosticsInformation" , "DiagnosticInformation")
