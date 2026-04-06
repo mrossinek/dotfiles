@@ -416,6 +416,10 @@ languages.git = {
 }
 apply_highlight(languages.git)
 
+high_link("ledgerTransaction", "String")
+high_link("ledgerTransactionExpression", "String")
+high_link("ledgerTransactionMetadata", "Comment")
+high_link("ledgerPostingMetadata", "Comment")
 
 -- plugins
 local plugins = {}
