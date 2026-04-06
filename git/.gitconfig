@@ -46,6 +46,9 @@
 [rebase]
     autostash = true
 
+[rerere]
+    enabled = true
+
 [color]
     ui = true
 
