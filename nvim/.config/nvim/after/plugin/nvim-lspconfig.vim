@@ -223,8 +223,8 @@ nnoremap <silent> ]d <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <silent> [d <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap <silent> <leader>dd <cmd>call mrossinek#functions#ToggleDiagnostics()<CR>
 
-autocmd CursorHold * lua
-            \ local ok, result = pcall(vim.api.nvim_buf_get_var, 0, 'show_diagnostics')
-            \ if not ok or result then
-            \     vim.diagnostic.open_float(nil, {scope = "cursor", focusable = false, border = "single"})
-            \ end
+" autocmd CursorHold * lua
+"             \ local ok, result = pcall(vim.api.nvim_buf_get_var, 0, 'show_diagnostics')
+"             \ if not ok or result then
+"             \     vim.diagnostic.open_float(nil, {scope = "cursor", focusable = false, border = "single"})
+"             \ end

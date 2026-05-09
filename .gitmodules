@@ -224,3 +224,4 @@
 [submodule "blink.cmp"]
 	path = nvim/.config/nvim/pack/minpac/start/blink.cmp
 	url = https://github.com/Saghen/blink.cmp
+	branch = v1

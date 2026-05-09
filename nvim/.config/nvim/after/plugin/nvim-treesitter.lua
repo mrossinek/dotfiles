@@ -39,22 +39,22 @@ require'nvim-treesitter.configs'.setup {
     },
     refactor = {
         highlight_definitions = { enable = true },
-        navigation = {
-            enable = true,
-            keymaps = {
-                goto_definition_lsp_fallback = "<c-]>",
-                list_definitions = "gnD",
-                goto_next_usage = "<C-*>",
-                goto_previous_usage = "<C-#>",
-            },
-        },
-        smart_rename = {
-            enable = true,
-            keymaps = {
-                smart_rename = "grn",
-            },
-        },
-    },
+    --     navigation = {
+    --         enable = true,
+    --         keymaps = {
+    --             goto_definition_lsp_fallback = "<c-]>",
+    --             list_definitions = "gnD",
+    --             goto_next_usage = "<C-*>",
+    --             goto_previous_usage = "<C-#>",
+    --         },
+    --     },
+    --     smart_rename = {
+    --         enable = true,
+    --         keymaps = {
+    --             smart_rename = "grn",
+    --         },
+    --     },
+    -- },
     textobjects = {
         select = {
             enable = true,
