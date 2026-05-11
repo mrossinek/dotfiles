@@ -11,7 +11,7 @@ function usage () {
 
 case $# in
     0)
-        DATE=`date -I`
+        DATE=`date +"%G-%V"`
         ;;
     1)
         DATE=`date -I -d "$1"`
