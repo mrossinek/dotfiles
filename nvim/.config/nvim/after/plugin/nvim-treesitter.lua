@@ -2,7 +2,7 @@ local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
 
 parser_configs.markdown.filetype_to_parsername = "octo"
 
-require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter.configs'.setup{
     ensure_installed = {
         "bash",
         "c",
@@ -38,7 +38,7 @@ require'nvim-treesitter.configs'.setup {
         },
     },
     refactor = {
-        highlight_definitions = { enable = true },
+    --     highlight_definitions = { enable = true },
     --     navigation = {
     --         enable = true,
     --         keymaps = {
@@ -54,7 +54,7 @@ require'nvim-treesitter.configs'.setup {
     --             smart_rename = "grn",
     --         },
     --     },
-    -- },
+    },
     textobjects = {
         select = {
             enable = true,
