@@ -21,26 +21,18 @@ local on_attach_vim = function(client)
   lsp_status.on_attach(client)
 end
 
-local lspconfig = require('lspconfig')
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.buf.signature_help({
+    border = "single"
+})
 
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-    vim.lsp.handlers.signature_help, {
-        border = "single"
-    }
-)
-
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-    vim.lsp.handlers.hover, {
-        border = "single"
-    }
-)
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({
+    border = "single"
+})
 
 local on_references = vim.lsp.handlers["textDocument/references"]
-vim.lsp.handlers["textDocument/references"] = vim.lsp.with(
-    on_references, {
-        loclist = true,
-    }
-)
+vim.lsp.handlers["textDocument/references"] = vim.lsp.buf.references(nil, {
+    loclist = true,
+})
 
 local function preview_location_callback(_, _, result)
     if result == nil or vim.tbl_isempty(result) then
@@ -55,13 +47,17 @@ function preview_definition()
 end
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua preview_definition()<CR>", {noremap = true})
 
-lspconfig.clangd.setup{
-    handlers = lsp_status.extensions.clangd.setup(),
+vim.lsp.config('*', {
     on_attach=on_attach_vim,
     capabilities=capabilities
-}
+})
 
-lspconfig.fortls.setup{
+vim.lsp.config('clangd',
+{
+    handlers = lsp_status.extensions.clangd.setup(),
+})
+
+vim.lsp.config('fortls', {
     -- fortls currently is unable to handle settings and instead relies on them being passed via cmdline arguments:
     -- https://github.com/neovim/nvim-lspconfig/issues/219#issuecomment-623955655
     cmd = {
@@ -75,12 +71,10 @@ lspconfig.fortls.setup{
         "--hover_signature",
         "--enable_code_actions"
     },
-    root_dir = lspconfig.util.root_pattern('.git', '.fortls'),
-    on_attach=on_attach_vim,
-    capabilities=capabilities
-}
+    root_dir = vim.fs.root(0, {'.git', '.fortls'}),
+})
 
-lspconfig.pyright.setup{
+vim.lsp.config('pyright', {
     settings = {
         python = {
             analysis = {
@@ -95,22 +89,9 @@ lspconfig.pyright.setup{
         client.server_capabilities.document_range_formatting = false
         on_attach_vim(client)
     end,
-    capabilities=capabilities
-}
+})
 
-lspconfig.ruff.setup{
-    on_attach=on_attach_vim,
-    capabilities=capabilities,
-}
-
-lspconfig.rust_analyzer.setup{
-    on_attach=on_attach_vim,
-    capabilities=capabilities,
-}
-
-lspconfig.lua_ls.setup{
-    on_attach=on_attach_vim,
-    capabilities=capabilities,
+vim.lsp.config('lua_ls', {
     settings = {
         Lua = {
             runtime = {
@@ -130,24 +111,9 @@ lspconfig.lua_ls.setup{
             },
         },
     },
-}
+})
 
-lspconfig.texlab.setup{
-    on_attach=on_attach_vim,
-    capabilities=capabilities
-}
-
-lspconfig.vimls.setup{
-    on_attach=on_attach_vim,
-    capabilities=capabilities
-}
-
-lspconfig.gopls.setup{
-    on_attach=on_attach_vim,
-    capabilities=capabilities
-}
-
-lspconfig.efm.setup{
+vim.lsp.config('efm', {
     init_options = {
         documentFormatting = true,
         documentRangeFormatting = true,
@@ -195,8 +161,7 @@ lspconfig.efm.setup{
         formatDebounce = "1s",
     },
     filetypes = {"lua", "python"},
-    on_attach=on_attach_vim,
-}
+})
 
 EOF
 
