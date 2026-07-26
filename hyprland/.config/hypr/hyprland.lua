@@ -7,8 +7,9 @@ hl.env("HYPRLAND_TRACE", "1")
 hl.env("AQ_TRACE", "1")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("SSH_AUTH_SOCK", "$XDG_RUNTIME_DIR/gcr/ssh")
-hl.env("HYPRSHOT_DIR", "$HOME/Pictures/Screenshots/")
+hl.env("SSH_AUTH_SOCK", os.getenv("XDG_RUNTIME_DIR") .. "/gcr/ssh")
+hl.env("HYPRSHOT_DIR", os.getenv("HOME") .. "/Pictures/Screenshots/")
+hl.env("PATH", os.getenv("PATH") .. ":" .. os.getenv("HOME") .. "/.local/bin")
 
 hl.config({
     debug = {
@@ -41,7 +42,7 @@ hl.monitor({
 hl.monitor({
     output = "",
     mode = "preferred",
-    position = "auto",
+    position = "auto-up",
     scale = "auto",
 })
 

@@ -2,12 +2,12 @@
 
 enable_monitor() {
   notify-send -u normal "Enabling eDP"
-  hyprctl keyword monitor "eDP-1, enable"
+  hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = false })'
 }
 
 disable_monitor() {
   notify-send -u normal "Disabling eDP"
-  hyprctl keyword monitor "eDP-1, disable"
+  hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = true })'
 }
 
 if hyprctl monitors | grep eDP-1; then
