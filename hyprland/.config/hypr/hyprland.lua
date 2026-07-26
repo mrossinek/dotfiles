@@ -275,7 +275,7 @@ hl.config({
 local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + SHIFT + return", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.kill())
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exit())
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("toggle_eDP"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
