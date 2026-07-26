@@ -49,6 +49,34 @@ wezterm.on('user-var-changed', function(window, pane, name, value)
     window:set_config_overrides(overrides)
 end)
 
+-- Cap title lengths to stay well under Wayland's 4096-byte wl_display message
+-- limit. Long titles (e.g. from claude-code OSC updates or long commands) would
+-- otherwise crash wezterm on Hyprland when the compositor rejects the oversized
+-- message, especially on window switch. See wezterm issue #7725.
+local function truncate(s, max)
+    if s == nil then return "" end
+    -- Count by unicode codepoints so multibyte glyphs don't blow the byte budget.
+    if wezterm.column_width(s) <= max then return s end
+    return wezterm.truncate_right(s, max - 1) .. "…"
+end
+
+-- Prefer the pane's OSC-set title, falling back to the foreground process name.
+local function pane_title(tab)
+    local title = tab.active_pane.title
+    if title ~= nil and #title > 0 then return title end
+    return tab.active_pane.foreground_process_name or ""
+end
+
+-- Tab bar entries stay short and readable.
+wezterm.on('format-tab-title', function(tab)
+    return " " .. truncate(pane_title(tab), 32) .. " "
+end)
+
+-- Window title is hard-capped far below 4096 bytes; it can never overflow.
+wezterm.on('format-window-title', function(tab)
+    return truncate(pane_title(tab), 256)
+end)
+
 return {
     check_for_updates = false,
 
