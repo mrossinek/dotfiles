@@ -67,9 +67,127 @@ local function pane_title(tab)
     return tab.active_pane.foreground_process_name or ""
 end
 
--- Tab bar entries stay short and readable.
+-- claude-code prefixes its OSC title with a state glyph: a two-frame spinner while
+-- it is working, swapped for a static asterisk once the turn completes. Taken from
+-- the claude binary itself (`Ene = ["\u{25D0}","\u{25D1}"], Dne = "\u{2733}"`,
+-- flipping every 960ms), so the first codepoint of the title *is* the state.
+-- If a future claude release changes these glyphs, highlighting silently stops;
+-- see wezterm/NIGHTLY.md.
+local CLAUDE_BUSY = { [0x25D0] = true, [0x25D1] = true }  -- ◐ ◑
+local CLAUDE_IDLE = 0x2733                                -- ✳
+
+-- Returns "busy", "idle", or nil when this isn't a claude pane. Decodes the first
+-- codepoint properly -- these glyphs are 3 bytes each, so string.sub(s, 1, 1) would
+-- compare a partial sequence and never match.
+local function claude_state(title)
+    if title == nil or #title == 0 then return nil end
+    local ok, cp = pcall(utf8.codepoint, title, 1)
+    if not ok then return nil end
+    if CLAUDE_BUSY[cp] then return "busy" end
+    if cp == CLAUDE_IDLE then return "idle" end
+    return nil
+end
+
+-- Shell panes report the exit status of the last command via a user var set from
+-- the precmd hook in zsh/.zshrc. "running" means a command is currently in flight.
+local function shell_status(vars)
+    if vars == nil then return nil end
+    if vars.CMD_RUNNING == "1" then return "running" end
+    local rc = vars.CMD_STATUS
+    if rc == nil or rc == "" then return nil end
+    return rc == "0" and "ok" or "failed"
+end
+
+-- TabBarColors rejects unknown keys, so the highlight colours live here rather
+-- than in colors.tab_bar. Bright enough to carry against the #1c1c1c inactive tab.
+local ATTENTION = {
+    done   = { bg = "#86bd47", fg = "#1c1c1c" },
+    failed = { bg = "#f15250", fg = "#1c1c1c" },
+}
+
+-- Panes needing attention: finished while we were looking somewhere else. Keyed by
+-- pane_id. `acknowledged` is set once the pane has been *seen* in a settled state,
+-- which is what makes the highlight clear on visit -- and, importantly, keeps a pane
+-- that finishes while you are already watching it from ever lighting up.
+local attention = {}
+local acknowledged = {}
+local last_state = {}
+
+-- All state transitions happen here, never in format-tab-title: that runs for every
+-- tab on every repaint and has to stay cheap. Firing on status_update_interval also
+-- gives the tab bar a periodic invalidation, which is what keeps the claude spinner
+-- animating on *inactive* tabs instead of only advancing when some other event
+-- happens to trigger a repaint.
+wezterm.on('update-status', function(window, pane)
+    local active_pane_id = pane ~= nil and pane:pane_id() or nil
+    local seen = {}
+
+    for _, tab in ipairs(window:mux_window():tabs()) do
+        for _, p in ipairs(tab:panes()) do
+            local id = p:pane_id()
+            seen[id] = true
+
+            local state = claude_state(p:get_title())
+                          or shell_status(p:get_user_vars())
+            local settled = state == "idle" or state == "ok" or state == "failed"
+            -- Deliberately *not* gated on window:is_focused(): if the tab is on
+            -- screen it counts as seen, even when wezterm itself sits behind
+            -- another window. Otherwise a tab that finished while the whole
+            -- terminal was unfocused would get flagged and then never clear,
+            -- because on return it is already the active tab and so is filtered
+            -- out of the highlight by format-tab-title.
+            local on_screen = id == active_pane_id
+
+            if not settled then
+                -- Working again: forget that we ever acknowledged it, so the next
+                -- completion can raise a fresh notification.
+                acknowledged[id] = nil
+                attention[id] = nil
+            elseif on_screen then
+                -- Settled and on screen right now -> nothing to flag, and remember
+                -- that we have seen this particular completion.
+                acknowledged[id] = true
+                attention[id] = nil
+            elseif not acknowledged[id] and last_state[id] ~= state then
+                -- Settled off-screen, and it *changed* into that state while we
+                -- were away. Requiring the edge stops every already-idle tab from
+                -- lighting up at once -- including on the very first tick, where
+                -- last_state is nil and every settled pane would otherwise flag.
+                if last_state[id] ~= nil then
+                    attention[id] = state
+                end
+            end
+
+            last_state[id] = state
+        end
+    end
+
+    -- Drop bookkeeping for panes that have gone away.
+    for id in pairs(last_state) do
+        if not seen[id] then
+            last_state[id], acknowledged[id], attention[id] = nil, nil, nil
+        end
+    end
+end)
+
+-- Tab bar entries stay short and readable. Returns FormatItems so a tab needing
+-- attention can be filled; the truncate() call is load-bearing, see above.
 wezterm.on('format-tab-title', function(tab)
-    return " " .. truncate(pane_title(tab), 32) .. " "
+    local text = " " .. truncate(pane_title(tab), 32) .. " "
+    local flag = not tab.is_active and attention[tab.active_pane.pane_id] or nil
+
+    if flag == nil then
+        return text
+    end
+
+    local scheme = (flag == "failed") and ATTENTION.failed or ATTENTION.done
+    return {
+        { Background = { Color = scheme.bg } },
+        { Foreground = { Color = scheme.fg } },
+        { Attribute = { Intensity = "Bold" } },
+        { Text = text },
+        "ResetAttributes",
+    }
 end)
 
 -- Window title is hard-capped far below 4096 bytes; it can never overflow.
@@ -86,6 +204,10 @@ return {
 
     use_fancy_tab_bar = false,
     tab_bar_at_bottom = true,
+
+    -- Drives update-status. Kept below claude's 960ms spinner period so no frame
+    -- is skipped, and doubles as the tab bar's periodic repaint tick.
+    status_update_interval = 500,
 
     font = wezterm.font("Hasklug Nerd Font Mono"),
     adjust_window_size_when_changing_font_size = false,

@@ -37,6 +37,32 @@ bindkey -M vicmd 'j' history-substring-search-down
 source ~/.zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 
+# wezterm: publish the last command's exit status so the tab bar can flag
+# finished/failed tabs -- see the update-status handler in
+# wezterm/.config/wezterm/wezterm.lua. /etc/profile.d/wezterm.sh already reports
+# status via OSC 133;D semantic zones, but those aren't readable from Lua, so the
+# status has to go out as a user var too. It provides __wezterm_set_user_var
+# (which also handles the tmux passthrough case), so reuse that when present.
+if [[ -n "$WEZTERM_PANE" ]] && (( $+functions[__wezterm_set_user_var] )); then
+    # $? must be captured first, before anything else can clobber it. Use
+    # add-zsh-hook rather than defining precmd/preexec outright: grml already owns
+    # those, and redefining them would take out the prompt.
+    _wezterm_status_precmd () {
+        local rc=$?
+        __wezterm_set_user_var CMD_RUNNING 0
+        __wezterm_set_user_var CMD_STATUS "$rc"
+    }
+
+    _wezterm_status_preexec () {
+        __wezterm_set_user_var CMD_RUNNING 1
+    }
+
+    autoload -Uz add-zsh-hook
+    add-zsh-hook precmd _wezterm_status_precmd
+    add-zsh-hook preexec _wezterm_status_preexec
+fi
+
+
 # ttyctl command: freeze/unfreeze terminal
 ttyctl -f
 
