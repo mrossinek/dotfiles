@@ -116,3 +116,6 @@ c.editor.command = [
     "-c",
     "normal {line}G{column0}l",
 ]
+
+# GPU workaround
+c.qt.force_software_rendering = "chromium"
