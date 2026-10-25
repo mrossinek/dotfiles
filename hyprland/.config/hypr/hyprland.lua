@@ -9,7 +9,18 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("SSH_AUTH_SOCK", os.getenv("XDG_RUNTIME_DIR") .. "/gcr/ssh")
 hl.env("HYPRSHOT_DIR", os.getenv("HOME") .. "/Pictures/Screenshots/")
-hl.env("PATH", os.getenv("PATH") .. ":" .. os.getenv("HOME") .. "/.local/bin")
+-- Prepend (not append) ~/.local/bin so locally installed binaries win over /usr/bin.
+-- Build the value idempotently: hl.env() is re-applied on every config reload,
+-- so a naive prepend would stack another copy of the dir onto PATH each time.
+local localbin = os.getenv("HOME") .. "/.local/bin"
+local cleaned = {}
+for entry in (os.getenv("PATH") or ""):gmatch("[^:]+") do
+    -- Drop any existing copy (with or without a trailing slash) before prepending.
+    if entry ~= localbin and entry ~= localbin .. "/" then
+        table.insert(cleaned, entry)
+    end
+end
+hl.env("PATH", localbin .. ":" .. table.concat(cleaned, ":"))
 
 hl.config({
     debug = {
@@ -424,4 +435,7 @@ hl.window_rule({
     float = true,
 })
 
-hl.workspace_rule({ workspace = "special:scratchpad", on_created_empty = "wezterm start --class 'scratchpad'" })
+hl.workspace_rule({
+    workspace = "special:scratchpad",
+    on_created_empty = terminal .. " start --class 'scratchpad'",
+})
