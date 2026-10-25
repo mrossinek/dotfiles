@@ -1,7 +1,8 @@
 from pathlib import Path
 from os import system
 from cobib.config import Event, LabelSuffix, config
-from cobib.commands import AddCommand
+from cobib.commands import AddCommand, NoteCommand
+from cobib.database import Database
 
 config.commands.note.default_filetype = "norg"
 config.commands.open.fields += ["eprint"]
@@ -109,6 +110,12 @@ def add_new_tag(cmd: AddCommand) -> None:
        if "new" not in entry.tags:
            entry.tags = entry.tags + ["new"]
 
-@Event.PostGitCommit.subscribe
-def push_to_remote(root: Path, file: Path) -> None:
-    system(f"git -C {root} push origin master")
+@Event.PreNoteCommand.subscribe
+def note_in_zettels(cmd: NoteCommand) -> None:
+   entry = Database().get(cmd.largs.label)
+   if entry is not None and entry.notes is None:
+       entry.notes = f"~/Org/6-zettels/{entry.label}.norg"
+
+# @Event.PostGitCommit.subscribe
+# def push_to_remote(root: Path, file: Path) -> None:
+#     system(f"git -C {root} push origin master")
