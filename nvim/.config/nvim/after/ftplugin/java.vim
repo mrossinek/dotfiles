@@ -1,5 +1,5 @@
 setlocal foldmethod=expr
-setlocal foldexpr=nvim_treesitter#foldexpr()
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 
 command! MakeTage AsyncRun ctags -R --java-kinds=+p --fields=+iaS --extras=+q .
 

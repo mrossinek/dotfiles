@@ -1,2 +1,2 @@
 setlocal foldmethod=expr
-setlocal foldexpr=nvim_treesitter#foldexpr()
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()

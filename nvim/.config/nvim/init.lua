@@ -1,5 +1,11 @@
 vim.loader.enable()
 
+-- keep treesitter parsers and queries inside these dotfiles (ignored by git);
+-- this must happen before plugins like neorg look for them
+require("nvim-treesitter").setup({
+    install_dir = vim.fn.stdpath("config") .. "/site",
+})
+
 vim.cmd.colorscheme("mrossinek")
 
 vim.keymap.set("n", "<space>", "<Nop>")
