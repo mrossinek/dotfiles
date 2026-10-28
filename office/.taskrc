@@ -33,4 +33,4 @@ urgency.blocked.coefficient = 0.0
 include ~/.task_local
 
 # news
-news.version=3.4.1
+news.version=3.5.0
